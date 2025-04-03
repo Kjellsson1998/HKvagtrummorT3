@@ -3,102 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/src/output.css" rel="stylesheet" />
+    <link href="src/output.css" rel="stylesheet" />
   </head>
 
 <body class="dark:bg-DGreenC-100 bg-DGreenC-800 dark:text-DGreenC-800 text-DGreenC-100">
   
-    <nav
-      id="header"
-      class="w-full z-30 top-5 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2"
-    >
+    <nav id="header" class="w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2">
       <div class="w-full flex items-center justify-between px-6 py-2 relative">
         <!-- Logo -->
-        <div class="flex-1 md:flex-none">
-          <img src="Image/hk-logo.png" alt="Logo" class="h-10" />
+        <div class="flex-1 md:flex-none text-DGreenC-800">
+          <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="-60 -60 120 120" width="40" height="40">
+            <g stroke="currentColor">
+              <circle r="58" fill="none" stroke-width="4" />
+              <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
+              <path fill="currentColor" stroke-width="6.1"
+                d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447" />
+            </g>
+          </svg>
         </div>
-
+    
         <!-- Menu Items for Large Screens -->
-        <div
-          class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1"
-        >
-          <ul
-            class="md:flex items-center justify-end text-base text-YellowC-900 pt-4 md:pt-0"
-          >
+        <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1">
+          <ul class="md:flex items-center justify-end text-base text-YellowC-900 pt-4 md:pt-0">
             <li>
-              <a
-                class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium transform hover:scale-120 text-xl py-2 px-4"
-                href="index.html"
-                >Hem</a
-              >
+              <a class="inline-block underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium transform hover:scale-120 text-xl py-2 px-4"
+                href="index.html">Hem</a>
             </li>
             <li>
-              <a
-                class="inline-block underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium transform hover:scale-120 text-xl py-2 px-4"
-                href="produkter.html"
-                >Produkter</a
-              >
+              <a class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium transform hover:scale-120 text-xl py-2 px-4"
+                href="produkter.html">Produkter</a>
             </li>
             <li>
-              <a
-                class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium transform hover:scale-120 text-xl py-2 px-4"
-                href="about.html"
-                >Om HK</a
-              >
+              <a class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium transform hover:scale-120 text-xl py-2 px-4"
+                href="about.html">Om HK</a>
             </li>
           </ul>
         </div>
-
+    
         <!-- Menu Icon for Small Screens (Peer-driven toggle) -->
         <div class="md:hidden">
           <input type="checkbox" id="menu-toggle" class="hidden peer" />
-          <label
-            for="menu-toggle"
-            aria-label="Open menu"
-            class="cursor-pointer"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
+          <label for="menu-toggle" aria-label="Open menu" class="cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg"
               class="w-8 h-8 transition-transform duration-200 ease-in-out transform hover:scale-125 hover:fill-YellowC-100"
-              viewBox="0 0 48 48"
-            >
+              viewBox="0 0 48 48">
               <g data-name="Layer 2">
                 <path fill="none" d="M0 0h48v48H0z" data-name="invisible box" />
                 <g data-name="icons Q2">
                   <path
-                    d="M42 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 24a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 36a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"
-                  />
+                    d="M42 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 24a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 36a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z" />
                 </g>
               </g>
             </svg>
           </label>
-
+    
           <!-- Seamless Menu for Small Screens -->
           <div
-            class="hidden peer-checked:flex flex-col text-base text-YellowC-900 absolute top-full left-0 w-full bg-YellowC-500 border-YellowC-900 shadow-md mt-0 rounded-b-lg"
-          >
+            class="hidden peer-checked:flex flex-col text-base text-YellowC-900 absolute top-full left-0 w-full bg-YellowC-500 border-YellowC-900 shadow-md mt-0 rounded-b-lg">
             <ul class="text-center">
               <!-- Center-align the text -->
               <li>
-                <a
-                  class="block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium transform hover:scale-120 text-xl py-3"
-                  href="index.html"
-                  >Hem</a
-                >
+                <a class="block underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium transform hover:scale-120 text-xl py-3"
+                  href="index.html">Hem</a>
               </li>
               <li>
-                <a
-                  class="block underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium transform hover:scale-120 text-xl py-3"
-                  href="produkter.html"
-                  >Produkter</a
-                >
+                <a class="block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium transform hover:scale-120 text-xl py-3"
+                  href="produkter.html">Produkter</a>
               </li>
               <li>
-                <a
-                  class="block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium transform hover:scale-120 text-xl py-3"
-                  href="about.html"
-                  >Om HK</a
-                >
+                <a class="block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium transform hover:scale-120 text-xl py-3"
+                  href="about.html">Om HK</a>
               </li>
             </ul>
           </div>
