@@ -98,6 +98,7 @@
     --color-RedC-500: #cf2626;
     --color-RedC-700: #7d1717;
     --color-DGreenC-100: #dfded8;
+    --color-DGreenC-200: #c1bfb3;
     --color-DGreenC-400: #7f7a67;
     --color-DGreenC-500: #595648;
     --color-DGreenC-600: #474439;
@@ -576,11 +577,20 @@
   .bg-DGreenC-100 {
     background-color: var(--color-DGreenC-100);
   }
+  .bg-DGreenC-200 {
+    background-color: var(--color-DGreenC-200);
+  }
+  .bg-DGreenC-500 {
+    background-color: var(--color-DGreenC-500);
+  }
   .bg-DGreenC-800 {
     background-color: var(--color-DGreenC-800);
   }
   .bg-RedC-400 {
     background-color: var(--color-RedC-400);
+  }
+  .bg-YellowC-50 {
+    background-color: var(--color-YellowC-50);
   }
   .bg-YellowC-100 {
     background-color: var(--color-YellowC-100);
@@ -1039,9 +1049,19 @@
       background-color: var(--color-DGreenC-100);
     }
   }
+  .dark\:bg-DGreenC-200 {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-DGreenC-200);
+    }
+  }
   .dark\:bg-DGreenC-600 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-DGreenC-600);
+    }
+  }
+  .dark\:bg-DGreenC-800 {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-DGreenC-800);
     }
   }
   .dark\:bg-DGreenC-900 {
