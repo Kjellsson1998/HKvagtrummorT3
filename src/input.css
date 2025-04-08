@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+/* npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch  */
+
 @font-face {
   font-family: 'Futura';
   font-style: normal;
