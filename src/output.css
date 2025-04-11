@@ -49,6 +49,7 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-2xl: 42rem;
+    --container-4xl: 56rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
@@ -323,6 +324,9 @@
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
+  .mt-12 {
+    margin-top: calc(var(--spacing) * 12);
+  }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
@@ -383,6 +387,9 @@
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
+  .h-48 {
+    height: calc(var(--spacing) * 48);
+  }
   .h-60 {
     height: calc(var(--spacing) * 60);
   }
@@ -421,6 +428,9 @@
   }
   .max-w-2xl {
     max-width: var(--container-2xl);
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
   }
   .flex-1 {
     flex: 1;
@@ -891,6 +901,13 @@
       }
     }
   }
+  .hover\:text-YellowC-600 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-YellowC-600);
+      }
+    }
+  }
   .hover\:text-white {
     &:hover {
       @media (hover: hover) {
@@ -985,6 +1002,16 @@
       order: 1;
     }
   }
+  .md\:mr-6 {
+    @media (width >= 48rem) {
+      margin-right: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:mb-0 {
+    @media (width >= 48rem) {
+      margin-bottom: calc(var(--spacing) * 0);
+    }
+  }
   .md\:flex {
     @media (width >= 48rem) {
       display: flex;
@@ -1003,6 +1030,11 @@
   .md\:flex-none {
     @media (width >= 48rem) {
       flex: none;
+    }
+  }
+  .md\:flex-row {
+    @media (width >= 48rem) {
+      flex-direction: row;
     }
   }
   .md\:items-center {
@@ -1085,6 +1117,11 @@
       background-color: var(--color-DGreenC-600);
     }
   }
+  .dark\:bg-DGreenC-700 {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-DGreenC-700);
+    }
+  }
   .dark\:bg-DGreenC-800 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-DGreenC-800);
@@ -1113,6 +1150,15 @@
   .dark\:text-YellowC-800 {
     @media (prefers-color-scheme: dark) {
       color: var(--color-YellowC-800);
+    }
+  }
+  .dark\:hover\:text-GreenC-500 {
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-GreenC-500);
+        }
+      }
     }
   }
   .hover\:dark\:text-GreenC-500 {
