@@ -41,12 +41,17 @@
 <script type="application/ld+json">
 {  
   "@context": "https://schema.org",  
-  "@type": "LocalBusiness",  
+  "@type": ["LocalBusiness", "Store", "BuildingMaterialsStore"],  
   "name": "HK Vägtrummor",  
   "description": "HK Vägtrummor i Sidensjö erbjuder vägtrummor (plast, plåt, valvbågar) och markduk med personlig service och flexibel hämtning.",  
   "url": "https://www.hkvagtrummor.se/",  
   "telephone": "+46703909051",  
-  "email": "hugo@kjellsson.nu",  
+  "email": "hugo@kjellsson.nu",
+  "logo": "https://www.hkvagtrummor.se/Image/HK logo Master Version.svg",
+  "image": [
+    "https://www.hkvagtrummor.se/Image/Trumma3.webp", 
+    "https://www.hkvagtrummor.se/Image/Banner_trummlager2.jpg" 
+   ],
   "address": {  
     "@type": "PostalAddress",  
     "streetAddress": "By 120",  
@@ -58,19 +63,49 @@
     "@type": "GeoCoordinates",  
     "latitude": "63.30061",  
     "longitude": "18.33192"  
-  },  
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö",
   "openingHoursSpecification": {  
     "@type": "OpeningHoursSpecification",  
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],  
     "opens": "00:00",  
-    "closes": "23:59",  
-"description": "Produkterna kan hämtas dygnet runt, året om, men kontakt via telefon krävs innan första köp."  
+    "closes": "23:59",
+    "description": "Produkterna kan hämtas dygnet runt, året om, men kontakt via telefon krävs innan första köp."
   },  
   "hasOfferCatalog": {  
     "@type": "OfferCatalog",  
     "name": "Produktkatalog för vägtrummor och valvbågar",  
     "url": "https://www.hkvagtrummor.se/produkter.html"  
-  }  
+  },
+  "paymentAccepted": [ "Invoice", "Swish", "Cash" ], 
+  "currenciesAccepted": "SEK",
+  "areaServed": [
+      {
+        "@type": "Place",
+        "name": "Sidensjö"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Västernorrlands län"
+      },
+      {
+        "@type": "Country",
+        "name": "Sverige"
+      }
+   ],
+"taxID": "SE980321001301",
+
+   "founder": {
+      "@type": "Person",
+      "name": "Hugo Kjellsson",
+      "jobTitle": "Grundare & Ägare", 
+      "sameAs": [
+         "https://www.linkedin.com/in/hugo-kjellsson-2bb0011b6/"]
+    },
+   "sameAs": [
+      "https://www.facebook.com/profile.php?id=61564964080791"
+   ],
+   "keywords": "vägtrummor, plasttrummor, plåttrummor, valvbågar, markduk, Sidensjö, Västernorrland, vägbygge, diken"
 }  
 </script>
 
