@@ -145,286 +145,196 @@
 </nav>
 
 
+<!-- Image Container -->
+<div class="m-5 overflow-hidden rounded-lg shadow-md">
+  <img src="Image/Dagvatten_Banner.jpg" alt="Bannerbild för dagvattenmagasin och fördröjningsmagasin"
+    class="w-full h-40 object-cover object-center" />
+  <!-- Ersätt Image/Dagvatten_Banner.jpg med din bildsökväg -->
+</div>
 
-  <!-- Image Container -->
-  <div class="m-5 overflow-hidden rounded-lg shadow-md">
-    <img src="Image/HelCor_Banner.jpg" alt="Bannerbild för HelCor vägtrummor"
-      class="w-full h-40 object-cover object-center" />
-    <!-- Ersätt Image/HelCor_Banner.jpg med din bildsökväg -->
-  </div>
+<!-- Material/System Table -->
+<div class="overflow-hidden rounded-lg border-2 border-YellowC-500 shadow-md m-5">
+  <table class="w-full border-collapse bg-YellowC-100 text-left text-sm text-DGreenC-800">
+    <thead class="bg-YellowC-200">
+      <tr>
+        <th scope="col" class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-medium text-DGreenC-800">
+          Material / System
+        </th>
+        <th scope="col" class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-medium text-DGreenC-800">
+          Beskrivning / Fördelar
+        </th>
+        <th scope="col" class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-medium text-DGreenC-800">
+          Teknisk Data / Exempel
+        </th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-DGreenC-100 border-t border-DGreenC-100">
 
-  <!-- HelCor Product Table -->
-  <div class="overflow-hidden rounded-lg border-2 border-YellowC-500 shadow-md m-5">
-    <table class="w-full border-collapse bg-YellowC-100 text-left text-sm text-DGreenC-800">
-      <thead class="bg-YellowC-200">
-        <tr>
-          <th scope="col"
-            class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-medium text-DGreenC-800">
-            HelCor Vägtrumma
-          </th>
-          <th scope="col"
-            class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-medium text-DGreenC-800">
-            Pris
-          </th>
-          <th scope="col"
-            class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-medium text-DGreenC-800">
-            Teknisk Data (Exempel)
-          </th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-DGreenC-100 border-t border-DGreenC-100">
+      <!-- Rad 1: HelCor -->
+      <tr class="hover:bg-YellowC-50">
+        <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
+          <div class="relative h-20 w-30 hidden sm:block">
+            <img class="h-full w-full rounded-md object-contain object-center" src="Image/Helcor_Tank.jpg" /* Ersätt med
+              din bild */ alt="HelCor dagvattenmagasin" />
+          </div>
+          <div class="text-sm align-top">
+            <div class="font-medium text-DGreenC-700">
+              <span class="text-xl">HelCor</span>
+              <span class="text-xs sm:text-lg md:text-xl">Magasin</span>
+            </div>
+            <div class="text-DGreenC-400">Varmförzinkat Stål</div>
+            <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
+              <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
+              <!-- Blue for 'contact us' -->
+              Kontakta för design & offert
+            </div>
+          </div>
+        </th>
+        <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
+          <div class="text-sm">
+            <div class="font-medium text-DGreenC-700">Spiralkorrugerad rörkonstruktion med god ringstyvhet och
+              flexibilitet. Klarar full trafiklast vid låg överfyllnad. Låg vikt.</div>
+            <div class="text-DGreenC-400">Anpassningsbar profil (cylindrisk/assymetrisk).</div>
+          </div>
+        </td>
+        <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
+          <div class="font-medium text-DGreenC-700">Diameter (DI): 300 - 3500 mm</div>
+          <div class="text-DGreenC-700">Volym/m (ex): 0.07 m³ (300mm) - 9.08 m³ (3400mm)</div>
+          <div class="text-DGreenC-700">Livslängd: Minst 80 år (system)</div>
+          <div class="text-DGreenC-700">Material: Varmförzinkat stål</div>
+        </td>
+      </tr>
 
-        <!-- Rad 1: 300 mm -->
-        <tr class="hover:bg-YellowC-50">
-          <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
-            <div class="relative h-20 w-30 hidden sm:block">
-              <img class="h-full w-full rounded-md object-contain object-center" /* Changed object-cover to
-                object-contain for potentially different aspect ratio */ src="Image/HelCor_Trumma_Small.jpg" /* Ersätt
-                med din bild */ alt="HelCor vägtrumma" />
+      <!-- Rad 2: TrenchCoat -->
+      <tr class="hover:bg-YellowC-50">
+        <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
+          <div class="relative h-20 w-30 hidden sm:block">
+            <img class="h-full w-full rounded-md object-contain object-center" src="Image/TrenchCoat_Tank.jpg"
+              alt="TrenchCoat dagvattenmagasin" />
+            <!-- Ersätt med din bild -->
+          </div>
+          <div class="text-sm align-top">
+            <div class="font-medium text-DGreenC-700">
+              <span class="text-xl">TrenchCoat</span>
+              <span class="text-xs sm:text-lg md:text-xl">Magasin</span>
             </div>
-            <div class="text-sm align-top">
-              <div class="font-medium text-DGreenC-700">
-                <span class="text-xl">300 mm</span>
-                <span class="text-xs sm:text-lg md:text-xl">HelCor</span>
-              </div>
-              <div class="text-DGreenC-400">Varmförzinkad / Trenchcoat</div>
-              <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
-                <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
-                <!-- Blue for 'contact us' -->
-                Kontakta för lagerstatus
-              </div>
+            <div class="text-DGreenC-400">Plastbelagt Stål</div>
+            <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
+              <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
+              Kontakta för design & offert
             </div>
-          </th>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="text-sm">
-              <div class="font-medium text-DGreenC-700">Offert</div>
-            </div>
-          </td>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="font-medium text-DGreenC-700">Korrugering: 68x13 mm</div>
-            <div class="text-DGreenC-700">Area: 0,07 m²</div>
-            <div class="text-DGreenC-700">Plåttjocklek: 1,5 mm</div>
-            <div class="text-DGreenC-700">Vikt: ca 14 kg/m</div>
-            <div class="text-DGreenC-700">Överfyllnad: 0,3 - 60 m</div>
-          </td>
-        </tr>
+          </div>
+        </th>
+        <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
+          <div class="text-sm">
+            <div class="font-medium text-DGreenC-700">HelCor-konstruktion med extra polyetenlaminat (250 μm) på in- och
+              utsida. Ger överlägset korrosionsskydd och kemikalieresistens. Lång livslängd.</div>
+            <div class="text-DGreenC-400">Optimal för krävande miljöer.</div>
+          </div>
+        </td>
+        <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
+          <div class="font-medium text-DGreenC-700">Diameter (DI): 300 - 3500 mm</div>
+          <div class="text-DGreenC-700">Volym/m (ex): 0.07 m³ (300mm) - 9.08 m³ (3400mm)</div>
+          <div class="text-DGreenC-700">Livslängd: Minst 80 år (system), utökat skydd</div>
+          <div class="text-DGreenC-700">Material: Stål + Varmförzinkning + Polyeten (PE)</div>
+          <div class="text-DGreenC-700">Processvatten: pH 3-12</div>
+        </td>
+      </tr>
 
-        <!-- Rad 2: 600 mm -->
-        <tr class="hover:bg-YellowC-50">
-          <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
-            <div class="relative h-20 w-30 hidden sm:block">
-              <img class="h-full w-full rounded-md object-contain object-center" src="Image/HelCor_Trumma_Small.jpg"
-                alt="HelCor vägtrumma" />
+      <!-- Rad 3: Pecor Quattro -->
+      <tr class="hover:bg-YellowC-50">
+        <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
+          <div class="relative h-20 w-30 hidden sm:block">
+            <img class="h-full w-full rounded-md object-contain object-center" src="Image/PecorQuattro_Tank.jpg"
+              alt="Pecor Quattro dagvattenmagasin" />
+            <!-- Ersätt med din bild -->
+          </div>
+          <div class="text-sm align-top">
+            <div class="font-medium text-DGreenC-700">
+              <span class="text-xl">Pecor Quattro</span>
+              <span class="text-xs sm:text-lg md:text-xl">Magasin</span>
             </div>
-            <div class="text-sm align-top">
-              <div class="font-medium text-DGreenC-700">
-                <span class="text-xl">600 mm</span>
-                <span class="text-xs sm:text-lg md:text-xl">HelCor</span>
-              </div>
-              <div class="text-DGreenC-400">Varmförzinkad / Trenchcoat</div>
-              <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
-                <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
-                Kontakta för lagerstatus
-              </div>
+            <div class="text-DGreenC-400">Polypropen (PP)</div>
+            <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
+              <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
+              Kontakta för design & offert
             </div>
-          </th>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="text-sm">
-              <div class="font-medium text-DGreenC-700">Offert</div>
-            </div>
-          </td>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="font-medium text-DGreenC-700">Korrugering: 68x13 mm</div>
-            <div class="text-DGreenC-700">Area: 0,28 m²</div>
-            <div class="text-DGreenC-700">Plåttjocklek: 1,5 - 2,0 mm</div>
-            <div class="text-DGreenC-700">Vikt: ca 28 - 35 kg/m</div>
-            <div class="text-DGreenC-700">Överfyllnad: 0,3 - 42 m</div>
-          </td>
-        </tr>
+          </div>
+        </th>
+        <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
+          <div class="text-sm">
+            <div class="font-medium text-DGreenC-700">Lätt och flexibelt rörsystem. Dubbelväggig konstruktion med slät
+              insida (bra flöde, renhållning) och korrugerad utsida (styrka).</div>
+            <div class="text-DGreenC-400">Enkel hantering och installation.</div>
+          </div>
+        </td>
+        <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
+          <div class="font-medium text-DGreenC-700">Diameter (Di): 300 - 1000 mm</div>
+          <div class="text-DGreenC-700">Volym/m (ex): 0.07 m³ (300mm) - 0.79 m³ (1000mm)</div>
+          <div class="text-DGreenC-700">Livslängd: Minst 80 år (system)</div>
+          <div class="text-DGreenC-700">Material: Polypropen (PP)</div>
+        </td>
+      </tr>
 
-        <!-- Rad 3: 1000 mm -->
-        <tr class="hover:bg-YellowC-50">
-          <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
-            <div class="relative h-20 w-30 hidden sm:block">
-              <img class="h-full w-full rounded-md object-contain object-center" src="Image/HelCor_Trumma_Small.jpg"
-                alt="HelCor vägtrumma" />
-            </div>
-            <div class="text-sm align-top">
-              <div class="font-medium text-DGreenC-700">
-                <span class="text-xl">1000 mm</span>
-                <span class="text-xs sm:text-lg md:text-xl">HelCor</span>
-              </div>
-              <div class="text-DGreenC-400">Varmförzinkad / Trenchcoat</div>
-              <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
-                <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
-                Kontakta för lagerstatus
-              </div>
-            </div>
-          </th>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="text-sm">
-              <div class="font-medium text-DGreenC-700">Offert</div>
-            </div>
-          </td>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <!-- Data combined from both tables for 1000mm -->
-            <div class="font-medium text-DGreenC-700">Korrugering: 68x13 / 125x26 mm</div>
-            <div class="text-DGreenC-700">Area: 0,79 m²</div>
-            <div class="text-DGreenC-700">Plåttjocklek: 2,0 - 2,5 mm</div>
-            <div class="text-DGreenC-700">Vikt: ca 58 - 70 kg/m</div>
-            <div class="text-DGreenC-700">Överfyllnad: 0,35 - 29 m</div>
-          </td>
-        </tr>
+    </tbody>
+  </table>
+</div>
 
-        <!-- Rad 4: 1400 mm -->
-        <tr class="hover:bg-YellowC-50">
-          <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
-            <div class="relative h-20 w-30 hidden sm:block">
-              <img class="h-full w-full rounded-md object-contain object-center" src="Image/HelCor_Trumma_Small.jpg"
-                alt="HelCor vägtrumma" />
-            </div>
-            <div class="text-sm align-top">
-              <div class="font-medium text-DGreenC-700">
-                <span class="text-xl">1400 mm</span>
-                <span class="text-xs sm:text-lg md:text-xl">HelCor</span>
-              </div>
-              <div class="text-DGreenC-400">Varmförzinkad / Trenchcoat</div>
-              <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
-                <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
-                Kontakta för lagerstatus
-              </div>
-            </div>
-          </th>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="text-sm">
-              <div class="font-medium text-DGreenC-700">Offert</div>
-            </div>
-          </td>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <!-- Data combined from both tables for 1400mm -->
-            <div class="font-medium text-DGreenC-700">Korrugering: 68x13 / 125x26 mm</div>
-            <div class="text-DGreenC-700">Area: 1,54 m²</div>
-            <div class="text-DGreenC-700">Plåttjocklek: 2,0 - 3,0 mm</div>
-            <div class="text-DGreenC-700">Vikt: ca 79 - 122 kg/m</div>
-            <div class="text-DGreenC-700">Överfyllnad: 0,4 - 29 m</div>
-          </td>
-        </tr>
+<!-- Product Info Box -->
+<div
+  class="font-body mx-5 my-8 p-6 mt-5 bg-YellowC-100 border-2 border-YellowC-500 rounded-lg shadow-md text-DGreenC-800">
+  <h2 class="font-heading text-2xl font-semibold mb-3">ViaCon Dagvatten- och Fördröjningsmagasin</h2>
+  <p class="text-base leading-relaxed">
+    Effektiv dagvattenhantering är avgörande för att förhindra skador vid kraftiga skyfall. ViaCon erbjuder marknadens
+    bredaste utbud av moderna, högkapacitiva och platseffektiva lösningar för dagvatten- och fördröjningsmagasin som
+    ersätter traditionella stenkistor. Tack vare egen produktion i Lycksele ("ViaCons Händiga Hjärta") kan vi erbjuda
+    både standardlösningar och snabbt kundanpassade system för maximal funktion och kostnadseffektivitet.
+  </p>
+  <p class="text-base leading-relaxed mt-3">
+    Våra system är testade för nordiskt klimat och passar alla miljöer, från stora ytor som parkeringsplatser och
+    logistikcentrum till mindre ytor som stadstorg och gator. Vi erbjuder magasin i tre huvudmaterial: HelCor
+    (varmförzinkat stål), TrenchCoat (plastbelagt stål) och Pecor Quattro (polypropen).
+  </p>
 
-        <!-- Rad 5: 1800 mm -->
-        <tr class="hover:bg-YellowC-50">
-          <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
-            <div class="relative h-20 w-30 hidden sm:block">
-              <img class="h-full w-full rounded-md object-contain object-center" src="Image/HelCor_Trumma_Small.jpg"
-                alt="HelCor vägtrumma" />
-            </div>
-            <div class="text-sm align-top">
-              <div class="font-medium text-DGreenC-700">
-                <span class="text-xl">1800 mm</span>
-                <span class="text-xs sm:text-lg md:text-xl">HelCor</span>
-              </div>
-              <div class="text-DGreenC-400">Varmförzinkad / Trenchcoat</div>
-              <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
-                <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
-                Kontakta för lagerstatus
-              </div>
-            </div>
-          </th>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="text-sm">
-              <div class="font-medium text-DGreenC-700">Offert</div>
-            </div>
-          </td>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="font-medium text-DGreenC-700">Korrugering: 125x26 mm</div>
-            <div class="text-DGreenC-700">Area: 2,54 m²</div>
-            <div class="text-DGreenC-700">Plåttjocklek: 2,5 - 3,0 mm</div>
-            <div class="text-DGreenC-700">Vikt: ca 132 - 159 kg/m</div>
-            <div class="text-DGreenC-700">Överfyllnad: 0,5 - 23 m</div>
-          </td>
-        </tr>
+  <p class="font-subheading text-base leading-relaxed mt-5">Viktiga fördelar med ViaCons system:</p>
+  <ul class="list-disc ml-6 my-2">
+    <li><strong>Brett Dimensionsregister:</strong> 300 mm upp till 3500 mm beroende på material.</li>
+    <li><strong>Lång Livslängd:</strong> Minst 80 år för systemen. TrenchCoat erbjuder överlägset skydd.</li>
+    <li><strong>Låg Vikt:</strong> Underlättar transport och hantering.</li>
+    <li><strong>Hög Bärighet:</strong> Kan dimensioneras för full trafiklast (särskilt stålvarianterna).</li>
+    <li><strong>Effektiv Installation:</strong> Korta installationstider. Olika sammanfogningsmetoder tillgängliga.</li>
+    <li><strong>Kundanpassning:</strong> Egen produktion möjliggör flexibla och optimerade lösningar.</li>
+    <li><strong>Svensktillverkat:</strong> Produceras i Lycksele med fokus på kvalitet.</li>
+    <li><strong>Materialval:</strong> Välj mellan stål (HelCor), plastbelagt stål (TrenchCoat) eller plast (Pecor
+      Quattro) baserat på behov.</li>
+    <li><strong>Kompletta System:</strong> Kan levereras med pumpstationer, inspektions-/provtagningsbrunnar,
+      reningsverk m.m.</li>
+    <li><strong>Designsupport:</strong> Vi bistår med teknisk kunskap för optimal design och utformning.</li>
+  </ul>
 
-        <!-- Rad 6: 2200 mm och större -->
-        <tr class="hover:bg-YellowC-50">
-          <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
-            <div class="relative h-20 w-30 hidden sm:block">
-              <img class="h-full w-full rounded-md object-contain object-center" src="Image/HelCor_Trumma_Small.jpg"
-                alt="HelCor vägtrumma" />
-            </div>
-            <div class="text-sm align-top">
-              <div class="font-medium text-DGreenC-700">
-                <span class="text-xl">2200 mm+</span>
-                <span class="text-xs sm:text-lg md:text-xl">HelCor</span>
-              </div>
-              <div class="text-DGreenC-400">(Upp till 3600 mm)</div>
-              <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
-                <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
-                Kontakta för lagerstatus
-              </div>
-            </div>
-          </th>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="text-sm">
-              <div class="font-medium text-DGreenC-700">Offert</div>
-            </div>
-          </td>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="font-medium text-DGreenC-700">Korrugering: 125x26 mm</div>
-            <div class="text-DGreenC-700">Area (2200mm): 3,80 m²</div>
-            <div class="text-DGreenC-700">Plåttjocklek (2200mm): 3,0 - 3,5 mm</div>
-            <div class="text-DGreenC-700">Vikt (2200mm): ca 193 - 225 kg/m</div>
-            <div class="text-DGreenC-700">Överfyllnad (2200mm): 0,5 - 23 m</div>
-            <div class="text-DGreenC-700">Specifikationer varierar för större diametrar.</div>
-          </td>
-        </tr>
+  <p class="font-subheading text-base leading-relaxed mt-5">Användningsområden:</p>
+  <ul class="list-disc ml-6 my-2">
+    <li>Dagvattenmagasin (fördröjning, magasinering)</li>
+    <li>Brandvattentankar</li>
+    <li>Processvattentankar (pH 3-12 för TrenchCoat)</li>
+    <li>Sedimenteringstankar</li>
+    <li>Passar för: Parkeringsplatser, lagerytor, köpcentrum, logistikcentrum, stadstorg, parker, gator, vägar m.m.</li>
+  </ul>
 
-      </tbody>
-    </table>
-  </div>
+  <p class="font-subheading text-base leading-relaxed mt-5">Underhåll:</p>
+  <p class="text-base leading-relaxed">
+    För att säkerställa optimal funktion under hela driftstiden krävs löpande underhåll. Detta inkluderar regelbunden
+    inspektion (särskilt efter skyfall), rensning av brunnar/galler, spolning och borttagning av sediment från
+    magasinet.
+  </p>
 
-  <!-- Product Info Box -->
-  <div
-    class="font-body mx-5 my-8 p-6 mt-5 bg-YellowC-100 border-2 border-YellowC-500 rounded-lg shadow-md text-DGreenC-800">
-    <h2 class="font-heading text-2xl font-semibold mb-3">HelCor Spiralkorrugerad Vägtrumma</h2>
-    <p class="text-base leading-relaxed"> <!-- Changed h1 to p -->
-      HelCor är en högkvalitativ, spiralkorrugerad vägtrumma tillverkad i Lycksele, Sverige. Den är konstruerad av
-      stålplåt (1,2-3,5 mm tjock) med korrosionsskydd av varmförzinkning (standard) eller Trenchcoat™ (varmförzinkning +
-      plastlaminat) för extra lång livslängd (upp till 100 år). Tack vare användningen av naturliga grundämnen (järn och
-      zink) har rören minimal miljöpåverkan.
-    </p>
-    <p class="text-base leading-relaxed mt-3">
-      Den unika korrugeringen och den dubbellåsta falsen ger rören exceptionell styrka och flexibilitet, vilket
-      möjliggör samverkan med kringfyllningen för att hantera laster effektivt, även vid låga eller mycket höga
-      överfyllnader. HelCor levereras i kundanpassade längder (upp till 25 m) och skarvas enkelt med stabila
-      kopplingsband, vilket minimerar installationsarbetet och risken för isärglidning.
-    </p>
+  <p class="font-subheading text-base leading-relaxed mt-5">Beprövade Lösningar:</p>
+  <p class="text-base leading-relaxed">
+    Våra system används framgångsrikt i projekt världen över, exempelvis vid Bauhaus Upplands Väsby (Sverige), Fornebu
+    Arena (Norge) och motorvägsbygge (Polen).
+  </p>
+</div>
 
-    <p class="font-subheading text-base leading-relaxed mt-5">Viktiga fördelar:</p>
-    <ul class="list-disc ml-6 my-2">
-      <li><strong>Hög Styrka & Flexibilitet:</strong> Optimerad korrugering och stålkvalitet för hög bärighet och
-        samverkan med marken.</li>
-      <li><strong>Lång Livslängd:</strong> Varmförzinkat stål som standard, med option för Trenchcoat™ plastbeläggning
-        (100 års teknisk livslängd).</li>
-      <li><strong>Svensktillverkad Kvalitet:</strong> Producerad i Lycksele med fokus på detaljer och hållbarhet.</li>
-      <li><strong>Anpassade Längder:</strong> Tillverkas i exakta längder (1-25m) för att minimera skarvar och spill.
-      </li>
-      <li><strong>Stabila Kopplingsband:</strong> Enkla att montera, låser sektioner säkert och möjliggör lyft av
-        sammanfogade enheter. Täta skarvar med gummitätning finns som tillval.</li>
-      <li><strong>Låg Miljöpåverkan:</strong> Tillverkad av naturliga material (järn, zink) med minimal avsöndring.</li>
-      <li><strong>Låg Vikt:</strong> Enklare transport och hantering jämfört med t.ex. betongrör.</li>
-      <li><strong>Valvformat Alternativ:</strong> Finns även i valvform för att bevara vattendragets naturliga botten.
-      </li>
-    </ul>
-
-    <p class="font-subheading text-base leading-relaxed mt-5">Användningsområden:</p>
-    <ul class="list-disc ml-6 my-2">
-      <li><strong>Vägtrummor:</strong> Primär användning för vattenavledning under vägar.</li>
-      <li><strong>Kuvertledningar / Koportal:</strong> Genomföringar för djur eller mindre passager.</li>
-      <li><strong>Gångtunnlar & Transporttunnlar:</strong> Skyddade passager för människor eller material.</li>
-      <li><strong>Dagvattenledningar & Magasin:</strong> Effektiv hantering och fördröjning av dagvatten.</li>
-      <li><strong>Ventilationsledningar & Kabeltrummor:</strong> Skydd för ventilation och kablar i mark.</li>
-      <li><strong>Skyttevärn och andra specialapplikationer.</strong></li>
-    </ul>
-  </div>
 
 
 
