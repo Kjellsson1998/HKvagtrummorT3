@@ -1,35 +1,65 @@
 <!DOCTYPE html>
 <html lang="sv">
   <head>
+    <!-- Google tag Google adds (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16731409488">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'AW-16731409488');
+    </script>
+    
+    <!-- Google tag Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MPRK3ZTL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-C6MPRK3ZTL");
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description"
+        content="Se vårt utbud av hållbara vägtrummor i plast och stål, samt valvbågar och markduk. Kvalitetsprodukter för dina markarbeten hos HK Vägtrummor." />
     <link href="src/output.css" rel="stylesheet" />
-  </head>
+    
+    <link rel="icon" href="Image/HK logo Master Version.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="Image/HK-logo_liten3.png" />
+    <link rel="shortcut icon" href="Image/HK-logo_liten5.png" />
+    </head>
 
   <body
-    class="dark:bg-DGreenC-100 bg-DGreenC-800 dark:text-DGreenC-800 text-DGreenC-100"
+  
+    class="font-body dark:bg-DGreenC-100 bg-DGreenC-800 dark:text-DGreenC-800 text-DGreenC-100"
   >
-  <nav id="header" class="w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2">
+  <nav id="header" class="font-subheading w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2">
     <div class="w-full flex items-center justify-between px-6 py-2 relative">
       <!-- Logo -->
-      <div class="flex-1 md:flex-none text-YellowC-600">
+      <div class="flex-1 md:flex-none text-DGreenC-800">
         <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xml:space="preserve"
-        viewBox="-60 -60 120 120"
-        width="40"
-        height="40"
-      >
-        <g stroke="currentColor">
-          <circle r="58" fill="none" stroke-width="4" />
-          <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
-          <path
-            fill="currentColor"
-            stroke-width="6.1"
-            d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447"
-          />
-        </g>
-      </svg>
+          xmlns="http://www.w3.org/2000/svg"
+          xml:space="preserve"
+          viewBox="-60 -60 120 120"
+          width="40"
+          height="40"
+        >
+          <g stroke="currentColor">
+            <circle r="58" fill="none" stroke-width="4" />
+            <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
+            <path
+              fill="currentColor"
+              stroke-width="6.1"
+              d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447"
+            />
+          </g>
+        </svg>
       </div>
 
       <!-- Desktop Menu -->
@@ -37,22 +67,23 @@
         <ul class="flex items-center space-x-4">
           <li>
             <!-- Link to index.html -->
-            <a href="index.html" class="inline-block underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium text-xl py-2 px-4">Hem</a>
+            <a href="index.html" class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3">Hem</a>
           </li>
 
           <!-- Produkter Dropdown (Desktop) -->
           <li class="relative group">
-            <button class="inline-flex items-center no-underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium text-xl py-2 px-4">
-              <a href="Products.html" >Produkter</a>
+            <button class="inline-flex items-center underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-lg py-2 px-3">
+              <a href="Products.html" class="font-subheading">Produkter</a> 
               <svg class="ml-1 w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
              </svg>
             </button>
             <!-- Updated Product Links with English filenames -->
-            <ul class="absolute hidden group-hover:block bg-YellowC-500 shadow-md rounded-md mt-0 pt-0 top-full left-0 w-48 text-left">
-              <li><a href="Plasticpipes.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Plasttrummor</a></li>
+            <ul class="absolute hidden group-hover:block bg-YellowC-500 shadow-md rounded-md mt-0 pt-0 top-full left-0 w-48 text-left font-medium">
+              <li><a href="Plasticpipes.html" class="block px-4 py-2 underline hover:bg-YellowC-600 hover:text-white">Plasttrummor</a></li>
               <li><a href="Archculverts.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Valvbågar</a></li>
               <li><a href="Steelpipes.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Ståltrummor</a></li>
+              <li><a href="Stormwater.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Dagvatten</a></li>
               <li><a href="Geotextile.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Markduk</a></li>
               <li><a href="Rental.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Hyra Maskiner</a></li> 
             </ul>
@@ -61,63 +92,66 @@
            <!-- New Menu Items with English filenames -->
           <li>
             <!-- Link to Guestbook.html -->
-            <a href="GuestBook.html" class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium text-xl py-2 px-4">Gästbok</a> 
+            <a href="GuestBook.html" class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-lg py-2 px-3">Gästbok</a> 
           </li>
           <li>
              <!-- Link to faq.html -->
-            <a href="FAQ.html" class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium text-xl py-2 px-4">Vanliga Frågor</a> 
+            <a href="FAQ.html" class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-lg py-2 px-3">Vanliga Frågor</a> 
           </li>
           <!-- End New Menu Items -->
 
           <li>
              <!-- Link to about.html -->
-            <a href="about.html" class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium text-xl py-2 px-4">Om HK</a>
+            <a href="about.html" class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-lg py-2 px-3">Om HK</a>
           </li>
         </ul>
       </div>
 
-      <!-- Mobile Hamburger -->
-    <div class="md:hidden">
-      <input type="checkbox" id="menu-toggle" class="hidden peer" />
-      <label for="menu-toggle" aria-label="Open menu" class="cursor-pointer">
-        <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-8 h-8 transition-transform duration-200 ease-in-out transform hover:scale-125 hover:fill-YellowC-100"
-        viewBox="0 0 48 48"
-      >
-        <g data-name="Layer 2">
-          <path fill="none" d="M0 0h48v48H0z" data-name="invisible box" />
-          <g data-name="icons Q2">
-            <path
-              d="M42 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 24a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 36a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"
-            />
-          </g>
+
+
+  <!-- Mobile Hamburger -->
+  <div class="md:hidden">
+    <input type="checkbox" id="menu-toggle" class="hidden peer" />
+    <label for="menu-toggle" aria-label="Open menu" class="cursor-pointer">
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-8 h-8 transition-transform duration-200 ease-in-out transform hover:scale-125 hover:fill-YellowC-100"
+      viewBox="0 0 48 48"
+    >
+      <g data-name="Layer 2">
+        <path fill="none" d="M0 0h48v48H0z" data-name="invisible box" />
+        <g data-name="icons Q2">
+          <path
+            d="M42 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 24a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 36a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"
+          />
         </g>
-      </svg>
-      </label>
+      </g>
+    </svg>
+    </label>
 
       <!-- Mobile Menu -->
       <div class="hidden peer-checked:flex flex-col text-base text-YellowC-900 absolute top-full left-0 w-full bg-YellowC-500 shadow-md rounded-b-lg">
         <ul class="text-center">
           <li>
              <!-- Link to index.html -->
-            <a href="index.html" class="block underline hover:text-YellowC-100 transition duration-300 ease-in-out font-medium text-xl py-3">Hem</a>
+            <a href="index.html" class="block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3">Hem</a>
           </li>
 
           <!-- Mobile Produkter Dropdown -->
           <li class="block">
             <input type="checkbox" id="mobile-produkt-toggle" class="peer hidden">
-            <label for="mobile-produkt-toggle" class="inline-flex items-center justify-center w-full hover:text-YellowC-100 transition duration-300 ease-in-out font-medium text-xl py-3 cursor-pointer">
-              <a href="Products.html" >Produkter</a>
+            <label for="mobile-produkt-toggle" class="inline-flex items-center justify-center w-full hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3 cursor-pointer">
+              <a href="Products.html" class="font-subheading underline">Produkter</a> 
               <svg class="ml-1 w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
              </svg>
             </label>
             <!-- Updated Product Links with English filenames -->
-            <ul class="hidden peer-checked:block bg-YellowC-500">
-              <li><a href="Plasticpipes.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Plasttrummor</a></li>
+            <ul class="hidden peer-checked:block bg-YellowC-500 font-medium">
+              <li><a href="Plasticpipes.html" class="underline block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Plasttrummor</a></li>
               <li><a href="Archculverts.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Valvbågar</a></li>
               <li><a href="Steelpipes.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Ståltrummor</a></li>
+              <li><a href="Stormwater.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Dagvatten</a></li>
               <li><a href="Geotextile.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Markduk</a></li>
               <li><a href="Rental.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Hyra Maskiner</a></li>
             </ul>
@@ -126,17 +160,17 @@
           <!-- New Menu Items with English filenames -->
           <li>
              <!-- Link to GuestBook.html -->
-            <a href="GuestBook.html" class="block hover:text-YellowC-100 transition duration-300 ease-in-out font-medium text-xl py-3">Gästbok</a> 
+            <a href="GuestBook.html" class="block hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3">Gästbok</a> 
           </li>
           <li>
              <!-- Link to faq.html -->
-            <a href="FAQ.html" class="block hover:text-YellowC-100 transition duration-300 ease-in-out font-medium text-xl py-3">Vanliga Frågor</a> 
+            <a href="FAQ.html" class="block hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3">Vanliga Frågor</a> 
           </li>
           <!-- End New Menu Items -->
 
           <li>
              <!-- Link to about.html -->
-            <a href="about.html" class="block hover:text-YellowC-100 transition duration-300 ease-in-out font-medium text-xl py-3">Om HK</a>
+            <a href="about.html" class="block hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3">Om HK</a>
           </li>
         </ul>
       </div>
@@ -144,293 +178,9 @@
   </div>
 </nav>
 
-
-
-  <!-- Image Container -->
-  <div class="m-5 overflow-hidden rounded-lg shadow-md">
-    <img src="Image/HelCor_Banner.jpg" alt="Bannerbild för HelCor vägtrummor"
-      class="w-full h-40 object-cover object-center" />
-    <!-- Ersätt Image/HelCor_Banner.jpg med din bildsökväg -->
-  </div>
-
-  <!-- HelCor Product Table -->
-  <div class="overflow-hidden rounded-lg border-2 border-YellowC-500 shadow-md m-5">
-    <table class="w-full border-collapse bg-YellowC-100 text-left text-sm text-DGreenC-800">
-      <thead class="bg-YellowC-200">
-        <tr>
-          <th scope="col"
-            class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-medium text-DGreenC-800">
-            HelCor Vägtrumma
-          </th>
-          <th scope="col"
-            class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-medium text-DGreenC-800">
-            Pris
-          </th>
-          <th scope="col"
-            class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-medium text-DGreenC-800">
-            Teknisk Data (Exempel)
-          </th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-DGreenC-100 border-t border-DGreenC-100">
-
-        <!-- Rad 1: 300 mm -->
-        <tr class="hover:bg-YellowC-50">
-          <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
-            <div class="relative h-20 w-30 hidden sm:block">
-              <img class="h-full w-full rounded-md object-contain object-center" /* Changed object-cover to
-                object-contain for potentially different aspect ratio */ src="Image/HelCor_Trumma_Small.jpg" /* Ersätt
-                med din bild */ alt="HelCor vägtrumma" />
-            </div>
-            <div class="text-sm align-top">
-              <div class="font-medium text-DGreenC-700">
-                <span class="text-xl">300 mm</span>
-                <span class="text-xs sm:text-lg md:text-xl">HelCor</span>
-              </div>
-              <div class="text-DGreenC-400">Varmförzinkad / Trenchcoat</div>
-              <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
-                <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
-                <!-- Blue for 'contact us' -->
-                Kontakta för lagerstatus
-              </div>
-            </div>
-          </th>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="text-sm">
-              <div class="font-medium text-DGreenC-700">Offert</div>
-            </div>
-          </td>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="font-medium text-DGreenC-700">Korrugering: 68x13 mm</div>
-            <div class="text-DGreenC-700">Area: 0,07 m²</div>
-            <div class="text-DGreenC-700">Plåttjocklek: 1,5 mm</div>
-            <div class="text-DGreenC-700">Vikt: ca 14 kg/m</div>
-            <div class="text-DGreenC-700">Överfyllnad: 0,3 - 60 m</div>
-          </td>
-        </tr>
-
-        <!-- Rad 2: 600 mm -->
-        <tr class="hover:bg-YellowC-50">
-          <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
-            <div class="relative h-20 w-30 hidden sm:block">
-              <img class="h-full w-full rounded-md object-contain object-center" src="Image/HelCor_Trumma_Small.jpg"
-                alt="HelCor vägtrumma" />
-            </div>
-            <div class="text-sm align-top">
-              <div class="font-medium text-DGreenC-700">
-                <span class="text-xl">600 mm</span>
-                <span class="text-xs sm:text-lg md:text-xl">HelCor</span>
-              </div>
-              <div class="text-DGreenC-400">Varmförzinkad / Trenchcoat</div>
-              <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
-                <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
-                Kontakta för lagerstatus
-              </div>
-            </div>
-          </th>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="text-sm">
-              <div class="font-medium text-DGreenC-700">Offert</div>
-            </div>
-          </td>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="font-medium text-DGreenC-700">Korrugering: 68x13 mm</div>
-            <div class="text-DGreenC-700">Area: 0,28 m²</div>
-            <div class="text-DGreenC-700">Plåttjocklek: 1,5 - 2,0 mm</div>
-            <div class="text-DGreenC-700">Vikt: ca 28 - 35 kg/m</div>
-            <div class="text-DGreenC-700">Överfyllnad: 0,3 - 42 m</div>
-          </td>
-        </tr>
-
-        <!-- Rad 3: 1000 mm -->
-        <tr class="hover:bg-YellowC-50">
-          <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
-            <div class="relative h-20 w-30 hidden sm:block">
-              <img class="h-full w-full rounded-md object-contain object-center" src="Image/HelCor_Trumma_Small.jpg"
-                alt="HelCor vägtrumma" />
-            </div>
-            <div class="text-sm align-top">
-              <div class="font-medium text-DGreenC-700">
-                <span class="text-xl">1000 mm</span>
-                <span class="text-xs sm:text-lg md:text-xl">HelCor</span>
-              </div>
-              <div class="text-DGreenC-400">Varmförzinkad / Trenchcoat</div>
-              <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
-                <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
-                Kontakta för lagerstatus
-              </div>
-            </div>
-          </th>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="text-sm">
-              <div class="font-medium text-DGreenC-700">Offert</div>
-            </div>
-          </td>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <!-- Data combined from both tables for 1000mm -->
-            <div class="font-medium text-DGreenC-700">Korrugering: 68x13 / 125x26 mm</div>
-            <div class="text-DGreenC-700">Area: 0,79 m²</div>
-            <div class="text-DGreenC-700">Plåttjocklek: 2,0 - 2,5 mm</div>
-            <div class="text-DGreenC-700">Vikt: ca 58 - 70 kg/m</div>
-            <div class="text-DGreenC-700">Överfyllnad: 0,35 - 29 m</div>
-          </td>
-        </tr>
-
-        <!-- Rad 4: 1400 mm -->
-        <tr class="hover:bg-YellowC-50">
-          <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
-            <div class="relative h-20 w-30 hidden sm:block">
-              <img class="h-full w-full rounded-md object-contain object-center" src="Image/HelCor_Trumma_Small.jpg"
-                alt="HelCor vägtrumma" />
-            </div>
-            <div class="text-sm align-top">
-              <div class="font-medium text-DGreenC-700">
-                <span class="text-xl">1400 mm</span>
-                <span class="text-xs sm:text-lg md:text-xl">HelCor</span>
-              </div>
-              <div class="text-DGreenC-400">Varmförzinkad / Trenchcoat</div>
-              <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
-                <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
-                Kontakta för lagerstatus
-              </div>
-            </div>
-          </th>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="text-sm">
-              <div class="font-medium text-DGreenC-700">Offert</div>
-            </div>
-          </td>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <!-- Data combined from both tables for 1400mm -->
-            <div class="font-medium text-DGreenC-700">Korrugering: 68x13 / 125x26 mm</div>
-            <div class="text-DGreenC-700">Area: 1,54 m²</div>
-            <div class="text-DGreenC-700">Plåttjocklek: 2,0 - 3,0 mm</div>
-            <div class="text-DGreenC-700">Vikt: ca 79 - 122 kg/m</div>
-            <div class="text-DGreenC-700">Överfyllnad: 0,4 - 29 m</div>
-          </td>
-        </tr>
-
-        <!-- Rad 5: 1800 mm -->
-        <tr class="hover:bg-YellowC-50">
-          <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
-            <div class="relative h-20 w-30 hidden sm:block">
-              <img class="h-full w-full rounded-md object-contain object-center" src="Image/HelCor_Trumma_Small.jpg"
-                alt="HelCor vägtrumma" />
-            </div>
-            <div class="text-sm align-top">
-              <div class="font-medium text-DGreenC-700">
-                <span class="text-xl">1800 mm</span>
-                <span class="text-xs sm:text-lg md:text-xl">HelCor</span>
-              </div>
-              <div class="text-DGreenC-400">Varmförzinkad / Trenchcoat</div>
-              <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
-                <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
-                Kontakta för lagerstatus
-              </div>
-            </div>
-          </th>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="text-sm">
-              <div class="font-medium text-DGreenC-700">Offert</div>
-            </div>
-          </td>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="font-medium text-DGreenC-700">Korrugering: 125x26 mm</div>
-            <div class="text-DGreenC-700">Area: 2,54 m²</div>
-            <div class="text-DGreenC-700">Plåttjocklek: 2,5 - 3,0 mm</div>
-            <div class="text-DGreenC-700">Vikt: ca 132 - 159 kg/m</div>
-            <div class="text-DGreenC-700">Överfyllnad: 0,5 - 23 m</div>
-          </td>
-        </tr>
-
-        <!-- Rad 6: 2200 mm och större -->
-        <tr class="hover:bg-YellowC-50">
-          <th class="flex gap-2 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal text-DGreenC-900">
-            <div class="relative h-20 w-30 hidden sm:block">
-              <img class="h-full w-full rounded-md object-contain object-center" src="Image/HelCor_Trumma_Small.jpg"
-                alt="HelCor vägtrumma" />
-            </div>
-            <div class="text-sm align-top">
-              <div class="font-medium text-DGreenC-700">
-                <span class="text-xl">2200 mm+</span>
-                <span class="text-xs sm:text-lg md:text-xl">HelCor</span>
-              </div>
-              <div class="text-DGreenC-400">(Upp till 3600 mm)</div>
-              <div class="product-stock font-medium text-DGreenC-800 flex items-center gap-2">
-                <span class="stock-indicator w-2 h-2 rounded-full bg-blue-400 border border-blue-700"></span>
-                Kontakta för lagerstatus
-              </div>
-            </div>
-          </th>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="text-sm">
-              <div class="font-medium text-DGreenC-700">Offert</div>
-            </div>
-          </td>
-          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 align-top">
-            <div class="font-medium text-DGreenC-700">Korrugering: 125x26 mm</div>
-            <div class="text-DGreenC-700">Area (2200mm): 3,80 m²</div>
-            <div class="text-DGreenC-700">Plåttjocklek (2200mm): 3,0 - 3,5 mm</div>
-            <div class="text-DGreenC-700">Vikt (2200mm): ca 193 - 225 kg/m</div>
-            <div class="text-DGreenC-700">Överfyllnad (2200mm): 0,5 - 23 m</div>
-            <div class="text-DGreenC-700">Specifikationer varierar för större diametrar.</div>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Product Info Box -->
-  <div
-    class="font-body mx-5 my-8 p-6 mt-5 bg-YellowC-100 border-2 border-YellowC-500 rounded-lg shadow-md text-DGreenC-800">
-    <h2 class="font-heading text-2xl font-semibold mb-3">HelCor Spiralkorrugerad Vägtrumma</h2>
-    <p class="text-base leading-relaxed"> <!-- Changed h1 to p -->
-      HelCor är en högkvalitativ, spiralkorrugerad vägtrumma tillverkad i Lycksele, Sverige. Den är konstruerad av
-      stålplåt (1,2-3,5 mm tjock) med korrosionsskydd av varmförzinkning (standard) eller Trenchcoat™ (varmförzinkning +
-      plastlaminat) för extra lång livslängd (upp till 100 år). Tack vare användningen av naturliga grundämnen (järn och
-      zink) har rören minimal miljöpåverkan.
-    </p>
-    <p class="text-base leading-relaxed mt-3">
-      Den unika korrugeringen och den dubbellåsta falsen ger rören exceptionell styrka och flexibilitet, vilket
-      möjliggör samverkan med kringfyllningen för att hantera laster effektivt, även vid låga eller mycket höga
-      överfyllnader. HelCor levereras i kundanpassade längder (upp till 25 m) och skarvas enkelt med stabila
-      kopplingsband, vilket minimerar installationsarbetet och risken för isärglidning.
-    </p>
-
-    <p class="font-subheading text-base leading-relaxed mt-5">Viktiga fördelar:</p>
-    <ul class="list-disc ml-6 my-2">
-      <li><strong>Hög Styrka & Flexibilitet:</strong> Optimerad korrugering och stålkvalitet för hög bärighet och
-        samverkan med marken.</li>
-      <li><strong>Lång Livslängd:</strong> Varmförzinkat stål som standard, med option för Trenchcoat™ plastbeläggning
-        (100 års teknisk livslängd).</li>
-      <li><strong>Svensktillverkad Kvalitet:</strong> Producerad i Lycksele med fokus på detaljer och hållbarhet.</li>
-      <li><strong>Anpassade Längder:</strong> Tillverkas i exakta längder (1-25m) för att minimera skarvar och spill.
-      </li>
-      <li><strong>Stabila Kopplingsband:</strong> Enkla att montera, låser sektioner säkert och möjliggör lyft av
-        sammanfogade enheter. Täta skarvar med gummitätning finns som tillval.</li>
-      <li><strong>Låg Miljöpåverkan:</strong> Tillverkad av naturliga material (järn, zink) med minimal avsöndring.</li>
-      <li><strong>Låg Vikt:</strong> Enklare transport och hantering jämfört med t.ex. betongrör.</li>
-      <li><strong>Valvformat Alternativ:</strong> Finns även i valvform för att bevara vattendragets naturliga botten.
-      </li>
-    </ul>
-
-    <p class="font-subheading text-base leading-relaxed mt-5">Användningsområden:</p>
-    <ul class="list-disc ml-6 my-2">
-      <li><strong>Vägtrummor:</strong> Primär användning för vattenavledning under vägar.</li>
-      <li><strong>Kuvertledningar / Koportal:</strong> Genomföringar för djur eller mindre passager.</li>
-      <li><strong>Gångtunnlar & Transporttunnlar:</strong> Skyddade passager för människor eller material.</li>
-      <li><strong>Dagvattenledningar & Magasin:</strong> Effektiv hantering och fördröjning av dagvatten.</li>
-      <li><strong>Ventilationsledningar & Kabeltrummor:</strong> Skydd för ventilation och kablar i mark.</li>
-      <li><strong>Skyttevärn och andra specialapplikationer.</strong></li>
-    </ul>
-  </div>
-
-
-
 <main class="min-h-screen flex flex-col items-center justify-center text-center p-6">
-    <!-- Huvudrubrik med stor text och pulseffekt -->
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase text-YellowC-500  mb-4">
+    <!-- Huvudrubrik -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase text-YellowC-500 mb-4">
       Valvbågar
       <span class="block sm:inline"> - Kommer Snart</span> <!-- Hanterar radbrytning på små skärmar -->
     </h1>
@@ -440,11 +190,13 @@
       Produktsidan för våra valvbågar är snart klar. Håll utkik!
     </p>
 
+    
     <a href="tel:+46703909051"
        class="px-6 py-3 bg-YellowC-600 text-white font-semibold rounded-lg animate-pulse shadow-md hover:bg-YellowC-700 transition duration-300 ease-in-out">
        070-390 90 51
     </a>
-  </main>
+
+</main>
 
 
   
