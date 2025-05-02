@@ -21,7 +21,7 @@
       gtag("js", new Date());
       gtag("config", "G-C6MPRK3ZTL");
     </script>
-
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- *** UPPDATERA BESKRIVNINGEN HÄR *** -->
@@ -223,13 +223,13 @@
         <!-- Avsnitt 3: Egna uppskattningar -->
         <div>
             <h2 class="font-subheading text-2xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-4 mt-8">
-                Mina Egna Uppskattningar för SN8 (OBS! Endast Teoretiska Indikationer!)
+                Mina Egna Uppskattningar för SN8 rör (OBS! Endast Teoretiska Indikationer!)
             </h2>
             <p class="leading-relaxed">
                 Ur ett geometriskt perspektiv kan man resonera kring hur djupt en vägtrumma bör grävas ned, genom att beakta hur belastningen fördelas genom fyllningen ovanpå trumman. Tänk dig att belastningen från fordon och mark ovanför trumman sprids nedåt som en kon, där konens basdiameter ökar med djupet. För att minimera deformation och säkerställa att trumman håller, vill man att denna belastningskon vid trummans nivå har minst samma diameter som trummans ytterdiameter.
             </p>
             <p class="leading-relaxed mt-4">
-                Detta resonemang leder fram till en enkel geometrisk formel för att uppskatta den minsta fyllnadshöjden över trumman:
+                Detta resonemang leder fram till en enkel geometrisk formel för att uppskatta den minsta fyllnadshöjden över trumman för att få lasten att spridas jämt över trumman:
             </p>
             <!-- Formel Block - Stajlad med Tailwind -->
             <div class="bg-YellowC-100 dark:bg-DGreenC-700 border border-YellowC-300 dark:border-DGreenC-600 p-4 rounded-md my-4 font-mono text-sm overflow-x-auto">
@@ -237,7 +237,7 @@
             </div>
             <!-- Disclaimer Block - Stajlad med Tailwind -->
             <div class="bg-yellow-100 dark:bg-yellow-900 border border-yellow-300 dark:border-yellow-700 text-yellow-800 dark:text-yellow-200 p-4 rounded-md my-4 text-sm">
-                <strong>OBS!</strong> Det är mitt sätt att se på överfyllnad på mindre trummor upp till 400 mm i diameter. Observera att dessa beräkningar inte ger några garantier eller officiella rekommendationer!
+                <strong>OBS!</strong> Det är mitt sätt att se på överfyllnad på mindre trummor upp till 400 mm i diameter. Observera att dessa beräkningar inte ger några garantier eller officiella rekommendationer utan mer som en bodepraktika!
             </div>
 
             <h3 class="font-subheading text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3 mt-6">
@@ -253,53 +253,350 @@
             </p>
         </div>
 
-        <!-- Avsnitt 4: Teoretisk Förklaring -->
+
+
+        <!-- Avsnitt 4: Teoretisk Förklaring - Förbättrad Version -->
         <div>
-            <h2 class="font-subheading text-2xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-4 mt-8">
-                Teoretisk Förklaring: Beräkning av Rördeformation (Modifierad Iowa-formel)
-            </h2>
-            <p class="leading-relaxed">
-                För den som är intresserad av hur man kan beräkna detta, är den vanligaste metoden för flexibla rör den så kallade Modifierade Iowa-formeln. Målet är att beräkna den procentuella vertikala nedböjningen (Δy/D) och säkerställa att den är under den tillåtna gränsen (ofta 5-6%).
-            </p>
-
-            <h3 class="font-subheading text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3 mt-6">
-                Formelns Princip:
-            </h3>
-            <p class="leading-relaxed">
-                Formeln ställer de laster som trycker ner röret mot det motstånd som röret och den omgivande jorden tillsammans ger.
-            </p>
-            <!-- Formel Block - Stajlad med Tailwind -->
-            <div class="bg-YellowC-100 dark:bg-DGreenC-700 border border-YellowC-300 dark:border-DGreenC-600 p-4 rounded-md my-4 font-mono text-sm overflow-x-auto">
-                (Procentuell Nedböjning) ≈ (Konstanter * (Jordlast + Trafiklast)) / (Rörstyvhet + Jordens Sidomotstånd)
+          <h2 class="font-subheading text-2xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-4 mt-8">
+            Teoretisk Grund: Beräkning av Rördeformation via Modifierad Iowa-formel
+          </h2>
+          <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+            För en teknisk analys av nedböjning hos flexibla rör är den Modifierade Iowa-formeln en vedertagen metod inom
+            branschen. Metoden syftar till att kvantifiera den förväntade vertikala nedböjningen, uttryckt som en procentandel
+            av rörets diameter (\(\Delta y / D_o\)), och verifiera att denna understiger specificerade tillåtna gränsvärden
+            (vanligen 5-6% för de flesta applikationer för att säkerställa långsiktig funktion och integritet).
+          </p>
+        
+          <h3 class="font-subheading text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3 mt-6">
+            Formelns Grundprincip: En Balansgång
+          </h3>
+          <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+            Kärnan i formeln är en jämviktsanalys som ställer de externa lasterna (från jord och trafik) som verkar vertikalt
+            nedåt på röret, mot det kombinerade motståndet från rörets egen styvhet och det laterala stödet från den omgivande
+            packade jorden.
+          </p>
+        
+          <!-- Formel Block - Modifierad Iowa-formel -->
+          <section aria-labelledby="iowa-formula-heading"
+            class="bg-yellow-100 dark:bg-green-800 border border-yellow-300 dark:border-green-600 p-6 rounded-md my-6 shadow-md overflow-x-auto">
+            <h4 id="iowa-formula-heading" class="text-center text-lg font-semibold mb-4 text-gray-800 dark:text-gray-100">
+              Modifierad Iowa-formel för Vertikal Nedböjning
+            </h4>
+            <div class="text-center text-xl font-mono">
+              \[
+              \frac{\Delta y}{D_o} (\%) = \frac{D_L \cdot K \cdot (W_E + W_L)}{P_S + 0.061 \cdot E'} \times 100
+              \]
             </div>
-
-            <h3 class="font-subheading text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3 mt-6">
-                Nyckelkomponenter att Förstå:
-            </h3>
-            <ol class="list-decimal pl-5 space-y-4 leading-relaxed">
+        
+            <div class="mt-6 text-sm text-gray-700 dark:text-gray-300">
+              <div class="font-semibold mb-2">Definition av Termer:</div>
+              <ul class="list-none space-y-1">
+                <li><strong>\(\frac{\Delta y}{D_o}\)</strong> = Relativ vertikal nedböjning (dimensionslös, multipliceras med
+                  100 för procent)</li>
+                <li><strong>\(D_L\)</strong> = Deflection Lag Factor (Tidsfaktor, ofta 1.0-1.5, beaktar långtidseffekter som
+                  konsolidering)</li>
+                <li><strong>\(K\)</strong> = Bedding Constant (Bäddningsfaktor, beror på installationsvinkeln, typiskt ~0.1)
+                </li>
+                <li><strong>\(W_E\)</strong> = Prism Earth Load (Jordlast per meter rör, N/m)</li>
+                <li><strong>\(W_L\)</strong> = Live Load (Rörlig last, t.ex. trafik, per meter rör, N/m)</li>
+                <li><strong>\(P_S\)</strong> = Pipe Stiffness (Rörstyvhet, N/m², motsvarar tryck) - <em>Se förklaring nedan</em>
+                </li>
+                <li><strong>\(E'\)</strong> = Modulus of Soil Reaction (Jordens reaktionsmodul/sidostöd, N/m²) - <em>Se
+                    förklaring nedan</em></li>
+              </ul>
+            </div>
+          </section>
+          <!-- Slut Formel Block -->
+        
+          <!-- Belastningskomponenter -->
+          <section aria-labelledby="load-components-heading"
+            class="bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 p-6 rounded-lg my-6 shadow overflow-x-auto">
+            <h4 id="load-components-heading" class="text-center text-lg font-semibold mb-6 text-gray-800 dark:text-gray-200">
+              Beräkning av Belastningskomponenter (Täljaren)
+            </h4>
+            <div class="space-y-10">
+              <!-- Jordlast W_E -->
+              <div>
+                <h5 class="font-semibold text-md mb-3 text-gray-700 dark:text-gray-300">1. Jordlast (\( W_E \)):</h5>
+                <p class="text-sm italic mb-3 text-gray-600 dark:text-gray-400">Lasten från jordprisman ovanför röret.</p>
+                <div class="text-xl text-center my-2 font-mono">
+                  \[
+                  W_E = C_d \cdot \rho_{soil} \cdot g \cdot h \cdot D_o
+                  \]
+                </div>
+                <div class="mt-4 text-sm text-gray-700 dark:text-gray-300">
+                  <strong>Förklaring av variabler:</strong>
+                  <ul class="list-disc pl-6 space-y-1 mt-2">
+                    <li>\(C_d\): Lastkoefficient baserad på installationstyp och jordens egenskaper (kan beräknas via Marston's
+                      teori eller användas från standardtabeller)</li>
+                    <li>\(\rho_{soil}\): Jordens densitet (kg/m³), t.ex. \(1900 \, kg/m^3\) för packad sand/grus</li>
+                    <li>\(g\): Tyngdacceleration (\(\approx 9.82 \, m/s^2\))</li>
+                    <li>\(h\): Överfyllnadshöjd från rörets hjässa till markytan (m)</li>
+                    <li>\(D_o\): Rörets ytterdiameter (m)</li>
+                  </ul>
+                </div>
+              </div>
+        
+              <hr class="border-gray-300 dark:border-gray-600">
+        
+              <!-- Trafiklast W_L -->
+              <div>
+                <h5 class="font-semibold text-md mb-3 text-gray-700 dark:text-gray-300">2. Rörlig Last / Trafiklast (\( W_L \)):
+                </h5>
+                <p class="text-sm italic mb-3 text-gray-600 dark:text-gray-400">Last per meter rör från t.ex. vägtrafik.</p>
+                <div class="text-xl text-center my-2 font-mono">
+                  \[
+                  W_L = I_f \cdot P_{surface} \cdot D_o
+                  \]
+                </div>
+                <p class="text-sm italic my-3 text-gray-600 dark:text-gray-400">Där \( P_{surface} \) är trycket vid rörets
+                  nivå, ofta beräknat från hjullaster via spridningsmodeller.</p>
+        
+                <div class="text-md font-semibold mt-4 mb-2 text-gray-700 dark:text-gray-300">Approximation via Boussinesqs
+                  teori (Punktlast):</div>
+                <p class="text-sm mb-2 text-gray-600 dark:text-gray-400">För en enskild hjullast \( P_{wheel} \) kan trycket \(
+                  \sigma_z \) på djupet \( h \) under lasten approximeras som:</p>
+                <div class="text-xl text-center my-2 font-mono">
+                  \[
+                  \sigma_z \approx \frac{3 \cdot P_{wheel}}{2 \cdot \pi \cdot h^2}
+                  \]
+                </div>
+                <div class="text-md font-semibold mt-4 mb-2 text-gray-700 dark:text-gray-300">Och hjullasten \( P_{wheel} \)
+                  beräknas från axeltrycket:</div>
+                <div class="text-xl text-center my-2 font-mono">
+                  \[
+                  P_{wheel} = \frac{\text{Axeltryck (kg)}}{2} \cdot g \quad [N]
+                  \]
+                </div>
+        
+                <div class="mt-4 text-sm text-gray-700 dark:text-gray-300">
+                  <strong>Förklaring av variabler:</strong>
+                  <ul class="list-disc pl-6 space-y-1 mt-2">
+                    <li>\(I_f\): Impact Factor / Dynamisk faktor (typiskt 1.0-1.5, beroende på djup och hastighet)</li>
+                    <li>\(P_{surface}\) / \(\sigma_z\): Tryck vid rörets nivå (N/m²)</li>
+                    <li>\(P_{wheel}\): Vertikal hjullast (N)</li>
+                    <li>\(\text{Axeltryck}\): Dimensionerande axellast (kg), t.ex. \(12000 \, kg\) för tung trafik</li>
+                    <li>\(g\): Tyngdacceleration (\(\approx 9.82 \, m/s^2\))</li>
+                    <li>\(h\): Överfyllnadsdjup från markyta till rörets hjässa (m)</li>
+                    <li>\(D_o\): Rörets ytterdiameter (m)</li>
+                  </ul>
+                  <div class="mt-4 bg-gray-100 dark:bg-gray-700 p-3 rounded">
+                    <strong>Exempel Hjullast:</strong> För 12000 kg axeltryck:
+                    <div class="text-center font-mono mt-1">
+                      \[
+                      P_{wheel} = \frac{12000}{2} \cdot 9.82 = 58920 \, N
+                      \]
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4 text-xs italic text-gray-500 dark:text-gray-400">
+                  (Not: Beräkning av \(W_L\) från punktlaster är en förenkling. Mer avancerade metoder beaktar lastspridning
+                  genom marklager och över rörets yta, samt inverkan av flera axlar. Konsultera relevanta standarder som Eurokod
+                  eller AASHTO för detaljerade metoder.)
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Slut Belastningskomponenter -->
+        
+          <!-- Motståndskomponenter -->
+          <section aria-labelledby="resistance-components-heading"
+            class="bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 p-6 rounded-lg my-6 shadow overflow-x-auto">
+            <h4 id="resistance-components-heading"
+              class="text-center text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
+              Motstånd mot Nedböjning (Nämnaren)
+            </h4>
+            <div class="text-xl text-center mb-6 font-mono">
+              \[
+              \text{Motstånd} = P_S + 0.061 \cdot E'
+              \]
+            </div>
+            <div class="mt-4 text-sm text-gray-700 dark:text-gray-300 space-y-4">
+              <div class="font-semibold mb-2">Definition av Termer:</div>
+              <ul class="list-disc pl-6 space-y-3">
                 <li>
-                    <strong class="font-semibold">Laster (Täljaren):</strong>
-                    <ul class="list-disc pl-5 space-y-2 mt-2">
-                        <li><strong>Jordlast (<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">W_soil</code>):</strong> Vikten av jorden ovanför röret. Beror på överfyllnadshöjd (<em>h</em>) och jordens densitet (<em>γ</em>). Enkel approximation: <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">W_soil = γ * h * D_o</code> (<em>D_o</em> = ytterdiameter). Vid större djup kan jordvalvning (arching) minska lasten på röret.</li>
-                        <li><strong>Trafiklast (<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">W_traffic</code>):</strong> Last från fordonshjul som sprids nedåt genom fyllningen (ofta 1:1 eller 1:2 spridning). Mindre överfyllnad (<em>h</em>) ger högre tryck på röret. Kräver info om axellast, kontaktyta, lastspridningsmodell och dynamisk faktor.</li>
-                    </ul>
+                  <strong>\(P_S\) = Rörstyvhet (Pipe Stiffness):</strong> Ett mått på rörets inneboende motstånd mot deformation
+                  under extern belastning. För ringstyva rör definieras detta ofta genom standardiserade tester (t.ex. enligt EN
+                  ISO 9969) och anges i klasser som SN4, SN8, SN12, vilket motsvarar en styvhet på 4000, 8000, respektive 12000
+                  N/m². Denna term representerar trycket som krävs för att deformera röret en viss procentandel. En högre
+                  SN-klass innebär ett styvare rör.
+                  <br><em>(Enhet: N/m² eller Pa)</em>
                 </li>
-                <li class="mt-4">
-                    <strong class="font-semibold">Motstånd (Nämnaren):</strong>
-                    <ul class="list-disc pl-5 space-y-2 mt-2">
-                        <li><strong>Rörstyvhet (PS - Pipe Stiffness):</strong> Rörets egen förmåga att motstå deformation, relaterad till SN-klass (t.ex. <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">SN8</code> = 8 kN/m²).</li>
-                        <li><strong>Jordens Sidomotstånd (<code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">0.061 * E'</code>):</strong> Det <strong class="font-semibold">kritiska bidraget</strong> från den packade kringfyllningen. När röret trycks ihop vertikalt, motstår jorden att röret buktar ut horisontellt. <em>E'</em> (Modulus of Soil Reaction) mäter kringfyllningens styvhet. Högt <em>E'</em> (välpackat krossgrus) ger stort motstånd. Lågt <em>E'</em> (lös lera) ger litet motstånd. <em>E'</em> beror på material, packningsgrad och vattenhalt. Korrekt val av <em>E'</em> är avgörande.</li>
-                    </ul>
+                <li>
+                  <strong>\(E'\) = Jordens Reaktionsmodul (Modulus of Soil Reaction):</strong> Representerar det laterala stödet
+                  som den omgivande jorden ger mot rörets sidor när det deformeras. Detta är en <span
+                    class="text-red-600 dark:text-red-400 font-bold">KRITISKT VIKTIG PARAMETER</span> som är direkt beroende av:
+                  <ul class="list-circle pl-6 mt-1 space-y-1">
+                    <li>Kringfyllnadsmaterialets typ och kvalitet (t.ex. kornstorleksfördelning, friktionsegenskaper).</li>
+                    <li>Packningsgraden (densiteten) hos kringfyllnaden.</li>
+                    <li>Fuktkvoten under packning och i drift.</li>
+                  </ul>
+                  Ett noggrant utfört installationsarbete med korrekt material och packning är avgörande för att uppnå ett högt
+                  \(E'\)-värde och därmed minimera nedböjningen.
+                  <br><em>(Enhet: N/m² eller Pa)</em>
                 </li>
-            </ol>
-
-             <h3 class="font-subheading text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3 mt-6">
-                Sammanfattningsvis om Beräkningen:
+              </ul>
+            </div>
+          </section>
+          <!-- Slut Motståndskomponenter -->
+        
+          <!-- E Prime Tabell -->
+          <section aria-labelledby="e-prime-table-heading"
+            class="bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 p-6 rounded-lg my-6 shadow overflow-x-auto">
+            <h4 id="e-prime-table-heading" class="text-center text-lg font-semibold mb-6 text-gray-700 dark:text-gray-200">
+              Typiska Värden för Jordens Reaktionsmodul (\(E'\)) baserat på Installationens Kvalitet
+            </h4>
+        
+            <table class="min-w-full text-sm border-collapse border border-gray-300 dark:border-gray-600">
+              <thead class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-semibold">
+                <tr>
+                  <th class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-left">Installationskvalitet &
+                    Kringfyllnad</th>
+                  <th class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center">Packningsgrad<br>(% Standard
+                    Proctor)</th>
+                  <th class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center">Typisk Densitet<br>(kg/m³)</th>
+                  <th class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-left">Typisk Jordtyp / Material
+                    (ASTM-klass)</th>
+                  <th class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center">Typiskt \(E'\) Intervall<br>(MPa
+                    = 10⁶ N/m²)</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-800 dark:text-gray-300">
+                <!-- Utmärkt -->
+                <tr class="border-t border-gray-300 dark:border-gray-600">
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 align-top">
+                    <strong>Utmärkt:</strong> Välgraderat krossmaterial (t.ex. bergkross 0-32 mm). Packat i tunna lager (≤15 cm)
+                    vid optimal fuktkvot. Mycket god kontroll.
+                  </td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center align-top">>95-100%</td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center align-top">~2200-2400</td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 align-top">Krossad sten, välgraderat grus
+                    (GW, GP)</td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center align-top font-semibold">20 - 30+
+                    MPa</td>
+                </tr>
+                <!-- Bra -->
+                <tr class="bg-gray-100 dark:bg-gray-750 border-t border-gray-300 dark:border-gray-600">
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 align-top">
+                    <strong>Bra:</strong> Sand/grus-material (t.ex. rörgravsgrus 0-18 mm). Packat i lager (≤30 cm) vid nära
+                    optimal fuktkvot. God kontroll.
+                  </td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center align-top">90-95%</td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center align-top">~1900-2200</td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 align-top">Sandigt grus, grusig sand (SW, SP,
+                    GP)</td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center align-top font-semibold">10 - 20
+                    MPa</td>
+                </tr>
+                <!-- Medelgod -->
+                <tr class="border-t border-gray-300 dark:border-gray-600">
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 align-top">
+                    <strong>Medelgod/Tillräcklig:</strong> Sand/grus eller vissa kohesionsjordar packade kontrollerat vid
+                    optimal fuktkvot. Packning kritisk och måste noggrant kontrolleras.
+                  </td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center align-top">85-90%</td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center align-top">~1700-2000</td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 align-top">Sand (SP), siltig sand (SM), lätt
+                    lera (CL)</td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center align-top font-semibold">3 - 10
+                    MPa</td>
+                </tr>
+                <!-- Dålig -->
+                <tr class="bg-gray-100 dark:bg-gray-750 border-t border-gray-300 dark:border-gray-600">
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 align-top">
+                    <strong>Dålig/Otillräcklig:</strong> Dåligt packad jord, löst tippat material, kohesionsjord med ogynnsam
+                    vattenhalt, organiskt material eller stora stenar nära röret.
+                  </td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center align-top">
+                    <85%< /td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center align-top">~1500-1800</td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 align-top">Lös sand/grus, silt (ML), lera
+                    (CL/CH), organisk jord (OH, OL)</td>
+                  <td class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-center align-top font-semibold">
+                    < 3 MPa</td>
+                </tr>
+              </tbody>
+            </table>
+        
+            <div class="mt-4 text-sm italic text-gray-600 dark:text-gray-400">
+              Observera: Värdena ovan är typiska och baserade på ASTM D2321 och etablerad praxis. Faktiska värden kan variera
+              beroende på projekt- och platsförhållanden. Geoteknisk undersökning och fältprovning rekommenderas för att
+              fastställa projektspecifika E'-värden. Parametern \(E'\) är avgörande för rörinstallationens stabilitet och
+              långsiktiga prestanda.
+            </div>
+          </section>
+          <!-- Slut E Prime Tabell -->
+        
+          <!-- Nyckelkomponenter och Slutsatser -->
+          <section aria-labelledby="key-conclusions-heading">
+            <h3 id="key-conclusions-heading"
+              class="font-subheading text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3 mt-8">
+              Nyckelkomponenter och Slutsatser
             </h3>
-            <p class="leading-relaxed">
-                Formeln visar att både rörstyvheten (SN) och jordens sidostöd (<em>E'</em>) motstår lasterna. För flexibla rör är jordens bidrag (<em>E'</em>) ofta mycket större än rörets (SN). <strong class="font-semibold">Detta understryker varför installationen och packningen av kringfyllningen är så otroligt viktig.</strong> Överfyllnaden (<em>h</em>) påverkar både jordlasten och (särskilt vid låga <em>h</em>) den effektiva trafiklasten på röret.
+            <p class="leading-relaxed mb-4 text-gray-700 dark:text-gray-300">
+              För att effektivt tillämpa och förstå den Modifierade Iowa-formeln är det viktigt att uppmärksamma följande
+              nyckelkomponenter:
             </p>
+            <ul class="list-disc pl-6 space-y-2 leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+              <li>
+                <strong>Balans mellan Last och Motstånd:</strong> Kärnan i beräkningen är förhållandet mellan de pålagda
+                lasterna (jord och trafik) och rörets samt jordens kombinerade förmåga att motstå dessa laster.
+              </li>
+              <li>
+                <strong>Noggrann Lastuppskattning:</strong> Korrekt bestämning av både permanent jordlast (\(W_E\)) och variabla
+                laster som trafik (\(W_L\)), inklusive dynamiska effekter och långtidsfaktorer (\(D_L\)), är essentiellt.
+                Förenklingar måste användas med omdöme.
+              </li>
+              <li>
+                <strong>Jordens Sidostöd (\(E'\)) är Avgörande:</strong> Kvaliteten på installationen – valet av
+                kringfyllnadsmaterial och framför allt packningsgraden – har en dominerande inverkan på rörets nedböjning via
+                \(E'\). Ett högt \(E'\)-värde, uppnått genom korrekt utförande, är den mest effektiva faktorn för att begränsa
+                deformation.
+              </li>
+              <li>
+                <strong>Rörstyvhetens (\(P_S\)) Roll:</strong> Rörets egen styvhet bidrar till motståndet, men för flexibla rör
+                är dess relativa bidrag ofta mindre än jordens stöd, särskilt vid god packning. Val av SN-klass påverkar dock
+                säkerhetsmarginalen.
+              </li>
+              <li>
+                <strong>Tidsaspekten (\(D_L\)):</strong> Långtidseffekter som konsolidering av kringfyllnad och potentiell
+                krypning i rörmaterialet kan öka nedböjningen över tid. Tidsfaktorn \(D_L\) syftar till att inkludera detta i
+                designen.
+              </li>
+              <li>
+                <strong>Designmål:</strong> Det slutgiltiga målet är att säkerställa att den beräknade maximala nedböjningen
+                (\(\Delta y / D_o\)) understiger det tillåtna gränsvärdet (ofta 5-6%) med en betryggande marginal för att
+                garantera rörets funktion och strukturella integritet under hela dess livslängd.
+              </li>
+            </ul>
+            <p class="leading-relaxed mt-4 text-gray-700 dark:text-gray-300">
+              Sammanfattningsvis ger den Modifierade Iowa-formeln ett kraftfullt verktyg för att analysera och designa nedgrävda
+              flexibla rör, men dess tillförlitlighet vilar tungt på korrekta indata och en grundläggande förståelse för de
+              geotekniska principerna, särskilt vikten av högkvalitativ installation och packning.
+            </p>
+          </section>
+          <!-- Slut Nyckelkomponenter -->
+        
+          <!-- Avslutande Sammanfattning -->
+          <section aria-labelledby="final-summary-heading" class="mt-6 pt-4 border-t border-gray-300 dark:border-gray-600">
+            <h3 id="final-summary-heading"
+              class="font-subheading text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3">
+              Sammanfattningsvis om Beräkningen:
+            </h3>
+            <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+              Formeln visar att både rörstyvheten (\(P_S\)) och jordens sidostöd (\(E'\)) motstår lasterna. För flexibla rör är
+              jordens bidrag (\(E'\)) ofta mycket större än rörets (\(P_S\)). <strong
+                class="font-semibold text-gray-800 dark:text-gray-100">Detta understryker
+                varför installationen och packningen av kringfyllningen är så otroligt viktig.</strong> Överfyllnaden (\(h\))
+              påverkar både jordlasten och (särskilt vid låga \(h\)) den effektiva trafiklasten på röret.
+            </p>
+          </section>
+          <!-- Slut Avslutande Sammanfattning -->
+        
         </div>
+        <!-- Slut Avsnitt 4 -->
+
+
 
 <!-- Avsnitt 5: Datakällor (Reviderad) -->
 <div>
