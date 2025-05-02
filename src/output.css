@@ -331,8 +331,14 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
+  .z-20 {
+    z-index: 20;
+  }
   .z-30 {
     z-index: 30;
+  }
+  .z-40 {
+    z-index: 40;
   }
   .order-3 {
     order: 3;
@@ -824,6 +830,9 @@
   .bg-YellowC-200 {
     background-color: var(--color-YellowC-200);
   }
+  .bg-YellowC-400 {
+    background-color: var(--color-YellowC-400);
+  }
   .bg-YellowC-500 {
     background-color: var(--color-YellowC-500);
   }
@@ -880,9 +889,6 @@
   }
   .fill-current {
     fill: currentColor;
-  }
-  .object-contain {
-    object-fit: contain;
   }
   .object-cover {
     object-fit: cover;
@@ -1009,20 +1015,8 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
-  .text-\[1\.1rem\] {
-    font-size: 1.1rem;
-  }
   .text-\[1\.2rem\] {
     font-size: 1.2rem;
-  }
-  .text-\[1\.3rem\] {
-    font-size: 1.3rem;
-  }
-  .text-\[1\.27rem\] {
-    font-size: 1.27rem;
-  }
-  .text-\[2rem\] {
-    font-size: 2rem;
   }
   .leading-6 {
     --tw-leading: calc(var(--spacing) * 6);
@@ -1795,11 +1789,6 @@
   .dark\:text-DGreenC-100 {
     @media (prefers-color-scheme: dark) {
       color: var(--color-DGreenC-100);
-    }
-  }
-  .dark\:text-DGreenC-200 {
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-DGreenC-200);
     }
   }
   .dark\:text-DGreenC-600 {
