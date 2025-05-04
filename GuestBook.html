@@ -16,13 +16,134 @@
       gtag("config", "G-C6MPRK3ZTL");
     </script>
 
+<!-- Schema.org JSON-LD for Guestbook/Reviews Page -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Kundrecensioner & 5-stjärniga Omdömen | HK Vägtrummor Gästbok",
+    "url": "https://www.hkvagtrummor.se/Guestbook.html", 
+    "description": "Se äkta 5-stjärniga kundrecensioner för HK Vägtrummor. Läs vad kunder tycker om våra vägtrummor och service i Sidensjö.",
+    "inLanguage": "sv-SE",
+    "publisher": { // Added URL and Logo (assuming from previous context)
+      "@type": "Organization",
+      "name": "HK Vägtrummor",
+      "url": "https://www.hkvagtrummor.se/index.html", 
+      "logo": {
+         "@type": "ImageObject",
+         "url": "https://www.hkvagtrummor.se/Image/HK-logo_liten5.png" 
+       }
+    },
+    "mainEntity": { // <<<--- RE-ADDED mainEntity structure
+      "@type": "Organization",
+      "@id": "https://www.hkvagtrummor.se/#organization", 
+      "name": "HK Vägtrummor",
+      "url": "https://www.hkvagtrummor.se/index.html", 
+       
+      "aggregateRating": {
+         "@type": "AggregateRating",
+         "itemReviewed": { // Points to the Organization ID
+           "@type": "Organization",
+           "@id": "https://www.hkvagtrummor.se/#organization" 
+         },
+         "ratingValue": "5",
+         "bestRating": "5",
+         "worstRating": "1",
+         "reviewCount": "4" // Remember to update if reviews change
+       },
+       "review": [ // Reviews nested within the Organization they are about
+        {
+          "@type": "Review",
+          "itemReviewed": { // Points to the Organization ID
+            "@type": "Organization",
+            "@id": "https://www.hkvagtrummor.se/#organization" 
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Alexander Westberg",
+            "url": "https://www.linkedin.com/in/alexander-westberg-20a003198/"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "reviewBody": "Bra pris och smidig service å hämtning",
+          "datePublished": "2024-01-04"
+        },
+        {
+          "@type": "Review",
+           "itemReviewed": {
+            "@type": "Organization",
+            "@id": "https://www.hkvagtrummor.se/#organization" 
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Peter Allansson",
+             "url": "https://www.linkedin.com/in/peter-allansson-31925110b/"
+          },
+           "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "reviewBody": "Smidigt och hämta trummor. Bra service.",
+          "datePublished": "2024-04-14"
+        },
+        {
+           "@type": "Review",
+            "itemReviewed": {
+             "@type": "Organization",
+             "@id": "https://www.hkvagtrummor.se/#organization" 
+           },
+          "author": {
+            "@type": "Person",
+            "name": "Anton Lundberg",
+            "url": "https://www.linkedin.com/in/anton-lundberg-438729201/"
+          },
+           "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "reviewBody": "Väldigt trevlig och snabb service",
+          "datePublished": "2024-04-24"
+        },
+         {
+           "@type": "Review",
+            "itemReviewed": {
+             "@type": "Organization",
+             "@id": "https://www.hkvagtrummor.se/#organization" 
+           },
+          "author": {
+            "@type": "Person",
+            "name": "Henrik Olofsson"
+          },
+           "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "reviewBody": "Trevligt bemötande. Enkelt och smidigt att handla, samt bra priser.",
+          "datePublished": "2024-05-27"
+        }
+      ] // End of review array
+    } // End of mainEntity
+  } // End of JSON object
+  </script>
+
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HK Vägtrummor - Kundrecensioner | Gästbok</title>
+    <title>Kundrecensioner & Omdömen - HK Vägtrummor | Gästbok</title>
 
     <meta
       name="description"
-      content="HK Vägtrummor erbjuder vägtrummor i plast för omgående upphämtning i Sidensjö. Öppet alla dagar, året om. Ring för personlig service."
+      content="Läs vad nöjda kunder säger om HK Vägtrummor! Se verkliga kundrecensioner och omdömen om våra vägtrummor och service i Sidensjö."
     />
     <link href="src/output.css" rel="stylesheet" />
 
@@ -33,10 +154,8 @@
     />
     <link rel="apple-touch-icon" href="Image/HK-logo_liten3.png" />
     <link rel="shortcut icon" href="Image/HK-logo_liten5.png" />
-    <link rel="prefetch" href="/produkter.html" as="document" />
+    
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
 
   <body
@@ -182,149 +301,131 @@
 </nav>
 
 
-<!-- Gästbok Sektion -->
-<section id="gastbok" class="py-20 bg-DGreenC-800 z-20 ">
-  <div class="max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto">
+<section id="gastbok" class="py-16 md:py-20 bg-DGreenC-800">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left md:text-center">
 
-    <div class="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100">
-      <div class="mb-12 space-y-5 md:mb-16 md:text-center">
-
-        <h1 class="mb-5 text-3xl font-semibold text-YellowC-400 md:text-center md:text-5xl">
-          Gästbok
-        </h1>
-        <p class="text-xl text-YellowC-100 md:text-center md:text-2xl">
-          Ett urval från min Google Reviews
-        </p>
-      </div>
+    <!-- Section Header -->
+    <div class="mb-12 ">
+      <p class="text-3xl font-semibold text-YellowC-400 sm:text-4xl lg:text-5xl">
+        Gästbok
+      </p>
+      <h1 class="mt-3 text-xl text-YellowC-100 sm:mt-4">
+        Ett urval från min Reviews
+      </h1>
     </div>
 
-    <!-- Ändring: Använd EN lista (ul) med grid-klasser direkt på den -->
-    <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 ">
+    <!-- Testimonials Container -->
+    <div class="space-y-12">
 
-      <!-- Första recensionen -->
-      <li class="text-sm leading-6">
-        <div class="relative group">
-          <div
-            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-YellowC-400 to-GreenC-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-          </div>
-          <a href="https://www.linkedin.com/in/alexander-westberg-20a003198/" class="cursor-pointer">
-            <div class="relative p-6 space-y-6 leading-none rounded-lg bg-DGreenC-700 ring-1 ring-gray-900/5">
-              <div class="flex items-center space-x-4">
-                <img src="Image/ProfileP_AlexanderW.png"
-                  class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Alexander Westberg">
-                <div>
-                  <h3 class="text-lg font-semibold text-YellowC-400">Alexander Westberg</h3>
-                  <p class="text-YellowC-100 text-md">Själverksam skogsägare</p>
-                </div>
-              </div>
-              <p class="leading-normal text-YellowC-200 text-md">Bra pris och smidig service å hämtning</p>
-            </div>
-          </a>
-        </div>
-      </li>
+      <!-- Testimonial 1 -->
+      <blockquote class=" p-6 border-l-4 border-YellowC-500 bg-DGreenC-700 shadow-md rounded-r-lg">
+        <p class="text-xl italic leading-relaxed text-YellowC-100">
+          "Bra pris och smidig service å hämtning"
+        </p>
+        <footer class="mt-4 flex items-center space-x-3">
+           <a href="https://www.linkedin.com/in/alexander-westberg-20a003198/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
+                <img class="h-10 w-10 rounded-full border border-YellowC-600" src="Image/ProfileP_AlexanderW.webp" alt="Alexander Westberg">
+           </a>
+           <div>
+              <cite class="text-base font-medium text-YellowC-400 not-italic">
+                 <a href="https://www.linkedin.com/in/alexander-westberg-20a003198/" target="_blank" rel="noopener noreferrer" class="hover:underline">Alexander Westberg</a>
+               </cite>
+              <span class="block text-sm text-YellowC-300">Själverksam skogsägare</span>
+           </div>
+        </footer>
+      </blockquote>
+      <!-- End Testimonial 1 -->
 
-      <!-- Andra recensionen -->
-      <li class="text-sm leading-6">
-        <div class="relative group">
-          <div
-            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-YellowC-400 to-GreenC-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-          </div>
-          <a href="https://www.linkedin.com/in/peter-allansson-31925110b/" class="cursor-pointer">
-            <div class="relative p-6 space-y-6 leading-none rounded-lg bg-DGreenC-700 ring-1 ring-gray-900/5">
-              <div class="flex items-center space-x-4">
-                <img src="Image/ProfileP_PeterAllansson.png"
-                  class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Peter Allansson">
-                <div>
-                  <h3 class="text-lg font-semibold text-YellowC-400">Peter Allansson</h3>
-                  <p class="text-YellowC-100 text-md">Privatperson</p>
-                </div>
-              </div>
-              <p class="leading-normal text-YellowC-200 text-md">Smidigt och hämta trummor. Bra service.</p>
-            </div>
-          </a>
-        </div>
-      </li>
+      <!-- Testimonial 2 -->
+      <blockquote class=" p-6 border-l-4 border-YellowC-500 bg-DGreenC-700 shadow-md rounded-r-lg">
+        <p class="text-xl italic leading-relaxed text-YellowC-100">
+           "Smidigt och hämta trummor. Bra service."
+        </p>
+        <footer class="mt-4 flex items-center space-x-3">
+            <a href="https://www.linkedin.com/in/peter-allansson-31925110b/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
+                <img class="h-10 w-10 rounded-full border border-YellowC-600" src="Image/ProfileP_PeterAllansson.webp" alt="Peter Allansson">
+            </a>
+           <div>
+              <cite class="text-base font-medium text-YellowC-400 not-italic">
+                 <a href="https://www.linkedin.com/in/peter-allansson-31925110b/" target="_blank" rel="noopener noreferrer" class="hover:underline">Peter Allansson</a>
+               </cite>
+              <span class="block text-sm text-YellowC-300">Privatperson</span>
+           </div>
+        </footer>
+      </blockquote>
+      <!-- End Testimonial 2 -->
 
-      <!-- Tredje recensionen -->
-      <li class="text-sm leading-6">
-        <div class="relative group">
-          <div
-            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-YellowC-400 to-GreenC-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-          </div>
-          <a href="https://www.linkedin.com/in/anton-lundberg-438729201/" class="cursor-pointer">
-            <div class="relative p-6 space-y-6 leading-none rounded-lg bg-DGreenC-700 ring-1 ring-gray-900/5">
-              <div class="flex items-center space-x-4">
-                <img src="Image/ProfileP_AntonL.png"
-                  class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Anton Lundberg">
-                <div>
-                  <h3 class="text-lg font-semibold text-YellowC-400">Anton Lundberg</h3>
-                  <p class="text-YellowC-100 text-md">Privatperson</p>
-                </div>
-              </div>
-              <p class="leading-normal text-YellowC-200 text-md">Väldigt trevlig och snabb service
-              </p>
-            </div>
-          </a>
+       <!-- Testimonial 3 -->
+      <blockquote class=" p-6 border-l-4 border-YellowC-500 bg-DGreenC-700 shadow-md rounded-r-lg">
+        <p class="text-xl italic leading-relaxed text-YellowC-100">
+           "Väldigt trevlig och snabb service"
+        </p>
+        <footer class="mt-4 flex items-center space-x-3">
+            <a href="https://www.linkedin.com/in/anton-lundberg-438729201/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
+                <img class="h-10 w-10 rounded-full border border-YellowC-600" src="Image/ProfileP_AntonL.webp" alt="Anton Lundberg">
+            </a>
+           <div>
+              <cite class="text-base font-medium text-YellowC-400 not-italic">
+                 <a href="https://www.linkedin.com/in/anton-lundberg-438729201/" target="_blank" rel="noopener noreferrer" class="hover:underline">Anton Lundberg</a>
+               </cite>
+              <span class="block text-sm text-YellowC-300">Privatperson</span>
+           </div>
+        </footer>
+      </blockquote>
+      <!-- End Testimonial 3 -->
 
+       <!-- Testimonial 4 -->
+      <blockquote class=" p-6 border-l-4 border-YellowC-500 bg-DGreenC-700 shadow-md rounded-r-lg">
+        <p class="text-xl italic leading-relaxed text-YellowC-100">
+           "Trevligt bemötande. Enkelt och smidigt att handla, samt bra priser."
+        </p>
+        <footer class="mt-4 flex items-center space-x-3">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="flex-shrink-0"> <!-- Add link if available -->
+                <img class="h-10 w-10 rounded-full border border-YellowC-600" src="Image/ProfileP_HenrikO.webp" alt="Henrik Olofsson">
+            </a>
+           <div>
+              <cite class="text-base font-medium text-YellowC-400 not-italic">
+                 <a href="#" target="_blank" rel="noopener noreferrer" class="hover:underline">Henrik Olofsson</a> <!-- Add link if available -->
+               </cite>
+              <span class="block text-sm text-YellowC-300">Privatperson</span>
+           </div>
+        </footer>
+      </blockquote>
+      <!-- End Testimonial 4 -->
 
+      <!-- ADD MORE TESTIMONIALS HERE by duplicating one of the blockquote blocks -->
 
-        </div>
-
-      </li>
-
-      <!-- Fjärde recensionen -->
-      <li class="text-sm leading-6">
-        <div class="relative group">
-          <div
-            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-YellowC-400 to-GreenC-500 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-          </div>
-          <a href="" class="cursor-pointer">
-            <div class="relative p-6 space-y-6 leading-none rounded-lg bg-DGreenC-700 ring-1 ring-gray-900/5">
-              <div class="flex items-center space-x-4">
-                <img src="Image/ProfileP_HenrikO.png" class="w-12 h-12 bg-center bg-cover border rounded-full"
-                  alt="Henrik Olofsson">
-                <div>
-                  <h3 class="text-lg font-semibold text-YellowC-400">Henrik Olofsson</h3>
-                  <p class="text-YellowC-100 text-md">Privatperson</p>
-                </div>
-              </div>
-              <p class="leading-normal text-YellowC-200 text-md">Trevligt bemötande.
-              Enkelt och smidigt att handla, samt bra priser.
-              </p>
-            </div>
-          </a>
-      
-        </div>
-      
-      </li>
-    </ul> <!-- Slut på den enda listan -->
-
+    </div>
 
 
 <!-- **** Uppmaning att lämna recension **** -->
-<div class="mt-16 text-center">
+<div class="mt-16 ">
   <h2 class="text-2xl font-semibold text-YellowC-400 mb-4"> <!-- Använder din gula färg -->
     Lämna gärna ett omdöme
   </h2>
   <p class="text-lg text-YellowC-100 mb-6"> <!-- Använder din ljusgula färg -->
     Om du tog dig tid att skriva några rader på Google skulle det uppskattas enormt.
   </p>
-
+  
+  <div class="text-center">
   <a href="https://g.page/r/CbJP96OT8yPWEBI/review" target="_blank" rel="noopener noreferrer" class="inline-flex flex-col items-center px-8 py-4 bg-YellowC-500 text-DGreenC-900 font-semibold rounded-lg shadow-md 
-            hover:bg-YellowC-600 transition duration-300 ease-in-out transform hover:scale-105">
+            hover:bg-YellowC-600 transition duration-400 ease-in-out transform hover:scale-110">
     <!-- Klasser för bakgrund, text och hover använder dina färger -->
 
     <!-- Rad 1: Uppmaningen -->
-    <span class="text-lg mb-1">
+    <span class="text-lg mb-1 ">
       Lämna en recension på Google
     </span>
 
   </a>
+  </div>
 
 </div> <!-- **** SLUT Uppmaning att lämna recension **** -->
 
   </div>
 </section>
+
+
 
     <footer class="px-4 divide-y">
       <div
@@ -519,8 +620,9 @@
       <div
         class="py-4 text-sm text-center dark:text-YellowC-800 text-YellowC-700"
       >
-        © 2025 Company Co. All rights reserved.
+      © 2024 HK Vägtrummor. All rights reserved.
       </div>
     </footer>
+    
   </body>
 </html>
