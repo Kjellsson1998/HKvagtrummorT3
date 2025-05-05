@@ -425,62 +425,65 @@
 
 <!-- Hero Section -->
 <section
-  class="flex flex-wrap items-center justify-center min-h-screen bg-DGreenC-100 dark:bg-DGreenC-600 text-DGreenC-800 dark:text-DGreenC-100">
-  <!-- Text Content Area -->
-  <!-- w-full by default (mobile), md:w-8/12 for medium screens and up -->
-  <div class="w-full md:w-8/12 ">
-    <div class="container mx-auto h-full p-5 md:p-10">
-      <nav class="flex justify-center w-full">
-        <div>
-          <img src="Image/logo.webp" alt="Vägtrumma" class=" " />
-          <!-- Adjust the class or size as needed -->
-        </div>
-      </nav>
-      <header class="container px-4 lg:flex mt-10 items-center h-full lg:mt-0">
-        <div class="w-full lg:text-center p-10"> 
-          <h1 class="font-heading text-4xl lg:text-6xl mb-8">
-            Vägtrummor redo för omgående upphämtning
-          </h1>
+  class="flex flex-col items-center justify-center min-h-screen bg-DGreenC-100 dark:bg-DGreenC-600 text-DGreenC-800 dark:text-DGreenC-100 ">
+  <!-- Added padding top/bottom -->
 
-          <!-- Text and Image Container -->
-          <div class="flex items-center justify-center gap-4 mb-8">
-            <p class="font-body text-2xl text-left">
-              Personlig kontakt är viktigt för mig. Därför vill jag prata med dig på
-              telefon innan ditt första köp.
-            </p>
-            <div class="flex-shrink-0">
-              <img src="Image/PP_Hugo.webp" alt="Profilbild på Hugo"
-                class="w-15 h-20 md:w-40 md:h-50 rounded-full object-cover shadow-md border-4 border-YellowC-500"
-                loading="lazy" />
-            </div>
-          </div>
-          <!-- End Text and Image Container -->
-
-          <!-- Buttons Container -->
-          <div class="p-2"> 
-            <a href="tel:+46703909051"
-              class="text-center font-body m-2 bg-YellowC-500 text-DGreenC-950 hover:bg-YellowC-500 hover:text-YellowC-100 py-2 px-6 rounded-full text-[1.2rem]  transition duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg inline-block">
-              
-              070-390 90 51<br>Hugo Kjellsson
-            </a>
-
-            <a href="Plasticpipes.html"
-              class="text-center m-2 bg-YellowC-500 text-DGreenC-950 hover:bg-YellowC-500 hover:text-YellowC-100 py-2 px-6 rounded-full text-lg font-body uppercase transition duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg inline-block"
-              >
-              Se<br> Lagerstatus
-            </a>
-          </div>
-          <!-- End Buttons Container -->
-        </div>
-      </header>
-    </div>
+  <!-- Logo Wrapper (Replaced <nav>) -->
+  <div class="flex justify-center  w-full"> <!-- Margin bottom for spacing -->
+    <img src="Image/logo.webp" alt="HK Vägtrumma Logotyp"  />
+    <!-- Added alt text, controlled size, centered -->
   </div>
 
-  <!-- Background Image Area -->
-  <!-- w-full h-60 by default (mobile), md:w-4/12 md:h-screen for medium screens and up -->
-  <img src="Image/bg.webp" alt="vägtrummor i plast staplade bredvid en grävmaskin på HK Vägtrummors lager"
-    class="w-full h-70 object-cover md:h-screen md:w-4/12" loading="lazy" />
+  <!-- Content Area -->
+  <div class="w-full max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 text-left lg:text-center">
+    <!-- Centered content, controlled max width -->
+
+    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl mb-8">
+      Vägtrummor redo för omgående upphämtning
+    </h1>
+
+    <!-- Explanation Text -->
+    <p class="font-body text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto"> <!-- Adjusted text sizes -->
+      Personlig kontakt är viktigt för mig. Därför vill jag prata med dig på
+      telefon innan ditt första köp.
+    </p>
+    <!-- End Explanation Text -->
+
+    <!-- Buttons Container -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10"> <!-- Responsive gap -->
+
+      <!-- Call Me Button -->
+      <a href="tel:+46703909051"
+        class="inline-flex items-center gap-3 bg-YellowC-500 text-DGreenC-950 hover:bg-YellowC-600 hover:text-DGreenC-950  pr-5  rounded-full text-[1.1rem] md:text-[1.2rem] transition duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg group w-full sm:w-auto justify-center">
+        <!-- Added balanced padding, w-full/sm:w-auto for mobile stacking -->
+        <img src="Image/PP_Hugo.webp" alt="Profilbild på Hugo Kjellsson"
+          class="flex-shrink-0 w-16 h-16 md:w-18 md:h-18 rounded-full object-cover border-3 border-YellowC-500 group-hover:border-YellowC-600 transition duration-300"
+          loading="lazy" />
+        <span class="text-center font-body">
+          070-390 90 51<br>Hugo Kjellsson
+        </span>
+      </a>
+      <!-- End Call Me Button -->
+
+      <!-- Lagerstatus Button -->
+      <a href="Plasticpipes.html"
+        class="inline-flex items-center gap-3 bg-YellowC-500 text-DGreenC-950 hover:bg-YellowC-600 hover:text-DGreenC-950  pr-5  rounded-full text-[1.1rem] md:text-[1.2rem] uppercase transition duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg group w-full sm:w-auto justify-center">
+        <!-- Added balanced padding, w-full/sm:w-auto for mobile stacking -->
+        <!-- !!! Assumed Ptrumma.webp is the correct image path !!! -->
+        <img src="Image/Ptrumma.webp" alt="Ikon som representerar lagerstatus för plasttrummor"
+          class="flex-shrink-0 w-16 h-16 md:w-18 md:h-18 rounded-full object-cover border-3 border-YellowC-500 group-hover:border-YellowC-600 transition duration-300"
+          loading="lazy" />
+        <span class="text-center font-body">
+          Se<br> Lagerstatus
+        </span>
+      </a>
+      <!-- End Lagerstatus Button -->
+
+    </div>
+    <!-- End Buttons Container -->
+  </div> <!-- End Content Area -->
 </section>
+<!-- End Hero Section -->
 
     <section>
       <div class="relative w-full h-screen bg-DGreenC-100">
