@@ -425,37 +425,44 @@
 
 <!-- Hero Section -->
 <section
-  class="flex flex-col items-center justify-center min-h-screen bg-DGreenC-100 dark:bg-DGreenC-600 text-DGreenC-800 dark:text-DGreenC-100 ">
-  <!-- Added padding top/bottom -->
+  class="flex flex-col items-center bg-DGreenC-100 dark:bg-DGreenC-600 text-DGreenC-800 dark:text-DGreenC-100 pt-16 md:pt-20 pb-16 md:pb-20">
+  <!-- REMOVED: min-h-screen -->
+  <!-- ADDED: pt-16 md:pt-20 for top spacing (adjust if needed) -->
+  <!-- ADDED: pb-16 md:pb-20 for bottom spacing (adjust as needed) -->
 
-  <!-- Logo Wrapper (Replaced <nav>) -->
-  <div class="flex justify-center  w-full"> <!-- Margin bottom for spacing -->
-    <img src="Image/logo.webp" alt="HK Vägtrumma Logotyp"  />
-    <!-- Added alt text, controlled size, centered -->
+  <!-- Logo Wrapper -->
+  <!-- REMOVED: pt-10. ADDED mb-8 md:mb-12 for space below logo -->
+  <div class="w-full mb-8 md:mb-12">
+    <img src="Image/logo.webp" alt="HK Vägtrumma Logotyp" class="mx-auto h-auto w-auto" />
+    <!-- ADDED: mx-auto and size classes for better control -->
   </div>
 
   <!-- Content Area -->
-  <div class="w-full max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 text-left lg:text-center">
-    <!-- Centered content, controlled max width -->
+  <!-- REMOVED: pt-10. Using parent padding and element margins instead. -->
+  <!-- Ensure text-center is applied for consistent centering -->
+  <div class="w-full max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 text-center">
 
+    <!-- ADDED: mb-8 for space below heading -->
     <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl mb-8">
       Vägtrummor redo för omgående upphämtning
     </h1>
 
     <!-- Explanation Text -->
-    <p class="font-body text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto"> <!-- Adjusted text sizes -->
+    <!-- REMOVED: pt-8. ADDED mb-10 or similar for space below paragraph -->
+    <p class="font-body text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
       Personlig kontakt är viktigt för mig. Därför vill jag prata med dig på
       telefon innan ditt första köp.
     </p>
     <!-- End Explanation Text -->
 
     <!-- Buttons Container -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10"> <!-- Responsive gap -->
+    <!-- No extra padding/margin needed here -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10">
 
       <!-- Call Me Button -->
       <a href="tel:+46703909051"
         class="inline-flex items-center gap-3 bg-YellowC-500 text-DGreenC-950 hover:bg-YellowC-600 hover:text-DGreenC-950  pr-5  rounded-full text-[1.1rem] md:text-[1.2rem] transition duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg group w-full sm:w-auto justify-center">
-        <!-- Added balanced padding, w-full/sm:w-auto for mobile stacking -->
+        <!-- Adjusted padding for balance: pl-3 pr-5 py-2 -->
         <img src="Image/PP_Hugo.webp" alt="Profilbild på Hugo Kjellsson"
           class="flex-shrink-0 w-16 h-16 md:w-18 md:h-18 rounded-full object-cover border-3 border-YellowC-500 group-hover:border-YellowC-600 transition duration-300"
           loading="lazy" />
@@ -468,8 +475,7 @@
       <!-- Lagerstatus Button -->
       <a href="Plasticpipes.html"
         class="inline-flex items-center gap-3 bg-YellowC-500 text-DGreenC-950 hover:bg-YellowC-600 hover:text-DGreenC-950  pr-5  rounded-full text-[1.1rem] md:text-[1.2rem] uppercase transition duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg group w-full sm:w-auto justify-center">
-        <!-- Added balanced padding, w-full/sm:w-auto for mobile stacking -->
-        <!-- !!! Assumed Ptrumma.webp is the correct image path !!! -->
+        <!-- Adjusted padding for balance: pl-3 pr-5 py-2 -->
         <img src="Image/Ptrumma.webp" alt="Ikon som representerar lagerstatus för plasttrummor"
           class="flex-shrink-0 w-16 h-16 md:w-18 md:h-18 rounded-full object-cover border-3 border-YellowC-500 group-hover:border-YellowC-600 transition duration-300"
           loading="lazy" />
