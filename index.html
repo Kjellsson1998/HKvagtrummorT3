@@ -423,59 +423,64 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section
-      class="flex flex-wrap items-center justify-center min-h-screen bg-DGreenC-100 dark:bg-DGreenC-600 text-DGreenC-800 dark:text-DGreenC-100"
-    >
-      <div class="w-full sm:w-8/12 mb-10">
-        <div class="container mx-auto h-full sm:p-10">
-          <nav class="flex justify-center w-full">
-            <div>
-              <img src="Image/logo.webp" alt="Vägtrumma" class=" " />
-              <!-- Adjust the class or size as needed -->
-            </div>
-          </nav>
-          <header
-            class="container px-4 lg:flex mt-10 items-center h-full lg:mt-0"
-          >
-            <div class="w-full lg:text-center text-left p-10">
-              <h1 class="font-heading text-4xl lg:text-6xl mb-8">
-                Vägtrummor redo för omgående upphämtning
-              </h1>
-
-              <h1 class="font-body text-2xl mb-10">
-                Tillgänglig när du behöver dem, öppet
-                <span class="font-bold">alla</span> dagar året om
-              </h1>
-
-              <p class="font-body text-2xl mb-10">
-                Personlig kontakt är viktigt för mig. Därför vill jag prata med
-                dig på telefon innan ditt första köp
-              </p>
-
-              <a
-                href="tel:+46703909051"
-                class="ml-4 bg-YellowC-500 text-DGreenC-950 hover:bg-YellowC-500 hover:text-YellowC-100 py-2 px-6 rounded-full text-[1.2rem] font-subheading transition duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg inline-block mb-4"
-                >070-390 90 51</a
-              >
-
-              <!-- NY Lagerstatusknapp -->
-              <a
-                href="Plasticpipes.html"
-                class="ml-4 bg-YellowC-500 text-DGreenC-950 hover:bg-YellowC-500 hover:text-YellowC-100 py-2 px-6 rounded-full text-lg font-subheading transition duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg inline-block"
-              >
-                <!-- Added ml-4 for margin and inline-block -->
-                Se Lagerstatus
-              </a>
-            </div>
-          </header>
+<!-- Hero Section -->
+<section
+  class="flex flex-wrap items-center justify-center min-h-screen bg-DGreenC-100 dark:bg-DGreenC-600 text-DGreenC-800 dark:text-DGreenC-100">
+  <!-- Text Content Area -->
+  <!-- w-full by default (mobile), md:w-8/12 for medium screens and up -->
+  <div class="w-full md:w-8/12 ">
+    <div class="container mx-auto h-full md:p-10">
+      <nav class="flex justify-center w-full">
+        <div>
+          <img src="Image/logo.webp" alt="Vägtrumma" class=" " />
+          <!-- Adjust the class or size as needed -->
         </div>
-      </div>
+      </nav>
+      <header class="container px-4 lg:flex mt-10 items-center h-full lg:mt-0">
+        <div class="w-full lg:text-center p-10"> 
+          <h1 class="font-heading text-4xl lg:text-6xl mb-8">
+            Vägtrummor redo för omgående upphämtning
+          </h1>
 
-      <img src=Image/bg.webp alt="vägtrummor i plast staplade bredvid en
-      grävmaskin på HK Vägtrummors lager" class="w-full h-60 object-cover
-      sm:h-screen sm:w-4/12" loading="lazy" >
-    </section>
+          <!-- Text and Image Container -->
+          <div class="flex items-center justify-center gap-4 mb-10">
+            <p class="font-body text-2xl text-left">
+              Personlig kontakt är viktigt för mig. Därför vill jag prata med dig på
+              telefon innan ditt första köp.
+            </p>
+            <div class="flex-shrink-0">
+              <img src="Image/PP_Hugo.webp" alt="Profilbild på Hugo"
+                class="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover shadow-md border-4 border-YellowC-500"
+                loading="lazy" />
+            </div>
+          </div>
+          <!-- End Text and Image Container -->
+
+          <!-- Buttons Container -->
+          <div class=""> 
+            <a href="tel:+46703909051"
+              class="text-center font-body m-2 bg-YellowC-500 text-DGreenC-950 hover:bg-YellowC-500 hover:text-YellowC-100 py-2 px-6 rounded-full text-[1.2rem]  transition duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg inline-block">
+              
+              070-390 90 51<br>Hugo Kjellsson
+            </a>
+
+            <a href="Plasticpipes.html"
+              class="text-center m-2 bg-YellowC-500 text-DGreenC-950 hover:bg-YellowC-500 hover:text-YellowC-100 py-2 px-6 rounded-full text-lg font-body uppercase transition duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg inline-block"
+              >
+              Se<br> Lagerstatus
+            </a>
+          </div>
+          <!-- End Buttons Container -->
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <!-- Background Image Area -->
+  <!-- w-full h-60 by default (mobile), md:w-4/12 md:h-screen for medium screens and up -->
+  <img src="Image/bg.webp" alt="vägtrummor i plast staplade bredvid en grävmaskin på HK Vägtrummors lager"
+    class="w-full h-70 object-cover md:h-screen md:w-4/12" loading="lazy" />
+</section>
 
     <section>
       <div class="relative w-full h-screen bg-DGreenC-100">
