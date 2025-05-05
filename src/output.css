@@ -506,6 +506,9 @@
   .h-70 {
     height: calc(var(--spacing) * 70);
   }
+  .h-\[68px\] {
+    height: 68px;
+  }
   .h-\[80px\] {
     height: 80px;
   }
@@ -611,6 +614,42 @@
   .-translate-x-2 {
     --tw-translate-x: calc(var(--spacing) * -2);
     translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .scale-100 {
+    --tw-scale-x: 100%;
+    --tw-scale-y: 100%;
+    --tw-scale-z: 100%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-110 {
+    --tw-scale-x: 110%;
+    --tw-scale-y: 110%;
+    --tw-scale-z: 110%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-120 {
+    --tw-scale-x: 120%;
+    --tw-scale-y: 120%;
+    --tw-scale-z: 120%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-125 {
+    --tw-scale-x: 125%;
+    --tw-scale-y: 125%;
+    --tw-scale-z: 125%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-130 {
+    --tw-scale-x: 130%;
+    --tw-scale-y: 130%;
+    --tw-scale-z: 130%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-140 {
+    --tw-scale-x: 140%;
+    --tw-scale-y: 140%;
+    --tw-scale-z: 140%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
   }
   .scale-150 {
     --tw-scale-x: 150%;
@@ -1679,6 +1718,11 @@
   .md\:h-50 {
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 50);
+    }
+  }
+  .md\:h-\[80px\] {
+    @media (width >= 48rem) {
+      height: 80px;
     }
   }
   .md\:h-\[100px\] {
