@@ -437,6 +437,9 @@
   .ml-1 {
     margin-left: calc(var(--spacing) * 1);
   }
+  .ml-2 {
+    margin-left: calc(var(--spacing) * 2);
+  }
   .ml-6 {
     margin-left: calc(var(--spacing) * 6);
   }
@@ -763,9 +766,17 @@
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
+  .border-3 {
+    border-style: var(--tw-border-style);
+    border-width: 3px;
+  }
   .border-4 {
     border-style: var(--tw-border-style);
     border-width: 4px;
+  }
+  .border-5 {
+    border-style: var(--tw-border-style);
+    border-width: 5px;
   }
   .border-t {
     border-top-style: var(--tw-border-style);
@@ -1070,9 +1081,6 @@
   .text-DGreenC-900 {
     color: var(--color-DGreenC-900);
   }
-  .text-DGreenC-950 {
-    color: var(--color-DGreenC-950);
-  }
   .text-GreenC-700 {
     color: var(--color-GreenC-700);
   }
@@ -1157,18 +1165,6 @@
   .shadow-xl {
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-DGreenC-600 {
-    --tw-shadow-color: color-mix(in srgb, #474439 var(--tw-shadow-alpha), transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-shadow-color: color-mix(in oklab, var(--color-DGreenC-600) var(--tw-shadow-alpha), transparent);
-    }
-  }
-  .shadow-DGreenC-900 {
-    --tw-shadow-color: color-mix(in srgb, #11100e var(--tw-shadow-alpha), transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-shadow-color: color-mix(in oklab, var(--color-DGreenC-900) var(--tw-shadow-alpha), transparent);
-    }
   }
   .outline {
     outline-style: var(--tw-outline-style);
@@ -1256,13 +1252,6 @@
       }
     }
   }
-  .hover\:bg-YellowC-400 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-YellowC-400);
-      }
-    }
-  }
   .hover\:bg-YellowC-600 {
     &:hover {
       @media (hover: hover) {
@@ -1281,13 +1270,6 @@
     &:hover {
       @media (hover: hover) {
         fill: var(--color-YellowC-100);
-      }
-    }
-  }
-  .hover\:text-DGreenC-50 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-DGreenC-50);
       }
     }
   }
