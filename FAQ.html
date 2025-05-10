@@ -353,9 +353,9 @@
       </h1>
     </div>
 
-    <div class="mt-8 xl:mt-16 lg:flex lg:-mx-12">
+    <div class="mt-8 xl:mt-16 lg:flex font-body lg:-mx-12">
       <!-- Sidebar: Table of Content -->
-      <div class="lg:w-1/4 lg:mx-12 mb-12 lg:mb-0">
+      <div class="lg:w-1/4 lg:mx-12 mb-12  lg:mb-0">
         <h1 class="text-xl font-semibold text-DGreenC-800 dark:text-DGreenC-100">Innehållsförteckning</h1>
         <div class="mt-4 space-y-4 lg:mt-8">
           <a href="#installation-montering"
@@ -631,7 +631,8 @@
                 <p>För att säkerställa en god funktion och självrensning bör vägtrummor och dagvattenledningar läggas
                   med en lutning anpassad efter trummans/rörets diameter. För små lutningar kan leda till igensättning,
                   medan för stora lutningar kan orsaka erosion vid utloppet. Nedan visas rekommenderade minsta lutningar
-                  för olika diametrar:</p>
+                  för olika diametrar enligt trafikverket. <br>Med tanke på milimeterprecisonen är det i praktiken ofta bäst att efter bästa förmåga lägga trumman så plant som
+                  möjligt, det är viktigare med ett stabilt anläggningsarbete än millimeterprecision på lutningen i längden.:</p>
                 <div class="overflow-x-auto mt-4">
                   <table
                     class="min-w-full divide-y divide-DGreenC-300 dark:divide-DGreenC-700 border border-DGreenC-300 dark:border-DGreenC-700">
@@ -719,7 +720,7 @@
           <details class="group">
             <summary
               class="flex items-center justify-between w-full py-3 font-medium text-left cursor-pointer focus:outline-none list-none">
-              <h3 class="mx-4 text-xl">Vad innebär överdjup vid läggning av trummor och varför behövs det?</h3>
+              <h3 class="mx-4 text-xl">Vad innebär överdjup/nedsänkning vid läggning av trummor och varför behövs det?</h3>
               <span class="ml-auto">
                 <svg class="flex-shrink-0 w-6 h-6 text-DGreenC-500 group-open:hidden" fill="none" stroke="currentColor"
                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -742,6 +743,7 @@
                 <ul class="list-disc list-inside ml-4">
                   <li>Minska risken för att vatten leds utanför trumman.</li>
                   <li>Säkerställa bättre förankring av trummans ändar.</li>
+                  <li>Underlätta passage för vattendragets fauna.</li>
                   <li>Skapa naturligare strömningsförhållanden och minska erosion uppströms och nedströms trumman.</li>
                 </ul>
 
@@ -847,27 +849,42 @@
                     </thead>
                     <tbody class="divide-y divide-DGreenC-200 dark:divide-DGreenC-700">
                       <tr>
-                        <td class="px-3 py-2 whitespace-nowrap">300 &lt Di</td>
+                        <td class="px-3 py-2 whitespace-nowrap">200</td>
                         <td class="px-3 py-2 whitespace-nowrap">50</td>
                       </tr>
                       <tr>
-                        <td class="px-3 py-2 whitespace-nowrap">300 &lt Di ≤ 500</td>
+                        <td class="px-3 py-2 whitespace-nowrap">300</td>
+                        <td class="px-3 py-2 whitespace-nowrap">50</td>
+                      </tr>
+                      <tr>
+                        <td class="px-3 py-2 whitespace-nowrap">400</td>
+                        <td class="px-3 py-2 whitespace-nowrap">90</td>
+                      </tr>
+                      <tr>
+                        <td class="px-3 py-2 whitespace-nowrap">500</td>
                         <td class="px-3 py-2 whitespace-nowrap">100</td>
                       </tr>
                       <tr>
-                        <td class="px-3 py-2 whitespace-nowrap">500 &lt Di ≤ 800</td>
-                        <td class="px-3 py-2 whitespace-nowrap">150</td>
+                        <td class="px-3 py-2 whitespace-nowrap">600</td>
+                        <td class="px-3 py-2 whitespace-nowrap">120</td>
                       </tr>
                       <tr>
-                        <td class="px-3 py-2 whitespace-nowrap">800 &lt Di ≤ 1600</td>
-                        <td class="px-3 py-2 whitespace-nowrap">200</td>
+                        <td class="px-3 py-2 whitespace-nowrap">1000</td>
+                        <td class="px-3 py-2 whitespace-nowrap">180</td>
                       </tr>
                       <tr>
-                        <td class="px-3 py-2 whitespace-nowrap">1600 &lt Di ≤ 2000</td>
-                        <td class="px-3 py-2 whitespace-nowrap">300</td>
+                        <td class="px-3 py-2 whitespace-nowrap">1400</td>
+                        <td class="px-3 py-2 whitespace-nowrap">240</td>
                       </tr>
-                    </tbody>
-                  </table>
+                      <tr>
+                        <td class="px-3 py-2 whitespace-nowrap">1600</td>
+                        <td class="px-3 py-2 whitespace-nowrap">270</td>
+                      </tr>
+                      <tr>
+                        <td class="px-3 py-2 whitespace-nowrap">2000</td>
+                        <td class="px-3 py-2 whitespace-nowrap">330</td>
+                      </tr>
+                    </tbody>        </table>
                 </div>
                 <p class="mt-2"><strong>Observera:</strong> Det område av trumman som motsvarar överdjupet kan inte
                   räknas med i kapacitetsberäkningar för vattenflöde, eftersom det förväntas fyllas med sediment och
