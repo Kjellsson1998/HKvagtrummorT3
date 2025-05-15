@@ -519,7 +519,7 @@
           <details class="group">
             <summary
               class="flex items-center justify-between w-full py-3 font-medium text-left cursor-pointer focus:outline-none list-none">
-              <h3 class="mx-4 text-xl">Kan jag lägga flera trummor bredvid varandra för att öka vattenflödet?</h3>
+              <h3 class="mx-4 text-xl">Kan man lägga flera trummor bredvid varandra för att öka vattenflödet?</h3>
               <span class="ml-auto">
                 <svg class="flex-shrink-0 w-6 h-6 text-DGreenC-500 group-open:hidden" fill="none" stroke="currentColor"
                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -540,6 +540,93 @@
                 <p>Det är dock avgörande att säkerställa korrekt avstånd mellan trummorna. Att placera dem tätt intill
                   varandra ("kloss i kloss") är inte rekommenderat. Följande riktlinjer för avstånd bör beaktas:</p>
                 <p class="font-semibold">Enligt Trafikverkets riktlinjer (TDOK 2014:0045 figur 5.3-1):</p>
+
+                <svg width="75.5mm" height="64.5mm" viewBox="0 0 149 129" version="1.1" id="cleaned_svg_trummor_parallell_v2"
+                  xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                  <defs id="definitions">
+                    <marker style="overflow:visible;fill:context-stroke;stroke:none;fill-rule:evenodd;" id="StandardArrow" refX="9"
+                      refY="0" orient="auto-start-reverse" markerWidth="3.85" markerHeight="2.8" viewBox="-2 -4.01 11 8.02"
+                      preserveAspectRatio="xMidYMid" markerUnits="userSpaceOnUse">
+                      <path d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z" id="arrow-path-shape" />
+                    </marker>
+                  </defs>
+                
+                  <style id="svg-styles">
+                    .label-text {
+                      font-size: 12.7px;
+                      font-family: Arial, sans-serif;
+                      text-anchor: middle;
+                      fill: var(--color-DGreenC-900);
+                      stroke: none;
+                    }
+                  
+                    .guide-line {
+                      fill: none;
+                      stroke: var(--color-DGreenC-900);
+                      stroke-width: 1.6;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                    }
+                  
+                    .drum-outline {
+                      fill: none;
+                      stroke: var(--color-DGreenC-900);
+                      stroke-width: 2.5;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                    }
+                  
+                    .dimension-line {
+                      fill: none;
+                      stroke: var(--color-DGreenC-900);
+                      stroke-width: 1;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                      marker-start: url(#StandardArrow);
+                      marker-end: url(#StandardArrow);
+                    }
+                  
+                    .dimension-line-start-mid {
+                      
+                      fill: none;
+                      stroke: var(--color-DGreenC-900);
+                      stroke-width: 1;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                      marker-start: url(#StandardArrow);
+                      marker-mid: url(#StandardArrow);
+                      marker-end: none;
+                      
+                    }
+                  </style>
+                
+                  <g id="diagram-content" transform="translate(-33.608857,-5.1143913)">
+                    <g id="labels-and-guides">
+                      <text xml:space="preserve" class="label-text" x="141.37637" y="70.505531" id="label-Do-right">D<tspan
+                          style="font-size: 0.7em;">o</tspan></text>
+                      <text xml:space="preserve" class="label-text" x="155.07564" y="31.416973" id="label-min-height">min 0,6m</text>
+                      <text xml:space="preserve" class="label-text" x="153.06642" y="17.535055" id="label-Do-half">>D<tspan
+                          style="font-size: 0.7em;">o</tspan>/2</text>
+                      <text xml:space="preserve" class="label-text" x="64.660507" y="71.23616" id="label-Do-left">D<tspan
+                          style="font-size: 0.7em;">o</tspan></text>
+                      <path class="guide-line" d="M 38.055408,106.67159 V 62.468635" id="guideline-left-drum-vertical" />
+                      <path class="guide-line" d="M 88.898989,104.64487 V 16.6249" id="guideline-center-left-vertical" />
+                      <path class="guide-line" d="M 113.64528,105.85168 V 16.345738" id="guideline-center-right-vertical" />
+                      <path class="guide-line" d="M 164.48318,106.67159 V 62.468635" id="guideline-right-drum-vertical" />
+                    </g>
+                    <g id="drum-visuals">
+                      <circle class="drum-outline" id="drum-left" cx="63.473244" cy="106.48894" r="23.380074" />
+                      <circle class="drum-outline" id="drum-right" cx="139.09317" cy="106.48894" r="23.380074" />
+                    </g>
+                    <g id="dimension-indicators">
+                      <path class="dimension-line" d="M 41.248059,75.345943 H 85.378785" id="dimline-Do-left-horizontal" />
+                      <path class="dimension-line" d="m 116.97498,75.345943 h 44.13073" id="dimline-Do-right-horizontal" />
+                      <path class="dimension-line-start-mid" d="M 90.071176,20.72984 H 113.24871 173.5358"
+                        id="dimline-top-complex-horizontal" />
+                    </g>
+                  </g>
+                </svg>
+
                 <ul class="list-disc list-inside ml-4">
                   <li>Ett minimiavstånd på 0,6 meter ska alltid upprätthållas.</li>
                   <li>Om rördiametern överstiger 1,2 meter, ska avståndet vara minst halva rördiametern (d.v.s.
