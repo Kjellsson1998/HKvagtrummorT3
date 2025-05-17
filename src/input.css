@@ -2,23 +2,29 @@
 
 /* npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch  */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap');
 
-/* Your Custom Font Classes */
+/* --- Your Custom Font Classes based on the image --- */
+
 .font-heading {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
+  /* Jag lägger till "-image" för att undvika konflikt med dina befintliga klasser */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  
 }
 
 .font-subheading {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .font-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
+  letter-spacing: 0.02em;
+  /* text-transform: none; /* Explicit för att säkerställa att det inte ärver uppercase */
 }
 
 @theme {
