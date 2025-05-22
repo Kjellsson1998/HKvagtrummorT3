@@ -147,6 +147,10 @@
     --color-TanC-700: #af8c64;
     --color-DGreen-500: #595648;
     --color-DGreen-800: #25231e;
+    --color-TanC-50: #efe8e0;
+    --color-TanC-200: #e3d7c9;
+    --color-DGreen-500: #595648;
+    --color-DGreen-800: #25231e;
   }
 }
 @layer base {
@@ -845,6 +849,12 @@
   .bg-TanC-200 {
     background-color: var(--color-TanC-200);
   }
+  .bg-TanC-50 {
+    background-color: var(--color-TanC-50);
+  }
+  .bg-TanC-200 {
+    background-color: var(--color-TanC-200);
+  }
   .bg-YellowC-50 {
     background-color: var(--color-YellowC-50);
   }
@@ -892,6 +902,9 @@
   .to-YellowC-200 {
     --tw-gradient-to: var(--color-YellowC-200);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .fill-TanC-50 {
+    fill: var(--color-TanC-50);
   }
   .fill-current {
     fill: currentColor;
@@ -1100,6 +1113,9 @@
   .text-GreenC-700 {
     color: var(--color-GreenC-700);
   }
+  .text-TanC-50 {
+    color: var(--color-TanC-50);
+  }
   .text-YellowC-100 {
     color: var(--color-YellowC-100);
   }
@@ -1200,6 +1216,11 @@
   }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
@@ -1565,6 +1586,11 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
   .md\:flex-row {
     @media (width >= 48rem) {
       flex-direction: row;
@@ -1772,6 +1798,7 @@
   .dark\:border-YellowC-400 {
     @media (prefers-color-scheme: dark) {
       border-color: var(--color-YellowC-400);
+      border-color: var(--color-TanC-50);
     }
   }
   .dark\:border-YellowC-500 {
@@ -1800,22 +1827,16 @@
     }
   }
   .dark\:bg-DGreen-500 {
+  .dark\:bg-TanC-50 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-DGreen-500);
+      background-color: var(--color-TanC-50);
     }
   }
   .dark\:bg-DGreen-800 {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-DGreen-800);
-    }
-  }
-  .dark\:bg-TanC-200 {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-TanC-200);
-    }
-  }
   .dark\:bg-YellowC-400 {
     @media (prefers-color-scheme: dark) {
+      background-color: var(--color-DGreen-800);
       background-color: var(--color-YellowC-400);
     }
   }
@@ -1887,6 +1908,7 @@
   .dark\:text-TanC-300 {
     @media (prefers-color-scheme: dark) {
       color: var(--color-TanC-300);
+      color: var(--color-TanC-50);
     }
   }
   .dark\:text-YellowC-400 {
@@ -1984,6 +2006,39 @@
       }
     }
   }
+  .dark\:hover\:scale-105 {
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        @media (hover: hover) {
+          --tw-scale-x: 105%;
+          --tw-scale-y: 105%;
+          --tw-scale-z: 105%;
+          scale: var(--tw-scale-x) var(--tw-scale-y);
+        }
+      }
+    }
+  }
+  .dark\:hover\:scale-110 {
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        @media (hover: hover) {
+          --tw-scale-x: 110%;
+          --tw-scale-y: 110%;
+          --tw-scale-z: 110%;
+          scale: var(--tw-scale-x) var(--tw-scale-y);
+        }
+      }
+    }
+  }
+  .dark\:hover\:bg-YellowC-400 {
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-YellowC-400);
+        }
+      }
+    }
+  }
   .dark\:hover\:text-GreenC-500 {
     @media (prefers-color-scheme: dark) {
       &:hover {
@@ -2016,6 +2071,24 @@
       &:hover {
         @media (hover: hover) {
           color: var(--color-YellowC-300);
+        }
+      }
+    }
+  }
+  .dark\:hover\:text-TanC-50 {
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-TanC-50);
+        }
+      }
+    }
+  }
+  .dark\:hover\:text-TanC-200 {
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-TanC-200);
         }
       }
     }
