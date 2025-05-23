@@ -44,6 +44,7 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
       --tw-duration: initial;
       --tw-ease: initial;
     }
@@ -615,6 +616,9 @@
   .flex-1 {
     flex: 1;
   }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
   .flex-shrink-0 {
     flex-shrink: 0;
   }
@@ -642,6 +646,9 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .scroll-mt-24 {
     scroll-margin-top: calc(var(--spacing) * 24);
@@ -893,6 +900,9 @@
   }
   .bg-DGreenC-100 {
     background-color: var(--color-DGreenC-100);
+  }
+  .bg-DGreenC-500 {
+    background-color: var(--color-DGreenC-500);
   }
   .bg-DGreenC-700 {
     background-color: var(--color-DGreenC-700);
@@ -1196,6 +1206,9 @@
   .text-DGreenC-500 {
     color: var(--color-DGreenC-500);
   }
+  .text-DGreenC-600 {
+    color: var(--color-DGreenC-600);
+  }
   .text-DGreenC-700 {
     color: var(--color-DGreenC-700);
   }
@@ -1290,11 +1303,21 @@
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
+  .shadow-DGreenC-500 {
+    --tw-shadow-color: color-mix(in srgb, #595648 var(--tw-shadow-alpha), transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-shadow-color: color-mix(in oklab, var(--color-DGreenC-500) var(--tw-shadow-alpha), transparent);
+    }
+  }
   .shadow-TanC-200 {
     --tw-shadow-color: color-mix(in srgb, #e3d7c9 var(--tw-shadow-alpha), transparent);
     @supports (color: color-mix(in lab, red, red)) {
       --tw-shadow-color: color-mix(in oklab, var(--color-TanC-200) var(--tw-shadow-alpha), transparent);
     }
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
@@ -1971,11 +1994,23 @@
       line-height: var(--tw-leading, var(--text-lg--line-height));
     }
   }
+  .dark\:divide-DGreenC-500 {
+    @media (prefers-color-scheme: dark) {
+      :where(& > :not(:last-child)) {
+        border-color: var(--color-DGreenC-500);
+      }
+    }
+  }
   .dark\:divide-DGreenC-700 {
     @media (prefers-color-scheme: dark) {
       :where(& > :not(:last-child)) {
         border-color: var(--color-DGreenC-700);
       }
+    }
+  }
+  .dark\:border-DGreenC-500 {
+    @media (prefers-color-scheme: dark) {
+      border-color: var(--color-DGreenC-500);
     }
   }
   .dark\:border-DGreenC-600 {
@@ -2031,6 +2066,11 @@
   .dark\:bg-DGreenC-100 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-DGreenC-100);
+    }
+  }
+  .dark\:bg-DGreenC-500 {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-DGreenC-500);
     }
   }
   .dark\:bg-DGreenC-600 {
@@ -2199,6 +2239,14 @@
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
+  .dark\:shadow-DGreenC-500 {
+    @media (prefers-color-scheme: dark) {
+      --tw-shadow-color: color-mix(in srgb, #595648 var(--tw-shadow-alpha), transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        --tw-shadow-color: color-mix(in oklab, var(--color-DGreenC-500) var(--tw-shadow-alpha), transparent);
+      }
+    }
+  }
   .dark\:shadow-TanC-200 {
     @media (prefers-color-scheme: dark) {
       --tw-shadow-color: color-mix(in srgb, #e3d7c9 var(--tw-shadow-alpha), transparent);
@@ -2227,6 +2275,15 @@
           --tw-scale-y: 110%;
           --tw-scale-z: 110%;
           scale: var(--tw-scale-x) var(--tw-scale-y);
+        }
+      }
+    }
+  }
+  .dark\:hover\:bg-DGreenC-600 {
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-DGreenC-600);
         }
       }
     }
@@ -2522,6 +2579,11 @@
   syntax: "*";
   inherits: false;
   initial-value: 0 0 #0000;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-duration {
   syntax: "*";
