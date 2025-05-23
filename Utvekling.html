@@ -1,801 +1,1378 @@
 <!DOCTYPE html>
 <html lang="sv">
+  <head>
+    <!-- Google tag Google adds (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16731409488"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-  <!-- Google tag Google adds (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16731409488">
-  </script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+      gtag("config", "AW-16731409488");
+    </script>
 
-    gtag('config', 'AW-16731409488');
-  </script>
+    <!-- Google tag Analytics (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-C6MPRK3ZTL"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  <!-- Google tag Analytics (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MPRK3ZTL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+      gtag("config", "G-C6MPRK3ZTL");
+    </script>
 
-    gtag("config", "G-C6MPRK3ZTL");
-  </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MODE bord - color" />
+    <link href="src/output.css" rel="stylesheet" />
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MODE bord - color" />
-  <link href="src/output.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      href="Image/HK logo Master Version.svg"
+      type="image/svg+xml"
+    />
+    <link rel="apple-touch-icon" href="Image/HK-logo_liten3.png" />
+    <link rel="shortcut icon" href="Image/HK-logo_liten5.png" />
+  </head>
 
-  <link rel="icon" href="Image/HK logo Master Version.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="Image/HK-logo_liten3.png" />
-  <link rel="shortcut icon" href="Image/HK-logo_liten5.png" />
-</head>
-
-
-<nav id="header"
-  class="font-subheading w-full z-30 top-0 py-1 text-DGreenC-800 bg-YellowC-500 dark:bg-YellowC-500 shadow-lg mt-2">
-  <div class="w-full flex items-center justify-between px-6 py-2 relative">
-    <!-- Logo -->
-    <div class="flex-1 md:flex-none">
-      <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="-60 -60 120 120" width="40" height="40"
-        class="fill-DGreenC-800 dark:fill-DGreenC-800">
-        <g class="text-DGreenC-800 dark:text-DGreenC-800" stroke="currentColor">
-          <circle r="58" fill="none" stroke-width="4" />
-          <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
-          <path fill="currentColor" stroke-width="6.1"
-            d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447" />
-        </g>
-      </svg>
-    </div>
-
-    <!-- Desktop Menu -->
-    <div class="hidden md:flex items-center justify-end text-base">
-      <ul class="flex items-center space-x-4">
-        <li>
-          <a href="index.html"
-            class="text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 inline-block no-underline transition duration-300 ease-in-out text-lg py-2 px-3">Hem</a>
-        </li>
-        <li class="relative group">
-          <button
-            class="text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 inline-flex items-center no-underline transition duration-300 ease-in-out text-lg py-2 px-3">
-            <a href="Products.html" class="font-subheading">Produkter</a>
-            <svg class="ml-1 w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-            </svg>
-          </button>
-          <ul
-            class="absolute hidden group-hover:block bg-YellowC-500 dark:bg-YellowC-500 shadow-md rounded-md mt-0 pt-0 top-full left-0 w-48 text-left">
-            <li>
-              <a href="Plasticpipes.html"
-                class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50">Plasttrummor</a>
-            </li>
-            <li>
-              <a href="Archculverts.html"
-                class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50">Valvbågar</a>
-            </li>
-            <li>
-              <a href="Steelpipes.html"
-                class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50">Ståltrummor</a>
-            </li>
-            <li>
-              <a href="Stormwater.html"
-                class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50">Dagvatten</a>
-            </li>
-            <li>
-              <a href="Geotextile.html"
-                class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50">Markduk</a>
-            </li>
-            <li>
-              <a href="Rental.html"
-                class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50">Hyra
-                Maskiner</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="GuestBook.html"
-            class="text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 inline-block no-underline transition duration-300 ease-in-out text-lg py-2 px-3">Gästbok</a>
-        </li>
-        <li>
-          <a href="FAQ.html"
-            class="text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 inline-block underline transition duration-300 ease-in-out text-lg py-2 px-3">Vanliga
-            Frågor</a>
-        </li>
-        <li>
-          <a href="about.html"
-            class="text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 inline-block no-underline transition duration-300 ease-in-out text-lg py-2 px-3">Om
-            HK</a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Mobile Hamburger -->
-    <div class="md:hidden">
-      <input type="checkbox" id="menu-toggle" class="hidden peer" />
-      <label for="menu-toggle" aria-label="Open menu"
-        class="cursor-pointer text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50">
-        <svg xmlns="http://www.w3.org/2000/svg"
-          class="w-8 h-8 transition-transform duration-200 ease-in-out transform hover:scale-125" viewBox="0 0 48 48"
-          fill="currentColor">
-          <path d="M0 0h48v48H0z" fill="none" />
-          <path d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z" />
+  <nav
+    id="header"
+    class="font-subheading w-full z-30 top-0 py-1 text-DGreenC-800 bg-YellowC-500 dark:bg-YellowC-500 shadow-lg mt-2"
+  >
+    <div class="w-full flex items-center justify-between px-6 py-2 relative">
+      <!-- Logo -->
+      <div class="flex-1 md:flex-none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xml:space="preserve"
+          viewBox="-60 -60 120 120"
+          width="40"
+          height="40"
+          class="fill-DGreenC-800 dark:fill-DGreenC-800"
+        >
+          <g
+            class="text-DGreenC-800 dark:text-DGreenC-800"
+            stroke="currentColor"
+          >
+            <circle r="58" fill="none" stroke-width="4" />
+            <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
+            <path
+              fill="currentColor"
+              stroke-width="6.1"
+              d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447"
+            />
+          </g>
         </svg>
-      </label>
-      <div
-        class="hidden peer-checked:flex flex-col text-base absolute top-full left-0 w-full bg-YellowC-500 dark:bg-YellowC-500 shadow-md rounded-b-lg">
-        <ul class="text-center">
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center justify-end text-base">
+        <ul class="flex items-center space-x-4">
           <li>
-            <a href="index.html"
-              class="block text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 no-underline transition duration-300 ease-in-out text-xl py-3">Hem</a>
+            <a
+              href="index.html"
+              class="text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 inline-block no-underline transition duration-300 ease-in-out text-lg py-2 px-3"
+              >Hem</a
+            >
           </li>
-          <li class="block">
-            <input type="checkbox" id="mobile-produkt-toggle" class="peer hidden" />
-            <label for="mobile-produkt-toggle"
-              class="text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 inline-flex items-center justify-center w-full transition duration-300 ease-in-out text-xl py-3 cursor-pointer">
+          <li class="relative group">
+            <button
+              class="text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 inline-flex items-center no-underline transition duration-300 ease-in-out text-lg py-2 px-3"
+            >
               <a href="Products.html" class="font-subheading">Produkter</a>
-              <svg class="ml-1 w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              <svg
+                class="ml-1 w-4 h-4 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
               </svg>
-            </label>
-            <ul class="hidden peer-checked:block bg-YellowC-500 dark:bg-YellowC-500">
+            </button>
+            <ul
+              class="absolute hidden group-hover:block bg-YellowC-500 dark:bg-YellowC-500 shadow-md rounded-md mt-0 pt-0 top-full left-0 w-48 text-left"
+            >
               <li>
-                <a href="Plasticpipes.html"
-                  class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50">Plasttrummor</a>
+                <a
+                  href="Plasticpipes.html"
+                  class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50"
+                  >Plasttrummor</a
+                >
               </li>
               <li>
-                <a href="Archculverts.html"
-                  class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50">Valvbågar</a>
+                <a
+                  href="Archculverts.html"
+                  class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50"
+                  >Valvbågar</a
+                >
               </li>
               <li>
-                <a href="Steelpipes.html"
-                  class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50">Ståltrummor</a>
+                <a
+                  href="Steelpipes.html"
+                  class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50"
+                  >Ståltrummor</a
+                >
               </li>
               <li>
-                <a href="Stormwater.html"
-                  class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50">Dagvatten</a>
+                <a
+                  href="Stormwater.html"
+                  class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50"
+                  >Dagvatten</a
+                >
               </li>
               <li>
-                <a href="Geotextile.html"
-                  class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50">Markduk</a>
+                <a
+                  href="Geotextile.html"
+                  class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50"
+                  >Markduk</a
+                >
               </li>
               <li>
-                <a href="Rental.html"
-                  class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50">Hyra
-                  Maskiner</a>
+                <a
+                  href="Rental.html"
+                  class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50"
+                  >Hyra Maskiner</a
+                >
               </li>
             </ul>
           </li>
           <li>
-            <a href="GuestBook.html"
-              class="block text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 transition duration-300 ease-in-out text-xl py-3">Gästbok</a>
+            <a
+              href="GuestBook.html"
+              class="text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 inline-block no-underline transition duration-300 ease-in-out text-lg py-2 px-3"
+              >Gästbok</a
+            >
           </li>
           <li>
-            <a href="FAQ.html"
-              class="block text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 underline transition duration-300 ease-in-out text-xl py-3">Vanliga
-              Frågor</a>
+            <a
+              href="FAQ.html"
+              class="text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 inline-block underline transition duration-300 ease-in-out text-lg py-2 px-3"
+              >Vanliga Frågor</a
+            >
           </li>
           <li>
-            <a href="about.html"
-              class="block text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 transition duration-300 ease-in-out text-xl py-3">Om
-              HK</a>
+            <a
+              href="about.html"
+              class="text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 inline-block no-underline transition duration-300 ease-in-out text-lg py-2 px-3"
+              >Om HK</a
+            >
           </li>
         </ul>
       </div>
-    </div>
-  </div>
-</nav>
 
-<body class="bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-800 dark:text-TanC-50 font-body">
-  <div class="container mx-auto p-8 space-y-10">
-<!-- Typography -->
-<!-- Typography -->
-<section>
-  <h2 class="font-heading uppercase text-DGreenC-800 dark:text-TanC-50
-             text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl mb-6">
-    
-    Typography Showcase
-  </h2>
-
-  <!-- Main Heading Style -->
-  <div class="mb-8">
-    <p class="font-body text-sm text-DGreenC-600 dark:text-TanC-300 mb-1">Style: Main Heading (Typically for H1)</p>
-    <div class="font-heading uppercase text-DGreenC-800 dark:text-TanC-50
-                text-4xl sm:text-4xl md:text-5xl lg:text-6xl">
-      Main Heading Example
-    </div>
-  </div>
-
-  <!-- Subheading Style -->
-  <div class="mb-8">
-    <p class="font-body text-sm text-DGreenC-600 dark:text-TanC-300 mb-1">Style: Subheading (Typically for H2, H3, H4)
-    </p>
-    <div class="font-subheading text-DGreenC-800 dark:text-TanC-50
-                text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl">
-      Subheading Example
-    </div>
-    <div class="font-subheading text-YellowC-600 dark:text-YellowC-400 mt-2 {/* Accent Version */}
-                text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl">
-      Accent Subheading
-    </div>
-  </div>
-
-  <!-- Body Text Style -->
-  <div>
-    <p class="font-body text-sm text-DGreenC-600 dark:text-TanC-300 mb-1">Style: Body Text (Typically for p, li, a)</p>
-    <p class="font-body text-DGreenC-800 dark:text-TanC-50
-              text-base sm:text-base md:text-lg">
-      This is standard body text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      An <a href="#" class="underline hover:text-YellowC-600 dark:hover:text-YellowC-400">inline link</a>
-      would also use this body style.
-    </p>
-    <p class="font-body text-DGreenC-800 dark:text-TanC-50
-              text-lg sm:text-lg md:text-xl mt-2"> 
-      This is a slightly larger lead paragraph, good for introductions in hero sections.
-    </p>
-  </div>
-</section>
-
-<hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
-
-<section aria-labelledby="typography-scale-heading" class="my-10">
-  <h2 id="typography-scale-heading" class="font-heading text-2xl sm:text-3xl mb-6 text-center">
-    Typography Scale - Tailwind Classes & Visual Sizes
-  </h2>
-  <p class="font-body text-sm text-center mb-6 max-w-2xl mx-auto">
-    This table shows the Tailwind CSS classes to achieve the desired responsive typography.
-    The "HK" text below each class is styled with that specific text size class for direct visual comparison.
-  </p>
-
-  <div class="overflow-x-auto shadow-md rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400">
-    <table class="w-full min-w-[900px] border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm">
-      <thead class="bg-YellowC-500 text-DGreenC-800 dark:text-DGreenC-800 align-bottom">
-        <tr>
-          <th class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 align-middle">
-            Visual Style</th>
-          <th class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 align-middle">Font
-            Class Used</th>
-          <th class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 align-middle"> 
-            Color 
-          </th>
-          <th
-            class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 text-center align-middle">
-            Default (Mobile)<br class="hidden sm:inline" /> Size
-          </th>
-          <th
-            class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 text-center align-middle">
-            <code>sm:</code><br class="hidden sm:inline" /> Size
-          </th>
-          <th
-            class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 text-center align-middle">
-            <code>md:</code><br class="hidden sm:inline" /> Size
-          </th>
-          <th
-            class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 text-center align-middle">
-            <code>lg:</code><br class="hidden sm:inline" /> Size
-          </th>
-          <th
-            class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 text-center align-middle">
-            <code>xl:</code><br class="hidden sm:inline" /> Size
-          </th>
-        </tr>
-      </thead>
-      <tbody class="text-DGreenC-800 dark:text-TanC-50 divide-y divide-DGreenC-300 dark:divide-DGreenC-500">
-        <!-- Main Heading Row -->
-        <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
-          <td class="px-3 py-4 font-medium whitespace-nowrap align-top">Main Heading</td>
-          <td class="px-3 py-4 font-mono text-xs align-top"><code>.font-heading</code></td>
-          <td class="px-3 py-4 font-mono text-xs align-top">
-            <code>uppercase</code><br />
-            <code>text-DGreenC-800</code><br />
-            <code>dark:text-TanC-50</code>
-          </td>
-          
-          <td class="px-3 py-4 text-center align-bottom"> 
-            <code class="block font-mono text-xs mb-1">text-4xl</code>
-            <span class="font-heading text-4xl leading-none inline-block">HK</span> 
-          </td>
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">sm:text-4xl</code>
-            <span class="font-heading text-4xl leading-none inline-block">HK</span>
-          </td>
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">md:text-5xl</code>
-            <span class="font-heading text-5xl leading-none inline-block">HK</span>
-          </td>
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">lg:text-6xl</code>
-            <span class="font-heading text-6xl leading-none inline-block">HK</span>
-          </td>
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">xl:text-6xl</code>
-            <span class="font-heading text-6xl leading-none inline-block">HK</span>
-          </td>
-        </tr>
-        <!-- Subheading Row -->
-        <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
-          <td class="px-3 py-4 font-medium whitespace-nowrap align-top">Subheading</td>
-          <td class="px-3 py-4 font-mono text-xs align-top"><code>.font-subheading</code></td>
-          <td class="px-3 py-4 font-mono text-xs align-top">
-            <code>text-DGreenC-800</code><br />
-            <code>dark:text-TanC-50</code><br />
-            <span class="text-DGreenC-600 dark:text-TanC-300 text-xs">(or accent)</span>
-          </td>
-          
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">text-xl</code>
-            <span class="font-subheading text-xl leading-snug inline-block">HK</span>
-          </td>
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">sm:text-xl</code>
-            <span class="font-subheading text-xl leading-snug inline-block">HK</span>
-          </td>
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">md:text-2xl</code>
-            <span class="font-subheading text-2xl leading-snug inline-block">HK</span>
-          </td>
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">lg:text-2xl</code>
-            <span class="font-subheading text-2xl leading-snug inline-block">HK</span>
-          </td>
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">xl:text-3xl</code>
-            <span class="font-subheading text-3xl leading-snug inline-block">HK</span>
-          </td>
-        </tr>
-        <!-- Body Text Row -->
-        <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
-          <td class="px-3 py-4 font-medium whitespace-nowrap align-top">Body Text</td>
-          <td class="px-3 py-4 font-mono text-xs align-top"><code>.font-body</code></td>
-          <td class="px-3 py-4 font-mono text-xs align-top">
-            <code>text-DGreenC-800</code><br />
-            <code>dark:text-TanC-50</code>
-          </td>
-          
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">text-base</code>
-            <span class="font-body text-base leading-normal inline-block">HK</span>
-          </td>
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">sm:text-base</code>
-            <span class="font-body text-base leading-normal inline-block">HK</span>
-          </td>
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">md:text-lg</code>
-            <span class="font-body text-lg leading-normal inline-block">HK</span>
-          </td>
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">lg:text-lg</code>
-            <span class="font-body text-lg leading-normal inline-block">HK</span>
-          </td>
-          <td class="px-3 py-4 text-center align-bottom">
-            <code class="block font-mono text-xs mb-1">xl:text-lg</code>
-            <span class="font-body text-lg leading-normal inline-block">HK</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-
-
-
-
-
-    <hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
-
-
-
-    <!-- Interactive Elements -->
-    <section>
-      <h2 class="font-heading text-2xl uppercase text-DGreenC-800 dark:text-TanC-50 mb-6">
-        Interactive Elements
-      </h2>
-    
-      <!-- Buttons -->
-      <div class="mb-8">
-        <h3 class="font-subheading text-xl text-DGreenC-800 dark:text-TanC-50 mb-3">Buttons & Links</h3>
-        <div class="flex flex-wrap items-center gap-4">
-          
-    
-          <a href="#"
-            class="font-subheading bg-YellowC-500 text-DGreenC-800 hover:bg-YellowC-500 hover:text-TanC-50 dark:bg-YellowC-500 dark:text-DGreenC-800 dark:hover:bg-YellowC-500 dark:hover:text-TanC-50 py-2 px-4 rounded-xl shadow hover:shadow-md transition-all duration-150 ease-in-out">
-            Primary Button
-          </a>
-    
-          <!-- Secondary/Outline Button Example -->
-
-    
-          <a href="#"
-            class="font-subheading border-2 border-YellowC-600 hover:border-YellowC-500 text-YellowC-600 hover:bg-YellowC-500 hover:text-TanC-50 dark:border-YellowC-500 dark:text-YellowC-500 dark:hover:bg-YellowC-500 dark:hover:text-DGreen-800 py-2 px-4 rounded-xl shadow hover:shadow-md transition-all duration-150 ease-in-out">
-            Secondary Button
-          </a>
-
-
-                  <!-- Call Me Button -->
-                  <a href="tel:+46703909051"
-                    class="inline-flex border-2 border-YellowC-600 hover:border-YellowC-500 items-center gap-3 bg-TanC-50 text-YellowC-600  hover:bg-YellowC-500 dark:hover:bg-yellow-400 hover:text-TanC-50 dark:hover:text-DGreen-800 dark:text-YellowC-500 dark:bg-DGreen-800 hover:scale-110 pl-3 pr-5 py-2 rounded-[2rem] text-[1.1rem] md:text-[1.2rem] transition duration-300 ease-in-out transform shadow-lg dark:hover:shadow-DGreen-500 hover:shadow-TanC-600  sm:w-auto justify-center overflow-hidden">
-                
-                    <img src="Image/PP_Hugo.webp" alt="Profilbil på Hugo Kjellsson"
-                      class="flex-shrink-0 w-[68px] h-[80px] md:w-[80px] md:h-[100px] rounded-full object-cover  transition duration-300 transform scale-150 -translate-x-2 object-left "
-                      loading="lazy" />
-                    <span class="text-center font-body ml-2">
-                      070-390 90 51<br>Hugo Kjellsson
-                    </span>
-                  </a>
-                  <!-- End Call Me Button -->
-                
-               
-        </div>
-      </div>
-    
-      <!-- Text Links -->
-      <div class="mb-8">
-        <h3 class="font-subheading text-xl text-DGreen-800 dark:text-TanC-50 mb-3">Text Links</h3>
-        <div class="space-y-3">
-          <p class="font-body">
-            This is a paragraph with a
-            <a href="#"
-              class="font-body underline text-DGreen-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 ">
-              standard text link
-            </a>
-            inside it. It inherits the body font and changes color on hover.
-          </p>
-    
-          <p class="font-body">
-            Here's an
-            <a href="#"
-              class="font-body font-medium  text-YellowC-600 hover:text-YellowC-500 dark:text-YellowC-500 dark:hover:text-YellowC-400 hover:underline ">
-              accent text link
-            </a>
-            that uses the accent color for more emphasis within a paragraph.
-          </p>
-    
-
-        </div>
-      </div>
-    
-  
-      
-
-    
-    </section>
-
-    <hr class="border-DGreen-800 dark:border-TanC-50 my-6" />
-
-    <!-- Backgrounds and Dividers -->
-    <section>
-      <h2 class="font-heading text-2xl uppercase text-DGreenC-800 dark:text-TanC-50 mb-4">
-        Backgrounds & Dividers
-      </h2>
-      <div class="bg-TanC-200 dark:bg-DGreen-500 p-6 rounded-lg shadow">
-        <h3 class="font-subheading text-DGreenC-800 dark:text-TanC-50 mb-2">
-          Secondary Background Area
-        </h3>
-        <p class="font-body text-DGreenC-800 dark:text-TanC-50">
-          This content is on a secondary background. The text color should
-          remain consistent with the primary text color for the current mode.
-        </p>
-      </div>
-      <div class="flex items-center justify-center my-8 space-x-4">
-        <p class="font-body text-DGreenC-800 dark:text-TanC-50">
-          Vertical Line Example:
-        </p>
-        <div class="w-1 h-24 bg-YellowC-600 dark:bg-YellowC-400"></div>
-      </div>
-    </section>
-
-    <hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
-
-    <!-- Color Palette Showcase -->
-    <section>
-      <h2 class="font-heading text-2xl uppercase text-DGreenC-800 dark:text-TanC-50  mb-4">
-        Color Palette
-      </h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 ">
-        <div>
-          <div class="w-full h-24 bg-DGreenC-800 dark:shadow-DGreenC-500 rounded-lg dark:shadow mb-2"></div>
-          <p class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50">DGreenC-800</p>
-        </div>
-        <div>
-          <div class="w-full h-24 bg-DGreenC-500 rounded-lg shadow mb-2"></div>
-          <p class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50">DGreenC-500</p>
-        </div>
-        <div>
-          <div class="w-full h-24 bg-TanC-50  dark:border-TanC-700 rounded-lg shadow shadow-TanC-200 mb-2"></div>
-          <p class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50">TanC-50</p>
-        </div>
-        <div>
-          <div class="w-full h-24 bg-TanC-200  dark:border-TanC-700 rounded-lg shadow mb-2"></div>
-          <p class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50">TanC-200</p>
-        </div>
-        <div>
-          <div class="w-full h-24 bg-YellowC-500 rounded-lg shadow mb-2"></div>
-          <p class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50">YellowC-500</p>
-        </div>
-        <div>
-          <div class="w-full h-24 bg-YellowC-600 rounded-lg shadow mb-2"></div>
-          <p class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50">YellowC-600</p>
-        </div>
-        <div>
-          <div class="w-full h-24 bg-YellowC-400 rounded-lg shadow mb-2"></div>
-          <p class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50">YellowC-400</p>
-        </div>
-        <!-- Add more colors as needed: e.g., neutral grays, success, error, warning specific shades -->
-      </div>
-    </section>
-
-    <hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
-
-    <!-- Card Component -->
-    <section>
-      <h2 class="font-heading text-2xl uppercase text-DGreenC-800 dark:text-TanC-50 mb-4">
-        Card Component
-      </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-TanC-200 dark:bg-DGreenC-500 p-6 rounded-lg shadow-md">
-          <h3 class="font-heading text-xl text-DGreenC-800 dark:text-TanC-50 mb-2">Standard Card Title</h3>
-          <p class="font-body text-DGreenC-800 dark:text-TanC-50 mb-4">
-            This is some content within a card. It can hold various elements and provide a nice visual grouping.
-            It uses a slightly lighter background (TanC-200 or DGreenC-500).
-          </p>
-          <button
-            class="font-subheading bg-YellowC-500 text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:bg-YellowC-500 dark:text-DGreenC-800 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50 py-2 px-4 rounded text-sm">
-            Card Action
-          </button>
-        </div>
-        <div class="bg-TanC-50 dark:bg-DGreenC-800 p-6 rounded-lg shadow-lg border border-YellowC-500">
-          <div class="flex items-center mb-3">
-            <!-- Placeholder for an icon -->
-            <svg class="h-6 w-6 text-YellowC-600 dark:text-YellowC-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <h3 class="font-heading text-xl text-DGreenC-800 dark:text-TanC-50">Card with Accent</h3>
-          </div>
-          <p class="font-body text-DGreenC-800 dark:text-TanC-50 mb-4">
-            This card uses a primary background and features an accent border and icon.
-          </p>
-          <a href="#"
-            class="font-body text-sm underline text-YellowC-600 hover:text-YellowC-500 dark:text-YellowC-400 dark:hover:text-YellowC-300">
-            Learn More
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
-
-
-
-<!-- Table -->
-<div class="overflow-hidden rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md m-5">
-  <table
-    class="w-full border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body">
-
-    <thead class="bg-YellowC-500 text-DGreenC-800 dark:text-DGreenC-800">
-      <tr>
-        <th scope="col" class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4">
-          Plasttrummor
-        </th>
-        <th scope="col" class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right">
-          Pris
-        </th>
-        <th scope="col" class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4">
-          Mått
-        </th>
-      </tr>
-    </thead>
-    <tbody class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500 border-t border-DGreenC-300 dark:border-DGreenC-500">
-      <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
-        <th scope="row" class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal">
-          <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
-            <img class="h-full w-full rounded-md object-cover object-center" src="Image/Ptrumma.webp"
-              alt="Bild på en 200s vägtrumma med muff" />
-          </div>
-          <div class="text-sm">
-            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">
-              <span class="text-xl">200</span>
-              <span class="text-xs sm:text-lg md:text-xl">Trumma</span>
-            </div>
-            <div class="text-DGreenC-500 dark:text-TanC-300">(inkl. muff)</div>
-            <div class="product-stock font-medium text-DGreenC-700 dark:text-TanC-100 flex items-center gap-2 mt-1">
-              <span class="stock-indicator w-2 h-2 rounded-full bg-green-400 border border-green-600"></span>
-              Lager: 14st
-            </div>
-          </div>
-        </th>
-        <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right">
-          <div class="text-sm">
-            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">1090 kr exkl. moms</div>
-            <div class="text-DGreenC-500 dark:text-TanC-300">1362 kr inkl. moms</div>
-          </div>
-        </td>
-        <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4">
-          <div class="font-medium text-DGreenC-700 dark:text-TanC-100">Längd: 6m</div>
-          <div class="text-DGreenC-700 dark:text-TanC-100">InnerMått: 200mm</div>
-          <div class="text-DGreenC-700 dark:text-TanC-100">YtterMått: 227mm</div>
-          <div class="text-DGreenC-700 dark:text-TanC-100">Vikt: 15kg</div>
-        </td>
-      </tr>
-      
-      <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
-        <th scope="row" class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal">
-          <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
-            <img class="h-full w-full rounded-md object-cover object-center" src="Image/Ptrumma.webp"
-              alt="Bild på en 800s eller större vägtrumma" />
-          </div>
-          <div class="text-sm">
-            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">
-              <span class="text-xl">800</span>
-              <span class="text-xs sm:text-lg md:text-xl">och större</span>
-            </div>
-            <div class="text-DGreenC-500 dark:text-TanC-300">(inkl. muff)</div>
-            <div class="product-stock font-medium text-DGreenC-700 dark:text-TanC-100 flex items-center gap-2 mt-1">
-              <span class="stock-indicator w-2 h-2 rounded-full bg-red-500 border border-red-700"></span>
-              Beställningsvara
-            </div>
-          </div>
-        </th>
-        <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right">
-          <div class="font-medium text-DGreenC-700 dark:text-TanC-100">Offert</div>
-        </td>
-        <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4">
-          <div class="font-medium text-DGreenC-700 dark:text-TanC-100">Längd: 6m / 8m</div>
-          <div class="text-DGreenC-700 dark:text-TanC-100">InnerMått: 800mm+</div> 
-          <div class="text-DGreenC-700 dark:text-TanC-100">YtterMått: 880mm+</div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-    <hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
-
-    <!-- Logo Usage -->
-    <section>
-      <h2 class="font-heading text-2xl uppercase text-DGreenC-800 border-DGreenC-800 dark:text-TanC-50 mb-4">
-        Logo Usage
-      </h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div
-          class="bg-TanC-50 dark:bg-DGreenC-800 p-6 rounded-lg shadow shadow-DGreenC-500 dark:shadow-TanC-200 text-center">
-          <h3 class="font-subheading text-DGreenC-800 dark:text-TanC-50 mb-2">
-            Logo on Primary BG
-          </h3>
-          <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="-60 -60 120 120" width="40" height="40"
-            class="fill-DGreenC-800 dark:fill-TanC-50 inline-block">
-            <g stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-50">
-              <circle r="58" fill="none" stroke-width="4" />
-              <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
-              <path fill="currentColor" stroke-width="6.1"
-                d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447" />
-            </g>
+      <!-- Mobile Hamburger -->
+      <div class="md:hidden">
+        <input type="checkbox" id="menu-toggle" class="hidden peer" />
+        <label
+          for="menu-toggle"
+          aria-label="Open menu"
+          class="cursor-pointer text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 transition-transform duration-200 ease-in-out transform hover:scale-125"
+            viewBox="0 0 48 48"
+            fill="currentColor"
+          >
+            <path d="M0 0h48v48H0z" fill="none" />
+            <path d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z" />
           </svg>
-          <p class="font-heading text-lg uppercase mt-2 text-DGreenC-800 dark:text-TanC-50">
-            Vägtrummor
+        </label>
+        <div
+          class="hidden peer-checked:flex flex-col text-base absolute top-full left-0 w-full bg-YellowC-500 dark:bg-YellowC-500 shadow-md rounded-b-lg"
+        >
+          <ul class="text-center">
+            <li>
+              <a
+                href="index.html"
+                class="block text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 no-underline transition duration-300 ease-in-out text-xl py-3"
+                >Hem</a
+              >
+            </li>
+            <li class="block">
+              <input
+                type="checkbox"
+                id="mobile-produkt-toggle"
+                class="peer hidden"
+              />
+              <label
+                for="mobile-produkt-toggle"
+                class="text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 inline-flex items-center justify-center w-full transition duration-300 ease-in-out text-xl py-3 cursor-pointer"
+              >
+                <a href="Products.html" class="font-subheading">Produkter</a>
+                <svg
+                  class="ml-1 w-4 h-4 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </label>
+              <ul
+                class="hidden peer-checked:block bg-YellowC-500 dark:bg-YellowC-500"
+              >
+                <li>
+                  <a
+                    href="Plasticpipes.html"
+                    class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50"
+                    >Plasttrummor</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Archculverts.html"
+                    class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50"
+                    >Valvbågar</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Steelpipes.html"
+                    class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50"
+                    >Ståltrummor</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Stormwater.html"
+                    class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50"
+                    >Dagvatten</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Geotextile.html"
+                    class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50"
+                    >Markduk</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Rental.html"
+                    class="block px-4 py-2 text-DGreenC-800 dark:text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50"
+                    >Hyra Maskiner</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="GuestBook.html"
+                class="block text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 transition duration-300 ease-in-out text-xl py-3"
+                >Gästbok</a
+              >
+            </li>
+            <li>
+              <a
+                href="FAQ.html"
+                class="block text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 underline transition duration-300 ease-in-out text-xl py-3"
+                >Vanliga Frågor</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="block text-DGreenC-800 dark:text-DGreenC-800 hover:text-TanC-50 dark:hover:text-TanC-50 transition duration-300 ease-in-out text-xl py-3"
+                >Om HK</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <body
+    class="bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-800 dark:text-TanC-50 font-body"
+  >
+    <div class="container mx-auto p-8 space-y-10">
+      <!-- Typography -->
+      <!-- Typography -->
+      <section>
+        <h2
+          class="font-heading uppercase text-DGreenC-800 dark:text-TanC-50 text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl mb-6"
+        >
+          Typography Showcase
+        </h2>
+
+        <!-- Main Heading Style -->
+        <div class="mb-8">
+          <p class="font-body text-sm text-DGreenC-600 dark:text-TanC-300 mb-1">
+            Style: Main Heading (Typically for H1)
           </p>
+          <div
+            class="font-heading uppercase text-DGreenC-800 dark:text-TanC-50 text-4xl sm:text-4xl md:text-5xl lg:text-6xl"
+          >
+            Main Heading Example
+          </div>
         </div>
 
-      </div>
-    </section>
-  </div>
+        <!-- Subheading Style -->
+        <div class="mb-8">
+          <p class="font-body text-sm text-DGreenC-600 dark:text-TanC-300 mb-1">
+            Style: Subheading (Typically for H2, H3, H4)
+          </p>
+          <div
+            class="font-subheading text-DGreenC-800 dark:text-TanC-50 text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl"
+          >
+            Subheading Example
+          </div>
+          <div
+            class="font-subheading text-YellowC-600 dark:text-YellowC-400 mt-2 {/* Accent Version */} text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl"
+          >
+            Accent Subheading
+          </div>
+        </div>
 
-  <footer class="px-4 divide-y border-t bg-TanC-200 dark:bg-DGreenC-500 border-DGreenC-800 dark:border-TanC-50">
-    <div class="font-body container flex flex-col justify-center items-center py-10 mx-auto space-y-8">
-      <div class="flex justify-center">
-        <a rel="noopener noreferrer" href="#" class="flex justify-center space-x-3 items-center">
-          <div class="flex items-center justify-center w-11 h-11">
-            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="-60 -60 120 120" width="40"
-              height="40" class="fill-DGreenC-800 dark:fill-TanC-50">
-              <g stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-50">
+        <!-- Body Text Style -->
+        <div>
+          <p class="font-body text-sm text-DGreenC-600 dark:text-TanC-300 mb-1">
+            Style: Body Text (Typically for p, li, a)
+          </p>
+          <p
+            class="font-body text-DGreenC-800 dark:text-TanC-50 text-base sm:text-base md:text-lg"
+          >
+            This is standard body text. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. An
+            <a
+              href="#"
+              class="underline hover:text-YellowC-600 dark:hover:text-YellowC-400"
+              >inline link</a
+            >
+            would also use this body style.
+          </p>
+          <p
+            class="font-body text-DGreenC-800 dark:text-TanC-50 text-lg sm:text-lg md:text-xl mt-2"
+          >
+            This is a slightly larger lead paragraph, good for introductions in
+            hero sections.
+          </p>
+        </div>
+      </section>
+
+      <hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
+
+      <section aria-labelledby="typography-scale-heading" class="my-10">
+        <h2
+          id="typography-scale-heading"
+          class="font-heading text-2xl sm:text-3xl mb-6 text-center"
+        >
+          Typography Scale - Tailwind Classes & Visual Sizes
+        </h2>
+        <p class="font-body text-sm text-center mb-6 max-w-2xl mx-auto">
+          This table shows the Tailwind CSS classes to achieve the desired
+          responsive typography. The "HK" text below each class is styled with
+          that specific text size class for direct visual comparison.
+        </p>
+
+        <div
+          class="overflow-x-auto shadow-md rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400"
+        >
+          <table
+            class="w-full min-w-[900px] border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm"
+          >
+            <thead
+              class="bg-YellowC-500 text-DGreenC-800 dark:text-DGreenC-800 align-bottom"
+            >
+              <tr>
+                <th
+                  class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 align-middle"
+                >
+                  Visual Style
+                </th>
+                <th
+                  class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 align-middle"
+                >
+                  Font Class Used
+                </th>
+                <th
+                  class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 align-middle"
+                >
+                  Color
+                </th>
+                <th
+                  class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 text-center align-middle"
+                >
+                  Default (Mobile)<br class="hidden sm:inline" />
+                  Size
+                </th>
+                <th
+                  class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 text-center align-middle"
+                >
+                  <code>sm:</code><br class="hidden sm:inline" />
+                  Size
+                </th>
+                <th
+                  class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 text-center align-middle"
+                >
+                  <code>md:</code><br class="hidden sm:inline" />
+                  Size
+                </th>
+                <th
+                  class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 text-center align-middle"
+                >
+                  <code>lg:</code><br class="hidden sm:inline" />
+                  Size
+                </th>
+                <th
+                  class="px-3 py-3 font-subheading border-b-2 border-YellowC-600 dark:border-YellowC-400 text-center align-middle"
+                >
+                  <code>xl:</code><br class="hidden sm:inline" />
+                  Size
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="text-DGreenC-800 dark:text-TanC-50 divide-y divide-DGreenC-300 dark:divide-DGreenC-500"
+            >
+              <!-- Main Heading Row -->
+              <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
+                <td
+                  class="px-3 py-4 font-medium whitespace-nowrap align-center"
+                >
+                  Main Heading <br />
+                  H1
+                </td>
+                <td class="px-3 py-4 font-mono text-xs align-center">
+                  <code>.font-heading</code>
+                </td>
+                <td class="px-3 py-4 font-mono text-xs align-center">
+                  <code>uppercase</code><br />
+                  <code>text-DGreenC-800</code><br />
+                  <code>dark:text-TanC-50</code>
+                </td>
+
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">text-4xl</code>
+                  <span class="font-heading text-4xl leading-none inline-block"
+                    >HKVG</span
+                  >
+                </td>
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">sm:text-4xl</code>
+                  <span class="font-heading text-4xl leading-none inline-block"
+                    >HKVG</span
+                  >
+                </td>
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">md:text-5xl</code>
+                  <span class="font-heading text-5xl leading-none inline-block"
+                    >HKVG</span
+                  >
+                </td>
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">lg:text-6xl</code>
+                  <span class="font-heading text-6xl leading-none inline-block"
+                    >HKVG</span
+                  >
+                </td>
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">xl:text-6xl</code>
+                  <span class="font-heading text-6xl leading-none inline-block"
+                    >HKVG</span
+                  >
+                </td>
+              </tr>
+              <!-- Subheading Row -->
+              <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
+                <td
+                  class="px-3 py-4 font-medium whitespace-nowrap align-center"
+                >
+                  Subheading<br />
+                  H2, H3, H4
+                </td>
+                <td class="px-3 py-4 font-mono text-xs align-center">
+                  <code>.font-subheading</code>
+                </td>
+                <td class="px-3 py-4 font-mono text-xs align-center">
+                  <code>text-DGreenC-800</code><br />
+                  <code>dark:text-TanC-50</code><br />
+                  <span class="text-DGreenC-600 dark:text-TanC-300 text-xs"
+                    >(or accent)</span
+                  >
+                </td>
+
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">text-xl</code>
+                  <span
+                    class="font-subheading text-xl leading-snug inline-block"
+                    >HKVG</span
+                  >
+                </td>
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">sm:text-xl</code>
+                  <span
+                    class="font-subheading text-xl leading-snug inline-block"
+                    >HKVG</span
+                  >
+                </td>
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">md:text-2xl</code>
+                  <span
+                    class="font-subheading text-2xl leading-snug inline-block"
+                    >HKVG</span
+                  >
+                </td>
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">lg:text-2xl</code>
+                  <span
+                    class="font-subheading text-2xl leading-snug inline-block"
+                    >HKVG</span
+                  >
+                </td>
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">xl:text-3xl</code>
+                  <span
+                    class="font-subheading text-3xl leading-snug inline-block"
+                    >HKVG</span
+                  >
+                </td>
+              </tr>
+              <!-- Body Text Row -->
+              <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
+                <td
+                  class="px-3 py-4 font-medium whitespace-nowrap align-center"
+                >
+                  Body Text <br />p, li, a
+                </td>
+                <td class="px-3 py-4 font-mono text-xs align-center">
+                  <code>.font-body</code>
+                </td>
+                <td class="px-3 py-4 font-mono text-xs align-center">
+                  <code>text-DGreenC-800</code><br />
+                  <code>dark:text-TanC-50</code>
+                </td>
+
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">text-base</code>
+                  <span class="font-body text-base leading-normal inline-block"
+                    >HKVG</span
+                  >
+                </td>
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">sm:text-base</code>
+                  <span class="font-body text-base leading-normal inline-block"
+                    >HKVG</span
+                  >
+                </td>
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">md:text-lg</code>
+                  <span class="font-body text-lg leading-normal inline-block"
+                    >HKVG</span
+                  >
+                </td>
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">lg:text-lg</code>
+                  <span class="font-body text-lg leading-normal inline-block"
+                    >HKVG</span
+                  >
+                </td>
+                <td class="px-3 py-4 text-center align-bottom">
+                  <code class="block font-mono text-xs mb-1">xl:text-lg</code>
+                  <span class="font-body text-lg leading-normal inline-block"
+                    >HKVG</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
+
+      <!-- Interactive Elements -->
+      <section>
+        <h2
+          class="font-heading text-2xl uppercase text-DGreenC-800 dark:text-TanC-50 mb-6"
+        >
+          Interactive Elements
+        </h2>
+
+        <!-- Buttons -->
+        <div class="mb-8">
+          <h3
+            class="font-subheading text-xl text-DGreenC-800 dark:text-TanC-50 mb-3"
+          >
+            Buttons & Links
+          </h3>
+          <div class="flex flex-wrap items-center gap-4">
+            <a
+              href="#"
+              class="font-subheading bg-YellowC-500 text-DGreenC-800 hover:bg-YellowC-500 hover:text-TanC-50 dark:bg-YellowC-500 dark:text-DGreenC-800 dark:hover:bg-YellowC-500 dark:hover:text-TanC-50 py-2 px-4 rounded-xl shadow hover:shadow-md transition-all duration-150 ease-in-out"
+            >
+              Primary Button
+            </a>
+
+            <!-- Secondary/Outline Button Example -->
+
+            <a
+              href="#"
+              class="font-subheading border-2 border-YellowC-600 hover:border-YellowC-500 text-YellowC-600 hover:bg-YellowC-500 hover:text-TanC-50 dark:border-YellowC-500 dark:text-YellowC-500 dark:hover:bg-YellowC-500 dark:hover:text-DGreenC-800 py-2 px-4 rounded-xl shadow hover:shadow-md transition-all duration-150 ease-in-out"
+            >
+              Secondary Button
+            </a>
+
+            <!-- Call Me Button -->
+            <a
+              href="tel:+46703909051"
+              class="inline-flex border-2 border-YellowC-600 hover:border-YellowC-500 items-center gap-3 bg-TanC-50 dark:bg-DGreenC-800 text-YellowC-600 hover:bg-YellowC-500 dark:hover:bg-yellow-400 hover:text-TanC-50 dark:hover:text-DGreenC-800 dark:text-YellowC-500 dark:bg-DGreenC-800 hover:scale-110 pl-3 pr-5 py-2 rounded-[2rem] text-[1.1rem] md:text-[1.2rem] transition duration-300 ease-in-out transform shadow-lg dark:hover:shadow-DGreenC-500 hover:shadow-TanC-600 sm:w-auto justify-center overflow-hidden"
+            >
+              <img
+                src="Image/PP_Hugo.webp"
+                alt="Profilbil på Hugo Kjellsson"
+                class="flex-shrink-0 w-[68px] h-[80px] md:w-[80px] md:h-[100px] rounded-full object-cover transition duration-300 transform scale-150 -translate-x-2 object-left"
+                loading="lazy"
+              />
+              <span class="text-center font-body ml-2">
+                070-390 90 51<br />Hugo Kjellsson
+              </span>
+            </a>
+            <!-- End Call Me Button -->
+          </div>
+        </div>
+
+        <!-- Text Links -->
+        <div class="mb-8">
+          <h3
+            class="font-subheading text-xl text-DGreenC-800 dark:text-TanC-50 mb-3"
+          >
+            Text Links
+          </h3>
+          <div class="space-y-3">
+            <p class="font-body">
+              This is a paragraph with a
+              <a
+                href="#"
+                class="font-body underline text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400"
+              >
+                standard text link
+              </a>
+              inside it. It inherits the body font and changes color on hover.
+            </p>
+
+            <p class="font-body">
+              Here's an
+              <a
+                href="#"
+                class="font-body font-medium text-YellowC-600 hover:text-YellowC-500 dark:text-YellowC-500 dark:hover:text-YellowC-400 hover:underline"
+              >
+                accent text link
+              </a>
+              that uses the accent color for more emphasis within a paragraph.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
+
+      <!-- Backgrounds and Dividers -->
+      <section>
+        <h2
+          class="font-heading text-2xl uppercase text-DGreenC-800 dark:text-TanC-50 mb-4"
+        >
+          Backgrounds & Dividers
+        </h2>
+        <div class="bg-TanC-200 dark:bg-DGreenC-500 p-6 rounded-lg shadow">
+          <h3 class="font-subheading text-DGreenC-800 dark:text-TanC-50 mb-2">
+            Secondary Background Area
+          </h3>
+          <p class="font-body text-DGreenC-800 dark:text-TanC-50">
+            This content is on a secondary background. The text color should
+            remain consistent with the primary text color for the current mode.
+          </p>
+        </div>
+        <div class="flex items-center justify-center my-8 space-x-4">
+          <p class="font-body text-DGreenC-800 dark:text-TanC-50">
+            Vertical Line Example:
+          </p>
+          <div class="w-1 h-24 bg-YellowC-600 dark:bg-YellowC-400"></div>
+        </div>
+      </section>
+
+      <hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
+
+      <!-- Color Palette Showcase -->
+      <section>
+        <h2
+          class="font-heading text-2xl uppercase text-DGreenC-800 dark:text-TanC-50 mb-4"
+        >
+          Color Palette
+        </h2>
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+        >
+          <div>
+            <div
+              class="w-full h-24 bg-DGreenC-800 dark:shadow-DGreenC-500 rounded-lg dark:shadow mb-2"
+            ></div>
+            <p
+              class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50"
+            >
+              DGreenC-800
+            </p>
+          </div>
+          <div>
+            <div
+              class="w-full h-24 bg-DGreenC-500 rounded-lg shadow mb-2"
+            ></div>
+            <p
+              class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50"
+            >
+              DGreenC-500
+            </p>
+          </div>
+          <div>
+            <div
+              class="w-full h-24 bg-TanC-50 dark:border-TanC-700 rounded-lg shadow shadow-TanC-200 mb-2"
+            ></div>
+            <p
+              class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50"
+            >
+              TanC-50
+            </p>
+          </div>
+          <div>
+            <div
+              class="w-full h-24 bg-TanC-200 dark:border-TanC-700 rounded-lg shadow mb-2"
+            ></div>
+            <p
+              class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50"
+            >
+              TanC-200
+            </p>
+          </div>
+          <div>
+            <div
+              class="w-full h-24 bg-YellowC-500 rounded-lg shadow mb-2"
+            ></div>
+            <p
+              class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50"
+            >
+              YellowC-500
+            </p>
+          </div>
+          <div>
+            <div
+              class="w-full h-24 bg-YellowC-600 rounded-lg shadow mb-2"
+            ></div>
+            <p
+              class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50"
+            >
+              YellowC-600
+            </p>
+          </div>
+          <div>
+            <div
+              class="w-full h-24 bg-YellowC-400 rounded-lg shadow mb-2"
+            ></div>
+            <p
+              class="font-body text-sm text-center text-DGreenC-800 dark:text-TanC-50"
+            >
+              YellowC-400
+            </p>
+          </div>
+          <!-- Add more colors as needed: e.g., neutral grays, success, error, warning specific shades -->
+        </div>
+      </section>
+
+      <hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
+
+      <!-- Card Component -->
+      <section>
+        <h2 class="font-heading text-2xl uppercase text-DGreen-800 dark:text-TanC-50 mb-6"> 
+          Card Components
+        </h2>
+        <p class="font-body text-DGreen-700 dark:text-TanC-300 mb-8 max-w-2xl"> 
+          Cards group related content and actions. Below are examples demonstrating different backgrounds, accents, and
+          actions, suitable for various content types like product summaries or feature highlights.
+        </p>
+      
+        <div class="grid md:grid-cols-2 gap-8"> 
+      
+          <!-- Card 1: Standard Card on Secondary Background -->
+          <div class="flex flex-col bg-TanC-200 dark:bg-DGreen-500 p-6 rounded-xl shadow-lg">
+            
+            <div class="flex-grow"> 
+              <h3 class="font-heading text-xl text-DGreen-800 dark:text-TanC-50 mb-2">
+                Standard Content Card
+              </h3>
+              <p class="font-body text-DGreen-800 dark:text-TanC-50 mb-6"> 
+                Ideal for general content blocks or summaries. Uses a secondary background for visual distinction from the
+                main page area. Content should be concise.
+              </p>
+            </div>
+            <a href="#card-action-1"
+              class="self-start font-subheading bg-YellowC-500 text-DGreen-800 hover:bg-YellowC-600 hover:text-TanC-50 dark:bg-YellowC-500 dark:text-DGreen-800 dark:hover:bg-YellowC-400 dark:hover:text-TanC-50 py-2 px-5 rounded-lg text-sm transition-colors duration-150">
+              
+              View Details
+            </a>
+          </div>
+      
+          <!-- Card 2: Accent Card on Primary Background -->
+          <div
+            class="flex flex-col bg-TanC-50 dark:bg-DGreen-800 p-6 rounded-xl shadow-xl border-2 border-YellowC-600 dark:border-YellowC-400">
+           
+            <div class="flex-grow">
+              <div class="flex items-center mb-3">
+                <svg class="h-6 w-6 text-YellowC-600 dark:text-YellowC-400 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h3 class="font-heading text-xl text-DGreen-800 dark:text-TanC-50">
+                  Highlighted Feature Card
+                </h3>
+              </div>
+              <p class="font-body text-DGreen-800 dark:text-TanC-50 mb-6">
+                Uses a primary background with an accent border and icon to draw attention. Suitable for key features,
+                announcements, or important calls to action.
+              </p>
+            </div>
+            <a href="#learn-more-2"
+              class="self-start font-body text-sm underline text-YellowC-600 hover:text-YellowC-700 dark:text-YellowC-400 dark:hover:text-YellowC-300 transition-colors duration-150">
+              Learn More »
+            </a>
+          </div>
+          
+          </div>
+          </section>
+
+
+
+        <!-- Image Banners & Containers -->
+        <section class="space-y-12"> 
+          <div>
+            <h2 class="font-heading text-2xl uppercase text-DGreen-800 dark:text-TanC-50 mb-6">
+              Full-Width Image Banner
+            </h2>
+            <p class="font-body text-DGreen-700 dark:text-TanC-300 mb-6 max-w-2xl">
+              This component is for a full-width image, often used as a page header, prominent section visual, or a separator.
+              It typically spans the entire available width.
+            </p>
+            
+            <div class="mt-4 overflow-hidden rounded-lg shadow-lg">
+              
+              <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="-mx-4 sm:-mx-6 lg:-mx-8 overflow-hidden rounded-lg shadow-lg">
+                  <img ... />
+                </div>
+              </div>
+              
+              <img src="Image/Banner_trummlager2.jpg" alt="Full-width banner showcasing the company's pipe storage"
+                class="w-full h-48 sm:h-64 md:h-80 object-cover object-center" /> 
+            </div>
+            <p class="font-body text-xs text-DGreen-600 dark:text-TanC-400 mt-2 italic">
+              Note: For true full-width bleed on a page with a constrained content container, negative margins might be needed
+              on the banner's wrapper.
+            </p>
+          </div>
+        
+          <hr class="border-DGreen-800 dark:border-TanC-50" />
+        
+          <div>
+            <h2 class="font-heading text-2xl uppercase text-DGreen-800 dark:text-TanC-50 mb-6">
+              Content Banners with Text
+            </h2>
+            <p class="font-body text-DGreen-700 dark:text-TanC-300 mb-8 max-w-2xl">
+              These components integrate text with imagery in creative ways, suitable for impactful headlines or artistic feature
+              highlights.
+            </p>
+          
+            <div class="grid md:grid-cols-2 gap-8">
+          
+              <!-- Banner Style 1: Text Overlay on Image -->
+              <div class="relative rounded-xl shadow-lg overflow-hidden group">
+                <h3
+                  class="font-subheading text-DGreen-800 dark:text-TanC-50 text-lg p-4 pb-0 text-center absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/30 via-black/10 to-transparent">
+                  Image with Text Overlay
+                </h3>
+                <div>
+                  <a href="#image-link-overlay" aria-label="View details for banner image with overlay"
+                    class="block focus:outline-none focus:ring-2 focus:ring-YellowC-500 focus:ring-offset-2 focus:ring-offset-TanC-50 dark:focus:ring-offset-DGreen-800 rounded-lg">
+                    <img src="Image/Banner_trummlager2.jpg" alt="Image banner with text overlay"
+                      class="w-full h-72 object-cover object-center rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:brightness-75" />
+                    <div
+                      class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out bg-black/40 rounded-lg">
+                      <h4 class="font-heading text-4xl text-TanC-50 mb-2 drop-shadow-lg">
+                        HK Vägtrummor
+                      </h4>
+                      <p class="font-body text-lg text-TanC-100 drop-shadow-md">
+                        Kvalitet för dina projekt.
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+          
+              <!-- Banner Style 2: Image-Filled Text (Knockout Effect) -->
+              <div
+                class="bg-TanC-200 dark:bg-DGreen-500 rounded-xl shadow-lg overflow-hidden p-6 flex flex-col items-center justify-center h-72">
+                <h3 class="font-subheading text-DGreen-800 dark:text-TanC-50 text-lg mb-4 text-center">
+                  Image-Filled Text (Knockout)
+                </h3>
+                <div class="font-heading uppercase text-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl bg-cover bg-center bg-no-repeat text-transparent bg-clip-text bg-[url('Image/Banner_trummlager2.jpg')] dark:brightness-110">
+                  VÄGTRUMMOR
+                </div>
+                <p class="font-body text-xs text-DGreen-600 dark:text-TanC-300 mt-3 text-center italic">
+                  (Uses <code>bg-clip-text</code> and <code>text-transparent</code>. Prefixes handled by build process.)
+                </p>
+              </div>
+            </div>
+            </div>
+        </section>
+
+
+
+      <hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
+
+      <!-- Table -->
+      <div
+        class="overflow-hidden rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md m-5"
+      >
+        <table
+          class="w-full border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body"
+        >
+          <thead class="bg-YellowC-500 text-DGreenC-800 dark:text-DGreenC-800">
+            <tr>
+              <th
+                scope="col"
+                class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4"
+              >
+                Plasttrummor
+              </th>
+              <th
+                scope="col"
+                class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right"
+              >
+                Pris
+              </th>
+              <th
+                scope="col"
+                class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4"
+              >
+                Mått
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500 border-t border-DGreenC-300 dark:border-DGreenC-500"
+          >
+            <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
+              <th
+                scope="row"
+                class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal"
+              >
+                <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
+                  <img
+                    class="h-full w-full rounded-md object-cover object-center"
+                    src="Image/Ptrumma.webp"
+                    alt="Bild på en 200s vägtrumma med muff"
+                  />
+                </div>
+                <div class="text-sm">
+                  <div class="font-medium text-DGreenC-700 dark:text-TanC-100">
+                    <span class="text-xl">200</span>
+                    <span class="text-xs sm:text-lg md:text-xl">Trumma</span>
+                  </div>
+                  <div class="text-DGreenC-500 dark:text-TanC-300">
+                    (inkl. muff)
+                  </div>
+                  <div
+                    class="product-stock font-medium text-DGreenC-700 dark:text-TanC-100 flex items-center gap-2 mt-1"
+                  >
+                    <span
+                      class="stock-indicator w-2 h-2 rounded-full bg-green-400 border border-green-600"
+                    ></span>
+                    Lager: 14st
+                  </div>
+                </div>
+              </th>
+              <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right">
+                <div class="text-sm">
+                  <div class="font-medium text-DGreenC-700 dark:text-TanC-100">
+                    1090 kr exkl. moms
+                  </div>
+                  <div class="text-DGreenC-500 dark:text-TanC-300">
+                    1362 kr inkl. moms
+                  </div>
+                </div>
+              </td>
+              <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4">
+                <div class="font-medium text-DGreenC-700 dark:text-TanC-100">
+                  Längd: 6m
+                </div>
+                <div class="text-DGreenC-700 dark:text-TanC-100">
+                  InnerMått: 200mm
+                </div>
+                <div class="text-DGreenC-700 dark:text-TanC-100">
+                  YtterMått: 227mm
+                </div>
+                <div class="text-DGreenC-700 dark:text-TanC-100">
+                  Vikt: 15kg
+                </div>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
+              <th
+                scope="row"
+                class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal"
+              >
+                <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
+                  <img
+                    class="h-full w-full rounded-md object-cover object-center"
+                    src="Image/Ptrumma.webp"
+                    alt="Bild på en 800s eller större vägtrumma"
+                  />
+                </div>
+                <div class="text-sm">
+                  <div class="font-medium text-DGreenC-700 dark:text-TanC-100">
+                    <span class="text-xl">800</span>
+                    <span class="text-xs sm:text-lg md:text-xl"
+                      >och större</span
+                    >
+                  </div>
+                  <div class="text-DGreenC-500 dark:text-TanC-300">
+                    (inkl. muff)
+                  </div>
+                  <div
+                    class="product-stock font-medium text-DGreenC-700 dark:text-TanC-100 flex items-center gap-2 mt-1"
+                  >
+                    <span
+                      class="stock-indicator w-2 h-2 rounded-full bg-red-500 border border-red-700"
+                    ></span>
+                    Beställningsvara
+                  </div>
+                </div>
+              </th>
+              <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right">
+                <div class="font-medium text-DGreenC-700 dark:text-TanC-100">
+                  Offert
+                </div>
+              </td>
+              <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4">
+                <div class="font-medium text-DGreenC-700 dark:text-TanC-100">
+                  Längd: 6m / 8m
+                </div>
+                <div class="text-DGreenC-700 dark:text-TanC-100">
+                  InnerMått: 800mm+
+                </div>
+                <div class="text-DGreenC-700 dark:text-TanC-100">
+                  YtterMått: 880mm+
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="border-DGreenC-800 dark:border-TanC-50 my-6" />
+
+      <!-- Logo Usage -->
+      <section>
+        <h2
+          class="font-heading text-2xl uppercase text-DGreenC-800 border-DGreenC-800 dark:text-TanC-50 mb-4"
+        >
+          Logo Usage
+        </h2>
+        <p class="font-body text-sm text-DGreen-700 dark:text-TanC-300 mb-6 max-w-xl"> 
+          The primary logo lockup (Alt 1) is preferred for most applications. Alt 2 provides a stacked
+          version for contexts where horizontal space is limited.  </p>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div
+            class="bg-TanC-50 dark:bg-DGreenC-800 p-6 rounded-lg shadow shadow-DGreenC-500 dark:shadow-TanC-200 text-center"
+          >
+            <h3 class="font-subheading text-DGreenC-800 dark:text-TanC-50 mb-2">
+              Logo on Primary BG, alt 1
+            </h3>
+            <div class="inline-flex items-center justify-center space-x-3">
+              <div class="flex items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xml:space="preserve"
+                  viewBox="-60 -60 120 120"
+                  width="40"
+                  height="40"
+                  class="fill-DGreen-800 dark:fill-TanC-50"
+                >
+                  <g
+                    stroke="currentColor"
+                    class="text-DGreen-800 dark:text-TanC-50"
+                  >
+                    <circle r="58" fill="none" stroke-width="4" />
+                    <path
+                      fill="none"
+                      stroke-width="6.1"
+                      d="M-36.508-44.93v89.853"
+                    />
+                    <path
+                      fill="currentColor"
+                      stroke-width="6.1"
+                      d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <span
+                class="self-center text-2xl font-heading uppercase text-DGreen-800 dark:text-TanC-50"
+              >
+                Vägtrummor
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="bg-TanC-50 dark:bg-DGreenC-800 p-6 rounded-lg shadow shadow-DGreenC-500 dark:shadow-TanC-200 text-center"
+          >
+            <h3 class="font-subheading text-DGreenC-800 dark:text-TanC-50 mb-2">
+              Logo on Primary BG, Alt 2
+            </h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xml:space="preserve"
+              viewBox="-60 -60 120 120"
+              width="40"
+              height="40"
+              class="fill-DGreenC-800 dark:fill-TanC-50 inline-block"
+            >
+              <g
+                stroke="currentColor"
+                class="text-DGreenC-800 dark:text-TanC-50"
+              >
                 <circle r="58" fill="none" stroke-width="4" />
-                <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
-                <path fill="currentColor" stroke-width="6.1"
-                  d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447" />
+                <path
+                  fill="none"
+                  stroke-width="6.1"
+                  d="M-36.508-44.93v89.853"
+                />
+                <path
+                  fill="currentColor"
+                  stroke-width="6.1"
+                  d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447"
+                />
               </g>
             </svg>
+            <p
+              class="font-heading text-lg uppercase mt-2 text-DGreenC-800 dark:text-TanC-50"
+            >
+              Vägtrummor
+            </p>
           </div>
-          <span class="self-center text-2xl font-heading uppercase text-DGreenC-800 dark:text-TanC-50">Vägtrummor
-          </span>
-        </a>
-      </div>
-      <div class="lg:w-2/3 flex justify-center">
-        <div class="grid grid-cols-2 text-sm gap-x-5 gap-y-8 sm:grid-cols-4 sm:gap-x-5">
-          <div class="space-y-3">
-            <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide">
-              <strong>Produkter</strong>
-            </h3>
-            <ul class="space-y-1">
-              <li>
-                <a rel="noopener noreferrer " href="Plasticpipes.html"
-                  class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105">Plasttrummor</a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="Steelpipes.html"
-                  class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105">Ståltrummor</a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="Archculverts.html"
-                  class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105">Valvbågar</a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="Geotextile.html"
-                  class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105">Markduk</a>
-              </li>
-            </ul>
-          </div>
-          <div class="space-y-3">
-            <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide">
-              <strong>Address</strong>
-            </h3>
-            <ul class="space-y-1">
-              <li>
-                <a href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö" target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105">By
-                  120</a>
-              </li>
-              <li>
-                <a href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö" target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105">893
-                  96 Sidensjö</a>
-              </li>
-            </ul>
-          </div>
-          <div class="space-y-3">
-            <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide">
-              <strong>Kontakt</strong>
-            </h3>
-            <ul class="space-y-1">
-              <li>
-                <a rel="noopener noreferrer" target="_blank"
-                  href="https://www.linkedin.com/in/hugo-kjellsson-2bb0011b6/"
-                  class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105">Hugo
-                  Kjellsson</a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" target="_blank" href="tel:+46703909051"
-                  class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105">070-390
-                  90 51</a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" target="_blank" href="mailto:hugo@kjellsson.nu"
-                  class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105">hugo@kjellsson.nu</a>
-              </li>
-            </ul>
-          </div>
-          <div class="space-y-3">
-            <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide">
-              <strong>Social media</strong>
-            </h3>
-            <div class="flex justify-start space-x-3">
-              <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/profile.php?id=61564964080791"
-                title="Facebook"
-                class="flex items-center p-1 text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-110 dark:hover:scale-110">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current">
+        </div>
+      </section>
+
+
+    </div>
+
+    <footer
+      class="px-4 divide-y border-t bg-TanC-200 dark:bg-DGreenC-500 border-DGreenC-800 dark:border-TanC-50"
+    >
+      <div
+        class="font-body container flex flex-col justify-center items-center py-10 mx-auto space-y-8"
+      >
+        <div class="flex justify-center">
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            class="flex justify-center space-x-3 items-center"
+          >
+            <div class="flex items-center justify-center w-11 h-11">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                viewBox="-60 -60 120 120"
+                width="40"
+                height="40"
+                class="fill-DGreenC-800 dark:fill-TanC-50"
+              >
+                <g
+                  stroke="currentColor"
+                  class="text-DGreenC-800 dark:text-TanC-50"
+                >
+                  <circle r="58" fill="none" stroke-width="4" />
                   <path
-                    d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z">
-                  </path>
-                </svg>
-              </a>
+                    fill="none"
+                    stroke-width="6.1"
+                    d="M-36.508-44.93v89.853"
+                  />
+                  <path
+                    fill="currentColor"
+                    stroke-width="6.1"
+                    d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447"
+                  />
+                </g>
+              </svg>
+            </div>
+            <span
+              class="self-center text-2xl font-heading uppercase text-DGreenC-800 dark:text-TanC-50"
+              >Vägtrummor
+            </span>
+          </a>
+        </div>
+        <div class="lg:w-2/3 flex justify-center">
+          <div
+            class="grid grid-cols-2 text-sm gap-x-5 gap-y-8 sm:grid-cols-4 sm:gap-x-5"
+          >
+            <div class="space-y-3">
+              <h3
+                class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"
+              >
+                <strong>Produkter</strong>
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a
+                    rel="noopener noreferrer "
+                    href="Plasticpipes.html"
+                    class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105"
+                    >Plasttrummor</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    href="Steelpipes.html"
+                    class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105"
+                    >Ståltrummor</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    href="Archculverts.html"
+                    class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105"
+                    >Valvbågar</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    href="Geotextile.html"
+                    class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105"
+                    >Markduk</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3
+                class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"
+              >
+                <strong>Address</strong>
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105"
+                    >By 120</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105"
+                    >893 96 Sidensjö</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3
+                class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"
+              >
+                <strong>Kontakt</strong>
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://www.linkedin.com/in/hugo-kjellsson-2bb0011b6/"
+                    class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105"
+                    >Hugo Kjellsson</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="tel:+46703909051"
+                    class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105"
+                    >070-390 90 51</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="mailto:hugo@kjellsson.nu"
+                    class="text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-105 dark:hover:scale-105"
+                    >hugo@kjellsson.nu</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3
+                class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"
+              >
+                <strong>Social media</strong>
+              </h3>
+              <div class="flex justify-start space-x-3">
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.facebook.com/profile.php?id=61564964080791"
+                  title="Facebook"
+                  class="flex items-center p-1 text-DGreenC-800 hover:text-DGreenC-500 dark:text-TanC-50 dark:hover:text-TanC-200 transition duration-200 ease-in-out transform hover:scale-110 dark:hover:scale-110"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 32 32"
+                    class="w-5 h-5 fill-current"
+                  >
+                    <path
+                      d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="py-4 text-sm text-center text-DGreenC-800 dark:text-TanC-50">
-      © 2025 HK Vägtrummor. All rights reserved.
-    </div>
-  </footer>
-</body>
-
+      <div class="py-4 text-sm text-center text-DGreenC-800 dark:text-TanC-50">
+        © 2025 HK Vägtrummor. All rights reserved.
+      </div>
+    </footer>
+  </body>
 </html>
