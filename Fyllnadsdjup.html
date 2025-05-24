@@ -41,10 +41,9 @@
 
 </head>
 
-  <!-- Samma body-klasser som about.html -->
-  <body class="font-body dark:bg-DGreenC-100 bg-DGreenC-800 dark:text-DGreenC-800 text-DGreenC-100">
 
-  <!-- *** KOPIERA HELA <nav>-ELEMENTET FRÅN about.html HÄR *** -->
+
+  
   <!-- Se till att aktiv länk (underline klass) eventuellt flyttas från "Om HK" till "Vanliga Frågor" om denna sida hör dit -->
   <nav id="header" class="font-subheading w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2">
     <div class="w-full flex items-center justify-between px-6 py-2 relative">
@@ -184,75 +183,74 @@
     </div>
   </div>
 </nav>
-    <!-- /Slut på kopierad Nav -->
+    
+<body class="font-body bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-800 dark:text-TanC-50 leading-relaxed text-base sm:text-base md:text-lg">
 
+  <section id="fyllnadsdjup-info" class="px-6 py-12"> 
 
-    <!-- Section med samma klasser som about.html -->
-    <section id="fyllnadsdjup-info" class="px-6 py-15 bg-YellowC-50 dark:bg-DGreenC-800 dark:text-DGreenC-100 text-DGreenC-800">
+    <!-- Title Section -->
+    <div class="text-center">
+      <h1 class="font-heading uppercase text-DGreenC-800 dark:text-TanC-50 text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">Hur djupt bör vägtrumman grävas ner för att hålla?</h1>
+      <p class="font-body text-DGreenC-800 dark:text-TanC-50 text-lg sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-6">
+        En fördjupning kring rekommenderat fyllnadsdjup för vägtrummor, samspelet mellan rör och mark, och de faktorer som påverkar hållfastheten.
+      </p>
+    </div>
 
-      <!-- Title Section - liknande about.html -->
-      <div class="text-center">
-        <h1 class="font-heading text-4xl font-extrabold mb-6">Hur djupt bör vägtrumman grävas ner för att hålla?</h1>
-        <p class="max-w-3xl mx-auto text-lg leading-relaxed mb-6">
-          En fördjupning kring rekommenderat fyllnadsdjup för vägtrummor, samspelet mellan rör och mark, och de faktorer som påverkar hållfastheten.
+    <!-- Content Sections -->
+    <div class="mt-10 space-y-8 max-w-3xl mx-auto">
+
+      <!-- Avsnitt 1: Problemet och rekommendationer -->
+      <div>
+        <p class="font-body text-DGreenC-800 dark:text-TanC-50">
+          Detta är en fråga jag själv brottats med, och det är svårt att hitta en enkel, definitiv siffra. Man hör ofta om en allmän rekommendation på <strong class="font-semibold text-YellowC-600 dark:text-YellowC-400">60 cm överfyllnad</strong> (från trummans högsta punkt till vägbanan), som till exempel <a href="https://www.skogskunskap.se/vagar-i-skogen/drift-och-underhall/upprustning-och-ombyggnad/byta-trummor/#:~:text=Normalt%20rekommenderas%20minst%2060%20cm%20%C3%B6verfyllnad.%20En%20sedimenteringsgrop,Trumman%20b%C3%B6r%20ha%20ett%20fall%20p%C3%A5%201%E2%80%934%20cm/m." class="font-medium text-YellowC-600 hover:text-YellowC-500 dark:text-YellowC-500 dark:hover:text-YellowC-400 hover:underline" target="_blank" rel="noopener noreferrer">Skogskunskap</a> nämner för skogsbilvägar. Samtidigt är det svårt att hitta just den regeln som generell sanning i Trafikverkets bredare dokumentation för alla vägtyper. Varför är det så?
+        </p>
+        <p class="font-body text-DGreenC-800 dark:text-TanC-50 mt-4">
+          Svaret ligger i att en vägtrumma, speciellt en flexibel sådan av plast (som <code class="bg-TanC-200 dark:bg-DGreenC-500 px-1 rounded font-mono text-sm text-DGreenC-800 dark:text-TanC-50">SN8</code>-rör) eller korrugerad plåt, inte bär lasten helt själv. Den ingår i ett komplext samspel med den omgivande marken. Överfyllnadens primära syfte är att sprida ut koncentrerade laster (från t.ex. fordonshjul) och att skapa förutsättningar för jorden att hjälpa till att bära lasten. Målet är att trummans deformation (nedböjning) inte ska överstiga ca <strong class="font-semibold text-YellowC-600 dark:text-YellowC-400">5-6%</strong> av dess diameter.
         </p>
       </div>
 
-      <!-- Content Sections - liknande about.html -->
-      <div class="mt-10 space-y-8 max-w-3xl mx-auto">
+      <!-- Avsnitt 2: Kan man ha mindre? -->
+      <div>
+        <h2 class="font-subheading text-DGreenC-800 dark:text-YellowC-400 text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold mb-4 mt-8">
+          Kan man då klara sig med mindre än 60 cm?
+        </h2>
+        <p class="font-body text-DGreenC-800 dark:text-TanC-50">
+          Ja, men det beror helt på förutsättningarna. Vid låg trafiklast (som på en del skogsvägar) och om man undviker körning när marken är som blötast (då den ger sämre stöd), kan det vara möjligt. En torrare, fastare mark ger bättre mothåll mot rörets sidor, vilket hjälper det att motstå deformation när det belastas ovanifrån.
+        </p>
+      </div>
 
-        <!-- Avsnitt 1: Problemet och rekommendationer -->
-        <div>
-          <p class="leading-relaxed">
-            Detta är en fråga jag själv brottats med, och det är svårt att hitta en enkel, definitiv siffra. Man hör ofta om en allmän rekommendation på <strong class="font-semibold">60 cm överfyllnad</strong> (från trummans högsta punkt till vägbanan), som till exempel <a href="https://www.skogskunskap.se/vagar-i-skogen/drift-och-underhall/upprustning-och-ombyggnad/byta-trummor/#:~:text=Normalt%20rekommenderas%20minst%2060%20cm%20%C3%B6verfyllnad.%20En%20sedimenteringsgrop,Trumman%20b%C3%B6r%20ha%20ett%20fall%20p%C3%A5%201%E2%80%934%20cm/m." class="text-yellow-500 underline">Skogskunskap</a> nämner för skogsbilvägar. Samtidigt är det svårt att hitta just den regeln som generell sanning i Trafikverkets bredare dokumentation för alla vägtyper. Varför är det så?
-          </p>
-          <p class="leading-relaxed mt-4">
-            Svaret ligger i att en vägtrumma, speciellt en flexibel sådan av plast (som <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">SN8</code>-rör) eller korrugerad plåt, inte bär lasten helt själv. Den ingår i ett komplext samspel med den omgivande marken. Överfyllnadens primära syfte är att sprida ut koncentrerade laster (från t.ex. fordonshjul) och att skapa förutsättningar för jorden att hjälpa till att bära lasten. Målet är att trummans deformation (nedböjning) inte ska överstiga ca <strong class="font-semibold">5-6%</strong> av dess diameter.
-          </p>
-        </div>
-
-        <!-- Avsnitt 2: Kan man ha mindre? -->
-        <div>
-          <h2 class="font-subheading text-2xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-4 mt-8">
-            Kan man då klara sig med mindre än 60 cm?
+      <!-- Avsnitt 3: Egna uppskattningar -->
+      <div>
+          <h2 class="font-subheading text-DGreenC-800 dark:text-YellowC-400 text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold mb-4 mt-8">
+              Mina Egna Uppskattningar för SN8 rör (OBS! Endast Teoretiska Indikationer!)
           </h2>
-          <p class="leading-relaxed">
-            Ja, men det beror helt på förutsättningarna. Vid låg trafiklast (som på en del skogsvägar) och om man undviker körning när marken är som blötast (då den ger sämre stöd), kan det vara möjligt. En torrare, fastare mark ger bättre mothåll mot rörets sidor, vilket hjälper det att motstå deformation när det belastas ovanifrån.
+          <p class="font-body text-DGreenC-800 dark:text-TanC-50">
+              Ur ett geometriskt perspektiv kan man resonera kring hur djupt en vägtrumma bör grävas ned, genom att beakta hur belastningen fördelas genom fyllningen ovanpå trumman. Tänk dig att belastningen från fordon och mark ovanför trumman sprids nedåt som en kon, där konens basdiameter ökar med djupet. För att minimera deformation och säkerställa att trumman håller, vill man att denna belastningskon vid trummans nivå har minst samma diameter som trummans ytterdiameter.
           </p>
-        </div>
+          <p class="font-body text-DGreenC-800 dark:text-TanC-50 mt-4">
+              Detta resonemang leder fram till en enkel geometrisk formel för att uppskatta den minsta fyllnadshöjden över trumman för att få lasten att spridas jämt över trumman:
+          </p>
+          <!-- Formel Block -->
+          <div class="bg-TanC-200 dark:bg-DGreenC-500 border border-YellowC-500 p-4 rounded-md my-4 font-mono text-sm text-DGreenC-800 dark:text-TanC-50 overflow-x-auto shadow-md">
+              Minsta fyllnadshöjd = ( (D<sub>ytter</sub> / 2) / tan(konens vinkel / 2) ) - (D<sub>ytter</sub> / 2)
+          </div>
+          <!-- Disclaimer Block -->
+          <div class="bg-YellowC-500/20 dark:bg-YellowC-400/20 border border-YellowC-500 text-YellowC-700 dark:text-YellowC-300 p-4 rounded-md my-4 text-sm">
+              <strong class="font-semibold">OBS!</strong> Det är mitt sätt att se på överfyllnad på mindre trummor upp till 400 mm i diameter. Observera att dessa beräkningar inte ger några garantier eller officiella rekommendationer utan mer som en bodepraktika!
+          </div>
 
-        <!-- Avsnitt 3: Egna uppskattningar -->
-        <div>
-            <h2 class="font-subheading text-2xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-4 mt-8">
-                Mina Egna Uppskattningar för SN8 rör (OBS! Endast Teoretiska Indikationer!)
-            </h2>
-            <p class="leading-relaxed">
-                Ur ett geometriskt perspektiv kan man resonera kring hur djupt en vägtrumma bör grävas ned, genom att beakta hur belastningen fördelas genom fyllningen ovanpå trumman. Tänk dig att belastningen från fordon och mark ovanför trumman sprids nedåt som en kon, där konens basdiameter ökar med djupet. För att minimera deformation och säkerställa att trumman håller, vill man att denna belastningskon vid trummans nivå har minst samma diameter som trummans ytterdiameter.
-            </p>
-            <p class="leading-relaxed mt-4">
-                Detta resonemang leder fram till en enkel geometrisk formel för att uppskatta den minsta fyllnadshöjden över trumman för att få lasten att spridas jämt över trumman:
-            </p>
-            <!-- Formel Block - Stajlad med Tailwind -->
-            <div class="bg-YellowC-100 dark:bg-DGreenC-700 border border-YellowC-300 dark:border-DGreenC-600 p-4 rounded-md my-4 font-mono text-sm overflow-x-auto">
-                Minsta fyllnadshöjd = ( (D<sub>ytter</sub> / 2) / tan(konens vinkel / 2) ) - (D<sub>ytter</sub> / 2)
-            </div>
-            <!-- Disclaimer Block - Stajlad med Tailwind -->
-            <div class="bg-yellow-100 dark:bg-yellow-900 border border-yellow-300 dark:border-yellow-700 text-yellow-800 dark:text-yellow-200 p-4 rounded-md my-4 text-sm">
-                <strong>OBS!</strong> Det är mitt sätt att se på överfyllnad på mindre trummor upp till 400 mm i diameter. Observera att dessa beräkningar inte ger några garantier eller officiella rekommendationer utan mer som en bodepraktika!
-            </div>
-
-            <h3 class="font-subheading text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3 mt-6">
-                Exempel på uppskattningar för olika trumdiametrar:
-            </h3>
-            <ul class="list-disc pl-5 space-y-2 leading-relaxed">
-                <li><strong>Ø200 mm:</strong> Minsta fyllnadshöjd kan vara cirka 0,2 - 0,31 m.</li>
-                <li><strong>Ø300 mm:</strong> Minsta fyllnadshöjd kan vara cirka 0,3 - 0,46 m.</li>
-                <li><strong>Ø400 mm:</strong> Minsta fyllnadshöjd kan vara cirka 0,4 - 0,62 m.</li>
-            </ul>
-            <p class="leading-relaxed mt-4">
-                Det är viktigt att förstå dessa uppskattningar korrekt, och om det finns tillräckligt med material bör man alltid sträva efter att ha <strong class="font-semibold">minst 0,6 m fyllning</strong> oavsett trummans storlek.
-            </p>
-        </div>
+          <h3 class="font-subheading text-DGreenC-800 dark:text-YellowC-400 text-lg sm:text-lg md:text-xl font-semibold mb-3 mt-6">
+              Exempel på uppskattningar för olika trumdiametrar:
+          </h3>
+          <ul class="list-disc pl-5 space-y-2 font-body text-DGreenC-800 dark:text-TanC-50">
+              <li><strong class="font-semibold text-YellowC-600 dark:text-YellowC-400">Ø200 mm:</strong> Minsta fyllnadshöjd kan vara cirka 0,2 - 0,31 m.</li>
+              <li><strong class="font-semibold text-YellowC-600 dark:text-YellowC-400">Ø300 mm:</strong> Minsta fyllnadshöjd kan vara cirka 0,3 - 0,46 m.</li>
+              <li><strong class="font-semibold text-YellowC-600 dark:text-YellowC-400">Ø400 mm:</strong> Minsta fyllnadshöjd kan vara cirka 0,4 - 0,62 m.</li>
+          </ul>
+          <p class="font-body text-DGreenC-800 dark:text-TanC-50 mt-4">
+              Det är viktigt att förstå dessa uppskattningar korrekt, och om det finns tillräckligt med material bör man alltid sträva efter att ha <strong class="font-semibold text-YellowC-600 dark:text-YellowC-400">minst 0,6 m fyllning</strong> oavsett trummans storlek.
+          </p>
+      </div>
 
 
 
