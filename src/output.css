@@ -164,8 +164,9 @@
     --color-YellowC-900: #332805;
     --color-GreenC-500: #606c38;
     --color-GreenC-600: #4e572d;
-    --color-GreenC-700: #394021;
     --color-RedC-400: #de4a4a;
+    --color-RedC-500: #cf2626;
+    --color-RedC-600: #a41e1e;
     --color-RedC-700: #7d1717;
     --color-BlueC-600: #4780a3;
     --color-BrownC-400: #9c8c7d;
@@ -173,19 +174,17 @@
     --color-TanC-100: #eae1d7;
     --color-TanC-200: #e3d7c9;
     --color-TanC-300: #dbcbb8;
-    --color-TanC-500: #c7af93;
+    --color-TanC-400: #d2bea8;
     --color-TanC-600: #bda07f;
     --color-TanC-700: #af8c64;
     --color-DGreenC-50: #efeeeb;
     --color-DGreenC-100: #dfded8;
     --color-DGreenC-200: #c1bfb3;
     --color-DGreenC-300: #a29d8b;
-    --color-DGreenC-400: #7f7a67;
     --color-DGreenC-500: #595648;
     --color-DGreenC-600: #474439;
     --color-DGreenC-700: #36342b;
     --color-DGreenC-800: #25231e;
-    --color-DGreenC-900: #11100e;
     --color-DGreenC-950: #080807;
   }
 }
@@ -397,9 +396,6 @@
   .mx-4 {
     margin-inline: calc(var(--spacing) * 4);
   }
-  .mx-5 {
-    margin-inline: calc(var(--spacing) * 5);
-  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -474,6 +470,9 @@
   }
   .mr-4 {
     margin-right: calc(var(--spacing) * 4);
+  }
+  .mb-0 {
+    margin-bottom: calc(var(--spacing) * 0);
   }
   .mb-1 {
     margin-bottom: calc(var(--spacing) * 1);
@@ -571,8 +570,17 @@
   .h-48 {
     height: calc(var(--spacing) * 48);
   }
+  .h-50 {
+    height: calc(var(--spacing) * 50);
+  }
+  .h-70 {
+    height: calc(var(--spacing) * 70);
+  }
   .h-72 {
     height: calc(var(--spacing) * 72);
+  }
+  .h-80 {
+    height: calc(var(--spacing) * 80);
   }
   .h-\[80px\] {
     height: 80px;
@@ -643,8 +651,8 @@
   .max-w-5xl {
     max-width: var(--container-5xl);
   }
-  .max-w-6xl {
-    max-width: var(--container-6xl);
+  .max-w-full {
+    max-width: 100%;
   }
   .max-w-xl {
     max-width: var(--container-xl);
@@ -824,11 +832,6 @@
       border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
     }
   }
-  .divide-DGreenC-200 {
-    :where(& > :not(:last-child)) {
-      border-color: var(--color-DGreenC-200);
-    }
-  }
   .divide-DGreenC-300 {
     :where(& > :not(:last-child)) {
       border-color: var(--color-DGreenC-300);
@@ -901,9 +904,6 @@
   .border-RedC-700 {
     border-color: var(--color-RedC-700);
   }
-  .border-YellowC-300 {
-    border-color: var(--color-YellowC-300);
-  }
   .border-YellowC-500 {
     border-color: var(--color-YellowC-500);
   }
@@ -919,9 +919,6 @@
   .border-yellow-300 {
     border-color: var(--color-yellow-300);
   }
-  .bg-DGreenC-50 {
-    background-color: var(--color-DGreenC-50);
-  }
   .bg-DGreenC-100 {
     background-color: var(--color-DGreenC-100);
   }
@@ -936,12 +933,6 @@
   }
   .bg-TanC-200 {
     background-color: var(--color-TanC-200);
-  }
-  .bg-YellowC-50 {
-    background-color: var(--color-YellowC-50);
-  }
-  .bg-YellowC-100 {
-    background-color: var(--color-YellowC-100);
   }
   .bg-YellowC-400 {
     background-color: var(--color-YellowC-400);
@@ -1107,9 +1098,6 @@
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
   }
-  .py-15 {
-    padding-block: calc(var(--spacing) * 15);
-  }
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
   }
@@ -1207,10 +1195,6 @@
   .text-\[1\.1rem\] {
     font-size: 1.1rem;
   }
-  .leading-7 {
-    --tw-leading: calc(var(--spacing) * 7);
-    line-height: calc(var(--spacing) * 7);
-  }
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
@@ -1266,9 +1250,6 @@
   .whitespace-nowrap {
     white-space: nowrap;
   }
-  .text-BlueC-600 {
-    color: var(--color-BlueC-600);
-  }
   .text-DGreenC-100 {
     color: var(--color-DGreenC-100);
   }
@@ -1283,6 +1264,12 @@
   }
   .text-DGreenC-800 {
     color: var(--color-DGreenC-800);
+  }
+  .text-RedC-500 {
+    color: var(--color-RedC-500);
+  }
+  .text-RedC-600 {
+    color: var(--color-RedC-600);
   }
   .text-TanC-50 {
     color: var(--color-TanC-50);
@@ -1325,12 +1312,6 @@
   }
   .text-white {
     color: var(--color-white);
-  }
-  .text-yellow-500 {
-    color: var(--color-yellow-500);
-  }
-  .text-yellow-800 {
-    color: var(--color-yellow-800);
   }
   .uppercase {
     text-transform: uppercase;
@@ -1964,11 +1945,6 @@
       margin-top: calc(var(--spacing) * 0);
     }
   }
-  .lg\:mt-8 {
-    @media (width >= 64rem) {
-      margin-top: calc(var(--spacing) * 8);
-    }
-  }
   .lg\:mb-0 {
     @media (width >= 64rem) {
       margin-bottom: calc(var(--spacing) * 0);
@@ -1992,11 +1968,6 @@
   .lg\:w-2\/3 {
     @media (width >= 64rem) {
       width: calc(2/3 * 100%);
-    }
-  }
-  .lg\:w-3\/4 {
-    @media (width >= 64rem) {
-      width: calc(3/4 * 100%);
     }
   }
   .lg\:grid-cols-3 {
@@ -2023,12 +1994,6 @@
     @media (width >= 64rem) {
       font-size: var(--text-2xl);
       line-height: var(--tw-leading, var(--text-2xl--line-height));
-    }
-  }
-  .lg\:text-3xl {
-    @media (width >= 64rem) {
-      font-size: var(--text-3xl);
-      line-height: var(--tw-leading, var(--text-3xl--line-height));
     }
   }
   .lg\:text-5xl {
@@ -2096,13 +2061,6 @@
       }
     }
   }
-  .dark\:divide-DGreenC-700 {
-    @media (prefers-color-scheme: dark) {
-      :where(& > :not(:last-child)) {
-        border-color: var(--color-DGreenC-700);
-      }
-    }
-  }
   .dark\:border-DGreenC-500 {
     @media (prefers-color-scheme: dark) {
       border-color: var(--color-DGreenC-500);
@@ -2111,11 +2069,6 @@
   .dark\:border-DGreenC-600 {
     @media (prefers-color-scheme: dark) {
       border-color: var(--color-DGreenC-600);
-    }
-  }
-  .dark\:border-DGreenC-700 {
-    @media (prefers-color-scheme: dark) {
-      border-color: var(--color-DGreenC-700);
     }
   }
   .dark\:border-TanC-50 {
@@ -2151,11 +2104,6 @@
   .dark\:border-green-600 {
     @media (prefers-color-scheme: dark) {
       border-color: var(--color-green-600);
-    }
-  }
-  .dark\:border-yellow-700 {
-    @media (prefers-color-scheme: dark) {
-      border-color: var(--color-yellow-700);
     }
   }
   .dark\:bg-DGreenC-100 {
@@ -2211,19 +2159,9 @@
       background-color: var(--color-gray-800);
     }
   }
-  .dark\:bg-gray-900 {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-gray-900);
-    }
-  }
   .dark\:bg-green-800 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-green-800);
-    }
-  }
-  .dark\:bg-yellow-900 {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-yellow-900);
     }
   }
   .dark\:from-DGreenC-700 {
@@ -2248,34 +2186,9 @@
       fill: var(--color-TanC-50);
     }
   }
-  .dark\:text-BlueC-600 {
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-BlueC-600);
-    }
-  }
-  .dark\:text-DGreenC-50 {
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-DGreenC-50);
-    }
-  }
   .dark\:text-DGreenC-100 {
     @media (prefers-color-scheme: dark) {
       color: var(--color-DGreenC-100);
-    }
-  }
-  .dark\:text-DGreenC-200 {
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-DGreenC-200);
-    }
-  }
-  .dark\:text-DGreenC-300 {
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-DGreenC-300);
-    }
-  }
-  .dark\:text-DGreenC-600 {
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-DGreenC-600);
     }
   }
   .dark\:text-DGreenC-800 {
@@ -2283,9 +2196,9 @@
       color: var(--color-DGreenC-800);
     }
   }
-  .dark\:text-GreenC-500 {
+  .dark\:text-RedC-400 {
     @media (prefers-color-scheme: dark) {
-      color: var(--color-GreenC-500);
+      color: var(--color-RedC-400);
     }
   }
   .dark\:text-TanC-50 {
@@ -2306,6 +2219,11 @@
   .dark\:text-TanC-300 {
     @media (prefers-color-scheme: dark) {
       color: var(--color-TanC-300);
+    }
+  }
+  .dark\:text-TanC-400 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-TanC-400);
     }
   }
   .dark\:text-YellowC-300 {
@@ -2346,11 +2264,6 @@
   .dark\:text-red-400 {
     @media (prefers-color-scheme: dark) {
       color: var(--color-red-400);
-    }
-  }
-  .dark\:text-yellow-200 {
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-yellow-200);
     }
   }
   .dark\:shadow {
