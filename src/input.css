@@ -2,17 +2,31 @@
 
 /* npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch  */
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat-100 900.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-100 900.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 
-
- @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap');
+ /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap');
 
 /* --- Your Custom Font Classes based on the image --- */
 
 .font-heading {
   
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   
 }
 
