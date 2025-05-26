@@ -35,10 +35,6 @@
     <link rel="shortcut icon" href="Image/HK-logo_liten5.png" />
     </head>
 
-  <body
-  
-    class="font-body dark:bg-DGreenC-100 bg-DGreenC-800 dark:text-DGreenC-800 text-DGreenC-100"
-  >
   <nav id="header" class="font-subheading w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2">
     <div class="w-full flex items-center justify-between px-6 py-2 relative">
       <!-- Logo -->
@@ -178,25 +174,33 @@
   </div>
 </nav>
 
-<main class="min-h-screen flex flex-col items-center justify-center text-center p-6">
+<body class="font-body bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-800 dark:text-TanC-50">
+
+  <main class="min-h-screen flex flex-col items-center justify-center text-center p-6">
     <!-- Huvudrubrik -->
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase text-YellowC-500 mb-4">
+    <h1
+      class="font-heading uppercase text-DGreenC-800 dark:text-TanC-50 text-4xl sm:text-5xl md:text-6xl lg:text-6xl mb-4">
       Ståltrummor
-      <span class="block sm:inline"> - Kommer Snart</span> <!-- Hanterar radbrytning på små skärmar -->
+      <span class="block sm:inline text-YellowC-600 dark:text-YellowC-400"> - Kommer Snart</span>
     </h1>
 
     <!-- Valfri extra text -->
-    <p class="text-lg text-YellowC-800 mb-8">
+    <p class="font-body text-DGreenC-700 dark:text-TanC-300 text-lg sm:text-xl md:text-xl mb-10">
       Produktsidan för våra ståltrummor är snart klar. Håll utkik!
     </p>
 
-    
+    <!-- Call Me Button - Adapted from reference -->
     <a href="tel:+46703909051"
-       class="px-6 py-3 bg-YellowC-600 text-white font-semibold rounded-lg animate-pulse shadow-md hover:bg-YellowC-700 transition duration-300 ease-in-out">
-       070-390 90 51
+      class="inline-flex border-2 border-YellowC-600 hover:border-YellowC-500 items-center gap-3 bg-TanC-50 dark:bg-DGreenC-800 text-YellowC-600 hover:bg-YellowC-500 dark:hover:bg-yellow-400 hover:text-TanC-50 dark:hover:text-DGreenC-800 dark:text-YellowC-500 hover:scale-110 pl-3 pr-5 py-2 rounded-[2rem] text-[1.1rem] md:text-[1.2rem] transition duration-300 ease-in-out transform shadow-lg dark:hover:shadow-DGreenC-500 hover:shadow-TanC-600 sm:w-auto justify-center overflow-hidden">
+      <img src="Image/PP_Hugo.webp" alt="Profilbild på Hugo Kjellsson"
+        class="flex-shrink-0 w-[68px] h-[80px] md:w-[80px] md:h-[100px] rounded-full object-cover transition duration-300 transform scale-150 -translate-x-2 object-left"
+        loading="lazy" />
+      <span class="text-center font-body ml-2">
+        070-390 90 51<br />Hugo Kjellsson
+      </span>
     </a>
 
-</main>
+    </main>
 
 
   

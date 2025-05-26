@@ -44,8 +44,6 @@
     <link rel="shortcut icon" href="Image/HK-logo_liten5.png" /> <!-- Anpassa sökväg -->
 
 </head>
-
-<body class="dark:bg-DGreenC-100 bg-DGreenC-800 dark:text-DGreenC-800 text-DGreenC-100 flex flex-col min-h-screen">
     <nav id="header" class="font-subheading w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2">
         <div class="w-full flex items-center justify-between px-6 py-2 relative">
             <!-- Logo -->
@@ -172,64 +170,76 @@
             </div>
         </div>
     </nav>
-
-    <!-- 404 Content Section -->
-    <main
-        class="flex-grow flex flex-col items-center justify-center bg-DGreenC-100 dark:bg-DGreenC-600 text-DGreenC-800 dark:text-DGreenC-100 py-12 md:py-18">
-        <div class="w-full max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 text-center">
-
-            <!-- Logo (optional, men kan vara bra för igenkänning) -->
-            <div class="w-full mb-8 md:mb-12">
-                <img src="Image/logo.webp" alt="HK Vägtrumma Logotyp" class="mx-auto h-auto w-48 md:w-64" />
-                <!-- Anpassa sökväg -->
-            </div>
-
-            <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl mb-2">
-                Error 404 
-            </h1>
-            <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl mb-6">
-                Sidan Hittades Inte
-            </h2>
-
-            <p class="font-body text-lg sm:text-xl md:text-2xl mb-10 max-w-2xl mx-auto">
-                Hoppsan! Det ser ut som att du har hamnat lite snett. Sidan du letar efter verkar inte finnas här, eller
-                så har den kanske flyttat på sig.
-            </p>
-
-            <p class="font-body text-lg sm:text-xl md:text-2xl mb-12 max-w-2xl mx-auto">
-                Ingen fara, här är några saker du kan göra:
-            </p>
-
-            <!-- Buttons Container -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10">
-
-                <!-- Till Startsidan Button -->
-                <a href="index.html" 
-                    class="inline-flex items-center justify-center gap-3 bg-YellowC-500 text-DGreenC-800
-                    hover:bg-YellowC-600 hover:text-DGreenC-950 hover:scale-105 px-8 py-4 rounded-lg text-[1.1rem]
-                    md:text-[1.2rem] transition duration-300 ease-in-out transform shadow-lg hover:shadow-DGreenC-600
-                    sm:w-auto font-body">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6 mr-2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M2.25 12l8.954-8.955a1.125 1.125 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5" />
-                    </svg>
-                    Till Startsidan
-                </a>
-
-                <!-- Se Produkter Button -->
-                <a href="Products.html" 
-                    class="inline-flex items-center justify-center gap-3 bg-YellowC-500 text-DGreenC-800
-                    hover:bg-YellowC-600 hover:text-DGreenC-950 hover:scale-105 px-8 py-4 rounded-lg text-[1.1rem]
-                    md:text-[1.2rem] transition duration-300 ease-in-out transform shadow-lg hover:shadow-DGreenC-600
-                    sm:w-auto font-body">
-                    
-                    Se Våra Produkter
-                </a>
-
-            </div>
-        </div> <!-- End Content Area -->
-    </main>
+    <body class="bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-800 dark:text-TanC-50 font-body flex flex-col min-h-screen">
+    
+        <!-- 404 Content Section -->
+        <main class="flex-grow flex flex-col items-center justify-center bg-TanC-50 dark:bg-DGreenC-800 py-12 md:py-18">
+            <div class="w-full max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    
+                <!-- Logo -->
+                <div class="w-full mb-8 md:mb-12 flex justify-center">
+                    <!-- Using the SVG logo from the reference for consistency -->
+                    <div class="inline-flex items-center justify-center space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="-60 -60 120 120" width="60"
+                            height="60" class="fill-DGreenC-800 dark:fill-TanC-50">
+                            <g stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-50">
+                                <circle r="58" fill="none" stroke-width="4" />
+                                <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
+                                <path fill="currentColor" stroke-width="6.1"
+                                    d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447" />
+                            </g>
+                        </svg>
+                        <span class="self-center text-4xl font-heading uppercase text-DGreenC-800 dark:text-TanC-50">
+                            Vägtrummor
+                        </span>
+                    </div>
+                    <!-- Original image tag commented out, replace above with your preferred logo style if Image/logo.webp is different -->
+                    <!-- <img src="Image/logo.webp" alt="HK Vägtrumma Logotyp" class="mx-auto h-auto w-48 md:w-64" /> -->
+                </div>
+    
+                <h1
+                    class="font-heading uppercase text-DGreenC-800 dark:text-TanC-50 text-4xl sm:text-4xl md:text-5xl lg:text-6xl mb-2">
+                    Error 404
+                </h1>
+                <h2
+                    class="font-subheading text-DGreenC-800 dark:text-TanC-50 text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl mb-6">
+                    Sidan Hittades Inte
+                </h2>
+    
+                <p
+                    class="font-body text-DGreenC-800 dark:text-TanC-50 text-lg sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                    Hoppsan! Det ser ut som att du har hamnat lite snett. Sidan du letar efter verkar inte finnas här, eller
+                    så har den kanske flyttat på sig.
+                </p>
+    
+                <p
+                    class="font-body text-DGreenC-800 dark:text-TanC-50 text-lg sm:text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                    Ingen fara, här är några saker du kan göra:
+                </p>
+    
+                <!-- Buttons Container -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
+    
+                    <!-- Till Startsidan Button -->
+                    <a href="index.html"
+                        class="font-subheading bg-YellowC-500 text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 py-3 px-6 rounded-xl shadow hover:shadow-md transition-all duration-200 ease-in-out inline-flex items-center justify-center text-base md:text-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-5 h-5 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 12l8.954-8.955a1.125 1.125 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5" />
+                        </svg>
+                        Till Startsidan
+                    </a>
+    
+                    <!-- Se Produkter Button -->
+                    <a href="Products.html"
+                        class="font-subheading bg-YellowC-500 text-DGreenC-800 hover:bg-YellowC-600 hover:text-TanC-50 py-3 px-6 rounded-xl shadow hover:shadow-md transition-all duration-200 ease-in-out inline-flex items-center justify-center text-base md:text-lg">
+                        Se Våra Produkter
+                    </a>
+    
+                </div>
+            </div> <!-- End Content Area -->
+            </main>
     <!-- End 404 Content Section -->
 
     <footer class="px-4 divide-y border-t bg-TanC-200 dark:bg-DGreenC-500 border-DGreenC-800 dark:border-TanC-50">
