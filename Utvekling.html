@@ -970,13 +970,41 @@
                 scope="row"
                 class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal"
               >
-                <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
-                  <img
-                    class="h-full w-full rounded-md object-cover object-center"
-                    src="Image/Ptrumma.webp"
-                    alt="Bild på en 200s vägtrumma med muff"
-                  />
+              <!-- Small Image Trigger -->
+              <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
+                <a href="#lightbox-ptrumma"
+                  class="group relative h-20 w-20 block cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-200 rounded-md">
+                  <img class="h-full w-full rounded-md object-cover object-right" src="Image/Ptrumma.webp"
+                    alt="Bild på en 200s vägtrumma med muff, klicka för större bild" />
+                  <!-- Optional: Overlay with an icon on hover to indicate "enlarge" -->
+                  <div
+                    class="absolute inset-0 bg-transparent group-hover:bg-black/40 flex items-center justify-center transition-all duration-200 rounded-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fdf9ec"
+                      class="w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                    </svg>
+                  </div>
+                </a>
+              
+                <!-- Lightbox Container (Initially Hidden) -->
+                <div id="lightbox-ptrumma"
+                  class="hidden target:flex fixed inset-0 z-50 bg-black/80 items-center justify-center p-4 sm:p-8 transition-opacity duration-300">
+                  <div class="relative bg-TanC-50 dark:bg-DGreenC-800 p-2 rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh]">
+                    <!-- The Larger Image -->
+                    <img class="block w-full max-h-[calc(90vh-4rem)] object-contain rounded" src="Image/Ptrumma.webp"
+                      alt="Stor bild på en 800s eller större vägtrumma från HK vägtrummors lager" />
+                    <!-- Close Button -->
+                    <a href="#"
+                      class="absolute -top-3 -right-3 sm:top-2 sm:right-2 bg-TanC-50 dark:bg-DGreenC-700 text-DGreenC-800 dark:text-TanC-50 rounded-full p-1.5 shadow-lg hover:bg-gray-200 dark:hover:bg-DGreenC-600 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                        class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
+              </div>
                 <div class="text-sm">
                   <div class="font-medium text-DGreenC-700 dark:text-TanC-100">
                     <span class="text-xl">200</span>
@@ -1026,13 +1054,41 @@
                 scope="row"
                 class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal"
               >
-                <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
-                  <img
-                    class="h-full w-full rounded-md object-cover object-center"
-                    src="Image/Ptrumma.webp"
-                    alt="Bild på en 800s eller större vägtrumma"
-                  />
+              <!-- Small Image Trigger -->
+              <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
+                <a href="#lightbox-ptrumma"
+                  class="group relative h-20 w-20 block cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-200 rounded-md">
+                  <img class="h-full w-full rounded-md object-cover object-right" src="Image/Ptrumma.webp"
+                    alt="Bild på en 800s eller större vägtrumma, klicka för större bild" />
+                  <!-- Optional: Overlay with an icon on hover to indicate "enlarge" -->
+                  <div
+                    class="absolute inset-0 bg-transparent group-hover:bg-black/40  flex items-center justify-center transition-all duration-200 rounded-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fdf9ec"
+                      class="w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                    </svg>
+                  </div>
+                </a>
+              
+                <!-- Lightbox Container (Initially Hidden) -->
+                <div id="lightbox-ptrumma"
+                  class="hidden target:flex fixed inset-0 z-50 bg-black/80 items-center justify-center p-4 sm:p-8 transition-opacity duration-300">
+                  <div class="relative bg-TanC-50 dark:bg-DGreenC-800 p-2 rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh]">
+                    <!-- The Larger Image -->
+                    <img class="block w-full max-h-[calc(90vh-4rem)] object-contain rounded" src="Image/Ptrumma.webp"
+                      alt="Stor bild på en 800s eller större vägtrumma från HK vägtrummors lager" />
+                    <!-- Close Button -->
+                    <a href="#"
+                      class="absolute -top-3 -right-3 sm:top-2 sm:right-2 bg-TanC-50 dark:bg-DGreenC-700 text-DGreenC-800 dark:text-TanC-50 rounded-full p-1.5 shadow-lg hover:bg-gray-200 dark:hover:bg-DGreenC-600 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                        class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
+              </div>
                 <div class="text-sm">
                   <div class="font-medium text-DGreenC-700 dark:text-TanC-100">
                     <span class="text-xl">800</span>
