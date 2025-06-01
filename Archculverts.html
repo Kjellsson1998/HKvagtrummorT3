@@ -172,36 +172,365 @@
     </div>
   </div>
 </nav>
-<body class="font-body bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-800 dark:text-TanC-50">
 
-  <main class="min-h-screen flex flex-col items-center justify-center text-center p-6">
-    <!-- Huvudrubrik -->
-    <h1
-      class="font-heading uppercase text-DGreenC-800 dark:text-TanC-50 text-4xl sm:text-5xl md:text-6xl lg:text-6xl mb-4">
+
+<body
+  class="font-body bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-800 dark:text-TanC-50 leading-relaxed text-base sm:text-base md:text-lg"
+>
+  <!-- Banner Image Section -->
+  <div class="w-full overflow-hidden rounded-lg shadow-lg">
+    <img
+      src="Image/valvbage_banner.jpg"
+      alt="Bannerbild på valvbågar och viltpassager"
+      class="w-full h-48 sm:h-64 md:h-80 object-cover object-center"
+    />
+  </div>
+
+  <!-- Product Title -->
+  <div class="text-center my-8 px-4">
+    <h1 class="font-heading uppercase text-3xl md:text-4xl text-DGreenC-800 dark:text-TanC-50">
       Valvbågar
-      <span class="block sm:inline text-YellowC-600 dark:text-YellowC-400"> - Kommer Snart</span>
     </h1>
-
-    <!-- Valfri extra text -->
-    <p class="font-body text-DGreenC-700 dark:text-TanC-300 text-lg sm:text-xl md:text-xl mb-10">
-      Produktsidan för våra valvbågar är snart klar. Håll utkik!
+    <p class="text-lg text-DGreenC-700 dark:text-TanC-200 mt-2">
+      Flexibla och hållbara lösningar i korrugerat stål för diken, vattendrag, broar och viltpassager.
     </p>
+  </div>
 
-    <!-- Call Me Button - Adapted from reference -->
-    <a href="tel:+46703909051"
-      class="inline-flex border-2 border-YellowC-600 hover:border-YellowC-500 items-center gap-3 bg-TanC-50 dark:bg-DGreenC-800 text-YellowC-600 hover:bg-YellowC-500 dark:hover:bg-yellow-400 hover:text-TanC-50 dark:hover:text-DGreenC-800 dark:text-YellowC-500 hover:scale-110 pl-3 pr-5 py-2 rounded-[2rem] text-[1.1rem] md:text-[1.2rem] transition duration-300 ease-in-out transform shadow-lg dark:hover:shadow-DGreenC-500 hover:shadow-TanC-600 sm:w-auto justify-center overflow-hidden">
-      <img src="Image/PP_Hugo.webp" alt="Profilbild på Hugo Kjellsson"
-        class="flex-shrink-0 w-[68px] h-[80px] md:w-[80px] md:h-[100px] rounded-full object-cover transition duration-300 transform scale-150 -translate-x-2 object-left"
-        loading="lazy" />
-      <span class="text-center font-body ml-2">
-        070-390 90 51<br />Hugo Kjellsson
-      </span>
-    </a>
+  <!-- Information about Sizing and Transport -->
+  <div class="max-w-5xl mx-auto px-5 text-center mb-6">
+    <p class="text-DGreenC-700 dark:text-TanC-200 leading-relaxed">
+      Valvbågar i stål erbjuds i en rad spännvidder, från mindre passager upp till större konstruktioner. Längden anpassas helt efter ert projekts behov.
+    </p>
+  </div>
 
-    </main>
+  <!-- Pricing Table Section - IMPROVED -->
+  <div
+    class="overflow-x-auto rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md m-5 max-w-5xl mx-auto" 
+  >
+    <table
+      class="w-full border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body"
+    >
+      <thead class="bg-YellowC-500 text-DGreenC-800 dark:text-DGreenC-800">
+        <tr>
+          <th
+            scope="col"
+            class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4"
+          >
+              Valvbåge/Brotyp
+          </th>
+          <th
+            scope="col"
+            class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center"
+          >
+            Spännvidd
+          </th>
+          <th
+            scope="col"
+            class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center sm:whitespace-nowrap" 
+          >
+            Pris / meter <br class="sm:hidden"> <!-- IMPROVED: Break line on XS, br hidden on SM+ -->
+            <span class="text-xs font-normal">(exkl / inkl moms)</span>
+          </th>
+          <th
+            scope="col"
+            class="font-subheading px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center sm:whitespace-nowrap" 
+          >
+            Ex: Totalpris 9m <br class="sm:hidden"> <!-- IMPROVED: Break line on XS, br hidden on SM+ -->
+            <span class="text-xs font-normal">(exkl / inkl moms)</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500 border-t border-DGreenC-300 dark:border-DGreenC-500"
+      >
+        <!-- Product Row 1: 1000mm -->
+        <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
+          <th
+            scope="row"
+            class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal"
+          >
+            <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
+              <img
+                class="h-full w-full rounded-md object-cover object-center"
+                src="Image/valvbage_banner.jpg"
+                alt="Bild på valvbåge 1000mm"
+              />
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-DGreenC-700 dark:text-TanC-100">
+                <span class="text-xl">Valvbåge</span>
+              </div>
+              <div class="text-DGreenC-500 dark:text-TanC-300">
+                inkl. skarvar och lyftöglor
+              </div>
+              <div class="product-stock font-medium text-DGreenC-700 dark:text-TanC-100 flex items-center gap-2 mt-1">
+                <span class="stock-indicator w-2 h-2 rounded-full bg-red-500 border border-RedC-700"></span>Beställningsvara
+              </div>
+            </div>
+          </th>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center align-middle">
+            1000mm
+          </td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right align-middle">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">2 444 kr/m</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">3 056 kr/m</div>
+          </td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right align-middle">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">22 000 kr</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">27 500 kr</div>
+          </td>
+        </tr>
+        <!-- Product Row 2: 1200mm -->
+        <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
+          <th scope="row" class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal">
+            <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
+              <img class="h-full w-full rounded-md object-cover object-center" src="Image/valvbage_banner.jpg" alt="Bild på valvbåge 1200mm" />
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-DGreenC-700 dark:text-TanC-100"><span class="text-xl">Valvbåge</span></div>
+              <div class="text-DGreenC-500 dark:text-TanC-300">inkl. skarvar och lyftöglor</div>
+              <div class="product-stock font-medium text-DGreenC-700 dark:text-TanC-100 flex items-center gap-2 mt-1">
+                <span class="stock-indicator w-2 h-2 rounded-full bg-red-500 border border-RedC-700"></span>Beställningsvara
+              </div>
+            </div>
+          </th>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center align-middle">1200mm</td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right align-middle">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">2 778 kr/m</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">3 472 kr/m</div>
+          </td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right align-middle">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">25 000 kr</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">31 250 kr</div>
+          </td>
+        </tr>
+        <!-- Product Row 3: 1400mm -->
+         <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
+          <th scope="row" class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal">
+            <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
+              <img class="h-full w-full rounded-md object-cover object-center" src="Image/valvbage_banner.jpg" alt="Bild på valvbåge 1400mm" />
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-DGreenC-700 dark:text-TanC-100"><span class="text-xl">Valvbåge</span></div>
+              <div class="text-DGreenC-500 dark:text-TanC-300">inkl. skarvar och lyftöglor</div>
+              <div class="product-stock font-medium text-DGreenC-700 dark:text-TanC-100 flex items-center gap-2 mt-1">
+                <span class="stock-indicator w-2 h-2 rounded-full bg-red-500 border border-RedC-700"></span>Beställningsvara
+              </div>
+            </div>
+          </th>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center align-middle">1400mm</td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right align-middle">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">3 222 kr/m</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">4 028 kr/m</div>
+          </td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right align-middle">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">29 000 kr</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">36 250 kr</div>
+          </td>
+        </tr>
+        <!-- Product Row 4: 1600mm -->
+        <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
+          <th scope="row" class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal">
+            <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
+              <img class="h-full w-full rounded-md object-cover object-center" src="Image/valvbage_banner.jpg" alt="Bild på valvbåge 1600mm" />
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-DGreenC-700 dark:text-TanC-100"><span class="text-xl">Valvbåge</span></div>
+              <div class="text-DGreenC-500 dark:text-TanC-300">inkl. skarvar och lyftöglor</div>
+              <div class="product-stock font-medium text-DGreenC-700 dark:text-TanC-100 flex items-center gap-2 mt-1">
+                <span class="stock-indicator w-2 h-2 rounded-full bg-red-500 border border-RedC-700"></span>Beställningsvara
+              </div>
+            </div>
+          </th>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center align-middle">1600mm</td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right align-middle">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">3 889 kr/m</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">4 861 kr/m</div>
+          </td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right align-middle">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">35 000 kr</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">43 750 kr</div>
+          </td>
+        </tr>
+        <!-- Product Row 5: 1800mm -->
+        <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
+          <th scope="row" class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal">
+            <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
+              <img class="h-full w-full rounded-md object-cover object-center" src="Image/valvbage_banner.jpg" alt="Bild på valvbåge 1800mm" />
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-DGreenC-700 dark:text-TanC-100"><span class="text-xl">Valvbåge</span></div>
+              <div class="text-DGreenC-500 dark:text-TanC-300">inkl. skarvar och lyftöglor</div>
+              <div class="product-stock font-medium text-DGreenC-700 dark:text-TanC-100 flex items-center gap-2 mt-1">
+                <span class="stock-indicator w-2 h-2 rounded-full bg-red-500 border border-RedC-700"></span>Beställningsvara
+              </div>
+            </div>
+          </th>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center align-middle">1800mm</td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right align-middle">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">4 333 kr/m</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">5 417 kr/m</div>
+          </td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right align-middle">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">39 000 kr</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">48 750 kr</div>
+          </td>
+        </tr>
+        <!-- Product Row 6: 2000mm -->
+        <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
+          <th scope="row" class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal">
+            <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
+              <img class="h-full w-full rounded-md object-cover object-center" src="Image/valvbage_banner.jpg" alt="Bild på valvbåge 2000mm" />
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-DGreenC-700 dark:text-TanC-100"><span class="text-xl">Valvbåge</span></div>
+              <div class="text-DGreenC-500 dark:text-TanC-300">inkl. skarvar och lyftöglor</div>
+              <div class="product-stock font-medium text-DGreenC-700 dark:text-TanC-100 flex items-center gap-2 mt-1">
+                <span class="stock-indicator w-2 h-2 rounded-full bg-red-500 border border-RedC-700"></span>Beställningsvara
+              </div>
+            </div>
+          </th>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center align-middle">2000mm</td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right align-middle">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">4 889 kr/m</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">6 111 kr/m</div>
+          </td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-right align-middle">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">44 000 kr</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">55 000 kr</div>
+          </td>
+        </tr>
+        <!-- OFFERT SECTION HEADER -->
+        <tr class="bg-TanC-100 dark:bg-DGreenC-750">
+            <td colspan="4" class="px-2 py-3 sm:px-4 sm:py-3 md:px-6 md:py-4 text-left font-subheading text-DGreenC-800 dark:text-TanC-50">
+                Större spännvidder & speciallösningar – Kontakta för offert
+            </td>
+        </tr>
+        <!-- Product Row 7: >2000mm up to 2600mm -->
+        <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
+          <th scope="row" class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal">
+            <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
+              <img class="h-full w-full rounded-md object-cover object-center" src="Image/valvbage_banner.jpg" alt="Bild på valvbågsbro" />
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-DGreenC-700 dark:text-TanC-100"><span class="text-xl">Valvbåge</span></div>
+              <div class="text-DGreenC-500 dark:text-TanC-300">Standardtransport oftast möjlig</div>
+              <div class="product-stock font-medium text-DGreenC-700 dark:text-TanC-100 flex items-center gap-2 mt-1">
+                <span class="stock-indicator w-2 h-2 rounded-full bg-red-500 border border-RedC-700"></span>Beställningsvara
+              </div>
+            </div>
+          </th>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center align-middle">
+            500mm - 2600mm
+          </td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center align-middle" colspan="2">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">Offert</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">Kontakta för pris</div>
+          </td>
+        </tr>
+        <!-- Product Row 8: >2600mm (Special Transport) -->
+        <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
+          <th scope="row" class="flex gap-3 px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 font-normal">
+            <div class="relative h-20 w-20 hidden sm:block flex-shrink-0">
+              <img class="h-full w-full rounded-md object-cover object-center" src="Image/valvbage_banner.jpg" alt="Bild på stor valvbågsbro" />
+            </div>
+            <div class="text-sm">
+              <div class="font-medium text-DGreenC-700 dark:text-TanC-100"><span class="text-xl">Valvbåge</span></div>
+              <div class="text-DGreenC-500 dark:text-TanC-300">Kräver oftast specialtransport</div>
+              <div class="product-stock font-medium text-DGreenC-700 dark:text-TanC-100 flex items-center gap-2 mt-1">
+                <span class="stock-indicator w-2 h-2 rounded-full bg-red-500 border border-RedC-700"></span>Beställningsvara
+              </div>
+            </div>
+          </th>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center align-middle">
+            >2600mm
+          </td>
+          <td class="px-2 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 text-center align-middle" colspan="2">
+            <div class="font-medium text-DGreenC-700 dark:text-TanC-100">Offert</div>
+            <div class="text-xs text-DGreenC-500 dark:text-TanC-300">Kontakta för pris & transportlösning</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
+      <div class="mt-8 text-center">
+        <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
+    
+            <!-- Telefonknapp (Sekundär stil med nummer) -->
+            <a href="tel:+46703909051"
+                class="font-subheading border-2 border-YellowC-600 hover:border-YellowC-500 text-YellowC-600 hover:bg-YellowC-500 hover:text-TanC-50 dark:border-YellowC-500 dark:text-YellowC-500 dark:hover:bg-YellowC-500 dark:hover:text-DGreenC-800 py-3 px-4 rounded-xl shadow hover:shadow-md transition-all duration-150 ease-in-out w-auto sm:w-auto min-w-55 text-center">
+                Ring mig gärna!
+                <br>
+                <span class="text-sm font-body">070-390 90 51</span>
+            </a>
+    
+            <!-- E-postknapp (Sekundär stil med e-postadress) -->
+            <a href="mailto:hugo@kjellsson.nu?subject=Förfrågan%20om%20Gabioner"
+                class="font-subheading border-2 border-YellowC-600 hover:border-YellowC-500 text-YellowC-600 hover:bg-YellowC-500 hover:text-TanC-50 dark:border-YellowC-500 dark:text-YellowC-500 dark:hover:bg-YellowC-500 dark:hover:text-DGreenC-800 py-3 px-4 rounded-xl shadow hover:shadow-md transition-all duration-150 ease-in-out w-auto sm:w-auto min-w-55 text-center">
+                Maila din fråga
+                <br>
+                <span class="text-sm font-body lowercase">hugo@kjellsson.nu</span>
+            </a>
+    
+        </div>
+        </div>
 
-  
+  <!-- Product Information Box Section -->
+  <div class="font-body my-8 p-4 sm:p-6 bg-TanC-50 dark:bg-DGreenC-800 rounded-lg shadow-lg border border-YellowC-500 text-DGreenC-800 dark:text-TanC-50 max-w-4xl mx-auto">
+    <h2 class="font-heading uppercase text-xl sm:text-2xl text-DGreenC-800 dark:text-TanC-50 mb-4">
+      Valvbågar: Miljövänliga, Kostnadseffektiva & Flexibla Lösningar
+    </h2>
+    <p class="font-body text-base leading-relaxed mb-4">
+      Valvbågar, även kända som halvtrummor, är en resurseffektiv lösning inom modern vattenhantering och miljöskydd. De möjliggör återställning av vattendragets naturliga botten och eliminerar hinder för vattenlevande organismer, vilket är avgörande för biologisk mångfald.
+    </p>
+    <h3 class="font-subheading text-DGreenC-800 dark:text-TanC-50 text-lg sm:text-xl md:text-2xl mb-2 mt-6">
+      Tillämpningsområden
+    </h3>
+    <ul class="list-disc ml-6 my-2 space-y-1">
+      <li>Vattenbroar och kulvertar</li>
+      <li>Väg- och järnvägsviadukter</li>
+      <li>Faunapassager (ekologiska korsningar)</li>
+      <li>Gångtunnlar</li>
+      <li>Dräneringsprojekt</li>
+      <li>Restaurering av vattendrag och fiskvandringsvägar</li>
+    </ul>
+    <h3 class="font-subheading text-DGreenC-800 dark:text-TanC-50 text-lg sm:text-xl md:text-2xl mb-2 mt-6">
+      Konkurrensfördelar med Valvbågar i Stål
+    </h3>
+    <ul class="list-disc ml-6 my-2 space-y-1">
+      <li>
+        <strong class="text-YellowC-600 dark:text-YellowC-400">Total Kostnadsfördel:</strong> Ofta lägre totalkostnad än traditionella betonglösningar tack vare snabbare installation och lägre transportkostnader.
+      </li>
+      <li>
+        <strong class="text-YellowC-600 dark:text-YellowC-400">Miljövänlig Konstruktion:</strong> Bibehåller eller återskapar naturlig botten, kritiskt för akvatisk fauna.
+      </li>
+      <li>
+        <strong class="text-YellowC-600 dark:text-YellowC-400">Flexibilitet & Anpassning:</strong> Designas för specifika spännvidder, längder och belastningsklasser.
+      </li>
+      <li>
+        <strong class="text-YellowC-600 dark:text-YellowC-400">Snabb Installation:</strong> Lätta stålelement monteras snabbt, vilket minskar byggtid och störningar.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Combined and Refined Material and Construction Section -->
+  <div class="font-body my-8 p-4 sm:p-6 bg-TanC-100 dark:bg-DGreenC-700 rounded-lg shadow-lg border border-YellowC-500 text-DGreenC-800 dark:text-TanC-50 max-w-4xl mx-auto">
+    <h2 class="font-heading uppercase text-xl sm:text-2xl text-DGreenC-800 dark:text-TanC-50 mb-4">
+      Material & Konstruktion
+    </h2>
+    <p class="font-body text-base leading-relaxed mb-3">
+      Våra valvbågar konstrueras av högkvalitativt, varmförzinkat korrugerat stål för maximal hållbarhet.
+    </p>
+     <p class="font-body text-base leading-relaxed mb-3">
+      Vid användning av valvbågar är miljöskydd en prioritet. Projekten strävar efter att minimera störningar i vattendragets botten och eftersträvar återskapande av naturliga bottenstrukturer, exempelvis med block av olika storlekar för att efterlikna vattendragets naturliga form och underlätta fiskvandring. Erosionsskydd, inklusive användning av natursten, är en viktig komponent.
+    </p>
+    <p class="font-body text-base leading-relaxed mt-4 ">
+      Valvbågar är en viktig komponent inom modern vattenhantering och miljöskydd, och balanserar infrastrukturbehov med hänsyn till naturen.
+    </p>
+  </div>
+
+</body>
 <footer class="px-4 divide-y border-t bg-TanC-200 dark:bg-DGreenC-500 border-DGreenC-800 dark:border-TanC-50">
   <div class="font-body container flex flex-col justify-center items-center py-10 mx-auto space-y-8">
     <div class="flex justify-center">
@@ -306,5 +635,4 @@
     © 2025 HK Vägtrummor. All rights reserved.
   </div>
 </footer>
-</body>
 </html>
