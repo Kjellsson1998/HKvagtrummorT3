@@ -466,9 +466,6 @@
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
-  .mb-5 {
-    margin-bottom: calc(var(--spacing) * 5);
-  }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
   }
@@ -559,9 +556,6 @@
   .h-72 {
     height: calc(var(--spacing) * 72);
   }
-  .h-\[25rem\] {
-    height: 25rem;
-  }
   .h-\[80px\] {
     height: 80px;
   }
@@ -637,9 +631,6 @@
   .max-w-5xl {
     max-width: var(--container-5xl);
   }
-  .max-w-\[45rem\] {
-    max-width: 45rem;
-  }
   .max-w-full {
     max-width: 100%;
   }
@@ -661,17 +652,8 @@
   .flex-shrink-0 {
     flex-shrink: 0;
   }
-  .shrink {
-    flex-shrink: 1;
-  }
   .flex-grow {
     flex-grow: 1;
-  }
-  .grow-\[0\.15\] {
-    flex-grow: 0.15;
-  }
-  .basis-0 {
-    flex-basis: calc(var(--spacing) * 0);
   }
   .border-collapse {
     border-collapse: collapse;
@@ -843,9 +825,6 @@
   }
   .rounded-\[2rem\] {
     border-radius: 2rem;
-  }
-  .rounded-\[5rem\] {
-    border-radius: 5rem;
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -1301,10 +1280,6 @@
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .shadow-\[0_5px_12px_rgba\(0\,0\,0\,0\.3\)\] {
-    --tw-shadow: 0 5px 12px var(--tw-shadow-color, rgba(0,0,0,0.3));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .shadow-lg {
     --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -1385,10 +1360,6 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
-  .duration-\[400ms\] {
-    --tw-duration: 400ms;
-    transition-duration: 400ms;
-  }
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
@@ -1459,13 +1430,6 @@
       display: flex;
     }
   }
-  .hover\:flex-1 {
-    &:hover {
-      @media (hover: hover) {
-        flex: 1;
-      }
-    }
-  }
   .hover\:scale-110 {
     &:hover {
       @media (hover: hover) {
@@ -1493,13 +1457,6 @@
         --tw-scale-y: 125%;
         --tw-scale-z: 125%;
         scale: var(--tw-scale-x) var(--tw-scale-y);
-      }
-    }
-  }
-  .hover\:rounded-xl {
-    &:hover {
-      @media (hover: hover) {
-        border-radius: var(--radius-xl);
       }
     }
   }
@@ -1672,11 +1629,6 @@
   .sm\:block {
     @media (width >= 40rem) {
       display: block;
-    }
-  }
-  .sm\:hidden {
-    @media (width >= 40rem) {
-      display: none;
     }
   }
   .sm\:inline {
