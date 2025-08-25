@@ -413,6 +413,9 @@
   .mt-0 {
     margin-top: calc(var(--spacing) * 0);
   }
+  .mt-0\.5 {
+    margin-top: calc(var(--spacing) * 0.5);
+  }
   .mt-1 {
     margin-top: calc(var(--spacing) * 1);
   }
@@ -617,6 +620,9 @@
   .w-48 {
     width: calc(var(--spacing) * 48);
   }
+  .w-\[5ch\] {
+    width: 5ch;
+  }
   .w-\[68px\] {
     width: 68px;
   }
@@ -664,6 +670,9 @@
   }
   .flex-grow {
     flex-grow: 1;
+  }
+  .table-auto {
+    table-layout: auto;
   }
   .table-fixed {
     table-layout: fixed;
@@ -798,9 +807,6 @@
       margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
     }
-  }
-  .gap-x-2 {
-    column-gap: calc(var(--spacing) * 2);
   }
   .gap-x-4 {
     column-gap: calc(var(--spacing) * 4);
@@ -1687,6 +1693,16 @@
       right: calc(var(--spacing) * 2);
     }
   }
+  .sm\:mt-0 {
+    @media (width >= 40rem) {
+      margin-top: calc(var(--spacing) * 0);
+    }
+  }
+  .sm\:ml-1 {
+    @media (width >= 40rem) {
+      margin-left: calc(var(--spacing) * 1);
+    }
+  }
   .sm\:block {
     @media (width >= 40rem) {
       display: block;
@@ -1725,6 +1741,16 @@
   .sm\:flex-row {
     @media (width >= 40rem) {
       flex-direction: row;
+    }
+  }
+  .sm\:items-baseline {
+    @media (width >= 40rem) {
+      align-items: baseline;
+    }
+  }
+  .sm\:justify-end {
+    @media (width >= 40rem) {
+      justify-content: flex-end;
     }
   }
   .sm\:gap-x-5 {
