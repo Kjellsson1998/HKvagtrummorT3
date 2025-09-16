@@ -2,17 +2,24 @@
 <html lang="sv">
   <head>
     <!-- Google tag Google adds (gtag.js) - Kopierat från about.html -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16731409488">
-    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16731409488"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'AW-16731409488');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-16731409488");
     </script>
 
     <!-- Google tag Analytics (gtag.js) - Kopierat från about.html -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MPRK3ZTL"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-C6MPRK3ZTL"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -22,27 +29,44 @@
       gtag("config", "G-C6MPRK3ZTL");
     </script>
 
-                <!-- Google Tag Manager -->
-                <script>(function (w, d, s, l, i) {
-                    w[l] = w[l] || []; w[l].push({
-                      'gtm.start':
-                        new Date().getTime(), event: 'gtm.js'
-                    }); var f = d.getElementsByTagName(s)[0],
-                      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-                  })(window, document, 'script', 'dataLayer', 'GTM-KPS3ZLJW');
-                </script>
-                <!-- End Google Tag Manager -->
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KPS3ZLJW");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- *** UPPDATERA BESKRIVNINGEN HÄR *** -->
-    <meta name="description" content="Fördjupad information om rekommenderat fyllnadsdjup för vägtrummor, samspelet mellan rör och mark, samt teoretiska beräkningar med Modifierade Iowa-formeln." />
+    <meta
+      name="description"
+      content="Fördjupad information om rekommenderat fyllnadsdjup för vägtrummor, samspelet mellan rör och mark, samt teoretiska beräkningar med Modifierade Iowa-formeln."
+    />
     <link href="src/output.css" rel="stylesheet" />
+    <link
+      rel="canonical"
+      href="https://www.hkvagtrummor.se/Fyllnadsdjup.html"
+    />
 
     <!-- Favicon länkar - Kopierat från about.html -->
-    <link rel="icon" href="Image/HK logo Master Version.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="Image/HK logo Master Version.svg"
+      type="image/svg+xml"
+    />
     <link rel="apple-touch-icon" href="Image/HK-logo_liten3.png" />
     <link rel="shortcut icon" href="Image/HK-logo_liten5.png" />
 
@@ -50,14 +74,13 @@
     <title>Fördjupning: Fyllnadsdjup för Vägtrummor - HK Vägtrummor</title>
 
     <!-- Eventuellt Schema.org JSON-LD för denna sida (TechArticle eller liknande) kan läggas till här -->
+  </head>
 
-</head>
-
-
-
-  
   <!-- Se till att aktiv länk (underline klass) eventuellt flyttas från "Om HK" till "Vanliga Frågor" om denna sida hör dit -->
-  <nav id="header" class="font-subheading w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2">
+  <nav
+    id="header"
+    class="font-subheading w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2"
+  >
     <div class="w-full flex items-center justify-between px-6 py-2 relative">
       <!-- Logo -->
       <div class="flex-1 md:flex-none text-DGreenC-800">
@@ -81,887 +104,1554 @@
       </div>
 
       <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center justify-end text-base text-YellowC-900">
+      <div
+        class="hidden md:flex items-center justify-end text-base text-YellowC-900"
+      >
         <ul class="flex items-center space-x-4">
           <li>
             <!-- Link to index.html -->
-            <a href="index.html" class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3">Hem</a>
+            <a
+              href="index.html"
+              class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3"
+              >Hem</a
+            >
           </li>
 
           <!-- Produkter Dropdown (Desktop) -->
           <li class="relative group">
-            <button class="inline-flex items-center no-underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-lg py-2 px-3">
-              <a href="Products.html" class="font-subheading">Produkter</a> 
-              <svg class="ml-1 w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-             </svg>
+            <button
+              class="inline-flex items-center no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3"
+            >
+              <a href="Products.html" class="font-subheading">Produkter</a>
+              <svg
+                class="ml-1 w-4 h-4 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
             </button>
             <!-- Updated Product Links with English filenames -->
-            <ul class="absolute hidden group-hover:block bg-YellowC-500 shadow-md rounded-md mt-0 pt-0 top-full left-0 w-48 text-left font-medium">
-              <li><a href="Plasticpipes.html" class="block px-4 py-2  hover:bg-YellowC-600 hover:text-white">Plasttrummor</a></li>
-              <li><a href="Archculverts.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Valvbågar</a></li>
-              <li><a href="Steelpipes.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Ståltrummor</a></li>
-              <li><a href="Stormwater.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Dagvatten</a></li>
-              <li><a href="Geotextile.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Markduk</a></li>
-              <li><a href="Gabions.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Gabioner</a></li> 
-            </ul>
-          </li>
-
-           <!-- New Menu Items with English filenames -->
-          <li>
-            <!-- Link to Guestbook.html -->
-            <a href="GuestBook.html" class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-lg py-2 px-3">Gästbok</a> 
-          </li>
-          <li>
-             <!-- Link to faq.html -->
-            <a href="FAQ.html" class="inline-block underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-lg py-2 px-3">Vanliga Frågor</a> 
-          </li>
-          <!-- End New Menu Items -->
-
-          <li>
-             <!-- Link to about.html -->
-            <a href="about.html" class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-lg py-2 px-3">Om HK</a>
-          </li>
-        </ul>
-      </div>
-
-
-
-  <!-- Mobile Hamburger -->
-  <div class="md:hidden">
-    <input type="checkbox" id="menu-toggle" class="hidden peer" />
-    <label for="menu-toggle" aria-label="Open menu" class="cursor-pointer">
-      <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-8 h-8 transition-transform duration-200 ease-in-out transform hover:scale-125 hover:fill-YellowC-100"
-      viewBox="0 0 48 48"
-    >
-      <g data-name="Layer 2">
-        <path fill="none" d="M0 0h48v48H0z" data-name="invisible box" />
-        <g data-name="icons Q2">
-          <path
-            d="M42 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 24a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 36a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"
-          />
-        </g>
-      </g>
-    </svg>
-    </label>
-
-      <!-- Mobile Menu -->
-      <div class="hidden peer-checked:flex flex-col text-base text-YellowC-900 absolute top-full left-0 w-full bg-YellowC-500 shadow-md rounded-b-lg">
-        <ul class="text-center">
-          <li>
-             <!-- Link to index.html -->
-            <a href="index.html" class="block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3">Hem</a>
-          </li>
-
-          <!-- Mobile Produkter Dropdown -->
-          <li class="block">
-            <input type="checkbox" id="mobile-produkt-toggle" class="peer hidden">
-            <label for="mobile-produkt-toggle" class="inline-flex items-center justify-center w-full hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3 cursor-pointer">
-              <a href="Products.html" class="font-subheading ">Produkter</a> 
-              <svg class="ml-1 w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-             </svg>
-            </label>
-            <!-- Updated Product Links with English filenames -->
-            <ul class="hidden peer-checked:block bg-YellowC-500 font-medium">
-              <li><a href="Plasticpipes.html" class=" block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Plasttrummor</a></li>
-              <li><a href="Archculverts.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Valvbågar</a></li>
-              <li><a href="Steelpipes.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Ståltrummor</a></li>
-              <li><a href="Stormwater.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Dagvatten</a></li>
-              <li><a href="Geotextile.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Markduk</a></li>
-              <li><a href="Gabions.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Gabioner</a></li>
+            <ul
+              class="absolute hidden group-hover:block bg-YellowC-500 shadow-md rounded-md mt-0 pt-0 top-full left-0 w-48 text-left font-medium"
+            >
+              <li>
+                <a
+                  href="Plasticpipes.html"
+                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                  >Plasttrummor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Archculverts.html"
+                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                  >Valvbågar</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Steelpipes.html"
+                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                  >Ståltrummor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Stormwater.html"
+                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                  >Dagvatten</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Geotextile.html"
+                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                  >Markduk</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Gabions.html"
+                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                  >Gabioner</a
+                >
+              </li>
             </ul>
           </li>
 
           <!-- New Menu Items with English filenames -->
           <li>
-             <!-- Link to GuestBook.html -->
-            <a href="GuestBook.html" class="block hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3">Gästbok</a> 
+            <!-- Link to Guestbook.html -->
+            <a
+              href="GuestBook.html"
+              class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3"
+              >Gästbok</a
+            >
           </li>
           <li>
-             <!-- Link to faq.html -->
-            <a href="FAQ.html" class="block hover:text-YellowC-100 transition duration-300 ease-in-out underline text-xl py-3">Vanliga Frågor</a> 
+            <!-- Link to faq.html -->
+            <a
+              href="FAQ.html"
+              class="inline-block underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3"
+              >Vanliga Frågor</a
+            >
           </li>
           <!-- End New Menu Items -->
 
           <li>
-             <!-- Link to about.html -->
-            <a href="about.html" class="block hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3">Om HK</a>
+            <!-- Link to about.html -->
+            <a
+              href="about.html"
+              class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3"
+              >Om HK</a
+            >
           </li>
         </ul>
       </div>
-    </div>
-  </div>
-</nav>
-    
-<body
-  class="font-body bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-800 dark:text-TanC-50 leading-relaxed text-base sm:text-base md:text-lg">
 
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPS3ZLJW" height="0" width="0"
-          style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-
-  <section id="fyllnadsdjup-info" class="px-6 py-12">
-
-    <!-- Title Section -->
-    <div class="text-center">
-      <h1
-        class="font-heading uppercase text-DGreenC-800 dark:text-TanC-50 text-4xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">
-        Hur djupt bör vägtrumman grävas ner för att hålla?</h1>
-      <p
-        class="font-body text-DGreenC-800 dark:text-TanC-50 text-lg sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-6">
-        En fördjupning kring rekommenderat fyllnadsdjup för vägtrummor, samspelet mellan rör och mark, och de faktorer
-        som påverkar hållfastheten.
-      </p>
-    </div>
-
-    <!-- Content Sections -->
-    <div class="mt-10 space-y-8 max-w-3xl mx-auto">
-
-      <!-- Avsnitt 1: Problemet och rekommendationer -->
-      <div>
-        <p class="font-body text-DGreenC-800 dark:text-TanC-50">
-          Detta är en fråga jag själv brottats med, och det är svårt att hitta en enkel, definitiv siffra. Man hör ofta
-          om en allmän rekommendation på <strong class="font-semibold text-YellowC-600 dark:text-YellowC-400">60 cm
-            överfyllnad</strong> (från trummans högsta punkt till vägbanan), som till exempel <a
-            href="https://www.skogskunskap.se/vagar-i-skogen/drift-och-underhall/upprustning-och-ombyggnad/byta-trummor/#:~:text=Normalt%20rekommenderas%20minst%2060%20cm%20%C3%B6verfyllnad.%20En%20sedimenteringsgrop,Trumman%20b%C3%B6r%20ha%20ett%20fall%20p%C3%A5%201%E2%80%934%20cm/m."
-            class="font-body font-medium text-YellowC-600 hover:text-YellowC-500 dark:text-YellowC-500 dark:hover:text-YellowC-400 hover:underline"
-            target="_blank" rel="noopener noreferrer">Skogskunskap</a> nämner för skogsbilvägar. Samtidigt är det svårt
-          att hitta just den regeln som generell sanning i Trafikverkets bredare dokumentation för alla vägtyper. Varför
-          är det så?
-        </p>
-        <p class="font-body text-DGreenC-800 dark:text-TanC-50 mt-4">
-          Svaret ligger i att en vägtrumma, speciellt en flexibel sådan av plast (som <code
-            class="bg-TanC-200 dark:bg-DGreenC-500 px-1 rounded font-mono text-sm text-DGreenC-800 dark:text-TanC-50">SN8</code>-rör)
-          eller korrugerad plåt, inte bär lasten helt själv. Den ingår i ett komplext samspel med den omgivande marken.
-          Överfyllnadens primära syfte är att sprida ut koncentrerade laster (från t.ex. fordonshjul) och att skapa
-          förutsättningar för jorden att hjälpa till att bära lasten. Målet är att trummans deformation (nedböjning)
-          inte ska överstiga ca <strong class="font-semibold text-YellowC-600 dark:text-YellowC-400">5-6%</strong> av
-          dess diameter.
-        </p>
-      </div>
-
-      <!-- Avsnitt 2: Kan man ha mindre? -->
-      <div>
-        <h2
-          class="font-subheading text-DGreenC-800 dark:text-YellowC-400 text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold mb-4 mt-8">
-          Kan man då klara sig med mindre än 60 cm?
-        </h2>
-        <p class="font-body text-DGreenC-800 dark:text-TanC-50">
-          Ja, men det beror helt på förutsättningarna. Vid låg trafiklast (som på en del skogsvägar) och om man undviker
-          körning när marken är som blötast (då den ger sämre stöd), kan det vara möjligt. En torrare, fastare mark ger
-          bättre mothåll mot rörets sidor, vilket hjälper det att motstå deformation när det belastas ovanifrån.
-        </p>
-      </div>
-
-      <!-- Avsnitt 3: Egna uppskattningar -->
-      <div>
-        <h2
-          class="font-subheading text-DGreenC-800 dark:text-YellowC-400 text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold mb-4 mt-8">
-          Mina Egna Uppskattningar för SN8 rör (OBS! Endast Teoretiska Indikationer!)
-        </h2>
-        <p class="font-body text-DGreenC-800 dark:text-TanC-50">
-          Ur ett geometriskt perspektiv kan man resonera kring hur djupt en vägtrumma bör grävas ned, genom att beakta
-          hur belastningen fördelas genom fyllningen ovanpå trumman. Tänk dig att belastningen från fordon och mark
-          ovanför trumman sprids nedåt som en kon, där konens basdiameter ökar med djupet. För att minimera deformation
-          och säkerställa att trumman håller, vill man att denna belastningskon vid trummans nivå har minst samma
-          diameter som trummans ytterdiameter.
-        </p>
-
-        <!-- Visuell representation av beräkningen -->
-        <figure class="my-6 text-center text-DGreenC-800 dark:text-TanC-50" aria-labelledby="lastspridningskon-caption">
-          <svg viewBox="65 15 179 200" xmlns="http://www.w3.org/2000/svg" class="inline-block max-w-full h-70"
-            style="stroke-linecap: round; stroke-linejoin: round; fill-rule: evenodd;">
-            <style>
-              .main-geo {
-                stroke: currentColor;
-                stroke-width: 1.5;
-                fill: none;
-              }
-
-              .road-line {
-                stroke: currentColor;
-                stroke-width: 2;
-                fill: none;
-              }
-
-              .pipe-body {
-                stroke: currentColor;
-                stroke-width: 1.5;
-                fill: none;
-              }
-
-              .dim-line {
-                stroke: currentColor;
-                stroke-width: 1;
-                marker-start: url(#arrow);
-                marker-end: url(#arrow);
-                fill: none;
-              }
-
-              .dim-line-single-end {
-                stroke: currentColor;
-                stroke-width: 1;
-                marker-end: url(#arrow);
-                fill: none;
-              }
-
-              .label-text {
-                fill: currentColor;
-                font-family: 'Inter', sans-serif;
-                /* Matches font-body if Inter is primary */
-                font-size: 12px;
-                text-anchor: middle;
-                dominant-baseline: central;
-                stroke: none;
-              }
-
-              .label-text-angle {
-                fill: currentColor;
-                font-family: 'Inter', sans-serif;
-                /* Matches font-body */
-                font-size: 11px;
-                text-anchor: middle;
-                dominant-baseline: central;
-                stroke: none;
-              }
-
-              .arrow-head {
-                fill: currentColor;
-                stroke: none;
-              }
-            </style>
-            <defs>
-              <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5"
-                orient="auto-start-reverse">
-                <path d="M 0 0 L 10 5 L 0 10 z" class="arrow-head" />
-              </marker>
-            </defs>
-            <line x1="80" y1="40" x2="220" y2="40" class="road-line" />
-            <circle cx="150" cy="160" r="50" class="pipe-body" />
-            <line x1="150" y1="40" x2="100" y2="110" class="main-geo" />
-            <line x1="150" y1="40" x2="200" y2="110" class="main-geo" />
-            <line x1="100" y1="110" x2="200" y2="110" class="main-geo" />
-            <line x1="150" y1="20" x2="150" y2="38" class="dim-line-single-end" />
-            <text x="143" y="25" class="label-text">P</text>
-            <line x1="70" y1="39" x2="70" y2="110" class="dim-line" />
-            <text x="85" y="70" class="label-text">h</text>
-            <text x="95" y="76"
-              style="font-size:8px; fill:currentColor; text-anchor:middle; dominant-baseline: central;">min</text>
-            <line x1="102" y1="160" x2="198" y2="160" class="dim-line" />
-            <text x="150" y="170" class="label-text">D</text>
-            <text x="156" y="173"
-              style="font-size:8px; fill:currentColor; text-anchor:middle; dominant-baseline: central;">o</text>
-            <path d="M 141.282 52.205 A 15 15 0 0 0 158.718 52.205" class="main-geo" style="stroke-width:1;" />
-            <text x="145" y="63" class="label-text-angle">θ</text>
-            <text x="149" y="65"
-              style="font-size:7px; fill:currentColor; text-anchor:start; dominant-baseline: central;">kon</text>
+      <!-- Mobile Hamburger -->
+      <div class="md:hidden">
+        <input type="checkbox" id="menu-toggle" class="hidden peer" />
+        <label for="menu-toggle" aria-label="Open menu" class="cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 transition-transform duration-200 ease-in-out transform hover:scale-125 hover:fill-YellowC-100"
+            viewBox="0 0 48 48"
+          >
+            <g data-name="Layer 2">
+              <path fill="none" d="M0 0h48v48H0z" data-name="invisible box" />
+              <g data-name="icons Q2">
+                <path
+                  d="M42 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 24a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 36a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"
+                />
+              </g>
+            </g>
           </svg>
-          <figcaption id="lastspridningskon-caption" class="mt-2 text-sm text-DGreenC-600 dark:text-TanC-300">
-            Figur 1: Illustration av lastspridningskon över ett rör med nyckeldimensioner.
-          </figcaption>
-        </figure>
+        </label>
 
-        <p class="font-body text-DGreenC-800 dark:text-TanC-50 mt-4">
-          Detta resonemang leder fram till en enkel geometrisk formel för att uppskatta den minsta fyllnadshöjden över
-          trumman för att få lasten att spridas jämt över trumman:
-        </p>
-        <!-- Formel Block -->
-        <section aria-labelledby="minsta-fyllnadshojd-formula-heading"
-          class="bg-TanC-200 dark:bg-DGreenC-700 border border-YellowC-500 dark:border-YellowC-400 p-6 rounded-lg my-6 shadow-md overflow-x-auto">
-          <h4 id="minsta-fyllnadshojd-formula-heading"
-            class="font-subheading text-center text-lg mb-4 text-DGreenC-800 dark:text-TanC-50">
-            Formel för Minsta Fyllnadshöjd
-          </h4>
-          <div class="text-DGreenC-800 dark:text-TanC-50 text-center text-xl font-mono">
-            \[
-            h_{\text{min}} = \frac{D_{\text{o}}}{2 \tan(\frac{\theta_{\text{kon}}}{2})} - \frac{D_{\text{o}}}{2}
-            \]
-          </div>
-          <div class="mt-6 text-sm text-DGreenC-700 dark:text-TanC-300 font-body">
-            <div class="font-semibold mb-2 text-DGreenC-800 dark:text-TanC-50">Definition av Termer:</div>
-            <ul class="list-none space-y-1">
-              <li><strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(h_{\text{min}}\)</strong> = Minsta
-                överfyllnadshöjd från rörets hjässa till markytan (m)</li>
-              <li><strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(D_{\text{o}}\)</strong> = Rörets
-                ytterdiameter (m)</li>
-              <li><strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(\theta_{\text{kon}}\)</strong> =
-                Konens fulla toppvinkel (den totala vinkeln vid spetsen av konen, anges i grader)</li>
-              <li><strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(\tan()\)</strong> = Tangens
-                trigonometrisk funktion</li>
-            </ul>
-          </div>
-        </section>
-        <!-- Disclaimer Block -->
+        <!-- Mobile Menu -->
         <div
-          class="bg-YellowC-500/20 dark:bg-YellowC-400/20 border border-YellowC-500 text-YellowC-700 dark:text-YellowC-300 p-4 rounded-md my-4 text-sm font-body">
-          <strong class="font-semibold">OBS!</strong> Det är mitt sätt att se på överfyllnad på mindre trummor upp till
-          400 mm i diameter. Observera att dessa beräkningar inte ger några garantier eller officiella rekommendationer
-          utan mer som en bodepraktika!
-        </div>
-
-        <h3
-          class="font-subheading text-DGreenC-800 dark:text-YellowC-400 text-lg sm:text-lg md:text-xl font-semibold mb-3 mt-6">
-          Exempel på uppskattningar för olika trumdiametrar:
-        </h3>
-
-        <ul class="list-disc pl-5 space-y-2 font-body text-DGreenC-800 dark:text-TanC-50">
-          <li><strong class="font-semibold text-YellowC-600 dark:text-YellowC-400">Ø200 mm:</strong> Minsta fyllnadshöjd
-            kan vara cirka 0,2 - 0,31 m.</li>
-          <li><strong class="font-semibold text-YellowC-600 dark:text-YellowC-400">Ø300 mm:</strong> Minsta fyllnadshöjd
-            kan vara cirka 0,3 - 0,46 m.</li>
-          <li><strong class="font-semibold text-YellowC-600 dark:text-YellowC-400">Ø400 mm:</strong> Minsta fyllnadshöjd
-            kan vara cirka 0,4 - 0,62 m.</li>
-        </ul>
-        <p class="font-body text-DGreenC-800 dark:text-TanC-50 mt-4">
-          För att dina exempelvärden ska stämma ungefär, behöver \(\theta_{\text{kon}}\) vara i intervallet ca 35° till
-          55°. <br>
-          Det är viktigt att förstå dessa uppskattningar korrekt, och om det finns tillräckligt med material bör man
-          alltid sträva efter att ha <strong class="font-semibold text-YellowC-600 dark:text-YellowC-400">minst 0,6 m
-            fyllning</strong> oavsett trummans storlek.
-        </p>
-      </div>
-
-      <!-- Avsnitt 4: Teoretisk Förklaring - Förbättrad Version -->
-      <div>
-        <h2
-          class="font-subheading text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-4 mt-8">
-          Teoretisk Grund: Beräkning av Rördeformation via Modifierad Iowa-formel
-        </h2>
-        <p class="font-body leading-relaxed text-DGreenC-700 dark:text-TanC-300 mb-6">
-          För en teknisk analys av nedböjning hos flexibla rör är den Modifierade Iowa-formeln en vedertagen metod inom
-          branschen. Metoden syftar till att kvantifiera den förväntade vertikala nedböjningen, uttryckt som en
-          procentandel
-          av rörets diameter (\(\Delta y / D_o\)), och verifiera att denna understiger specificerade tillåtna
-          gränsvärden
-          (vanligen 5-6% för de flesta applikationer för att säkerställa långsiktig funktion och integritet).
-        </p>
-
-        <h3
-          class="font-subheading text-lg sm:text-lg md:text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3 mt-6">
-          Formelns Grundprincip: En Balansgång
-        </h3>
-        <p class="font-body leading-relaxed text-DGreenC-700 dark:text-TanC-300">
-          Kärnan i formeln är en jämviktsanalys som ställer de externa lasterna (från jord och trafik) som verkar
-          vertikalt
-          nedåt på röret, mot det kombinerade motståndet från rörets egen styvhet och det laterala stödet från den
-          omgivande
-          packade jorden.
-        </p>
-
-        <!-- Formel Block - Modifierad Iowa-formel -->
-        <section aria-labelledby="iowa-formula-heading"
-          class="bg-TanC-200 dark:bg-DGreenC-700 border border-YellowC-500 dark:border-YellowC-400 p-6 rounded-lg my-6 shadow-md overflow-x-auto">
-          <h4 id="iowa-formula-heading"
-            class="font-subheading text-center text-lg mb-4 text-DGreenC-800 dark:text-TanC-50">
-            Modifierad Iowa-formel för Vertikal Nedböjning
-          </h4>
-          <div class="text-DGreenC-800 dark:text-TanC-50 text-center text-xl font-mono">
-            \[
-            \frac{\Delta y}{D_o} (\%) = \frac{D_L \cdot K \cdot (W_E + W_L)}{P_S + 0.061 \cdot E'} \times 100
-            \]
-          </div>
-
-          <div class="mt-6 text-sm text-DGreenC-700 dark:text-TanC-300 font-body">
-            <div class="font-semibold mb-2 text-DGreenC-800 dark:text-TanC-50">Definition av Termer:</div>
-            <ul class="list-none space-y-1">
-              <li><strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(\frac{\Delta y}{D_o}\)</strong> =
-                Relativ vertikal nedböjning (dimensionslös, multipliceras med 100 för procent)</li>
-              <li><strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(D_L\)</strong> = Deflection Lag
-                Factor (Tidsfaktor, ofta 1.0-1.5, beaktar långtidseffekter som konsolidering)</li>
-              <li><strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(K\)</strong> = Bedding Constant
-                (Bäddningsfaktor, beror på installationsvinkeln, typiskt ~0.1)</li>
-              <li><strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(W_E\)</strong> = Prism Earth Load
-                (Jordlast per meter rör, N/m)</li>
-              <li><strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(W_L\)</strong> = Live Load (Rörlig
-                last, t.ex. trafik, per meter rör, N/m)</li>
-              <li><strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(P_S\)</strong> = Pipe Stiffness
-                (Rörstyvhet, N/m², motsvarar tryck) - <em>Se förklaring nedan</em></li>
-              <li><strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(E'\)</strong> = Modulus of Soil
-                Reaction (Jordens reaktionsmodul/sidostöd, N/m²) - <em>Se förklaring nedan</em></li>
-            </ul>
-          </div>
-        </section>
-        <!-- Slut Formel Block -->
-
-        <!-- Belastningskomponenter -->
-        <section aria-labelledby="load-components-heading"
-          class="bg-TanC-200 dark:bg-DGreenC-500 border border-YellowC-500 dark:border-YellowC-400 p-6 rounded-lg my-6 shadow-md overflow-x-auto">
-          <h4 id="load-components-heading"
-            class="font-subheading text-center text-lg mb-6 text-DGreenC-800 dark:text-TanC-50">
-            Beräkning av Belastningskomponenter (Täljaren)
-          </h4>
-          <div class="space-y-10 font-body">
-            <!-- Jordlast W_E -->
-            <div>
-              <h5 class="font-subheading text-md mb-3 text-DGreenC-700 dark:text-TanC-300">1. Jordlast (\( W_E \)):</h5>
-              <p class="text-sm italic mb-3 text-DGreenC-600 dark:text-TanC-400">Lasten från jordprisman ovanför röret.
-              </p>
-              <div class="text-xl text-center my-2 font-mono text-DGreenC-800 dark:text-TanC-50">
-                \[
-                W_E = C_d \cdot \rho_{soil} \cdot g \cdot h \cdot D_o
-                \]
-              </div>
-              <div class="mt-4 text-sm text-DGreenC-700 dark:text-TanC-300">
-                <strong class="text-DGreenC-800 dark:text-TanC-50">Förklaring av variabler:</strong>
-                <ul class="list-disc pl-6 space-y-1 mt-2">
-                  <li>\(C_d\): Lastkoefficient baserad på installationstyp och jordens egenskaper (kan beräknas via
-                    Marston's teori eller användas från standardtabeller)</li>
-                  <li>\(\rho_{soil}\): Jordens densitet (kg/m³), t.ex. \(1900 \, kg/m^3\) för packad sand/grus</li>
-                  <li>\(g\): Tyngdacceleration (\(\approx 9.82 \, m/s^2\))</li>
-                  <li>\(h\): Överfyllnadshöjd från rörets hjässa till markytan (m)</li>
-                  <li>\(D_o\): Rörets ytterdiameter (m)</li>
-                </ul>
-              </div>
-            </div>
-
-            <hr class="border-DGreenC-300 dark:border-DGreenC-600">
-
-            <!-- Trafiklast W_L -->
-            <div>
-              <h5 class="font-subheading text-md mb-3 text-DGreenC-700 dark:text-TanC-300">2. Rörlig Last / Trafiklast
-                (\( W_L \)):</h5>
-              <p class="text-sm italic mb-3 text-DGreenC-600 dark:text-TanC-400">Last per meter rör från t.ex.
-                vägtrafik.</p>
-              <div class="text-xl text-center my-2 font-mono text-DGreenC-800 dark:text-TanC-50">
-                \[
-                W_L = I_f \cdot P_{surface} \cdot D_o
-                \]
-              </div>
-              <p class="text-sm italic my-3 text-DGreenC-600 dark:text-TanC-400">Där \( P_{surface} \) är trycket vid
-                rörets nivå, ofta beräknat från hjullaster via spridningsmodeller.</p>
-
-              <div class="text-md font-semibold mt-4 mb-2 text-DGreenC-700 dark:text-TanC-300">Approximation via
-                Boussinesqs teori (Punktlast):</div>
-              <p class="text-sm mb-2 text-DGreenC-600 dark:text-TanC-400">För en enskild hjullast \( P_{wheel} \) kan
-                trycket \( \sigma_z \) på djupet \( h \) under lasten approximeras som:</p>
-              <div class="text-xl text-center my-2 font-mono text-DGreenC-800 dark:text-TanC-50">
-                \[
-                \sigma_z \approx \frac{3 \cdot P_{wheel}}{2 \cdot \pi \cdot h^2}
-                \]
-              </div>
-              <div class="text-md font-semibold mt-4 mb-2 text-DGreenC-700 dark:text-TanC-300">Och hjullasten \(
-                P_{wheel} \) beräknas från axeltrycket:</div>
-              <div class="text-xl text-center my-2 font-mono text-DGreenC-800 dark:text-TanC-50">
-                \[
-                P_{wheel} = \frac{\text{Axeltryck (kg)}}{2} \cdot g \quad [N]
-                \]
-              </div>
-
-              <div class="mt-4 text-sm text-DGreenC-700 dark:text-TanC-300">
-                <strong class="text-DGreenC-800 dark:text-TanC-50">Förklaring av variabler:</strong>
-                <ul class="list-disc pl-6 space-y-1 mt-2">
-                  <li>\(I_f\): Impact Factor / Dynamisk faktor (typiskt 1.0-1.5, beroende på djup och hastighet)</li>
-                  <li>\(P_{surface}\) / \(\sigma_z\): Tryck vid rörets nivå (N/m²)</li>
-                  <li>\(P_{wheel}\): Vertikal hjullast (N)</li>
-                  <li>\(\text{Axeltryck}\): Dimensionerande axellast (kg), t.ex. \(12000 \, kg\) för tung trafik</li>
-                  <li>\(g\): Tyngdacceleration (\(\approx 9.82 \, m/s^2\))</li>
-                  <li>\(h\): Överfyllnadsdjup från markyta till rörets hjässa (m)</li>
-                  <li>\(D_o\): Rörets ytterdiameter (m)</li>
-                </ul>
-                <div class="mt-4 bg-TanC-50 dark:bg-DGreenC-700 p-3 rounded-md">
-                  <strong class="text-DGreenC-800 dark:text-TanC-50">Exempel Hjullast:</strong> För 12000 kg axeltryck:
-                  <div class="text-center font-mono mt-1 text-DGreenC-800 dark:text-TanC-50">
-                    \[
-                    P_{wheel} = \frac{12000}{2} \cdot 9.82 = 58920 \, N
-                    \]
-                  </div>
-                </div>
-              </div>
-              <div class="mt-4 text-xs italic text-DGreenC-500 dark:text-TanC-400">
-                (Not: Beräkning av \(W_L\) från punktlaster är en förenkling. Mer avancerade metoder beaktar
-                lastspridning genom marklager och över rörets yta, samt inverkan av flera axlar. Konsultera relevanta
-                standarder som Eurokod eller AASHTO för detaljerade metoder.)
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Slut Belastningskomponenter -->
-
-        <!-- Motståndskomponenter -->
-        <section aria-labelledby="resistance-components-heading"
-          class="bg-TanC-200 dark:bg-DGreenC-500 border border-YellowC-500 dark:border-YellowC-400 p-6 rounded-lg my-6 shadow-md overflow-x-auto">
-          <h4 id="resistance-components-heading"
-            class="font-subheading text-center text-lg mb-4 text-DGreenC-800 dark:text-TanC-50">
-            Motstånd mot Nedböjning (Nämnaren)
-          </h4>
-          <div class="text-xl text-center mb-6 font-mono text-DGreenC-800 dark:text-TanC-50">
-            \[
-            \text{Motstånd} = P_S + 0.061 \cdot E'
-            \]
-          </div>
-          <div class="mt-4 text-sm text-DGreenC-700 dark:text-TanC-300 space-y-4 font-body">
-            <div class="font-semibold mb-2 text-DGreenC-800 dark:text-TanC-50">Definition av Termer:</div>
-            <ul class="list-disc pl-6 space-y-3">
-              <li>
-                <strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(P_S\) = Rörstyvhet (Pipe
-                  Stiffness):</strong> Ett mått på rörets inneboende motstånd mot deformation under extern belastning.
-                För ringstyva rör definieras detta ofta genom standardiserade tester (t.ex. enligt EN ISO 9969) och
-                anges i klasser som SN4, SN8, SN12, vilket motsvarar en styvhet på 4000, 8000, respektive 12000 N/m².
-                Denna term representerar trycket som krävs för att deformera röret en viss procentandel. En högre
-                SN-klass innebär ett styvare rör.
-                <br><em>(Enhet: N/m² eller Pa)</em>
-              </li>
-              <li>
-                <strong class="font-semibold text-DGreenC-800 dark:text-TanC-50">\(E'\) = Jordens Reaktionsmodul
-                  (Modulus of Soil Reaction):</strong> Representerar det laterala stödet som den omgivande jorden ger
-                mot rörets sidor när det deformeras. Detta är en <span
-                  class="text-RedC-500 dark:text-RedC-400 font-bold">KRITISKT VIKTIG PARAMETER</span> som är direkt
-                beroende av:
-                <ul class="list-circle pl-6 mt-1 space-y-1">
-                  <li>Kringfyllnadsmaterialets typ och kvalitet (t.ex. kornstorleksfördelning, friktionsegenskaper).
-                  </li>
-                  <li>Packningsgraden (densiteten) hos kringfyllnaden.</li>
-                  <li>Fuktkvoten under packning och i drift.</li>
-                </ul>
-                Ett noggrant utfört installationsarbete med korrekt material och packning är avgörande för att uppnå ett
-                högt \(E'\)-värde och därmed minimera nedböjningen.
-                <br><em>(Enhet: N/m² eller Pa)</em>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <!-- Slut Motståndskomponenter -->
-
-        <!-- E Prime Tabell -->
-        <section aria-labelledby="e-prime-table-heading"
-          class="overflow-hidden rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md my-6">
-          <h4 id="e-prime-table-heading"
-            class="font-subheading text-center text-lg p-4 bg-TanC-50 dark:bg-DGreenC-700 text-DGreenC-800 dark:text-TanC-50 mb-0">
-            Typiska Värden för Jordens Reaktionsmodul (\(E'\)) baserat på Installationens Kvalitet
-          </h4>
-
-          <div class="overflow-x-auto">
-            <table
-              class="min-w-full text-sm border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-DGreenC-800 dark:text-TanC-50 font-body">
-              <thead class="bg-YellowC-500 text-DGreenC-800 dark:text-DGreenC-800 align-bottom">
-                <tr>
-                  <th class="px-3 py-3 font-subheading text-left align-middle">Installationskvalitet & Kringfyllnad</th>
-                  <th class="px-3 py-3 font-subheading text-center align-middle">Packningsgrad<br>(% Standard Proctor)
-                  </th>
-                  <th class="px-3 py-3 font-subheading text-center align-middle">Typisk Densitet<br>(kg/m³)</th>
-                  <th class="px-3 py-3 font-subheading text-left align-middle">Typisk Jordtyp / Material (ASTM-klass)
-                  </th>
-                  <th class="px-3 py-3 font-subheading text-center align-middle">Typiskt \(E'\) Intervall<br>(MPa = 10⁶
-                    N/m²)</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500">
-                <!-- Utmärkt -->
-                <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
-                  <td class="px-3 py-4 align-top">
-                    <strong>Utmärkt:</strong> Välgraderat krossmaterial (t.ex. bergkross 0-32 mm). Packat i tunna lager
-                    (≤15 cm) vid optimal fuktkvot. Mycket god kontroll.
-                  </td>
-                  <td class="px-3 py-4 text-center align-top">>95-100%</td>
-                  <td class="px-3 py-4 text-center align-top">~2200-2400</td>
-                  <td class="px-3 py-4 align-top">Krossad sten, välgraderat grus (GW, GP)</td>
-                  <td class="px-3 py-4 text-center align-top font-semibold">20 - 30+ MPa</td>
-                </tr>
-                <!-- Bra -->
-                <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
-                  <td class="px-3 py-4 align-top">
-                    <strong>Bra:</strong> Sand/grus-material (t.ex. rörgravsgrus 0-18 mm). Packat i lager (≤30 cm) vid
-                    nära optimal fuktkvot. God kontroll.
-                  </td>
-                  <td class="px-3 py-4 text-center align-top">90-95%</td>
-                  <td class="px-3 py-4 text-center align-top">~1900-2200</td>
-                  <td class="px-3 py-4 align-top">Sandigt grus, grusig sand (SW, SP, GP)</td>
-                  <td class="px-3 py-4 text-center align-top font-semibold">10 - 20 MPa</td>
-                </tr>
-                <!-- Medelgod -->
-                <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
-                  <td class="px-3 py-4 align-top">
-                    <strong>Medelgod/Tillräcklig:</strong> Sand/grus eller vissa kohesionsjordar packade kontrollerat
-                    vid optimal fuktkvot. Packning kritisk och måste noggrant kontrolleras.
-                  </td>
-                  <td class="px-3 py-4 text-center align-top">85-90%</td>
-                  <td class="px-3 py-4 text-center align-top">~1700-2000</td>
-                  <td class="px-3 py-4 align-top">Sand (SP), siltig sand (SM), lätt lera (CL)</td>
-                  <td class="px-3 py-4 text-center align-top font-semibold">3 - 10 MPa</td>
-                </tr>
-                <!-- Dålig -->
-                <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
-                  <td class="px-3 py-4 align-top">
-                    <strong>Dålig/Otillräcklig:</strong> Dåligt packad jord, löst tippat material, kohesionsjord med
-                    ogynnsam vattenhalt, organiskt material eller stora stenar nära röret.
-                  </td>
-                  <td class="px-3 py-4 text-center align-top">
-                    &lt 85% </td>
-                  <td class="px-3 py-4 text-center align-top">~1500-1800</td>
-                  <td class="px-3 py-4 align-top">Lös sand/grus, silt (ML), lera (CL/CH), organisk jord (OH, OL)</td>
-                  <td class="px-3 py-4 text-center align-top font-semibold">
-                    &lt 3 MPa</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="p-4 text-sm italic text-DGreenC-600 dark:text-TanC-300 bg-TanC-50 dark:bg-DGreenC-700 font-body">
-            Observera: Värdena ovan är typiska och baserade på ASTM D2321 och etablerad praxis. Faktiska värden kan
-            variera beroende på projekt- och platsförhållanden. Geoteknisk undersökning och fältprovning rekommenderas
-            för att fastställa projektspecifika E'-värden. Parametern \(E'\) är avgörande för rörinstallationens
-            stabilitet och långsiktiga prestanda.
-          </div>
-        </section>
-        <!-- Slut E Prime Tabell -->
-
-        <!-- Nyckelkomponenter och Slutsatser -->
-        <section aria-labelledby="key-conclusions-heading" class="font-body">
-          <h3 id="key-conclusions-heading"
-            class="font-subheading text-lg sm:text-lg md:text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3 mt-8">
-            Nyckelkomponenter och Slutsatser
-          </h3>
-          <p class="leading-relaxed mb-4 text-DGreenC-700 dark:text-TanC-300">
-            För att effektivt tillämpa och förstå den Modifierade Iowa-formeln är det viktigt att uppmärksamma följande
-            nyckelkomponenter:
-          </p>
-          <ul class="list-disc pl-6 space-y-2 leading-relaxed text-DGreenC-700 dark:text-TanC-300 mb-6">
+          class="hidden peer-checked:flex flex-col text-base text-YellowC-900 absolute top-full left-0 w-full bg-YellowC-500 shadow-md rounded-b-lg"
+        >
+          <ul class="text-center">
             <li>
-              <strong>Balans mellan Last och Motstånd:</strong> Kärnan i beräkningen är förhållandet mellan de pålagda
-              lasterna (jord och trafik) och rörets samt jordens kombinerade förmåga att motstå dessa laster.
+              <!-- Link to index.html -->
+              <a
+                href="index.html"
+                class="block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-xl py-3"
+                >Hem</a
+              >
+            </li>
+
+            <!-- Mobile Produkter Dropdown -->
+            <li class="block">
+              <input
+                type="checkbox"
+                id="mobile-produkt-toggle"
+                class="peer hidden"
+              />
+              <label
+                for="mobile-produkt-toggle"
+                class="inline-flex items-center justify-center w-full hover:text-YellowC-100 transition duration-300 ease-in-out text-xl py-3 cursor-pointer"
+              >
+                <a href="Products.html" class="font-subheading">Produkter</a>
+                <svg
+                  class="ml-1 w-4 h-4 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </label>
+              <!-- Updated Product Links with English filenames -->
+              <ul class="hidden peer-checked:block bg-YellowC-500 font-medium">
+                <li>
+                  <a
+                    href="Plasticpipes.html"
+                    class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                    >Plasttrummor</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Archculverts.html"
+                    class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                    >Valvbågar</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Steelpipes.html"
+                    class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                    >Ståltrummor</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Stormwater.html"
+                    class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                    >Dagvatten</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Geotextile.html"
+                    class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                    >Markduk</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Gabions.html"
+                    class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                    >Gabioner</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- New Menu Items with English filenames -->
+            <li>
+              <!-- Link to GuestBook.html -->
+              <a
+                href="GuestBook.html"
+                class="block hover:text-YellowC-100 transition duration-300 ease-in-out text-xl py-3"
+                >Gästbok</a
+              >
             </li>
             <li>
-              <strong>Noggrann Lastuppskattning:</strong> Korrekt bestämning av både permanent jordlast (\(W_E\)) och
-              variabla laster som trafik (\(W_L\)), inklusive dynamiska effekter och långtidsfaktorer (\(D_L\)), är
-              essentiellt. Förenklingar måste användas med omdöme.
+              <!-- Link to faq.html -->
+              <a
+                href="FAQ.html"
+                class="block hover:text-YellowC-100 transition duration-300 ease-in-out underline text-xl py-3"
+                >Vanliga Frågor</a
+              >
             </li>
+            <!-- End New Menu Items -->
+
             <li>
-              <strong>Jordens Sidostöd (\(E'\)) är Avgörande:</strong> Kvaliteten på installationen – valet av
-              kringfyllnadsmaterial och framför allt packningsgraden – har en dominerande inverkan på rörets nedböjning
-              via \(E'\). Ett högt \(E'\)-värde, uppnått genom korrekt utförande, är den mest effektiva faktorn för att
-              begränsa deformation.
-            </li>
-            <li>
-              <strong>Rörstyvhetens (\(P_S\)) Roll:</strong> Rörets egen styvhet bidrar till motståndet, men för
-              flexibla rör är dess relativa bidrag ofta mindre än jordens stöd, särskilt vid god packning. Val av
-              SN-klass påverkar dock säkerhetsmarginalen.
-            </li>
-            <li>
-              <strong>Tidsaspekten (\(D_L\)):</strong> Långtidseffekter som konsolidering av kringfyllnad och potentiell
-              krypning i rörmaterialet kan öka nedböjningen över tid. Tidsfaktorn \(D_L\) syftar till att inkludera
-              detta i designen.
-            </li>
-            <li>
-              <strong>Designmål:</strong> Det slutgiltiga målet är att säkerställa att den beräknade maximala
-              nedböjningen (\(\Delta y / D_o\)) understiger det tillåtna gränsvärdet (ofta 5-6%) med en betryggande
-              marginal för att garantera rörets funktion och strukturella integritet under hela dess livslängd.
+              <!-- Link to about.html -->
+              <a
+                href="about.html"
+                class="block hover:text-YellowC-100 transition duration-300 ease-in-out text-xl py-3"
+                >Om HK</a
+              >
             </li>
           </ul>
-          <p class="leading-relaxed mt-4 text-DGreenC-700 dark:text-TanC-300">
-            Sammanfattningsvis ger den Modifierade Iowa-formeln ett kraftfullt verktyg för att analysera och designa
-            nedgrävda flexibla rör, men dess tillförlitlighet vilar tungt på korrekta indata och en grundläggande
-            förståelse för de geotekniska principerna, särskilt vikten av högkvalitativ installation och packning.
-          </p>
-        </section>
-        <!-- Slut Nyckelkomponenter -->
+        </div>
+      </div>
+    </div>
+  </nav>
 
-        <!-- Avslutande Sammanfattning -->
-        <section aria-labelledby="final-summary-heading"
-          class="mt-6 pt-4 border-t border-DGreenC-300 dark:border-DGreenC-600 font-body">
-          <h3 id="final-summary-heading"
-            class="font-subheading text-lg sm:text-lg md:text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3">
-            Sammanfattningsvis om Beräkningen:
+  <body
+    class="font-body bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-800 dark:text-TanC-50 leading-relaxed text-base sm:text-base md:text-lg"
+  >
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPS3ZLJW"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <section id="fyllnadsdjup-info" class="px-6 py-12">
+      <!-- Title Section -->
+      <div class="text-center">
+        <h1
+          class="font-heading uppercase text-DGreenC-800 dark:text-TanC-50 text-4xl sm:text-4xl md:text-5xl lg:text-6xl mb-6"
+        >
+          Hur djupt bör vägtrumman grävas ner för att hålla?
+        </h1>
+        <p
+          class="font-body text-DGreenC-800 dark:text-TanC-50 text-lg sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-6"
+        >
+          En fördjupning kring rekommenderat fyllnadsdjup för vägtrummor,
+          samspelet mellan rör och mark, och de faktorer som påverkar
+          hållfastheten.
+        </p>
+      </div>
+
+      <!-- Content Sections -->
+      <div class="mt-10 space-y-8 max-w-3xl mx-auto">
+        <!-- Avsnitt 1: Problemet och rekommendationer -->
+        <div>
+          <p class="font-body text-DGreenC-800 dark:text-TanC-50">
+            Detta är en fråga jag själv brottats med, och det är svårt att hitta
+            en enkel, definitiv siffra. Man hör ofta om en allmän rekommendation
+            på
+            <strong class="font-semibold text-YellowC-600 dark:text-YellowC-400"
+              >60 cm överfyllnad</strong
+            >
+            (från trummans högsta punkt till vägbanan), som till exempel
+            <a
+              href="https://www.skogskunskap.se/vagar-i-skogen/drift-och-underhall/upprustning-och-ombyggnad/byta-trummor/#:~:text=Normalt%20rekommenderas%20minst%2060%20cm%20%C3%B6verfyllnad.%20En%20sedimenteringsgrop,Trumman%20b%C3%B6r%20ha%20ett%20fall%20p%C3%A5%201%E2%80%934%20cm/m."
+              class="font-body font-medium text-YellowC-600 hover:text-YellowC-500 dark:text-YellowC-500 dark:hover:text-YellowC-400 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Skogskunskap</a
+            >
+            nämner för skogsbilvägar. Samtidigt är det svårt att hitta just den
+            regeln som generell sanning i Trafikverkets bredare dokumentation
+            för alla vägtyper. Varför är det så?
+          </p>
+          <p class="font-body text-DGreenC-800 dark:text-TanC-50 mt-4">
+            Svaret ligger i att en vägtrumma, speciellt en flexibel sådan av
+            plast (som
+            <code
+              class="bg-TanC-200 dark:bg-DGreenC-500 px-1 rounded font-mono text-sm text-DGreenC-800 dark:text-TanC-50"
+              >SN8</code
+            >-rör) eller korrugerad plåt, inte bär lasten helt själv. Den ingår
+            i ett komplext samspel med den omgivande marken. Överfyllnadens
+            primära syfte är att sprida ut koncentrerade laster (från t.ex.
+            fordonshjul) och att skapa förutsättningar för jorden att hjälpa
+            till att bära lasten. Målet är att trummans deformation (nedböjning)
+            inte ska överstiga ca
+            <strong class="font-semibold text-YellowC-600 dark:text-YellowC-400"
+              >5-6%</strong
+            >
+            av dess diameter.
+          </p>
+        </div>
+
+        <!-- Avsnitt 2: Kan man ha mindre? -->
+        <div>
+          <h2
+            class="font-subheading text-DGreenC-800 dark:text-YellowC-400 text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold mb-4 mt-8"
+          >
+            Kan man då klara sig med mindre än 60 cm?
+          </h2>
+          <p class="font-body text-DGreenC-800 dark:text-TanC-50">
+            Ja, men det beror helt på förutsättningarna. Vid låg trafiklast (som
+            på en del skogsvägar) och om man undviker körning när marken är som
+            blötast (då den ger sämre stöd), kan det vara möjligt. En torrare,
+            fastare mark ger bättre mothåll mot rörets sidor, vilket hjälper det
+            att motstå deformation när det belastas ovanifrån.
+          </p>
+        </div>
+
+        <!-- Avsnitt 3: Egna uppskattningar -->
+        <div>
+          <h2
+            class="font-subheading text-DGreenC-800 dark:text-YellowC-400 text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold mb-4 mt-8"
+          >
+            Mina Egna Uppskattningar för SN8 rör (OBS! Endast Teoretiska
+            Indikationer!)
+          </h2>
+          <p class="font-body text-DGreenC-800 dark:text-TanC-50">
+            Ur ett geometriskt perspektiv kan man resonera kring hur djupt en
+            vägtrumma bör grävas ned, genom att beakta hur belastningen fördelas
+            genom fyllningen ovanpå trumman. Tänk dig att belastningen från
+            fordon och mark ovanför trumman sprids nedåt som en kon, där konens
+            basdiameter ökar med djupet. För att minimera deformation och
+            säkerställa att trumman håller, vill man att denna belastningskon
+            vid trummans nivå har minst samma diameter som trummans
+            ytterdiameter.
+          </p>
+
+          <!-- Visuell representation av beräkningen -->
+          <figure
+            class="my-6 text-center text-DGreenC-800 dark:text-TanC-50"
+            aria-labelledby="lastspridningskon-caption"
+          >
+            <svg
+              viewBox="65 15 179 200"
+              xmlns="http://www.w3.org/2000/svg"
+              class="inline-block max-w-full h-70"
+              style="
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                fill-rule: evenodd;
+              "
+            >
+              <style>
+                .main-geo {
+                  stroke: currentColor;
+                  stroke-width: 1.5;
+                  fill: none;
+                }
+
+                .road-line {
+                  stroke: currentColor;
+                  stroke-width: 2;
+                  fill: none;
+                }
+
+                .pipe-body {
+                  stroke: currentColor;
+                  stroke-width: 1.5;
+                  fill: none;
+                }
+
+                .dim-line {
+                  stroke: currentColor;
+                  stroke-width: 1;
+                  marker-start: url(#arrow);
+                  marker-end: url(#arrow);
+                  fill: none;
+                }
+
+                .dim-line-single-end {
+                  stroke: currentColor;
+                  stroke-width: 1;
+                  marker-end: url(#arrow);
+                  fill: none;
+                }
+
+                .label-text {
+                  fill: currentColor;
+                  font-family: "Inter", sans-serif;
+                  /* Matches font-body if Inter is primary */
+                  font-size: 12px;
+                  text-anchor: middle;
+                  dominant-baseline: central;
+                  stroke: none;
+                }
+
+                .label-text-angle {
+                  fill: currentColor;
+                  font-family: "Inter", sans-serif;
+                  /* Matches font-body */
+                  font-size: 11px;
+                  text-anchor: middle;
+                  dominant-baseline: central;
+                  stroke: none;
+                }
+
+                .arrow-head {
+                  fill: currentColor;
+                  stroke: none;
+                }
+              </style>
+              <defs>
+                <marker
+                  id="arrow"
+                  viewBox="0 0 10 10"
+                  refX="5"
+                  refY="5"
+                  markerWidth="5"
+                  markerHeight="5"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M 0 0 L 10 5 L 0 10 z" class="arrow-head" />
+                </marker>
+              </defs>
+              <line x1="80" y1="40" x2="220" y2="40" class="road-line" />
+              <circle cx="150" cy="160" r="50" class="pipe-body" />
+              <line x1="150" y1="40" x2="100" y2="110" class="main-geo" />
+              <line x1="150" y1="40" x2="200" y2="110" class="main-geo" />
+              <line x1="100" y1="110" x2="200" y2="110" class="main-geo" />
+              <line
+                x1="150"
+                y1="20"
+                x2="150"
+                y2="38"
+                class="dim-line-single-end"
+              />
+              <text x="143" y="25" class="label-text">P</text>
+              <line x1="70" y1="39" x2="70" y2="110" class="dim-line" />
+              <text x="85" y="70" class="label-text">h</text>
+              <text
+                x="95"
+                y="76"
+                style="
+                  font-size: 8px;
+                  fill: currentColor;
+                  text-anchor: middle;
+                  dominant-baseline: central;
+                "
+              >
+                min
+              </text>
+              <line x1="102" y1="160" x2="198" y2="160" class="dim-line" />
+              <text x="150" y="170" class="label-text">D</text>
+              <text
+                x="156"
+                y="173"
+                style="
+                  font-size: 8px;
+                  fill: currentColor;
+                  text-anchor: middle;
+                  dominant-baseline: central;
+                "
+              >
+                o
+              </text>
+              <path
+                d="M 141.282 52.205 A 15 15 0 0 0 158.718 52.205"
+                class="main-geo"
+                style="stroke-width: 1"
+              />
+              <text x="145" y="63" class="label-text-angle">θ</text>
+              <text
+                x="149"
+                y="65"
+                style="
+                  font-size: 7px;
+                  fill: currentColor;
+                  text-anchor: start;
+                  dominant-baseline: central;
+                "
+              >
+                kon
+              </text>
+            </svg>
+            <figcaption
+              id="lastspridningskon-caption"
+              class="mt-2 text-sm text-DGreenC-600 dark:text-TanC-300"
+            >
+              Figur 1: Illustration av lastspridningskon över ett rör med
+              nyckeldimensioner.
+            </figcaption>
+          </figure>
+
+          <p class="font-body text-DGreenC-800 dark:text-TanC-50 mt-4">
+            Detta resonemang leder fram till en enkel geometrisk formel för att
+            uppskatta den minsta fyllnadshöjden över trumman för att få lasten
+            att spridas jämt över trumman:
+          </p>
+          <!-- Formel Block -->
+          <section
+            aria-labelledby="minsta-fyllnadshojd-formula-heading"
+            class="bg-TanC-200 dark:bg-DGreenC-700 border border-YellowC-500 dark:border-YellowC-400 p-6 rounded-lg my-6 shadow-md overflow-x-auto"
+          >
+            <h4
+              id="minsta-fyllnadshojd-formula-heading"
+              class="font-subheading text-center text-lg mb-4 text-DGreenC-800 dark:text-TanC-50"
+            >
+              Formel för Minsta Fyllnadshöjd
+            </h4>
+            <div
+              class="text-DGreenC-800 dark:text-TanC-50 text-center text-xl font-mono"
+            >
+              \[ h_{\text{min}} = \frac{D_{\text{o}}}{2
+              \tan(\frac{\theta_{\text{kon}}}{2})} - \frac{D_{\text{o}}}{2} \]
+            </div>
+            <div
+              class="mt-6 text-sm text-DGreenC-700 dark:text-TanC-300 font-body"
+            >
+              <div
+                class="font-semibold mb-2 text-DGreenC-800 dark:text-TanC-50"
+              >
+                Definition av Termer:
+              </div>
+              <ul class="list-none space-y-1">
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(h_{\text{min}}\)</strong
+                  >
+                  = Minsta överfyllnadshöjd från rörets hjässa till markytan (m)
+                </li>
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(D_{\text{o}}\)</strong
+                  >
+                  = Rörets ytterdiameter (m)
+                </li>
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(\theta_{\text{kon}}\)</strong
+                  >
+                  = Konens fulla toppvinkel (den totala vinkeln vid spetsen av
+                  konen, anges i grader)
+                </li>
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(\tan()\)</strong
+                  >
+                  = Tangens trigonometrisk funktion
+                </li>
+              </ul>
+            </div>
+          </section>
+          <!-- Disclaimer Block -->
+          <div
+            class="bg-YellowC-500/20 dark:bg-YellowC-400/20 border border-YellowC-500 text-YellowC-700 dark:text-YellowC-300 p-4 rounded-md my-4 text-sm font-body"
+          >
+            <strong class="font-semibold">OBS!</strong> Det är mitt sätt att se
+            på överfyllnad på mindre trummor upp till 400 mm i diameter.
+            Observera att dessa beräkningar inte ger några garantier eller
+            officiella rekommendationer utan mer som en bodepraktika!
+          </div>
+
+          <h3
+            class="font-subheading text-DGreenC-800 dark:text-YellowC-400 text-lg sm:text-lg md:text-xl font-semibold mb-3 mt-6"
+          >
+            Exempel på uppskattningar för olika trumdiametrar:
           </h3>
-          <p class="leading-relaxed text-DGreenC-700 dark:text-TanC-300">
-            Formeln visar att både rörstyvheten (\(P_S\)) och jordens sidostöd (\(E'\)) motstår lasterna. För flexibla
-            rör är jordens bidrag (\(E'\)) ofta mycket större än rörets (\(P_S\)). <strong
-              class="font-semibold text-DGreenC-800 dark:text-TanC-50">Detta understryker varför installationen och
-              packningen av kringfyllningen är så otroligt viktig.</strong> Överfyllnaden (\(h\)) påverkar både
-            jordlasten och (särskilt vid låga \(h\)) den effektiva trafiklasten på röret.
+
+          <ul
+            class="list-disc pl-5 space-y-2 font-body text-DGreenC-800 dark:text-TanC-50"
+          >
+            <li>
+              <strong
+                class="font-semibold text-YellowC-600 dark:text-YellowC-400"
+                >Ø200 mm:</strong
+              >
+              Minsta fyllnadshöjd kan vara cirka 0,2 - 0,31 m.
+            </li>
+            <li>
+              <strong
+                class="font-semibold text-YellowC-600 dark:text-YellowC-400"
+                >Ø300 mm:</strong
+              >
+              Minsta fyllnadshöjd kan vara cirka 0,3 - 0,46 m.
+            </li>
+            <li>
+              <strong
+                class="font-semibold text-YellowC-600 dark:text-YellowC-400"
+                >Ø400 mm:</strong
+              >
+              Minsta fyllnadshöjd kan vara cirka 0,4 - 0,62 m.
+            </li>
+          </ul>
+          <p class="font-body text-DGreenC-800 dark:text-TanC-50 mt-4">
+            För att dina exempelvärden ska stämma ungefär, behöver
+            \(\theta_{\text{kon}}\) vara i intervallet ca 35° till 55°. <br />
+            Det är viktigt att förstå dessa uppskattningar korrekt, och om det
+            finns tillräckligt med material bör man alltid sträva efter att ha
+            <strong class="font-semibold text-YellowC-600 dark:text-YellowC-400"
+              >minst 0,6 m fyllning</strong
+            >
+            oavsett trummans storlek.
           </p>
-        </section>
-        <!-- Slut Avslutande Sammanfattning -->
-      </div>
-      <!-- Slut Avsnitt 4 -->
+        </div>
 
-      <!-- Avsnitt 5: Datakällor (Reviderad) -->
-      <div>
-        <h2
-          class="font-subheading text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-4 mt-8">
-          Var hittar man data och mer information?
-        </h2>
-        <p class="font-body leading-relaxed mb-4 text-DGreenC-800 dark:text-TanC-50">För den som vill fördjupa sig
-          ytterligare finns här några källor för beräkningsdata, standarder och vägledning:</p>
-        <ul class="list-disc pl-5 space-y-3 leading-relaxed font-body text-DGreenC-800 dark:text-TanC-50">
-          <li>
-            <strong>Standarder (SIS och AMA):</strong>
-            Viktiga svenska och europeiska standarder för dimensionering och utförande finns hos Svenska Institutet för
-            Standarder (SIS). Relevanta exempel inkluderar:
-            <ul class="list-circle pl-5 mt-2 space-y-1">
-              <li><a
-                  href="https://www.sis.se/produkter/fluidsystem-och-delar/rorledningskomponenter-och-rorledningar/allmant/ss-en-1295-12019/"
-                  target="_blank" rel="noopener noreferrer"
-                  class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300">SS-EN
-                  1295-1:2019</a> <span class="text-sm italic text-DGreenC-600 dark:text-TanC-300">(Strukturell
-                  dimensionering av rörledningar nedgrävda i mark)</span></li>
-              <li><a
-                  href="https://www.sis.se/produkter/miljo-och-halsoskydd-sakerhet/vattenkvalitet/avloppsvatten/ssen16102015/"
-                  target="_blank" rel="noopener noreferrer"
-                  class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300">SS-EN
-                  1610:2015</a> <span class="text-sm italic text-DGreenC-600 dark:text-TanC-300">(Utförande och provning
-                  av avloppsledningar)</span></li>
+        <!-- Avsnitt 4: Teoretisk Förklaring - Förbättrad Version -->
+        <div>
+          <h2
+            class="font-subheading text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-4 mt-8"
+          >
+            Teoretisk Grund: Beräkning av Rördeformation via Modifierad
+            Iowa-formel
+          </h2>
+          <p
+            class="font-body leading-relaxed text-DGreenC-700 dark:text-TanC-300 mb-6"
+          >
+            För en teknisk analys av nedböjning hos flexibla rör är den
+            Modifierade Iowa-formeln en vedertagen metod inom branschen. Metoden
+            syftar till att kvantifiera den förväntade vertikala nedböjningen,
+            uttryckt som en procentandel av rörets diameter (\(\Delta y /
+            D_o\)), och verifiera att denna understiger specificerade tillåtna
+            gränsvärden (vanligen 5-6% för de flesta applikationer för att
+            säkerställa långsiktig funktion och integritet).
+          </p>
+
+          <h3
+            class="font-subheading text-lg sm:text-lg md:text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3 mt-6"
+          >
+            Formelns Grundprincip: En Balansgång
+          </h3>
+          <p
+            class="font-body leading-relaxed text-DGreenC-700 dark:text-TanC-300"
+          >
+            Kärnan i formeln är en jämviktsanalys som ställer de externa
+            lasterna (från jord och trafik) som verkar vertikalt nedåt på röret,
+            mot det kombinerade motståndet från rörets egen styvhet och det
+            laterala stödet från den omgivande packade jorden.
+          </p>
+
+          <!-- Formel Block - Modifierad Iowa-formel -->
+          <section
+            aria-labelledby="iowa-formula-heading"
+            class="bg-TanC-200 dark:bg-DGreenC-700 border border-YellowC-500 dark:border-YellowC-400 p-6 rounded-lg my-6 shadow-md overflow-x-auto"
+          >
+            <h4
+              id="iowa-formula-heading"
+              class="font-subheading text-center text-lg mb-4 text-DGreenC-800 dark:text-TanC-50"
+            >
+              Modifierad Iowa-formel för Vertikal Nedböjning
+            </h4>
+            <div
+              class="text-DGreenC-800 dark:text-TanC-50 text-center text-xl font-mono"
+            >
+              \[ \frac{\Delta y}{D_o} (\%) = \frac{D_L \cdot K \cdot (W_E +
+              W_L)}{P_S + 0.061 \cdot E'} \times 100 \]
+            </div>
+
+            <div
+              class="mt-6 text-sm text-DGreenC-700 dark:text-TanC-300 font-body"
+            >
+              <div
+                class="font-semibold mb-2 text-DGreenC-800 dark:text-TanC-50"
+              >
+                Definition av Termer:
+              </div>
+              <ul class="list-none space-y-1">
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(\frac{\Delta y}{D_o}\)</strong
+                  >
+                  = Relativ vertikal nedböjning (dimensionslös, multipliceras
+                  med 100 för procent)
+                </li>
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(D_L\)</strong
+                  >
+                  = Deflection Lag Factor (Tidsfaktor, ofta 1.0-1.5, beaktar
+                  långtidseffekter som konsolidering)
+                </li>
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(K\)</strong
+                  >
+                  = Bedding Constant (Bäddningsfaktor, beror på
+                  installationsvinkeln, typiskt ~0.1)
+                </li>
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(W_E\)</strong
+                  >
+                  = Prism Earth Load (Jordlast per meter rör, N/m)
+                </li>
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(W_L\)</strong
+                  >
+                  = Live Load (Rörlig last, t.ex. trafik, per meter rör, N/m)
+                </li>
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(P_S\)</strong
+                  >
+                  = Pipe Stiffness (Rörstyvhet, N/m², motsvarar tryck) -
+                  <em>Se förklaring nedan</em>
+                </li>
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(E'\)</strong
+                  >
+                  = Modulus of Soil Reaction (Jordens reaktionsmodul/sidostöd,
+                  N/m²) - <em>Se förklaring nedan</em>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <!-- Slut Formel Block -->
+
+          <!-- Belastningskomponenter -->
+          <section
+            aria-labelledby="load-components-heading"
+            class="bg-TanC-200 dark:bg-DGreenC-500 border border-YellowC-500 dark:border-YellowC-400 p-6 rounded-lg my-6 shadow-md overflow-x-auto"
+          >
+            <h4
+              id="load-components-heading"
+              class="font-subheading text-center text-lg mb-6 text-DGreenC-800 dark:text-TanC-50"
+            >
+              Beräkning av Belastningskomponenter (Täljaren)
+            </h4>
+            <div class="space-y-10 font-body">
+              <!-- Jordlast W_E -->
+              <div>
+                <h5
+                  class="font-subheading text-md mb-3 text-DGreenC-700 dark:text-TanC-300"
+                >
+                  1. Jordlast (\( W_E \)):
+                </h5>
+                <p
+                  class="text-sm italic mb-3 text-DGreenC-600 dark:text-TanC-400"
+                >
+                  Lasten från jordprisman ovanför röret.
+                </p>
+                <div
+                  class="text-xl text-center my-2 font-mono text-DGreenC-800 dark:text-TanC-50"
+                >
+                  \[ W_E = C_d \cdot \rho_{soil} \cdot g \cdot h \cdot D_o \]
+                </div>
+                <div class="mt-4 text-sm text-DGreenC-700 dark:text-TanC-300">
+                  <strong class="text-DGreenC-800 dark:text-TanC-50"
+                    >Förklaring av variabler:</strong
+                  >
+                  <ul class="list-disc pl-6 space-y-1 mt-2">
+                    <li>
+                      \(C_d\): Lastkoefficient baserad på installationstyp och
+                      jordens egenskaper (kan beräknas via Marston's teori eller
+                      användas från standardtabeller)
+                    </li>
+                    <li>
+                      \(\rho_{soil}\): Jordens densitet (kg/m³), t.ex. \(1900 \,
+                      kg/m^3\) för packad sand/grus
+                    </li>
+                    <li>
+                      \(g\): Tyngdacceleration (\(\approx 9.82 \, m/s^2\))
+                    </li>
+                    <li>
+                      \(h\): Överfyllnadshöjd från rörets hjässa till markytan
+                      (m)
+                    </li>
+                    <li>\(D_o\): Rörets ytterdiameter (m)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <hr class="border-DGreenC-300 dark:border-DGreenC-600" />
+
+              <!-- Trafiklast W_L -->
+              <div>
+                <h5
+                  class="font-subheading text-md mb-3 text-DGreenC-700 dark:text-TanC-300"
+                >
+                  2. Rörlig Last / Trafiklast (\( W_L \)):
+                </h5>
+                <p
+                  class="text-sm italic mb-3 text-DGreenC-600 dark:text-TanC-400"
+                >
+                  Last per meter rör från t.ex. vägtrafik.
+                </p>
+                <div
+                  class="text-xl text-center my-2 font-mono text-DGreenC-800 dark:text-TanC-50"
+                >
+                  \[ W_L = I_f \cdot P_{surface} \cdot D_o \]
+                </div>
+                <p
+                  class="text-sm italic my-3 text-DGreenC-600 dark:text-TanC-400"
+                >
+                  Där \( P_{surface} \) är trycket vid rörets nivå, ofta
+                  beräknat från hjullaster via spridningsmodeller.
+                </p>
+
+                <div
+                  class="text-md font-semibold mt-4 mb-2 text-DGreenC-700 dark:text-TanC-300"
+                >
+                  Approximation via Boussinesqs teori (Punktlast):
+                </div>
+                <p class="text-sm mb-2 text-DGreenC-600 dark:text-TanC-400">
+                  För en enskild hjullast \( P_{wheel} \) kan trycket \(
+                  \sigma_z \) på djupet \( h \) under lasten approximeras som:
+                </p>
+                <div
+                  class="text-xl text-center my-2 font-mono text-DGreenC-800 dark:text-TanC-50"
+                >
+                  \[ \sigma_z \approx \frac{3 \cdot P_{wheel}}{2 \cdot \pi \cdot
+                  h^2} \]
+                </div>
+                <div
+                  class="text-md font-semibold mt-4 mb-2 text-DGreenC-700 dark:text-TanC-300"
+                >
+                  Och hjullasten \( P_{wheel} \) beräknas från axeltrycket:
+                </div>
+                <div
+                  class="text-xl text-center my-2 font-mono text-DGreenC-800 dark:text-TanC-50"
+                >
+                  \[ P_{wheel} = \frac{\text{Axeltryck (kg)}}{2} \cdot g \quad
+                  [N] \]
+                </div>
+
+                <div class="mt-4 text-sm text-DGreenC-700 dark:text-TanC-300">
+                  <strong class="text-DGreenC-800 dark:text-TanC-50"
+                    >Förklaring av variabler:</strong
+                  >
+                  <ul class="list-disc pl-6 space-y-1 mt-2">
+                    <li>
+                      \(I_f\): Impact Factor / Dynamisk faktor (typiskt 1.0-1.5,
+                      beroende på djup och hastighet)
+                    </li>
+                    <li>
+                      \(P_{surface}\) / \(\sigma_z\): Tryck vid rörets nivå
+                      (N/m²)
+                    </li>
+                    <li>\(P_{wheel}\): Vertikal hjullast (N)</li>
+                    <li>
+                      \(\text{Axeltryck}\): Dimensionerande axellast (kg), t.ex.
+                      \(12000 \, kg\) för tung trafik
+                    </li>
+                    <li>
+                      \(g\): Tyngdacceleration (\(\approx 9.82 \, m/s^2\))
+                    </li>
+                    <li>
+                      \(h\): Överfyllnadsdjup från markyta till rörets hjässa
+                      (m)
+                    </li>
+                    <li>\(D_o\): Rörets ytterdiameter (m)</li>
+                  </ul>
+                  <div
+                    class="mt-4 bg-TanC-50 dark:bg-DGreenC-700 p-3 rounded-md"
+                  >
+                    <strong class="text-DGreenC-800 dark:text-TanC-50"
+                      >Exempel Hjullast:</strong
+                    >
+                    För 12000 kg axeltryck:
+                    <div
+                      class="text-center font-mono mt-1 text-DGreenC-800 dark:text-TanC-50"
+                    >
+                      \[ P_{wheel} = \frac{12000}{2} \cdot 9.82 = 58920 \, N \]
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="mt-4 text-xs italic text-DGreenC-500 dark:text-TanC-400"
+                >
+                  (Not: Beräkning av \(W_L\) från punktlaster är en förenkling.
+                  Mer avancerade metoder beaktar lastspridning genom marklager
+                  och över rörets yta, samt inverkan av flera axlar. Konsultera
+                  relevanta standarder som Eurokod eller AASHTO för detaljerade
+                  metoder.)
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Slut Belastningskomponenter -->
+
+          <!-- Motståndskomponenter -->
+          <section
+            aria-labelledby="resistance-components-heading"
+            class="bg-TanC-200 dark:bg-DGreenC-500 border border-YellowC-500 dark:border-YellowC-400 p-6 rounded-lg my-6 shadow-md overflow-x-auto"
+          >
+            <h4
+              id="resistance-components-heading"
+              class="font-subheading text-center text-lg mb-4 text-DGreenC-800 dark:text-TanC-50"
+            >
+              Motstånd mot Nedböjning (Nämnaren)
+            </h4>
+            <div
+              class="text-xl text-center mb-6 font-mono text-DGreenC-800 dark:text-TanC-50"
+            >
+              \[ \text{Motstånd} = P_S + 0.061 \cdot E' \]
+            </div>
+            <div
+              class="mt-4 text-sm text-DGreenC-700 dark:text-TanC-300 space-y-4 font-body"
+            >
+              <div
+                class="font-semibold mb-2 text-DGreenC-800 dark:text-TanC-50"
+              >
+                Definition av Termer:
+              </div>
+              <ul class="list-disc pl-6 space-y-3">
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(P_S\) = Rörstyvhet (Pipe Stiffness):</strong
+                  >
+                  Ett mått på rörets inneboende motstånd mot deformation under
+                  extern belastning. För ringstyva rör definieras detta ofta
+                  genom standardiserade tester (t.ex. enligt EN ISO 9969) och
+                  anges i klasser som SN4, SN8, SN12, vilket motsvarar en
+                  styvhet på 4000, 8000, respektive 12000 N/m². Denna term
+                  representerar trycket som krävs för att deformera röret en
+                  viss procentandel. En högre SN-klass innebär ett styvare rör.
+                  <br /><em>(Enhet: N/m² eller Pa)</em>
+                </li>
+                <li>
+                  <strong
+                    class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                    >\(E'\) = Jordens Reaktionsmodul (Modulus of Soil
+                    Reaction):</strong
+                  >
+                  Representerar det laterala stödet som den omgivande jorden ger
+                  mot rörets sidor när det deformeras. Detta är en
+                  <span class="text-RedC-500 dark:text-RedC-400 font-bold"
+                    >KRITISKT VIKTIG PARAMETER</span
+                  >
+                  som är direkt beroende av:
+                  <ul class="list-circle pl-6 mt-1 space-y-1">
+                    <li>
+                      Kringfyllnadsmaterialets typ och kvalitet (t.ex.
+                      kornstorleksfördelning, friktionsegenskaper).
+                    </li>
+                    <li>Packningsgraden (densiteten) hos kringfyllnaden.</li>
+                    <li>Fuktkvoten under packning och i drift.</li>
+                  </ul>
+                  Ett noggrant utfört installationsarbete med korrekt material
+                  och packning är avgörande för att uppnå ett högt \(E'\)-värde
+                  och därmed minimera nedböjningen.
+                  <br /><em>(Enhet: N/m² eller Pa)</em>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <!-- Slut Motståndskomponenter -->
+
+          <!-- E Prime Tabell -->
+          <section
+            aria-labelledby="e-prime-table-heading"
+            class="overflow-hidden rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md my-6"
+          >
+            <h4
+              id="e-prime-table-heading"
+              class="font-subheading text-center text-lg p-4 bg-TanC-50 dark:bg-DGreenC-700 text-DGreenC-800 dark:text-TanC-50 mb-0"
+            >
+              Typiska Värden för Jordens Reaktionsmodul (\(E'\)) baserat på
+              Installationens Kvalitet
+            </h4>
+
+            <div class="overflow-x-auto">
+              <table
+                class="min-w-full text-sm border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-DGreenC-800 dark:text-TanC-50 font-body"
+              >
+                <thead
+                  class="bg-YellowC-500 text-DGreenC-800 dark:text-DGreenC-800 align-bottom"
+                >
+                  <tr>
+                    <th
+                      class="px-3 py-3 font-subheading text-left align-middle"
+                    >
+                      Installationskvalitet & Kringfyllnad
+                    </th>
+                    <th
+                      class="px-3 py-3 font-subheading text-center align-middle"
+                    >
+                      Packningsgrad<br />(% Standard Proctor)
+                    </th>
+                    <th
+                      class="px-3 py-3 font-subheading text-center align-middle"
+                    >
+                      Typisk Densitet<br />(kg/m³)
+                    </th>
+                    <th
+                      class="px-3 py-3 font-subheading text-left align-middle"
+                    >
+                      Typisk Jordtyp / Material (ASTM-klass)
+                    </th>
+                    <th
+                      class="px-3 py-3 font-subheading text-center align-middle"
+                    >
+                      Typiskt \(E'\) Intervall<br />(MPa = 10⁶ N/m²)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500"
+                >
+                  <!-- Utmärkt -->
+                  <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
+                    <td class="px-3 py-4 align-top">
+                      <strong>Utmärkt:</strong> Välgraderat krossmaterial (t.ex.
+                      bergkross 0-32 mm). Packat i tunna lager (≤15 cm) vid
+                      optimal fuktkvot. Mycket god kontroll.
+                    </td>
+                    <td class="px-3 py-4 text-center align-top">>95-100%</td>
+                    <td class="px-3 py-4 text-center align-top">~2200-2400</td>
+                    <td class="px-3 py-4 align-top">
+                      Krossad sten, välgraderat grus (GW, GP)
+                    </td>
+                    <td class="px-3 py-4 text-center align-top font-semibold">
+                      20 - 30+ MPa
+                    </td>
+                  </tr>
+                  <!-- Bra -->
+                  <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
+                    <td class="px-3 py-4 align-top">
+                      <strong>Bra:</strong> Sand/grus-material (t.ex.
+                      rörgravsgrus 0-18 mm). Packat i lager (≤30 cm) vid nära
+                      optimal fuktkvot. God kontroll.
+                    </td>
+                    <td class="px-3 py-4 text-center align-top">90-95%</td>
+                    <td class="px-3 py-4 text-center align-top">~1900-2200</td>
+                    <td class="px-3 py-4 align-top">
+                      Sandigt grus, grusig sand (SW, SP, GP)
+                    </td>
+                    <td class="px-3 py-4 text-center align-top font-semibold">
+                      10 - 20 MPa
+                    </td>
+                  </tr>
+                  <!-- Medelgod -->
+                  <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
+                    <td class="px-3 py-4 align-top">
+                      <strong>Medelgod/Tillräcklig:</strong> Sand/grus eller
+                      vissa kohesionsjordar packade kontrollerat vid optimal
+                      fuktkvot. Packning kritisk och måste noggrant
+                      kontrolleras.
+                    </td>
+                    <td class="px-3 py-4 text-center align-top">85-90%</td>
+                    <td class="px-3 py-4 text-center align-top">~1700-2000</td>
+                    <td class="px-3 py-4 align-top">
+                      Sand (SP), siltig sand (SM), lätt lera (CL)
+                    </td>
+                    <td class="px-3 py-4 text-center align-top font-semibold">
+                      3 - 10 MPa
+                    </td>
+                  </tr>
+                  <!-- Dålig -->
+                  <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
+                    <td class="px-3 py-4 align-top">
+                      <strong>Dålig/Otillräcklig:</strong> Dåligt packad jord,
+                      löst tippat material, kohesionsjord med ogynnsam
+                      vattenhalt, organiskt material eller stora stenar nära
+                      röret.
+                    </td>
+                    <td class="px-3 py-4 text-center align-top">&lt 85%</td>
+                    <td class="px-3 py-4 text-center align-top">~1500-1800</td>
+                    <td class="px-3 py-4 align-top">
+                      Lös sand/grus, silt (ML), lera (CL/CH), organisk jord (OH,
+                      OL)
+                    </td>
+                    <td class="px-3 py-4 text-center align-top font-semibold">
+                      &lt 3 MPa
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="p-4 text-sm italic text-DGreenC-600 dark:text-TanC-300 bg-TanC-50 dark:bg-DGreenC-700 font-body"
+            >
+              Observera: Värdena ovan är typiska och baserade på ASTM D2321 och
+              etablerad praxis. Faktiska värden kan variera beroende på projekt-
+              och platsförhållanden. Geoteknisk undersökning och fältprovning
+              rekommenderas för att fastställa projektspecifika E'-värden.
+              Parametern \(E'\) är avgörande för rörinstallationens stabilitet
+              och långsiktiga prestanda.
+            </div>
+          </section>
+          <!-- Slut E Prime Tabell -->
+
+          <!-- Nyckelkomponenter och Slutsatser -->
+          <section aria-labelledby="key-conclusions-heading" class="font-body">
+            <h3
+              id="key-conclusions-heading"
+              class="font-subheading text-lg sm:text-lg md:text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3 mt-8"
+            >
+              Nyckelkomponenter och Slutsatser
+            </h3>
+            <p class="leading-relaxed mb-4 text-DGreenC-700 dark:text-TanC-300">
+              För att effektivt tillämpa och förstå den Modifierade Iowa-formeln
+              är det viktigt att uppmärksamma följande nyckelkomponenter:
+            </p>
+            <ul
+              class="list-disc pl-6 space-y-2 leading-relaxed text-DGreenC-700 dark:text-TanC-300 mb-6"
+            >
+              <li>
+                <strong>Balans mellan Last och Motstånd:</strong> Kärnan i
+                beräkningen är förhållandet mellan de pålagda lasterna (jord och
+                trafik) och rörets samt jordens kombinerade förmåga att motstå
+                dessa laster.
+              </li>
+              <li>
+                <strong>Noggrann Lastuppskattning:</strong> Korrekt bestämning
+                av både permanent jordlast (\(W_E\)) och variabla laster som
+                trafik (\(W_L\)), inklusive dynamiska effekter och
+                långtidsfaktorer (\(D_L\)), är essentiellt. Förenklingar måste
+                användas med omdöme.
+              </li>
+              <li>
+                <strong>Jordens Sidostöd (\(E'\)) är Avgörande:</strong>
+                Kvaliteten på installationen – valet av kringfyllnadsmaterial
+                och framför allt packningsgraden – har en dominerande inverkan
+                på rörets nedböjning via \(E'\). Ett högt \(E'\)-värde, uppnått
+                genom korrekt utförande, är den mest effektiva faktorn för att
+                begränsa deformation.
+              </li>
+              <li>
+                <strong>Rörstyvhetens (\(P_S\)) Roll:</strong> Rörets egen
+                styvhet bidrar till motståndet, men för flexibla rör är dess
+                relativa bidrag ofta mindre än jordens stöd, särskilt vid god
+                packning. Val av SN-klass påverkar dock säkerhetsmarginalen.
+              </li>
+              <li>
+                <strong>Tidsaspekten (\(D_L\)):</strong> Långtidseffekter som
+                konsolidering av kringfyllnad och potentiell krypning i
+                rörmaterialet kan öka nedböjningen över tid. Tidsfaktorn \(D_L\)
+                syftar till att inkludera detta i designen.
+              </li>
+              <li>
+                <strong>Designmål:</strong> Det slutgiltiga målet är att
+                säkerställa att den beräknade maximala nedböjningen (\(\Delta y
+                / D_o\)) understiger det tillåtna gränsvärdet (ofta 5-6%) med en
+                betryggande marginal för att garantera rörets funktion och
+                strukturella integritet under hela dess livslängd.
+              </li>
             </ul>
-            Referensverket AMA Anläggning innehåller också detaljerade anvisningar för utförande.
-          </li>
-          <li>
-            <strong>Trafikverket (TRVINFRA / TDOK):</strong>
-            För arbeten på eller invid allmän väg gäller Trafikverkets tekniska krav (TRVK/TRV). Här specificeras
-            laster, materialval och utförandekrav. Ett centralt dokument är:
-            <ul class="list-circle pl-5 mt-2 space-y-1">
-              <li><a
-                  href="https://trvdokument.trafikverket.se/fileHandler.ashx?typ=showdokument&id=13ca1588-486b-4477-a5c5-e636a6a71279"
-                  target="_blank" rel="noopener noreferrer"
-                  class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300">TRVK
-                  Väg (TDOK 2013:0737)</a> <span class="text-sm italic text-DGreenC-600 dark:text-TanC-300">(Tekniska
-                  krav för vägars konstruktion)</span></li>
-            </ul>
-          </li>
-          <li>
-            <strong>Geotekniska Handböcker & Resurser:</strong>
-            För att förstå och bestämma jordmaterialens egenskaper (som E'-modul) och hur laster sprids i marken finns
-            flera bra källor:
-            <ul class="list-circle pl-5 mt-2 space-y-1">
-              <li><a href="https://svenskageotekniskaforeningen.se/kunskapsbank/sgfs-falthandbok-geoteknik/"
-                  target="_blank" rel="noopener noreferrer"
-                  class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300">SGF:s
-                  Fälthandbok Geoteknik</a> <span class="text-sm italic text-DGreenC-600 dark:text-TanC-300">(Praktisk
-                  vägledning från Svenska Geotekniska Föreningen)</span></li>
-              <li>Statens Geotekniska Institut (<a href="https://www.sgi.se/" target="_blank" rel="noopener noreferrer"
-                  class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300">SGI</a>)
-                publicerar forskning och vägledningar inom geoteknik. Deras guide om <a
-                  href="https://www.sgi.se/globalassets/fysisk-planering-och-byggbarhet/epdf_saker-uppstallning-av-tunga-anlaggningsmaskiner.pdf"
-                  target="_blank" rel="noopener noreferrer"
-                  class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300">Säker
-                  uppställning av tunga anläggningsmaskiner</a> kan vara relevant för att bedöma tillfälliga laster
-                under byggtiden.</li>
-              <li>SGI har också denna rapport <a
-                  href="https://docplayer.se/storage/25/4486841/1746113746/qt_rEwHbge4WOlasYTGTwQ/4486841.pdf"
-                  target="_blank" rel="noopener noreferrer"
-                  class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300">"jordens
-                  egenskaper"</a> </li>
-            </ul>
-          </li>
-        </ul>
+            <p class="leading-relaxed mt-4 text-DGreenC-700 dark:text-TanC-300">
+              Sammanfattningsvis ger den Modifierade Iowa-formeln ett kraftfullt
+              verktyg för att analysera och designa nedgrävda flexibla rör, men
+              dess tillförlitlighet vilar tungt på korrekta indata och en
+              grundläggande förståelse för de geotekniska principerna, särskilt
+              vikten av högkvalitativ installation och packning.
+            </p>
+          </section>
+          <!-- Slut Nyckelkomponenter -->
+
+          <!-- Avslutande Sammanfattning -->
+          <section
+            aria-labelledby="final-summary-heading"
+            class="mt-6 pt-4 border-t border-DGreenC-300 dark:border-DGreenC-600 font-body"
+          >
+            <h3
+              id="final-summary-heading"
+              class="font-subheading text-lg sm:text-lg md:text-xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-3"
+            >
+              Sammanfattningsvis om Beräkningen:
+            </h3>
+            <p class="leading-relaxed text-DGreenC-700 dark:text-TanC-300">
+              Formeln visar att både rörstyvheten (\(P_S\)) och jordens sidostöd
+              (\(E'\)) motstår lasterna. För flexibla rör är jordens bidrag
+              (\(E'\)) ofta mycket större än rörets (\(P_S\)).
+              <strong class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+                >Detta understryker varför installationen och packningen av
+                kringfyllningen är så otroligt viktig.</strong
+              >
+              Överfyllnaden (\(h\)) påverkar både jordlasten och (särskilt vid
+              låga \(h\)) den effektiva trafiklasten på röret.
+            </p>
+          </section>
+          <!-- Slut Avslutande Sammanfattning -->
+        </div>
+        <!-- Slut Avsnitt 4 -->
+
+        <!-- Avsnitt 5: Datakällor (Reviderad) -->
+        <div>
+          <h2
+            class="font-subheading text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-4 mt-8"
+          >
+            Var hittar man data och mer information?
+          </h2>
+          <p
+            class="font-body leading-relaxed mb-4 text-DGreenC-800 dark:text-TanC-50"
+          >
+            För den som vill fördjupa sig ytterligare finns här några källor för
+            beräkningsdata, standarder och vägledning:
+          </p>
+          <ul
+            class="list-disc pl-5 space-y-3 leading-relaxed font-body text-DGreenC-800 dark:text-TanC-50"
+          >
+            <li>
+              <strong>Standarder (SIS och AMA):</strong>
+              Viktiga svenska och europeiska standarder för dimensionering och
+              utförande finns hos Svenska Institutet för Standarder (SIS).
+              Relevanta exempel inkluderar:
+              <ul class="list-circle pl-5 mt-2 space-y-1">
+                <li>
+                  <a
+                    href="https://www.sis.se/produkter/fluidsystem-och-delar/rorledningskomponenter-och-rorledningar/allmant/ss-en-1295-12019/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300"
+                    >SS-EN 1295-1:2019</a
+                  >
+                  <span
+                    class="text-sm italic text-DGreenC-600 dark:text-TanC-300"
+                    >(Strukturell dimensionering av rörledningar nedgrävda i
+                    mark)</span
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.sis.se/produkter/miljo-och-halsoskydd-sakerhet/vattenkvalitet/avloppsvatten/ssen16102015/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300"
+                    >SS-EN 1610:2015</a
+                  >
+                  <span
+                    class="text-sm italic text-DGreenC-600 dark:text-TanC-300"
+                    >(Utförande och provning av avloppsledningar)</span
+                  >
+                </li>
+              </ul>
+              Referensverket AMA Anläggning innehåller också detaljerade
+              anvisningar för utförande.
+            </li>
+            <li>
+              <strong>Trafikverket (TRVINFRA / TDOK):</strong>
+              För arbeten på eller invid allmän väg gäller Trafikverkets
+              tekniska krav (TRVK/TRV). Här specificeras laster, materialval och
+              utförandekrav. Ett centralt dokument är:
+              <ul class="list-circle pl-5 mt-2 space-y-1">
+                <li>
+                  <a
+                    href="https://trvdokument.trafikverket.se/fileHandler.ashx?typ=showdokument&id=13ca1588-486b-4477-a5c5-e636a6a71279"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300"
+                    >TRVK Väg (TDOK 2013:0737)</a
+                  >
+                  <span
+                    class="text-sm italic text-DGreenC-600 dark:text-TanC-300"
+                    >(Tekniska krav för vägars konstruktion)</span
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Geotekniska Handböcker & Resurser:</strong>
+              För att förstå och bestämma jordmaterialens egenskaper (som
+              E'-modul) och hur laster sprids i marken finns flera bra källor:
+              <ul class="list-circle pl-5 mt-2 space-y-1">
+                <li>
+                  <a
+                    href="https://svenskageotekniskaforeningen.se/kunskapsbank/sgfs-falthandbok-geoteknik/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300"
+                    >SGF:s Fälthandbok Geoteknik</a
+                  >
+                  <span
+                    class="text-sm italic text-DGreenC-600 dark:text-TanC-300"
+                    >(Praktisk vägledning från Svenska Geotekniska
+                    Föreningen)</span
+                  >
+                </li>
+                <li>
+                  Statens Geotekniska Institut (<a
+                    href="https://www.sgi.se/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300"
+                    >SGI</a
+                  >) publicerar forskning och vägledningar inom geoteknik. Deras
+                  guide om
+                  <a
+                    href="https://www.sgi.se/globalassets/fysisk-planering-och-byggbarhet/epdf_saker-uppstallning-av-tunga-anlaggningsmaskiner.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300"
+                    >Säker uppställning av tunga anläggningsmaskiner</a
+                  >
+                  kan vara relevant för att bedöma tillfälliga laster under
+                  byggtiden.
+                </li>
+                <li>
+                  SGI har också denna rapport
+                  <a
+                    href="https://docplayer.se/storage/25/4486841/1746113746/qt_rEwHbge4WOlasYTGTwQ/4486841.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-body text-YellowC-600 dark:text-YellowC-400 underline hover:text-YellowC-500 dark:hover:text-YellowC-300"
+                    >"jordens egenskaper"</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Avsnitt 6: Slutlig rekommendation -->
+        <div>
+          <h2
+            class="font-subheading text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-4 mt-8"
+          >
+            Slutlig Rekommendation
+          </h2>
+          <p
+            class="font-body leading-relaxed text-DGreenC-800 dark:text-TanC-50"
+          >
+            Att förstå teorin bakom samspelet mellan rör, jord och last är
+            nyckeln. För att våga gå ner i överfyllnad krävs full kontroll på
+            både lasterna och, framför allt, på
+            <strong class="font-semibold text-DGreenC-800 dark:text-TanC-50"
+              >installationens kvalitet och det resulterande sidostödet
+              (<em>E'</em>)</strong
+            >. Om du inte har den kontrollen eller utför en installation under
+            mer krävande förhållanden (allmän väg, tunga laster), följ
+            etablerade rekommendationer och tillverkarens anvisningar, och ta
+            gärna en extra säkerhetsmarginal på överfyllnaden. Vid minsta
+            tvekan, konsultera expertis.
+          </p>
+          <p
+            class="mt-6 font-subheading text-xl text-center text-YellowC-600 dark:text-YellowC-400"
+          >
+            Hoppas denna fördjupning var till hjälp!
+          </p>
+        </div>
       </div>
+      <!-- End Content Sections Div -->
+    </section>
 
-      <!-- Avsnitt 6: Slutlig rekommendation -->
-      <div>
-        <h2
-          class="font-subheading text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-semibold text-DGreenC-800 dark:text-YellowC-400 mb-4 mt-8">
-          Slutlig Rekommendation
-        </h2>
-        <p class="font-body leading-relaxed text-DGreenC-800 dark:text-TanC-50">
-          Att förstå teorin bakom samspelet mellan rör, jord och last är nyckeln. För att våga gå ner i överfyllnad
-          krävs full kontroll på både lasterna och, framför allt, på <strong
-            class="font-semibold text-DGreenC-800 dark:text-TanC-50">installationens kvalitet och det resulterande
-            sidostödet (<em>E'</em>)</strong>. Om du inte har den kontrollen eller utför en installation under mer
-          krävande förhållanden (allmän väg, tunga laster), följ etablerade rekommendationer och tillverkarens
-          anvisningar, och ta gärna en extra säkerhetsmarginal på överfyllnaden. Vid minsta tvekan, konsultera expertis.
-        </p>
-        <p class="mt-6 font-subheading text-xl text-center text-YellowC-600 dark:text-YellowC-400">
-          Hoppas denna fördjupning var till hjälp!
-        </p>
-      </div>
-
-    </div> <!-- End Content Sections Div -->
-  </section>
-
-
-    <footer class="px-4 divide-y border-t bg-TanC-200 dark:bg-DGreenC-500 border-DGreenC-800 dark:border-TanC-50">
-      <div class="font-body container flex flex-col justify-center items-center py-10 mx-auto space-y-8">
+    <footer
+      class="px-4 divide-y border-t bg-TanC-200 dark:bg-DGreenC-500 border-DGreenC-800 dark:border-TanC-50"
+    >
+      <div
+        class="font-body container flex flex-col justify-center items-center py-10 mx-auto space-y-8"
+      >
         <div class="flex justify-center">
-          <a rel="noopener noreferrer" href="#" class="flex justify-center space-x-3 items-center">
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            class="flex justify-center space-x-3 items-center"
+          >
             <div class="flex items-center justify-center w-11 h-11">
-              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="-60 -60 120 120" width="40" height="40"
-                class="fill-DGreenC-800 dark:fill-TanC-50">
-                <g stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-50">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                viewBox="-60 -60 120 120"
+                width="40"
+                height="40"
+                class="fill-DGreenC-800 dark:fill-TanC-50"
+              >
+                <g
+                  stroke="currentColor"
+                  class="text-DGreenC-800 dark:text-TanC-50"
+                >
                   <circle r="58" fill="none" stroke-width="4" />
-                  <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
-                  <path fill="currentColor" stroke-width="6.1"
-                    d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447" />
+                  <path
+                    fill="none"
+                    stroke-width="6.1"
+                    d="M-36.508-44.93v89.853"
+                  />
+                  <path
+                    fill="currentColor"
+                    stroke-width="6.1"
+                    d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447"
+                  />
                 </g>
               </svg>
             </div>
-            <span class="self-center text-2xl font-heading uppercase text-DGreenC-800 dark:text-TanC-50">Vägtrummor
+            <span
+              class="self-center text-2xl font-heading uppercase text-DGreenC-800 dark:text-TanC-50"
+              >Vägtrummor
             </span>
           </a>
         </div>
         <div class="lg:w-2/3 flex justify-center">
-          <div class="grid grid-cols-2 text-sm gap-x-5 gap-y-8 sm:grid-cols-4 sm:gap-x-5">
+          <div
+            class="grid grid-cols-2 text-sm gap-x-5 gap-y-8 sm:grid-cols-4 sm:gap-x-5"
+          >
             <div class="space-y-3">
-              <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide">
+              <h3
+                class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"
+              >
                 <strong>Produkter</strong>
               </h3>
               <ul class="space-y-1">
                 <li>
-                  <a rel="noopener noreferrer " href="Plasticpipes.html"
-                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">Plasttrummor</a>
+                  <a
+                    rel="noopener noreferrer "
+                    href="Plasticpipes.html"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >Plasttrummor</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="Steelpipes.html"
-                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">Ståltrummor</a>
+                  <a
+                    rel="noopener noreferrer"
+                    href="Steelpipes.html"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >Ståltrummor</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="Archculverts.html"
-                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">Valvbågar</a>
+                  <a
+                    rel="noopener noreferrer"
+                    href="Archculverts.html"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >Valvbågar</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="Geotextile.html"
-                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">Markduk</a>
+                  <a
+                    rel="noopener noreferrer"
+                    href="Geotextile.html"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >Markduk</a
+                  >
                 </li>
               </ul>
             </div>
             <div class="space-y-3">
-              <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide">
+              <h3
+                class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"
+              >
                 <strong>Address</strong>
               </h3>
               <ul
-                class="space-y-1inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">
+                class="space-y-1inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+              >
                 <li>
-                  <a href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö" target="_blank"
-                    rel="noopener noreferrer">By 120</a>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >By 120</a
+                  >
                 </li>
                 <li>
-                  <a href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö" target="_blank"
-                    rel="noopener noreferrer">893 96 Sidensjö</a>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >893 96 Sidensjö</a
+                  >
                 </li>
               </ul>
             </div>
             <div class="space-y-3">
-              <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide">
+              <h3
+                class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"
+              >
                 <strong>Kontakt</strong>
               </h3>
               <ul class="space-y-1">
                 <li>
-                  <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/hugo-kjellsson-2bb0011b6/"
-                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">Hugo
-                    Kjellsson</a>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://www.linkedin.com/in/hugo-kjellsson-2bb0011b6/"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >Hugo Kjellsson</a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" target="_blank" href="tel:+46703909051"
-                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"><span>070</span>-<span>390</span> <span>90</span> <span>51</span></a>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="tel:+46703909051"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    ><span>070</span>-<span>390</span> <span>90</span>
+                    <span>51</span></a
+                  >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" target="_blank" href="mailto:hugo@kjellsson.nu"
-                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">hugo@kjellsson.nu</a>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="mailto:hugo@kjellsson.nu"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >hugo@kjellsson.nu</a
+                  >
                 </li>
               </ul>
             </div>
             <div class="space-y-3">
-              <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide">
+              <h3
+                class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"
+              >
                 <strong>Social media</strong>
               </h3>
               <div class="flex justify-start space-x-3">
-                <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/profile.php?id=61564964080791"
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.facebook.com/profile.php?id=61564964080791"
                   title="Facebook"
-                  class="flex items-center p-1 text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out transform hover:scale-115 ">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current">
+                  class="flex items-center p-1 text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out transform hover:scale-115"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 32 32"
+                    class="w-5 h-5 fill-current"
+                  >
                     <path
-                      d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z">
-                    </path>
+                      d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z"
+                    ></path>
                   </svg>
                 </a>
               </div>
@@ -973,6 +1663,5 @@
         © 2025 HK Vägtrummor. All rights reserved.
       </div>
     </footer>
-
   </body>
 </html>
