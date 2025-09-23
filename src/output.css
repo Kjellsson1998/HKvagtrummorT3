@@ -881,6 +881,11 @@
       border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
     }
   }
+  .divide-DGreenC-200 {
+    :where(& > :not(:last-child)) {
+      border-color: var(--color-DGreenC-200);
+    }
+  }
   .divide-DGreenC-300 {
     :where(& > :not(:last-child)) {
       border-color: var(--color-DGreenC-300);
@@ -1028,6 +1033,9 @@
   }
   .bg-TanC-200 {
     background-color: var(--color-TanC-200);
+  }
+  .bg-TanC-300 {
+    background-color: var(--color-TanC-300);
   }
   .bg-YellowC-400 {
     background-color: var(--color-YellowC-400);
@@ -1972,6 +1980,11 @@
       margin-bottom: calc(var(--spacing) * 16);
     }
   }
+  .md\:block {
+    @media (width >= 48rem) {
+      display: block;
+    }
+  }
   .md\:flex {
     @media (width >= 48rem) {
       display: flex;
@@ -2294,6 +2307,13 @@
     @media (prefers-color-scheme: dark) {
       :where(& > :not(:last-child)) {
         border-color: var(--color-DGreenC-500);
+      }
+    }
+  }
+  .dark\:divide-DGreenC-600 {
+    @media (prefers-color-scheme: dark) {
+      :where(& > :not(:last-child)) {
+        border-color: var(--color-DGreenC-600);
       }
     }
   }
