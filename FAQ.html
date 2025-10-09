@@ -49,6 +49,44 @@
     </script>
     <!-- End Google Tag Manager -->
 
+    <!-- Bing UET Tag -->
+    <script>
+      (function (w, d, t, r, u) {
+        var f, n, i;
+        (w[u] = w[u] || []),
+          (f = function () {
+            var o = { ti: "97209737", enableAutoSpaTracking: true };
+            (o.q = w[u]), (w[u] = new UET(o)), w[u].push("pageLoad");
+          }),
+          (n = d.createElement(t)),
+          (n.src = r),
+          (n.async = 1),
+          (n.onload = n.onreadystatechange =
+            function () {
+              var s = this.readyState;
+              (s && s !== "loaded" && s !== "complete") ||
+                (f(), (n.onload = n.onreadystatechange = null));
+            }),
+          (i = d.getElementsByTagName(t)[0]),
+          i.parentNode.insertBefore(n, i);
+      })(window, document, "script", "//bat.bing.com/bat.js", "uetq");
+    </script>
+    <!-- You can set default Consent Mode right after the UET tag -->
+    <script>
+      window.uetq = window.uetq || [];
+      window.uetq.push("consent", "default", {
+        ad_storage: "denied",
+      });
+    </script>
+    <!-- Implement a cookie banner or another method to collect user consent. When a user grants consent (e.g., selects 'Accept' on your banner), update the consent settings using the command below. -->
+    <script>
+      window.uetq = window.uetq || [];
+      window.uetq.push("consent", "update", {
+        ad_storage: "granted",
+      });
+    </script>
+    <!-- End Bing UET Tag -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Svar om Köp, Installation & Dimension | FAQ</title>
@@ -2025,307 +2063,346 @@
               <hr class="my-0 border-YellowC-500 dark:border-YellowC-500" />
 
               <details class="group">
-  <summary
-    class="flex items-center justify-between w-full py-3 font-medium text-left cursor-pointer focus:outline-none list-none"
-  >
-    <h3 class="mx-4 text-xl">
-      Hur många mindre trummor krävs för att ersätta en större?
-    </h3>
-    <span class="ml-auto">
-      <svg
-        class="flex-shrink-0 w-6 h-6 text-DGreenC-500 dark:text-TanC-200 group-open:hidden"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M12 4v16m8-8H4"
-        ></path>
-      </svg>
-      <svg
-        class="flex-shrink-0 w-6 h-6 text-DGreenC-500 dark:text-TanC-200 hidden group-open:block"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M20 12H4"
-        ></path>
-      </svg>
-    </span>
-  </summary>
-  <div class="flex mt-3 md:mx-10 pb-3">
-    <span class="border border-YellowC-500 mr-4"></span>
-    <div class="max-w-3xl px-4 text-sm space-y-3">
-      <p>
-        Att bara jämföra en trummas diameter ger en lit missvisande bild av dess
-        verkliga kapacitet. För att få ett korrekt svar måste vi ta hänsyn till
-        hur en trumma installeras i praktiken, där två faktorer begränsar det
-        faktiska vattenflödet:
-      </p>
-      <ul class="list-disc list-inside ml-4 space-y-1">
-        <li>
-          <strong>Överdjup:</strong> Trummans botten fylls med material för att
-          skapa en naturlig passage för fauna. Denna yta kan inte transportera
-          vatten.
-        </li>
-        <li>
-          <strong>Maximal fyllnadsgrad:</strong> För att garantera ett säkert
-          flöde utan att skadligt tryck byggs upp bör en trumma inte fyllas mer
-          än till cirka 85 % av sin höjd.
-        </li>
-      </ul>
-      <p>
-        Genom att beräkna den <strong>effektiva flödesarean</strong> – den yta
-        som faktiskt är tillgänglig för vatten – får vi en realistisk bild av
-        kapaciteten. Tabell 1 visar beräkningen, baserad på rekommenderade
-        överdjup enligt Trafikverkets riktlinjer.
-      </p>
+                <summary
+                  class="flex items-center justify-between w-full py-3 font-medium text-left cursor-pointer focus:outline-none list-none"
+                >
+                  <h3 class="mx-4 text-xl">
+                    Hur många mindre trummor krävs för att ersätta en större?
+                  </h3>
+                  <span class="ml-auto">
+                    <svg
+                      class="flex-shrink-0 w-6 h-6 text-DGreenC-500 dark:text-TanC-200 group-open:hidden"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 4v16m8-8H4"
+                      ></path>
+                    </svg>
+                    <svg
+                      class="flex-shrink-0 w-6 h-6 text-DGreenC-500 dark:text-TanC-200 hidden group-open:block"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M20 12H4"
+                      ></path>
+                    </svg>
+                  </span>
+                </summary>
+                <div class="flex mt-3 md:mx-10 pb-3">
+                  <span class="border border-YellowC-500 mr-4"></span>
+                  <div class="max-w-3xl px-4 text-sm space-y-3">
+                    <p>
+                      Att bara jämföra en trummas diameter ger en lit
+                      missvisande bild av dess verkliga kapacitet. För att få
+                      ett korrekt svar måste vi ta hänsyn till hur en trumma
+                      installeras i praktiken, där två faktorer begränsar det
+                      faktiska vattenflödet:
+                    </p>
+                    <ul class="list-disc list-inside ml-4 space-y-1">
+                      <li>
+                        <strong>Överdjup:</strong> Trummans botten fylls med
+                        material för att skapa en naturlig passage för fauna.
+                        Denna yta kan inte transportera vatten.
+                      </li>
+                      <li>
+                        <strong>Maximal fyllnadsgrad:</strong> För att garantera
+                        ett säkert flöde utan att skadligt tryck byggs upp bör
+                        en trumma inte fyllas mer än till cirka 85 % av sin
+                        höjd.
+                      </li>
+                    </ul>
+                    <p>
+                      Genom att beräkna den
+                      <strong>effektiva flödesarean</strong> – den yta som
+                      faktiskt är tillgänglig för vatten – får vi en realistisk
+                      bild av kapaciteten. Tabell 1 visar beräkningen, baserad
+                      på rekommenderade överdjup enligt Trafikverkets
+                      riktlinjer.
+                    </p>
 
-      <!-- Tabell 1: Dataunderlag -->
-      <div
-        class="overflow-x-auto mt-2 rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md"
-      >
-        <table
-          class="min-w-full border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body"
-        >
-          <caption
-            class="p-2 text-sm text-left text-DGreenC-700 dark:text-TanC-100 font-semibold"
-          >
-            Tabell 1: Beräkning av effektiv flödesarea (m²)
-          </caption>
-          <thead
-            class="bg-YellowC-500 text-DGreenC-800 dark:text-DGreenC-800"
-          >
-            <tr>
-              <th
-                scope="col"
-                class="font-subheading px-3 py-2 text-left text-xs uppercase tracking-wider"
-              >
-                Diameter
-              </th>
-              <th
-                scope="col"
-                class="font-subheading px-3 py-2 text-left text-xs uppercase tracking-wider"
-              >
-                Antaget Överdjup
-              </th>
-              <th
-                scope="col"
-                class="font-subheading px-3 py-2 text-left text-xs uppercase tracking-wider"
-              >
-                Area vid 85% fyllnad
-              </th>
-              <th
-                scope="col"
-                class="font-subheading px-3 py-2 text-left text-xs uppercase tracking-wider"
-              >
-                Area för Överdjup
-              </th>
-              <th
-                scope="col"
-                class="font-subheading px-3 py-2 text-left text-xs uppercase tracking-wider"
-              >
-                Effektiv Flödesarea
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500 border-t border-DGreenC-300 dark:border-DGreenC-500"
-          >
-            <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600">
-              <td class="px-3 py-2 font-bold">200 mm</td>
-              <td class="px-3 py-2">50 mm</td>
-              <td class="px-3 py-2">0.0298</td>
-              <td class="px-3 py-2">0.0079</td>
-              <td
-                class="px-3 py-2 font-bold text-YellowC-600 dark:text-YellowC-400"
-              >
-                0.0220
-              </td>
-            </tr>
-            <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600">
-              <td class="px-3 py-2 font-bold">300 mm</td>
-              <td class="px-3 py-2">50 mm</td>
-              <td class="px-3 py-2">0.0671</td>
-              <td class="px-3 py-2">0.0101</td>
-              <td
-                class="px-3 py-2 font-bold text-YellowC-600 dark:text-YellowC-400"
-              >
-                0.0570
-              </td>
-            </tr>
-            <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600">
-              <td class="px-3 py-2 font-bold">400 mm</td>
-              <td class="px-3 py-2">90 mm</td>
-              <td class="px-3 py-2">0.1193</td>
-              <td class="px-3 py-2">0.0212</td>
-              <td
-                class="px-3 py-2 font-bold text-YellowC-600 dark:text-YellowC-400"
-              >
-                0.0981
-              </td>
-            </tr>
-            <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600">
-              <td class="px-3 py-2 font-bold">500 mm</td>
-              <td class="px-3 py-2">100 mm</td>
-              <td class="px-3 py-2">0.1864</td>
-              <td class="px-3 py-2">0.0340</td>
-              <td
-                class="px-3 py-2 font-bold text-YellowC-600 dark:text-YellowC-400"
-              >
-                0.1523
-              </td>
-            </tr>
-            <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600">
-              <td class="px-3 py-2 font-bold">600 mm</td>
-              <td class="px-3 py-2">120 mm</td>
-              <td class="px-3 py-2">0.2684</td>
-              <td class="px-3 py-2">0.0495</td>
-              <td
-                class="px-3 py-2 font-bold text-YellowC-600 dark:text-YellowC-400"
-              >
-                0.2189
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+                    <!-- Tabell 1: Dataunderlag -->
+                    <div
+                      class="overflow-x-auto mt-2 rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md"
+                    >
+                      <table
+                        class="min-w-full border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body"
+                      >
+                        <caption
+                          class="p-2 text-sm text-left text-DGreenC-700 dark:text-TanC-100 font-semibold"
+                        >
+                          Tabell 1: Beräkning av effektiv flödesarea (m²)
+                        </caption>
+                        <thead
+                          class="bg-YellowC-500 text-DGreenC-800 dark:text-DGreenC-800"
+                        >
+                          <tr>
+                            <th
+                              scope="col"
+                              class="font-subheading px-3 py-2 text-left text-xs uppercase tracking-wider"
+                            >
+                              Diameter
+                            </th>
+                            <th
+                              scope="col"
+                              class="font-subheading px-3 py-2 text-left text-xs uppercase tracking-wider"
+                            >
+                              Antaget Överdjup
+                            </th>
+                            <th
+                              scope="col"
+                              class="font-subheading px-3 py-2 text-left text-xs uppercase tracking-wider"
+                            >
+                              Area vid 85% fyllnad
+                            </th>
+                            <th
+                              scope="col"
+                              class="font-subheading px-3 py-2 text-left text-xs uppercase tracking-wider"
+                            >
+                              Area för Överdjup
+                            </th>
+                            <th
+                              scope="col"
+                              class="font-subheading px-3 py-2 text-left text-xs uppercase tracking-wider"
+                            >
+                              Effektiv Flödesarea
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody
+                          class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500 border-t border-DGreenC-300 dark:border-DGreenC-500"
+                        >
+                          <tr
+                            class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600"
+                          >
+                            <td class="px-3 py-2 font-bold">200 mm</td>
+                            <td class="px-3 py-2">50 mm</td>
+                            <td class="px-3 py-2">0.0298</td>
+                            <td class="px-3 py-2">0.0079</td>
+                            <td
+                              class="px-3 py-2 font-bold text-YellowC-600 dark:text-YellowC-400"
+                            >
+                              0.0220
+                            </td>
+                          </tr>
+                          <tr
+                            class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600"
+                          >
+                            <td class="px-3 py-2 font-bold">300 mm</td>
+                            <td class="px-3 py-2">50 mm</td>
+                            <td class="px-3 py-2">0.0671</td>
+                            <td class="px-3 py-2">0.0101</td>
+                            <td
+                              class="px-3 py-2 font-bold text-YellowC-600 dark:text-YellowC-400"
+                            >
+                              0.0570
+                            </td>
+                          </tr>
+                          <tr
+                            class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600"
+                          >
+                            <td class="px-3 py-2 font-bold">400 mm</td>
+                            <td class="px-3 py-2">90 mm</td>
+                            <td class="px-3 py-2">0.1193</td>
+                            <td class="px-3 py-2">0.0212</td>
+                            <td
+                              class="px-3 py-2 font-bold text-YellowC-600 dark:text-YellowC-400"
+                            >
+                              0.0981
+                            </td>
+                          </tr>
+                          <tr
+                            class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600"
+                          >
+                            <td class="px-3 py-2 font-bold">500 mm</td>
+                            <td class="px-3 py-2">100 mm</td>
+                            <td class="px-3 py-2">0.1864</td>
+                            <td class="px-3 py-2">0.0340</td>
+                            <td
+                              class="px-3 py-2 font-bold text-YellowC-600 dark:text-YellowC-400"
+                            >
+                              0.1523
+                            </td>
+                          </tr>
+                          <tr
+                            class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600"
+                          >
+                            <td class="px-3 py-2 font-bold">600 mm</td>
+                            <td class="px-3 py-2">120 mm</td>
+                            <td class="px-3 py-2">0.2684</td>
+                            <td class="px-3 py-2">0.0495</td>
+                            <td
+                              class="px-3 py-2 font-bold text-YellowC-600 dark:text-YellowC-400"
+                            >
+                              0.2189
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
 
-      <p class="pt-2">
-        Med dessa värden kan vi skapa en jämförelsetabell som visar hur trummorna
-        förhåller sig till varandra i praktiken.
-      </p>
+                    <p class="pt-2">
+                      Med dessa värden kan vi skapa en jämförelsetabell som
+                      visar hur trummorna förhåller sig till varandra i
+                      praktiken.
+                    </p>
 
-      <!-- Tabell 2: Jämförelsematris -->
-      <div
-        class="overflow-x-auto mt-2 rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md"
-      >
-        <table
-          class="min-w-full border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body"
-        >
-          <caption
-            class="p-2 text-sm text-left text-DGreenC-700 dark:text-TanC-100 font-semibold"
-          >
-            Tabell 2: Jämförelse (baserad på effektiv flödesarea)
-          </caption>
-          <thead
-            class="bg-YellowC-500 text-DGreenC-800 dark:text-DGreenC-800"
-          >
-            <tr>
-              <th
-                scope="col"
-                class="font-subheading px-3 py-2 text-left text-xs uppercase tracking-wider"
-              >
-                <div class="text-right">Ersätts av (antal) ➔</div>
-                <div>En trumma på ▼</div>
-              </th>
-              <th
-                scope="col"
-                class="font-subheading px-3 py-2 text-center text-xs uppercase tracking-wider"
-              >
-                200 mm
-              </th>
-              <th
-                scope="col"
-                class="font-subheading px-3 py-2 text-center text-xs uppercase tracking-wider"
-              >
-                300 mm
-              </th>
-              <th
-                scope="col"
-                class="font-subheading px-3 py-2 text-center text-xs uppercase tracking-wider"
-              >
-                400 mm
-              </th>
-              <th
-                scope="col"
-                class="font-subheading px-3 py-2 text-center text-xs uppercase tracking-wider"
-              >
-                500 mm
-              </th>
-              <th
-                scope="col"
-                class="font-subheading px-3 py-2 text-center text-xs uppercase tracking-wider"
-              >
-                600 mm
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500 border-t border-DGreenC-300 dark:border-DGreenC-500"
-          >
-          <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600">
-              <th scope="row" class="px-3 py-2 font-bold">200 mm</th>
-              <td class="px-3 py-2 text-center">1</td>
-              <td class="px-3 py-2 text-center">-</td>
-              <td class="px-3 py-2 text-center">-</td>
-              <td class="px-3 py-2 text-center">-</td>
-              <td class="px-3 py-2 text-center">-</td>
-            </tr>
-            <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600">
-              <th scope="row" class="px-3 py-2 font-bold">300 mm</th>
-              <td class="px-3 py-2 text-center">2.60</td>
-              <td class="px-3 py-2 text-center">1</td>
-              <td class="px-3 py-2 text-center">-</td>
-              <td class="px-3 py-2 text-center">-</td>
-              <td class="px-3 py-2 text-center">-</td>
-            </tr>
-            <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600">
-              <th scope="row" class="px-3 py-2 font-bold">400 mm</th>
-              <td class="px-3 py-2 text-center">4.47</td>
-              <td class="px-3 py-2 text-center">1.72</td>
-              <td class="px-3 py-2 text-center">1</td>
-              <td class="px-3 py-2 text-center">-</td>
-              <td class="px-3 py-2 text-center">-</td>
-            </tr>
-            <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600">
-              <th scope="row" class="px-3 py-2 font-bold">500 mm</th>
-              <td class="px-3 py-2 text-center">6.93</td>
-              <td class="px-3 py-2 text-center">2.67</td>
-              <td class="px-3 py-2 text-center">1.55</td>
-              <td class="px-3 py-2 text-center">1</td>
-              <td class="px-3 py-2 text-center">-</td>
-            </tr>
-            <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600">
-              <th scope="row" class="px-3 py-2 font-bold">600 mm</th>
-              <td class="px-3 py-2 text-center">9.96</td>
-              <td class="px-3 py-2 text-center">3.84</td>
-              <td class="px-3 py-2 text-center">2.23</td>
-              <td class="px-3 py-2 text-center">1.44</td>
-              <td class="px-3 py-2 text-center">1</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+                    <!-- Tabell 2: Jämförelsematris -->
+                    <div
+                      class="overflow-x-auto mt-2 rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md"
+                    >
+                      <table
+                        class="min-w-full border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body"
+                      >
+                        <caption
+                          class="p-2 text-sm text-left text-DGreenC-700 dark:text-TanC-100 font-semibold"
+                        >
+                          Tabell 2: Jämförelse (baserad på effektiv flödesarea)
+                        </caption>
+                        <thead
+                          class="bg-YellowC-500 text-DGreenC-800 dark:text-DGreenC-800"
+                        >
+                          <tr>
+                            <th
+                              scope="col"
+                              class="font-subheading px-3 py-2 text-left text-xs uppercase tracking-wider"
+                            >
+                              <div class="text-right">Ersätts av (antal) ➔</div>
+                              <div>En trumma på ▼</div>
+                            </th>
+                            <th
+                              scope="col"
+                              class="font-subheading px-3 py-2 text-center text-xs uppercase tracking-wider"
+                            >
+                              200 mm
+                            </th>
+                            <th
+                              scope="col"
+                              class="font-subheading px-3 py-2 text-center text-xs uppercase tracking-wider"
+                            >
+                              300 mm
+                            </th>
+                            <th
+                              scope="col"
+                              class="font-subheading px-3 py-2 text-center text-xs uppercase tracking-wider"
+                            >
+                              400 mm
+                            </th>
+                            <th
+                              scope="col"
+                              class="font-subheading px-3 py-2 text-center text-xs uppercase tracking-wider"
+                            >
+                              500 mm
+                            </th>
+                            <th
+                              scope="col"
+                              class="font-subheading px-3 py-2 text-center text-xs uppercase tracking-wider"
+                            >
+                              600 mm
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody
+                          class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500 border-t border-DGreenC-300 dark:border-DGreenC-500"
+                        >
+                          <tr
+                            class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600"
+                          >
+                            <th scope="row" class="px-3 py-2 font-bold">
+                              200 mm
+                            </th>
+                            <td class="px-3 py-2 text-center">1</td>
+                            <td class="px-3 py-2 text-center">-</td>
+                            <td class="px-3 py-2 text-center">-</td>
+                            <td class="px-3 py-2 text-center">-</td>
+                            <td class="px-3 py-2 text-center">-</td>
+                          </tr>
+                          <tr
+                            class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600"
+                          >
+                            <th scope="row" class="px-3 py-2 font-bold">
+                              300 mm
+                            </th>
+                            <td class="px-3 py-2 text-center">2.60</td>
+                            <td class="px-3 py-2 text-center">1</td>
+                            <td class="px-3 py-2 text-center">-</td>
+                            <td class="px-3 py-2 text-center">-</td>
+                            <td class="px-3 py-2 text-center">-</td>
+                          </tr>
+                          <tr
+                            class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600"
+                          >
+                            <th scope="row" class="px-3 py-2 font-bold">
+                              400 mm
+                            </th>
+                            <td class="px-3 py-2 text-center">4.47</td>
+                            <td class="px-3 py-2 text-center">1.72</td>
+                            <td class="px-3 py-2 text-center">1</td>
+                            <td class="px-3 py-2 text-center">-</td>
+                            <td class="px-3 py-2 text-center">-</td>
+                          </tr>
+                          <tr
+                            class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600"
+                          >
+                            <th scope="row" class="px-3 py-2 font-bold">
+                              500 mm
+                            </th>
+                            <td class="px-3 py-2 text-center">6.93</td>
+                            <td class="px-3 py-2 text-center">2.67</td>
+                            <td class="px-3 py-2 text-center">1.55</td>
+                            <td class="px-3 py-2 text-center">1</td>
+                            <td class="px-3 py-2 text-center">-</td>
+                          </tr>
+                          <tr
+                            class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600"
+                          >
+                            <th scope="row" class="px-3 py-2 font-bold">
+                              600 mm
+                            </th>
+                            <td class="px-3 py-2 text-center">9.96</td>
+                            <td class="px-3 py-2 text-center">3.84</td>
+                            <td class="px-3 py-2 text-center">2.23</td>
+                            <td class="px-3 py-2 text-center">1.44</td>
+                            <td class="px-3 py-2 text-center">1</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
 
-      <p class="pt-2">
-        <strong>Slutsats:</strong> När vi tar hänsyn till praktiska
-        förutsättningar ser vi att kapacitetsskillnaden mellan dimensionerna är
-        betydligt större än vad en enkel area-beräkning visar. Som tabellen
-        visar krävs det exempelvis
-        <strong>nästan 4,5 stycken 200 mm trummor</strong> för att ersätta den
-        effektiva flödeskapaciteten hos en enda 400 mm trumma.
-      </p>
+                    <p class="pt-2">
+                      <strong>Slutsats:</strong> När vi tar hänsyn till
+                      praktiska förutsättningar ser vi att kapacitetsskillnaden
+                      mellan dimensionerna är betydligt större än vad en enkel
+                      area-beräkning visar. Som tabellen visar krävs det
+                      exempelvis
+                      <strong>nästan 4,5 stycken 200 mm trummor</strong> för att
+                      ersätta den effektiva flödeskapaciteten hos en enda 400 mm
+                      trumma.
+                    </p>
 
-      <p>
-        Dessutom finns en faktor som har rätt stor inverkan men som inte är medräknad:
-        <strong>friktion</strong>. Vattenflödet bromsas mindre av väggarna i en
-        större trumma jämfört med flera små. Detta innebär att en stor trumma i
-        verkligheten är <strong>ännu mer effektiv</strong> än vad även dessa
-        siffror visar.
-      </p>
-    </div>
-  </div>
-</details>
+                    <p>
+                      Dessutom finns en faktor som har rätt stor inverkan men
+                      som inte är medräknad:
+                      <strong>friktion</strong>. Vattenflödet bromsas mindre av
+                      väggarna i en större trumma jämfört med flera små. Detta
+                      innebär att en stor trumma i verkligheten är
+                      <strong>ännu mer effektiv</strong> än vad även dessa
+                      siffror visar.
+                    </p>
+                  </div>
+                </div>
+              </details>
               <hr class="my-0 border-YellowC-500 dark:border-YellowC-500" />
 
               <details class="group">
