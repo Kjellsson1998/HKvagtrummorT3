@@ -1,118 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instant SVG Rectangle Generator</title>
+    <title>Parametrisk Trumkalkylator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@latest/dist/svg.min.js"></script>
     <style>
         body {
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            font-family: sans-serif; display: flex; justify-content: center;
+            align-items: flex-start; padding: 20px; background-color: #f8f9fa; color: #333;
         }
         .container {
-            display: flex;
-            gap: 20px;
+            display: grid; grid-template-columns: 320px 1fr; gap: 25px;
+            max-width: 1600px; width: 100%;
         }
-        .input-section, .output-section {
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 5px;
+        .panel {
+            border: 1px solid #dee2e6; padding: 20px; border-radius: 8px;
+            background-color: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-        input {
-            width: 100%;
-            margin-bottom: 10px;
+        .input-table, .output-table {
+            display: grid; grid-template-columns: 1fr auto; gap: 12px 10px; align-items: center;
         }
-        label {
-            margin-bottom: 5px;
-            display: block;
+        label { font-size: 14px; color: #555; }
+        input[type="number"] {
+            width: 80px; padding: 6px 8px; border: 1px solid #ccc;
+            border-radius: 4px; text-align: right;
         }
-        #output {
-            width: 300px;
-            height: 300px;
-            border: 1px solid #000;
+        h2 {
+            margin-top: 0; padding-bottom: 8px; color: #0056b3;
+            border-bottom: 2px solid #007bff; margin-bottom: 20px;
         }
-        textarea {
-            width: 100%;
-            height: 150px;
-            margin-top: 10px;
-        }
+        #drawing-container { padding: 15px; }
+        #main-svg-view { width: 100%; height: auto; background-color: #fff; }
+        .output-value { font-weight: bold; color: #c92a2a; text-align: right; font-size: 16px; }
+
+        /* --- SVG STYLES --- */
+        .title-text { font-size: 16px; font-weight: bold; fill: #555; font-family: sans-serif; }
+        .embankment-line { stroke: #5d5543; stroke-width: 2; fill: none; }
+        .culvert-line { stroke: #000; stroke-width: 2.5; fill: none; }
+        .culvert-thickness { stroke: #000; stroke-width: 1; fill: none; }
+        .foundation-line { stroke: #555; stroke-width: 1.5; fill: #f0f0f0; }
+        .dimension-line, .dimension-tick { stroke: #e6a800; stroke-width: 1.5; }
+        .dimension-text { fill: #333; font-size: 12px; font-family: sans-serif; }
+        .hidden-line { stroke: #000; stroke-width: 2; stroke-dasharray: 6, 6; }
+        .reference-line { stroke: #aaa; stroke-width: 1; stroke-dasharray: 5, 5; }
+        .water-line { stroke: #5b9bd5; stroke-width: 2; }
     </style>
 </head>
 <body>
-
 <div class="container">
-    <div class="input-section">
-        <h2>Input Values</h2>
-        <label for="rectWidth">Width:</label>
-        <input type="number" id="rectWidth" value="150" oninput="drawRectangle()">
-
-        <label for="rectHeight">Height:</label>
-        <input type="number" id="rectHeight" value="100" oninput="drawRectangle()">
-
-        <label for="rectX">X Position:</label>
-        <input type="number" id="rectX" value="50" oninput="drawRectangle()">
-
-        <label for="rectY">Y Position:</label>
-        <input type="number" id="rectY" value="50" oninput="drawRectangle()">
-
-        <label for="rectColor">Fill Color:</label>
-        <input type="color" id="rectColor" value="#ff0000" oninput="drawRectangle()">
-
-        <label for="rectStroke">Stroke Color:</label>
-        <input type="color" id="rectStroke" value="#000000" oninput="drawRectangle()">
-
-        <label for="rectStrokeWidth">Stroke Width:</label>
-        <input type="number" id="rectStrokeWidth" value="2" oninput="drawRectangle()">
+    <div class="controls-panel">
+        <div class="panel">
+            <h2>Input</h2>
+            <div class="input-table">
+                <label>Släntlutning (1 på X)</label>
+                <input type="number" id="slantlutning" value="1.50" step="0.1" oninput="updateAll()">
+                <label>Ändavslutning (1 på X)</label>
+                <input type="number" id="cutSlopeRatio" value="1.5" step="0.1" oninput="updateAll()">
+                <label>Valvbågs diameter (m)</label>
+                <input type="number" id="valvbagsDiameter" value="4.45" step="0.1" oninput="updateAll()">
+                <label>Valvbågs höjd (m)</label>
+                <input type="number" id="valvbagsHojd" value="1.77" step="0.1" oninput="updateAll()">
+                <label>Körbana (m)</label>
+                <input type="number" id="korbana" value="4.1" step="0.1" oninput="updateAll()">
+                <label>Vinkel väg & trumma (°)</label>
+                <input type="number" id="vinkel" value="90" min="45" max="90" step="1" oninput="updateAll()">
+                <label>Överfyllnad (m)</label>
+                <input type="number" id="overfyllnad" value="0.8" step="0.1" oninput="updateAll()">
+                <label>Fundamenthöjd (m)</label>
+                <input type="number" id="fundament" value="0.2" step="0.1" oninput="updateAll()">
+                <label>X-mått (m)</label>
+                <input type="number" id="cutVertical" value="0.5" step="0.05" oninput="updateAll()">
+            </div>
+        </div>
+        <div class="panel" style="margin-top:20px;">
+            <h2>Output</h2>
+            <div class="output-table">
+                <label>Trummans bottenlängd:</label>
+                <div id="outputTrummasLangd" class="output-value">0.00 m</div>
+                <label>Topplängd:</label>
+                <div id="outputTopplangd" class="output-value">0.00 m</div>
+            </div>
+        </div>
     </div>
-
-    <div class="output-section">
-        <h2>Output</h2>
-        <div id="output"></div>
-        <h3>SVG Code:</h3>
-        <textarea id="svgCode" readonly></textarea>
+    <div id="drawing-container" class="panel">
+        <div id="main-svg-view"></div>
     </div>
 </div>
 
 <script>
-    function drawRectangle() {
-        const width = document.getElementById('rectWidth').value;
-        const height = document.getElementById('rectHeight').value;
-        const x = document.getElementById('rectX').value;
-        const y = document.getElementById('rectY').value;
-        const color = document.getElementById('rectColor').value;
-        const stroke = document.getElementById('rectStroke').value;
-        const strokeWidth = document.getElementById('rectStrokeWidth').value;
+    const scale = 40;
+    const mainView = SVG().addTo('#main-svg-view').viewbox(0, 0, 1200, 840);
+    const arrowMarker = mainView.marker(10, 10, function(add) {
+        add.path('M0,0 L10,5 L0,10 Z').fill('#e6a800');
+    });
 
-        const svgNS = "http://www.w3.org/2000/svg";
-        const svg = document.createElementNS(svgNS, "svg");
-        svg.setAttribute('width', '100%');
-        svg.setAttribute('height', '100%');
+    function drawDim(svg, p1, p2, text, options={}) {
+        const { isVertical=false, textOffset=10, midText="" } = options;
+        const group = svg.group();
+        const line = group.line(p1.x, p1.y, p2.x, p2.y).attr({ class: 'dimension-line' });
+        line.marker('start', arrowMarker).marker('end', arrowMarker);
+        if (midText) group.text(midText).center((p1.x+p2.x)/2, (p1.y+p2.y)/2 - 5).attr({class:'dimension-text'});
+        if (text) {
+            if (isVertical) group.text(text).center(p1.x + textOffset, (p1.y+p2.y)/2).attr({class:'dimension-text'});
+            else group.text(text).center((p1.x+p2.x)/2, p1.y + textOffset).attr({class:'dimension-text'});
+        }
+    }
+    
+    function drawAnnotation(svg, text, from, to) {
+        const group = svg.group();
+        const endMarker = group.marker(6, 6, function(add) {add.circle(3).center(3,3).fill('#000');});
+        group.line(from.x, from.y, to.x, to.y).stroke({width:1, color:'#000'}).marker('end', endMarker);
+        group.text(text).move(from.x - 30, from.y - 25).attr({class:'dimension-text'});
+    }
+    
+    function updateAll() {
+        mainView.clear();
+        mainView.defs().add(arrowMarker);
 
-        const rect = document.createElementNS(svgNS, 'rect');
-        rect.setAttribute('x', x);
-        rect.setAttribute('y', y);
-        rect.setAttribute('width', width);
-        rect.setAttribute('height', height);
-        rect.setAttribute('fill', color);
-        rect.setAttribute('stroke', stroke);
-        rect.setAttribute('stroke-width', strokeWidth);
+        const params = {
+            slopeRatio: parseFloat(document.getElementById('slantlutning').value),
+            cutSlopeRatio: parseFloat(document.getElementById('cutSlopeRatio').value),
+            culvertDiameter: parseFloat(document.getElementById('valvbagsDiameter').value),
+            culvertHeight: parseFloat(document.getElementById('valvbagsHojd').value),
+            roadWidth: parseFloat(document.getElementById('korbana').value),
+            skewAngleDeg: parseFloat(document.getElementById('vinkel').value),
+            overfillHeight: parseFloat(document.getElementById('overfyllnad').value),
+            foundationHeight: parseFloat(document.getElementById('fundament').value),
+            cutVertical: parseFloat(document.getElementById('cutVertical').value)
+        };
+        
+        const totalHeight = params.overfillHeight + params.culvertHeight + params.foundationHeight;
+        const totalSlopeRun = totalHeight * params.slopeRatio;
+        const perpBottomWidth = params.roadWidth + (2 * totalSlopeRun);
+        const perpTopWidth = params.roadWidth + (2 * params.overfillHeight * params.slopeRatio);
+        const skewAngleRad = params.skewAngleDeg * (Math.PI / 180);
+        const culvertBottomLength = perpBottomWidth / Math.sin(skewAngleRad);
+        const culvertTopLength = perpTopWidth / Math.sin(skewAngleRad);
 
-        svg.appendChild(rect);
+        const sideViewRegion = { x: 50, y: 50, width: 650, height: 350 };
+        const tunnelViewRegion = { x: 750, y: 50, width: 400, height: 350 };
+        const topViewRegion = { x: 50, y: 450, width: 1100, height: 350 };
+        
+        mainView.text('SIDEVIEW').move(sideViewRegion.x, sideViewRegion.y - 25).attr({class: 'title-text'});
+        mainView.text('TUNNELVIEW').move(tunnelViewRegion.x, tunnelViewRegion.y - 25).attr({class: 'title-text'});
+        mainView.text('TOPVIEW').move(topViewRegion.x + (topViewRegion.width / 2), topViewRegion.y -25).attr({class: 'title-text', 'text-anchor': 'middle'});
 
-        const outputDiv = document.getElementById('output');
-        outputDiv.innerHTML = '';
-        outputDiv.appendChild(svg);
+        drawSideView(mainView.group().translate(sideViewRegion.x, sideViewRegion.y), sideViewRegion, params, totalHeight, totalSlopeRun, perpBottomWidth, perpTopWidth);
+        drawTunnelView(mainView.group().translate(tunnelViewRegion.x, tunnelViewRegion.y), tunnelViewRegion, params, totalHeight);
+        drawTopView(mainView.group().translate(topViewRegion.x, topViewRegion.y), topViewRegion, params, perpBottomWidth, skewAngleRad, culvertBottomLength, perpTopWidth);
 
-        document.getElementById('svgCode').value = new XMLSerializer().serializeToString(svg);
+        document.getElementById('outputTrummasLangd').textContent = culvertBottomLength.toFixed(2) + ' m';
+        document.getElementById('outputTopplangd').textContent = culvertTopLength.toFixed(2) + ' m';
     }
 
-    // Initial drawing on page load
-    drawRectangle();
-</script>
+    function drawSideView(view, region, p, totalHeight, slopeRun, bottomWidth, topWidth) {
+        const yBase = region.height - 40;
+        const p1 = { x: 0, y: yBase };
+        const p4 = { x: bottomWidth * scale, y: yBase };
+        const p2 = { x: p1.x + slopeRun * scale, y: yBase - totalHeight * scale };
+        const p3 = { x: p4.x - slopeRun * scale, y: yBase - totalHeight * scale };
+        const yCulvertTop = yBase - (p.foundationHeight + p.culvertHeight) * scale;
+        
+        view.line(p2.x, p2.y, p3.x, p3.y).attr({class: 'embankment-line'}); 
+        view.line(p1.x, p1.y, p2.x, p2.y).attr({class: 'embankment-line'}); 
+        view.line(p3.x, p3.y, p4.x, p4.y).attr({class: 'embankment-line'}); 
+        view.line(0, yBase, region.width, yBase).attr({class: 'embankment-line'}); 
+        view.line(0, yBase + 10, region.width, yBase + 10).attr({class: 'water-line'});
+        
+        // Define the horizontal top of the culvert
+        const xCulvertTopStart = p2.x + p.overfillHeight * p.slopeRatio * scale;
+        const xCulvertTopEnd = p3.x - p.overfillHeight * p.slopeRatio * scale;
+        view.line(xCulvertTopStart, yCulvertTop, xCulvertTopEnd, yCulvertTop).attr({class:'culvert-line'});
+        
+        // Dotted reference lines from road deck to culvert top
+        view.line(p2.x, p2.y, xCulvertTopStart, yCulvertTop).attr({class: 'reference-line'});
+        view.line(p3.x, p3.y, xCulvertTopEnd, yCulvertTop).attr({class: 'reference-line'});
 
+        // Draw the end cut geometry
+        const cutP1 = {x: p4.x, y: yBase};
+        const cutP2 = {x: p4.x, y: yBase - p.cutVertical * scale};
+        const cutP3 = {x: p4.x - (p.culvertHeight - p.cutVertical) * p.cutSlopeRatio * scale, y: yCulvertTop};
+        view.polyline([cutP1.x, cutP1.y, cutP2.x, cutP2.y, cutP3.x, cutP3.y]).attr({class: 'culvert-line'});
+
+        // Annotations and Dimensions
+        drawAnnotation(view, `Cut\n1:${p.cutSlopeRatio}`, {x: cutP3.x - 30, y: cutP3.y - 15}, cutP3);
+        drawDim(view, {x:p2.x, y:p2.y-20}, {x:p3.x, y:p3.y-20}, `${p.roadWidth.toFixed(2)} m`, {textOffset: -10});
+        
+        // *** CORRECTED TOPPLÄNGD DIMENSION ***
+        const dimY = yCulvertTop - 15;
+        const dimGroup = view.group();
+        dimGroup.line(xCulvertTopStart, yCulvertTop, xCulvertTopStart, dimY).attr({class: 'dimension-tick'});
+        dimGroup.line(xCulvertTopEnd, yCulvertTop, xCulvertTopEnd, dimY).attr({class: 'dimension-tick'});
+        const mainDimLine = dimGroup.line(xCulvertTopStart, dimY, xCulvertTopEnd, dimY).attr({class: 'dimension-line'});
+        mainDimLine.marker('start', arrowMarker).marker('end', arrowMarker);
+        dimGroup.text('topplängd').center((xCulvertTopStart+xCulvertTopEnd)/2, dimY-8).attr({class:'dimension-text'});
+        
+        drawDim(view, p1, p4, `Vinkelrät bottenlängd ${bottomWidth.toFixed(1)} m`, {offset:25, textOffset: 15});
+        drawDim(view, {x: p4.x + 10, y: yBase}, {x:p4.x+10, y:yBase - p.cutVertical*scale}, `${p.cutVertical} m`, {isVertical:true, textOffset:15});
+        
+        const slopeAngleRad = Math.atan(1/p.slopeRatio);
+        view.path(`M ${p1.x+50},${p1.y} A 50,50 0 0 0 ${p1.x+50*Math.cos(slopeAngleRad)},${p1.y-50*Math.sin(slopeAngleRad)}`).attr({class:'dimension-line'});
+        view.text(`${(slopeAngleRad*180/Math.PI).toFixed(1)}°`).center(p1.x+60, p1.y-25).attr({class:'dimension-text'});
+    }
+
+    function drawTunnelView(view, region, p, totalHeight) {
+        // This function remains correct
+        const yBase = region.height - 40;
+        const xCenter = region.width/2;
+        const yCulvertBase = yBase - p.foundationHeight * scale;
+        const yCulvertTop = yCulvertBase - p.culvertHeight * scale;
+        const yRoad = yBase - totalHeight * scale;
+        const archRx = (p.culvertDiameter / 2) * scale;
+        const xStart = xCenter - archRx, xEnd = xCenter + archRx;
+
+        view.rect(p.culvertDiameter * scale, p.foundationHeight * scale).move(xStart, yCulvertBase).attr({class: 'foundation-line'});
+        view.path(`M ${xStart},${yCulvertBase} A ${archRx},${p.culvertHeight * scale} 0 0 1 ${xEnd},${yCulvertBase}`).attr({class: 'culvert-line'});
+        
+        view.line(0, yRoad, region.width, yRoad).attr({class: 'embankment-line'});
+        view.line(0, yRoad, region.width, yRoad).attr({class: 'reference-line'});
+        view.line(0, yCulvertTop, region.width, yCulvertTop).attr({class: 'reference-line'});
+        view.line(0, yCulvertBase, region.width, yCulvertBase).attr({class: 'reference-line'});
+        
+        drawDim(view, {x:xEnd+20, y:yRoad}, {x:xEnd+20, y:yCulvertTop}, `${p.overfillHeight.toFixed(2)} m`, {isVertical:true, textOffset:15});
+        drawDim(view, {x:xEnd+20, y:yCulvertTop}, {x:xEnd+20, y:yCulvertBase}, `${p.culvertHeight.toFixed(2)} m`, {isVertical:true, textOffset:15});
+        drawDim(view, {x:xEnd+20, y:yCulvertBase}, {x:xEnd+20, y:yBase}, `${p.foundationHeight.toFixed(2)} m`, {isVertical:true, textOffset:15});
+        drawDim(view, {x:xStart, y:yCulvertBase+10}, {x:xEnd, y:yCulvertBase+10}, `${p.culvertDiameter.toFixed(2)} m`, {textOffset:10});
+    }
+
+    function drawTopView(view, region, p, bottomWidth, skewAngleRad, culvertLength, topWidth) {
+        // This function remains correct, including the final angle logic
+        const yCenter = region.height/2;
+        const roadDrawWidth = 80;
+
+        view.line(0, yCenter - roadDrawWidth/2, region.width, yCenter - roadDrawWidth/2).attr({class:'embankment-line'});
+        view.line(0, yCenter + roadDrawWidth/2, region.width, yCenter + roadDrawWidth/2).attr({class:'embankment-line'});
+
+        const group = view.group();
+        const culvertL = culvertLength * scale;
+        const culvertD = p.culvertDiameter * scale;
+        
+        const roadWidthOnSkew = roadDrawWidth / Math.sin(skewAngleRad);
+        const wingLength = (culvertL - roadWidthOnSkew) / 2;
+
+        const wallPositions = [-culvertD/2, culvertD/2];
+        wallPositions.forEach(yPos => {
+            group.line(0, yPos, wingLength, yPos).attr({class:'culvert-line'});
+            group.line(culvertL - wingLength, yPos, culvertL, yPos).attr({class:'culvert-line'});
+            group.line(wingLength, yPos, culvertL - wingLength, yPos).attr({class:'hidden-line'});
+        });
+        
+        const curveDepth = (p.culvertHeight - p.cutVertical) * p.cutSlopeRatio * scale;
+        
+        const endPathStyle = { class:'culvert-line', fill: 'none' };
+        const endCapPath = (startX, y1, y2) => {
+            if (curveDepth > 1) { 
+                return `M ${startX},${y1} Q ${startX + curveDepth},${(y1+y2)/2} ${startX},${y2}`;
+            } else {
+                return `M ${startX},${y1} L ${startX},${y2}`;
+            }
+        };
+
+        group.path(endCapPath(0, wallPositions[0], wallPositions[1])).attr(endPathStyle);
+        group.path(endCapPath(culvertL, wallPositions[0], wallPositions[1])).attr(endPathStyle);
+        
+        const rotation = 90 - p.skewAngleDeg;
+        group.transform({ rotate: rotation, cx: 0, cy: 0 }).center(region.width / 2, yCenter);
+
+        const dimP1 = group.point(0, 0);
+        const dimP2 = group.point(culvertL, 0);
+        drawDim(view, dimP1, dimP2, ``, {midText:`Bottenlängd ${culvertLength.toFixed(2)} m`, textOffset:15});
+        
+        const angleMarkerGroup = view.group().move(dimP1.x - 20, dimP1.y - 60);
+        const lineLength = 50;
+        const radius = 30;
+        
+        angleMarkerGroup.line(0, 0, lineLength, 0).attr({class: 'embankment-line'});
+        const culvertAngleLine = angleMarkerGroup.line(0,0, lineLength, 0).attr({class: 'culvert-line'});
+        culvertAngleLine.transform({ rotate: rotation });
+        
+        const startAngleRad = 0;
+        const endAngleRad = rotation * (Math.PI/180);
+        const startPoint = {x: radius * Math.cos(startAngleRad), y: radius * Math.sin(startAngleRad)};
+        const endPoint = {x: radius * Math.cos(endAngleRad), y: radius * Math.sin(endAngleRad)};
+        angleMarkerGroup.path(`M ${startPoint.x} ${startPoint.y} A ${radius} ${radius} 0 0 0 ${endPoint.x} ${endPoint.y}`).attr({class:'dimension-line'});
+        
+        const textAngle = endAngleRad / 2;
+        angleMarkerGroup.text(`${p.skewAngleDeg}°`).center(radius * 1.3 * Math.cos(textAngle), radius * 1.3 * Math.sin(textAngle)).attr({class:'dimension-text'});
+    }
+    
+    document.addEventListener('DOMContentLoaded', updateAll);
+</script>
 </body>
 </html>
