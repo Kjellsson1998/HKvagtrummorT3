@@ -3,6 +3,22 @@
   <head>
     <link rel="canonical" href="https://www.hkvagtrummor.se/" />
 
+    <style>
+      .christmas-nav-pattern {
+        /* 
+       We use a wider image (600px) so the pattern doesn't look like a grid.
+       It includes a Star, a Bauble, and a Snowflake hanging at different lengths.
+       Opacity is set to 0.1 (10%) black, creating a "darker yellow" watermark effect.
+    */
+        background-image: url("data:image/svg+xml,%3Csvg width='600' height='100' viewBox='0 0 600 100' xmlns='http://www.w3.org/2000/svg'%3E%3C!-- String 1 & Star --%3E%3Cpath d='M50 0 v25' stroke='%23000000' stroke-width='1' stroke-opacity='0.15'/%3E%3Cpath d='M50 35 l2.5-7.5 h8 l-6.5 4.5 l2.5 7.5 l-6.5-5 l-6.5 5 l2.5-7.5 l-6.5-4.5 h8 z' fill='%23000000' fill-opacity='0.1' /%3E%3C!-- String 2 & Round Bauble --%3E%3Cpath d='M200 0 v45' stroke='%23000000' stroke-width='1' stroke-opacity='0.1'/%3E%3Ccircle cx='200' cy='52' r='8' fill='%23000000' fill-opacity='0.1' /%3E%3C!-- String 3 & Snowflake --%3E%3Cpath d='M350 0 v15' stroke='%23000000' stroke-width='1' stroke-opacity='0.1'/%3E%3Ctext x='350' y='30' font-family='Arial' font-size='20' text-anchor='middle' fill='%23000000' fill-opacity='0.1'%3E❄%3C/text%3E%3C!-- String 4 & Small Ball --%3E%3Cpath d='M500 0 v35' stroke='%23000000' stroke-width='1' stroke-opacity='0.1'/%3E%3Ccircle cx='500' cy='40' r='5' fill='%23000000' fill-opacity='0.1' /%3E%3C/svg%3E");
+
+        background-repeat: repeat-x;
+        background-position: center top;
+        /* This ensures the pattern stays the right size regardless of screen width */
+        background-size: 600px 100px;
+      }
+    </style>
+
     <!-- Google tag Google adds (gtag.js) -->
     <script
       async
@@ -186,9 +202,10 @@
       }
     </script>
   </head>
+
   <nav
     id="header"
-    class="font-subheading w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2"
+    class="font-subheading w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2 christmas-nav-pattern"
   >
     <div class="w-full flex items-center justify-between px-6 py-2 relative">
       <!-- Logo -->
