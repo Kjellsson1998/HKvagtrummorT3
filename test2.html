@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16731409488">
   </script>
   <script>
-    window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer ||[];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
@@ -16,7 +16,7 @@
   <!-- Google tag Analytics (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6MPRK3ZTL"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer ||[];
     function gtag() {
       dataLayer.push(arguments);
     }
@@ -48,138 +48,31 @@
   <link rel="icon" href="Image/HK logo Master Version.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="Image/HK-logo_liten3.png" />
   <link rel="shortcut icon" href="Image/HK-logo_liten5.png" />
+
+  <!-- JSON-LD Structured Data (Product Schema) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Stålvägtrummor & Rörbroar",
+      "image":[
+        "https://www.hkvagtrummor.se/Image/Ståltrumma.png"
+       ],
+      "description": "Svensktillverkade runda och pressade vägtrummor i stål. Optimal bärighet och anpassningsbara längder.",
+      "brand": {
+        "@type": "Brand",
+        "name": "HK Vägtrummor"
+      },
+      "category": "Construction Supplies",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "SEK",
+        "availability": "https://schema.org/InStock",
+        "offerCount": "7"
+      }
+    }
+  </script>
 </head>
-
-<nav id="header" class="font-subheading w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2">
-  <div class="w-full flex items-center justify-between px-6 py-2 relative">
-    <!-- Logo -->
-    <div class="flex-1 md:flex-none text-DGreenC-800">
-      <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="-60 -60 120 120" width="40" height="40">
-        <g stroke="currentColor">
-          <circle r="58" fill="none" stroke-width="4" />
-          <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
-          <path fill="currentColor" stroke-width="6.1"
-            d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447" />
-        </g>
-      </svg>
-    </div>
-
-    <!-- Desktop Menu -->
-    <div class="hidden md:flex items-center justify-end text-base text-YellowC-900">
-      <ul class="flex items-center space-x-4">
-        <li>
-          <a href="index.html"
-            class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3">Hem</a>
-        </li>
-
-        <li class="relative group">
-          <button
-            class="inline-flex items-center underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-lg py-2 px-3">
-            <a href="Products.html" class="font-subheading">Produkter</a>
-            <svg class="ml-1 w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-            </svg>
-          </button>
-          <ul
-            class="absolute hidden group-hover:block bg-YellowC-500 shadow-md rounded-md mt-0 pt-0 top-full left-0 w-48 text-left font-medium">
-            <li><a href="Plasticpipes.html"
-                class="block px-4 py-2  hover:bg-YellowC-600 hover:text-white">Plasttrummor</a></li>
-            <li><a href="Archculverts.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Valvbågar</a>
-            </li>
-            <li><a href="Steelpipes.html"
-                class="underline block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Ståltrummor</a></li>
-            <li><a href="Stormwater.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Dagvatten</a>
-            </li>
-            <li><a href="Geotextile.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Markduk</a></li>
-            <li><a href="Gabions.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Gabioner</a></li>
-          </ul>
-        </li>
-
-        <li>
-          <a href="GuestBook.html"
-            class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-lg py-2 px-3">Gästbok</a>
-        </li>
-        <li>
-          <a href="FAQ.html"
-            class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-lg py-2 px-3">Vanliga
-            Frågor</a>
-        </li>
-        <li>
-          <a href="about.html" class="block hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3">Om
-            HK</a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Mobile Hamburger -->
-    <div class="md:hidden">
-      <input type="checkbox" id="menu-toggle" class="hidden peer" />
-      <label for="menu-toggle" aria-label="Open menu" class="cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg"
-          class="w-8 h-8 transition-transform duration-200 ease-in-out transform hover:scale-125 hover:fill-YellowC-100"
-          viewBox="0 0 48 48">
-          <g data-name="Layer 2">
-            <path fill="none" d="M0 0h48v48H0z" data-name="invisible box" />
-            <g data-name="icons Q2">
-              <path
-                d="M42 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 24a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 36a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z" />
-            </g>
-          </g>
-        </svg>
-      </label>
-
-      <!-- Mobile Menu -->
-      <div
-        class="hidden peer-checked:flex flex-col text-base text-YellowC-900 absolute top-full left-0 w-full bg-YellowC-500 shadow-md rounded-b-lg">
-        <ul class="text-center">
-          <li>
-            <a href="index.html"
-              class="block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3">Hem</a>
-          </li>
-
-          <li class="block">
-            <input type="checkbox" id="mobile-produkt-toggle" class="peer hidden">
-            <label for="mobile-produkt-toggle"
-              class="inline-flex items-center justify-center w-full hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3 cursor-pointer">
-              <a href="Products.html" class="font-subheading underline">Produkter</a>
-              <svg class="ml-1 w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </label>
-            <ul class="hidden peer-checked:block bg-YellowC-500 font-medium">
-              <li><a href="Plasticpipes.html"
-                  class=" block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Plasttrummor</a></li>
-              <li><a href="Archculverts.html"
-                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Valvbågar</a></li>
-              <li><a href="Steelpipes.html"
-                  class="underline block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Ståltrummor</a></li>
-              <li><a href="Stormwater.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Dagvatten</a>
-              </li>
-              <li><a href="Geotextile.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Markduk</a>
-              </li>
-              <li><a href="Gabions.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Gabioner</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="GuestBook.html"
-              class="block hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3">Gästbok</a>
-          </li>
-          <li>
-            <a href="FAQ.html"
-              class="block hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3">Vanliga Frågor</a>
-          </li>
-          <li>
-            <a href="about.html"
-              class="block hover:text-YellowC-100 transition duration-300 ease-in-out  text-xl py-3">Om HK</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
 
 <body
   class="font-body bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-800 dark:text-TanC-50 leading-relaxed text-base sm:text-base md:text-lg">
@@ -188,7 +81,7 @@
   <script>
     (function (w, d, t, r, u) {
       var f, n, i;
-      (w[u] = w[u] || []),
+      (w[u] = w[u] ||[]),
         (f = function () {
           var o = { ti: "97209737", enableAutoSpaTracking: true };
           (o.q = w[u]), (w[u] = new UET(o)), w[u].push("pageLoad");
@@ -206,145 +99,209 @@
         i.parentNode.insertBefore(n, i);
     })(window, document, "script", "//bat.bing.com/bat.js", "uetq");
   </script>
-  <!-- End Bing UET Tag -->
 
-  <!-- Banner Image Section -->
-  <div class="w-full overflow-hidden rounded-lg shadow-lg ">
-    <img src="Image/Ståltrumma.png" alt="Bannerbild på ståltrummor i ett vägbygge"
-      class="w-full h-48 sm:h-64 md:h-80 object-cover object-center" />
+  <!-- NAVIGATION -->
+  <nav id="header" class="font-subheading w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2">
+    <div class="w-full flex items-center justify-between px-6 py-2 relative">
+      <div class="flex-1 md:flex-none text-DGreenC-800">
+        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="-60 -60 120 120" width="40" height="40">
+          <title>HK Vägtrummor Logotyp</title>
+          <g stroke="currentColor">
+            <circle r="58" fill="none" stroke-width="4" />
+            <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
+            <path fill="currentColor" stroke-width="6.1"
+              d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="hidden md:flex items-center justify-end text-base text-YellowC-900">
+        <ul class="flex items-center space-x-4">
+          <li><a href="index.html" class="inline-block no-underline hover:text-YellowC-100 transition text-lg py-2 px-3">Hem</a></li>
+          <li class="relative group">
+            <button class="inline-flex items-center underline hover:text-YellowC-100 transition text-lg py-2 px-3">
+              <a href="Products.html" class="font-subheading">Produkter</a>
+              <svg class="ml-1 w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            <ul class="absolute hidden group-hover:block bg-YellowC-500 shadow-md rounded-md mt-0 pt-0 top-full left-0 w-48 text-left font-medium">
+              <li><a href="Plasticpipes.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Plasttrummor</a></li>
+              <li><a href="Archculverts.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Valvbågar</a></li>
+              <li><a href="Steelpipes.html" class="underline block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Ståltrummor</a></li>
+              <li><a href="Stormwater.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Dagvatten</a></li>
+              <li><a href="Geotextile.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Markduk</a></li>
+              <li><a href="Gabions.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Gabioner</a></li>
+            </ul>
+          </li>
+          <li><a href="GuestBook.html" class="inline-block no-underline hover:text-YellowC-100 transition text-lg py-2 px-3">Gästbok</a></li>
+          <li><a href="FAQ.html" class="inline-block no-underline hover:text-YellowC-100 transition text-lg py-2 px-3">Vanliga Frågor</a></li>
+          <li><a href="about.html" class="block hover:text-YellowC-100 transition text-xl py-3">Om HK</a></li>
+        </ul>
+      </div>
+
+      <div class="md:hidden">
+        <input type="checkbox" id="menu-toggle" class="hidden peer" />
+        <label for="menu-toggle" aria-label="Open menu" class="cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 transition-transform hover:scale-125 hover:fill-YellowC-100" viewBox="0 0 48 48">
+            <path fill="none" d="M0 0h48v48H0z" />
+            <path d="M42 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 24a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 36a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z" />
+          </svg>
+        </label>
+        <div class="hidden peer-checked:flex flex-col text-base text-YellowC-900 absolute top-full left-0 w-full bg-YellowC-500 shadow-md rounded-b-lg">
+          <ul class="text-center">
+            <li><a href="index.html" class="block no-underline hover:text-YellowC-100 transition text-xl py-3">Hem</a></li>
+            <li class="block">
+              <input type="checkbox" id="mobile-produkt-toggle" class="peer hidden">
+              <label for="mobile-produkt-toggle" class="inline-flex items-center justify-center w-full hover:text-YellowC-100 transition text-xl py-3 cursor-pointer">
+                <a href="Products.html" class="font-subheading underline">Produkter</a>
+                <svg class="ml-1 w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </label>
+              <ul class="hidden peer-checked:block bg-YellowC-500 font-medium">
+                <li><a href="Plasticpipes.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Plasttrummor</a></li>
+                <li><a href="Archculverts.html" class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Valvbågar</a></li>
+                <li><a href="Steelpipes.html" class="underline block px-4 py-2 hover:bg-YellowC-600 hover:text-white">Ståltrummor</a></li>
+              </ul>
+            </li>
+            <li><a href="GuestBook.html" class="block hover:text-YellowC-100 transition text-xl py-3">Gästbok</a></li>
+            <li><a href="FAQ.html" class="block hover:text-YellowC-100 transition text-xl py-3">Vanliga Frågor</a></li>
+            <li><a href="about.html" class="block hover:text-YellowC-100 transition text-xl py-3">Om HK</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BANNER -->
+  <div class="w-full overflow-hidden rounded-b-lg shadow-lg">
+    <img src="Image/Ståltrumma.png" alt="Stålvägtrummor på byggarbetsplats" class="w-full h-48 sm:h-64 md:h-80 object-cover object-center" />
   </div>
 
-  <!-- HEADER & CTA (Oförändrad, ligger högst upp) -->
-  <div class="text-center my-8 px-4 max-w-5xl mx-auto">
-    <h1 class="font-heading uppercase text-3xl md:text-4xl text-DGreenC-800 dark:text-TanC-50">
+  <!-- HEADER -->
+  <div class="text-center mt-10 mb-6 px-4 max-w-5xl mx-auto">
+    <h1 class="font-heading uppercase text-3xl md:text-5xl text-DGreenC-800 dark:text-TanC-50">
       Ståltrummor & Rörbroar
     </h1>
-    <p class="text-left text-lg text-DGreenC-700 dark:text-TanC-200 mt-2 my-5">
-      Vi erbjuder ett komplett sortiment av svensktillverkade spiralkorrugerade vägtrummor.
-      Lättare än betong, starkare genom korrugering och anpassningsbara för alla markarbeten.
+    <p class="font-body text-lg md:text-xl text-DGreenC-700 dark:text-TanC-200 mt-4 max-w-3xl mx-auto">
+      Komplett sortiment av spiralkorrugerade vägtrummor. En konstruktion som utnyttjar stålets bärighet och ger radikal styvhet till en låg egenvikt. Anpassade för professionella markarbeten.
     </p>
 
-    <!-- KNAPPAR -->
-    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6 mb-8">
-      <a href="tel:+46703909051"
-        class="flex items-center justify-center gap-2 font-subheading bg-YellowC-500 hover:bg-YellowC-600 text-DGreenC-900 py-3 px-6 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-200">
+    <!-- CTAs -->
+    <div class="flex flex-wrap justify-center gap-4 mt-8">
+      <a href="tel:+46703909051" class="font-subheading bg-YellowC-500 hover:bg-YellowC-600 text-DGreenC-900 py-3 px-6 rounded-xl shadow transition-all duration-200 text-lg flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
-        <div>
-          <span class="block text-xs uppercase tracking-wider opacity-80">Ring för offert</span>
-          <span class="font-bold text-lg">070-390 90 51</span>
-        </div>
+        070-390 90 51
       </a>
-      <a href="mailto:hugo@kjellsson.nu?subject=Förfrågan%20om%20Ståltrummor"
-        class="flex items-center justify-center gap-2 font-subheading bg-white dark:bg-DGreenC-700 border-2 border-YellowC-500 text-DGreenC-800 dark:text-TanC-50 hover:bg-TanC-100 dark:hover:bg-DGreenC-600 py-3 px-6 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-200">
+      <a href="mailto:hugo@kjellsson.nu?subject=Förfrågan%20om%20Ståltrummor" class="font-subheading border-2 border-YellowC-600 hover:bg-YellowC-500 text-YellowC-600 hover:text-TanC-50 dark:border-YellowC-500 dark:text-YellowC-500 dark:hover:bg-YellowC-500 dark:hover:text-DGreenC-800 py-3 px-6 rounded-xl shadow transition-all duration-200 text-lg flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
-        <div>
-          <span class="block text-xs uppercase tracking-wider opacity-80">Maila förfrågan</span>
-          <span class="font-bold text-lg">hugo@kjellsson.nu</span>
-        </div>
+        hugo@kjellsson.nu
       </a>
     </div>
   </div>
 
-  <!-- LÄNGD & FRAKT INFO -->
-  <div
-    class="m-5 max-w-5xl mx-auto bg-blue-50 dark:bg-slate-800 border-l-4 border-blue-500 p-4 rounded shadow-sm flex items-start gap-4">
-    <div class="text-blue-500 mt-1">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
+  <!-- Tre balanserade Accent Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto px-5 mb-16">
+    <div class="bg-TanC-50 dark:bg-DGreenC-800 p-6 rounded-lg shadow border border-YellowC-500 flex flex-col items-start">
+      <div class="flex items-center mb-3">
+        <svg class="h-6 w-6 text-YellowC-600 dark:text-YellowC-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+        </svg>
+        <h3 class="font-heading text-lg text-DGreenC-800 dark:text-TanC-50">Svensk Kvalitet</h3>
+      </div>
+      <p class="font-body text-sm text-DGreenC-800 dark:text-TanC-50">
+        Tillverkade i Sverige av varmförzinkat konstruktionsstål. Byggda för att klara de tuffaste nordiska markförhållandena.
+      </p>
     </div>
-    <div>
-      <h3 class="font-bold text-DGreenC-800 dark:text-TanC-50 text-lg">Valfria längder & Skarvning</h3>
-      <p class="text-DGreenC-700 dark:text-TanC-200 text-sm mt-1">
-        Vi tillverkar rören i exakt den längd ni behöver. För längder som överstiger praktisk transport (oftast över
-        12m)
-        delar vi röret och levererar med <strong>bultade skarvband</strong> för enkel montering på plats.
+    <div class="bg-TanC-50 dark:bg-DGreenC-800 p-6 rounded-lg shadow border border-YellowC-500 flex flex-col items-start">
+      <div class="flex items-center mb-3">
+        <svg class="h-6 w-6 text-YellowC-600 dark:text-YellowC-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+        </svg>
+        <h3 class="font-heading text-lg text-DGreenC-800 dark:text-TanC-50">Valfria Längder</h3>
+      </div>
+      <p class="font-body text-sm text-DGreenC-800 dark:text-TanC-50">
+        Rören skräddarsys och kapas i exakt den längd ditt projekt kräver. Detta minimerar spill och onödigt fältarbete.
+      </p>
+    </div>
+    <div class="bg-TanC-50 dark:bg-DGreenC-800 p-6 rounded-lg shadow border border-YellowC-500 flex flex-col items-start">
+      <div class="flex items-center mb-3">
+        <svg class="h-6 w-6 text-YellowC-600 dark:text-YellowC-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
+        <h3 class="font-heading text-lg text-DGreenC-800 dark:text-TanC-50">Smidig Skarvning</h3>
+      </div>
+      <p class="font-body text-sm text-DGreenC-800 dark:text-TanC-50">
+        För rör över 12 meter levereras rören delade med robusta, bultade skarvband för snabb och säker montering på plats.
       </p>
     </div>
   </div>
 
-  <!-- TABLE 1: RUNDA RÖR (Clean version) -->
-  <div class="m-5 max-w-5xl mx-auto mt-8">
-    <h2 class="font-heading uppercase text-2xl text-DGreenC-800 dark:text-TanC-50 mb-2">
-      Runda Rör
-    </h2>
-    <p class="text-sm text-DGreenC-600 dark:text-TanC-300 max-w-xl mb-4">
-      Klassiska vägtrummor för maximal bärighet. D1-profil för mindre dimensioner, D2 för de större.
+  <!-- TABLE: RUNDA RÖR -->
+  <div class="px-5 max-w-5xl mx-auto mb-16">
+    <h2 class="font-heading uppercase text-2xl text-DGreenC-800 dark:text-TanC-50 mb-2">Runda Rör</h2>
+    <p class="font-body text-base text-DGreenC-700 dark:text-TanC-200 mb-6">
+      Den cirkulära profilen fördelar lasterna jämnt och ger extrem bärighet. D1-profil (68x13) används för standardrör, medan D2 (125x26) används vid grova dimensioner.
     </p>
 
     <div class="overflow-x-auto rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md">
-      <table
-        class="w-full border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body">
+      <table class="w-full min-w-[600px] border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body">
         <thead class="bg-YellowC-500 text-DGreenC-800">
           <tr>
-            <th class="p-3 border-b border-DGreenC-800 min-w-[100px]">Dimension (Ø)</th>
-            <th class="p-3 border-b border-DGreenC-800">Profil</th>
-            <th class="p-3 border-b border-DGreenC-800">Materialtjocklek</th>
-            <th class="p-3 border-b border-DGreenC-800">Vikt (kg/m)</th>
+            <th class="p-3 sm:p-4 border-b-2 border-YellowC-600 font-subheading">Dimension (Ø)</th>
+            <th class="p-3 sm:p-4 border-b-2 border-YellowC-600 font-subheading">Profil</th>
+            <th class="p-3 sm:p-4 border-b-2 border-YellowC-600 font-subheading">Materialtjocklek</th>
+            <th class="p-3 sm:p-4 border-b-2 border-YellowC-600 font-subheading">Vikt (kg/m)</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500">
           <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
-            <td class="p-3 font-bold text-lg">300 mm</td>
-            <td class="p-3">68x13</td>
-            <td class="p-3">1.5 mm</td>
-            <td class="p-3">12 kg</td>
+            <td class="p-3 sm:p-4 font-bold text-base">300 mm</td>
+            <td class="p-3 sm:p-4">68x13</td>
+            <td class="p-3 sm:p-4">1.5 mm</td>
+            <td class="p-3 sm:p-4">12 kg</td>
           </tr>
           <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
-            <td class="p-3 font-bold text-lg">500 mm</td>
-            <td class="p-3">68x13</td>
-            <td class="p-3">
-              <div class="space-y-1">
-                <span class="block">1.5 mm</span>
-                <span class="block text-DGreenC-600 dark:text-TanC-300">2.0 mm</span>
-              </div>
+            <td class="p-3 sm:p-4 font-bold text-base">500 mm</td>
+            <td class="p-3 sm:p-4">68x13</td>
+            <td class="p-3 sm:p-4">
+              <span class="block mb-1">1.5 mm</span>
+              <span class="block text-DGreenC-600 dark:text-TanC-300">2.0 mm</span>
             </td>
-            <td class="p-3">
-              <div class="space-y-1">
-                <span class="block">20 kg</span>
-                <span class="block text-DGreenC-600 dark:text-TanC-300">27 kg</span>
-              </div>
+            <td class="p-3 sm:p-4">
+              <span class="block mb-1">20 kg</span>
+              <span class="block text-DGreenC-600 dark:text-TanC-300">27 kg</span>
             </td>
           </tr>
           <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
-            <td class="p-3 font-bold text-lg">800 mm</td>
-            <td class="p-3">68x13</td>
-            <td class="p-3">
-              <div class="space-y-1">
-                <span class="block">1.5 mm</span>
-                <span class="block text-DGreenC-600 dark:text-TanC-300">2.0 mm</span>
-              </div>
+            <td class="p-3 sm:p-4 font-bold text-base">800 mm</td>
+            <td class="p-3 sm:p-4">68x13</td>
+            <td class="p-3 sm:p-4">
+              <span class="block mb-1">1.5 mm</span>
+              <span class="block text-DGreenC-600 dark:text-TanC-300">2.0 mm</span>
             </td>
-            <td class="p-3">
-              <div class="space-y-1">
-                <span class="block">33 kg</span>
-                <span class="block text-DGreenC-600 dark:text-TanC-300">44 kg</span>
-              </div>
+            <td class="p-3 sm:p-4">
+              <span class="block mb-1">33 kg</span>
+              <span class="block text-DGreenC-600 dark:text-TanC-300">44 kg</span>
             </td>
           </tr>
           <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
-            <td class="p-3 font-bold text-lg">1000 mm</td>
-            <td class="p-3">125x26</td>
-            <td class="p-3">
-              <div class="space-y-1">
-                <span class="block">1.5 mm</span>
-                <span class="block">2.0 mm</span>
-                <span class="block text-DGreenC-600 dark:text-TanC-300">2.5 mm</span>
-              </div>
+            <td class="p-3 sm:p-4 font-bold text-base">1000 mm</td>
+            <td class="p-3 sm:p-4">125x26</td>
+            <td class="p-3 sm:p-4">
+              <span class="block mb-1">1.5 mm</span>
+              <span class="block mb-1">2.0 mm</span>
+              <span class="block text-DGreenC-600 dark:text-TanC-300">2.5 mm</span>
             </td>
-            <td class="p-3">
-              <div class="space-y-1">
-                <span class="block">45 kg</span>
-                <span class="block">60 kg</span>
-                <span class="block text-DGreenC-600 dark:text-TanC-300">75 kg</span>
-              </div>
+            <td class="p-3 sm:p-4">
+              <span class="block mb-1">45 kg</span>
+              <span class="block mb-1">60 kg</span>
+              <span class="block text-DGreenC-600 dark:text-TanC-300">75 kg</span>
             </td>
           </tr>
         </tbody>
@@ -352,110 +309,81 @@
     </div>
   </div>
 
-  <!-- SEKTION: PRESSADE TRUMMOR (Rörbroar) -->
-  <div class="m-5 max-w-5xl mx-auto mt-16">
-    <div class="flex flex-col md:flex-row gap-8 items-center mb-6">
+  <!-- TABLE & INFO: PRESSADE TRUMMOR -->
+  <div class="px-5 max-w-5xl mx-auto mb-16">
+    <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start mb-6">
       <div class="flex-1">
-        <h2 class="font-heading uppercase text-2xl text-DGreenC-800 dark:text-TanC-50">
+        <h2 class="font-heading uppercase text-2xl text-DGreenC-800 dark:text-TanC-50 mb-2">
           Pressade Trummor (Rörbroar)
         </h2>
-        <p class="text-sm text-DGreenC-600 dark:text-TanC-300 mt-2">
-          Även kallade "Pipe Arches". Dessa har en bred, platt botten vilket är optimalt där bygghöjden är begränsad
-          (t.ex.
-          grunda diken).
-          Denna form ger <strong>65-100% bättre vattenflöde</strong> än ett runt rör vid samma höjd.
+        <p class="font-body text-base text-DGreenC-700 dark:text-TanC-200">
+          Låg bygghöjd kombinerat med platt botten. Dessa är designade för grunda diken där traditionella rör skulle bygga för högt. 
+          Den breda bottenprofilen optimerar dessutom vattenflödet (upp till 100% jämfört med ett runt rör vid låga flöden) och minskar risken för erosion.
         </p>
       </div>
-
-      <!-- NY SNYGGARE SVG: PRESSAD TRUMMA -->
-      <div class="w-full md:w-64 bg-white dark:bg-DGreenC-800 p-4 rounded-xl border border-DGreenC-300 shadow-lg">
+      
+      <!-- Ursprunglig SVG, skalad med max-w-[200px] -->
+      <div class="w-full max-w-[200px] flex-shrink-0 mx-auto md:mx-0 opacity-90 pt-1">
         <svg viewBox="0 0 240 170" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-          <!-- Den ursprungliga enkla Pipe Arch-formen (Päronform med platt botten) -->
-          <path d="M 40 120 L 160 120 Q 190 120 190 90 Q 190 20 100 20 Q 10 20 10 90 Q 10 120 40 120 Z" fill="none"
-            stroke="#ca8a04" stroke-width="4" stroke-linejoin="round" class="dark:text-TanC-50" />
-
-          <!-- De nya, tydliga måttlinjerna: Bredd -->
-          <line x1="10" y1="145" x2="190" y2="145" stroke="currentColor" stroke-width="2"
-            class="text-DGreenC-800 dark:text-TanC-200" />
-          <line x1="10" y1="140" x2="10" y2="150" stroke="currentColor" stroke-width="2"
-            class="text-DGreenC-800 dark:text-TanC-200" />
-          <line x1="190" y1="140" x2="190" y2="150" stroke="currentColor" stroke-width="2"
-            class="text-DGreenC-800 dark:text-TanC-200" />
-          <text x="100" y="162" font-family="sans-serif" font-size="12" fill="currentColor"
-            class="text-DGreenC-800 dark:text-TanC-50 font-bold" text-anchor="middle">Bredd</text>
-
-          <!-- De nya, tydliga måttlinjerna: Höjd -->
-          <line x1="210" y1="20" x2="210" y2="120" stroke="currentColor" stroke-width="2"
-            class="text-DGreenC-800 dark:text-TanC-200" />
-          <line x1="205" y1="20" x2="215" y2="20" stroke="currentColor" stroke-width="2"
-            class="text-DGreenC-800 dark:text-TanC-200" />
-          <line x1="205" y1="120" x2="215" y2="120" stroke="currentColor" stroke-width="2"
-            class="text-DGreenC-800 dark:text-TanC-200" />
-          <text x="215" y="70" font-family="sans-serif" font-size="12" fill="currentColor"
-            class="text-DGreenC-800 dark:text-TanC-50 font-bold" text-anchor="middle"
-            transform="rotate(90, 215, 70)">Höjd</text>
+          <title>Måttskiss Pressad Trumma</title>
+          <path d="M 40 120 L 160 120 Q 190 120 190 90 Q 190 20 100 20 Q 10 20 10 90 Q 10 120 40 120 Z" fill="none" stroke="#ca8a04" stroke-width="4" stroke-linejoin="round" class="dark:text-TanC-50" />
+          <line x1="10" y1="145" x2="190" y2="145" stroke="currentColor" stroke-width="2" class="text-DGreenC-800 dark:text-TanC-200" />
+          <line x1="10" y1="140" x2="10" y2="150" stroke="currentColor" stroke-width="2" class="text-DGreenC-800 dark:text-TanC-200" />
+          <line x1="190" y1="140" x2="190" y2="150" stroke="currentColor" stroke-width="2" class="text-DGreenC-800 dark:text-TanC-200" />
+          <text x="100" y="162" font-family="sans-serif" font-size="12" fill="currentColor" class="text-DGreenC-800 dark:text-TanC-50 font-bold" text-anchor="middle">Bredd</text>
+          <line x1="210" y1="20" x2="210" y2="120" stroke="currentColor" stroke-width="2" class="text-DGreenC-800 dark:text-TanC-200" />
+          <line x1="205" y1="20" x2="215" y2="20" stroke="currentColor" stroke-width="2" class="text-DGreenC-800 dark:text-TanC-200" />
+          <line x1="205" y1="120" x2="215" y2="120" stroke="currentColor" stroke-width="2" class="text-DGreenC-800 dark:text-TanC-200" />
+          <text x="215" y="70" font-family="sans-serif" font-size="12" fill="currentColor" class="text-DGreenC-800 dark:text-TanC-50 font-bold" text-anchor="middle" transform="rotate(90, 215, 70)">Höjd</text>
         </svg>
       </div>
     </div>
 
     <div class="overflow-x-auto rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md">
-      <table
-        class="w-full border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body">
+      <table class="w-full min-w-[600px] border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body">
         <thead class="bg-YellowC-500 text-DGreenC-800">
           <tr>
-            <th class="p-3 border-b border-DGreenC-800">Typ</th>
-            <th class="p-3 border-b border-DGreenC-800">Bredd x Höjd (m)</th>
-            <th class="p-3 border-b border-DGreenC-800">Materialtjocklek</th>
-            <th class="p-3 border-b border-DGreenC-800">Vikt (kg/m)</th>
+            <th class="p-3 sm:p-4 border-b-2 border-YellowC-600 font-subheading">Typ</th>
+            <th class="p-3 sm:p-4 border-b-2 border-YellowC-600 font-subheading">Bredd x Höjd (m)</th>
+            <th class="p-3 sm:p-4 border-b-2 border-YellowC-600 font-subheading">Materialtjocklek</th>
+            <th class="p-3 sm:p-4 border-b-2 border-YellowC-600 font-subheading">Vikt (kg/m)</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500">
           <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
-            <td class="p-3 font-bold">HCPA-01</td>
-            <td class="p-3">1.34 x 1.05</td>
-            <td class="p-3">
-              <div class="space-y-1">
-                <span class="block">2.0 mm</span>
-                <span class="block text-DGreenC-600 dark:text-TanC-300">2.5 mm</span>
-              </div>
+            <td class="p-3 sm:p-4 font-bold">HCPA-01</td>
+            <td class="p-3 sm:p-4">1.34 x 1.05</td>
+            <td class="p-3 sm:p-4">
+              <span class="block mb-1">2.0 mm</span>
+              <span class="block text-DGreenC-600 dark:text-TanC-300">2.5 mm</span>
             </td>
-            <td class="p-3">
-              <div class="space-y-1">
-                <span class="block">60 kg</span>
-                <span class="block text-DGreenC-600 dark:text-TanC-300">75 kg</span>
-              </div>
+            <td class="p-3 sm:p-4">
+              <span class="block mb-1">60 kg</span>
+              <span class="block text-DGreenC-600 dark:text-TanC-300">75 kg</span>
             </td>
           </tr>
           <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
-            <td class="p-3 font-bold">HCPA-04</td>
-            <td class="p-3">1.62 x 1.10</td>
-            <td class="p-3">
-              <div class="space-y-1">
-                <span class="block">2.0 mm</span>
-                <span class="block text-DGreenC-600 dark:text-TanC-300">2.5 mm</span>
-              </div>
+            <td class="p-3 sm:p-4 font-bold">HCPA-04</td>
+            <td class="p-3 sm:p-4">1.62 x 1.10</td>
+            <td class="p-3 sm:p-4">
+              <span class="block mb-1">2.0 mm</span>
+              <span class="block text-DGreenC-600 dark:text-TanC-300">2.5 mm</span>
             </td>
-            <td class="p-3">
-              <div class="space-y-1">
-                <span class="block">70 kg</span>
-                <span class="block text-DGreenC-600 dark:text-TanC-300">88 kg</span>
-              </div>
+            <td class="p-3 sm:p-4">
+              <span class="block mb-1">70 kg</span>
+              <span class="block text-DGreenC-600 dark:text-TanC-300">88 kg</span>
             </td>
           </tr>
           <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
-            <td class="p-3 font-bold">HCPA-07</td>
-            <td class="p-3">1.80 x 1.50</td>
-            <td class="p-3">
-              <div class="space-y-1">
-                <span class="block">2.5 mm</span>
-                <span class="block text-DGreenC-600 dark:text-TanC-300">3.0 mm</span>
-              </div>
+            <td class="p-3 sm:p-4 font-bold">HCPA-07</td>
+            <td class="p-3 sm:p-4">1.80 x 1.50</td>
+            <td class="p-3 sm:p-4">
+              <span class="block mb-1">2.5 mm</span>
+              <span class="block text-DGreenC-600 dark:text-TanC-300">3.0 mm</span>
             </td>
-            <td class="p-3">
-              <div class="space-y-1">
-                <span class="block">110 kg</span>
-                <span class="block text-DGreenC-600 dark:text-TanC-300">132 kg</span>
-              </div>
+            <td class="p-3 sm:p-4">
+              <span class="block mb-1">110 kg</span>
+              <span class="block text-DGreenC-600 dark:text-TanC-300">132 kg</span>
             </td>
           </tr>
         </tbody>
@@ -463,89 +391,93 @@
     </div>
   </div>
 
-  <!-- TEKNISK FÖRDJUPNING (Här ligger nu den gamla, bra SVG:n) -->
-  <div
-    class="font-body my-12 p-6 bg-TanC-100 dark:bg-DGreenC-800 rounded-lg shadow-inner text-DGreenC-800 dark:text-TanC-50 max-w-5xl mx-auto border-t-4 border-YellowC-500">
-    <h2 class="font-heading uppercase text-2xl mb-8 text-center">Teknisk Fördjupning</h2>
+  <!-- TEKNISK DATA -->
+  <div class="bg-TanC-100 dark:bg-DGreenC-800 py-12 px-5 border-t border-YellowC-500">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="font-heading uppercase text-2xl text-DGreenC-800 dark:text-TanC-50 mb-10 text-center">Teknisk Data</h2>
+      
+<!-- Korrugering (Responsiv 50/50 Layout) -->
+      <div class="flex flex-col md:flex-row items-center gap-8 border-b border-DGreenC-300 dark:border-DGreenC-600 pb-8 mb-8">
+        
+        <!-- TEXTDELEN: Tar 100% på mobil, 50% på större skärmar -->
+        <div class="w-full md:w-1/2">
+          <h3 class="font-subheading text-xl text-YellowC-600 dark:text-YellowC-400 mb-3">Styrka genom Korrugering</h3>
+          <p class="font-body text-base text-DGreenC-800 dark:text-TanC-50 mb-3">
+            Genom att vecka stålet ökas rörets styvhet avsevärt, enligt exakt samma princip som wellpapp. Detta gör att röret kan klara enorma mark- och trafiklaster trots sin lätta egenvikt.
+          </p>
+          <ul class="list-disc ml-5 font-body text-sm text-DGreenC-800 dark:text-TanC-50 space-y-1">
+            <li><strong>Profil D1 (68x13 mm):</strong> Standard för rör upp till 800mm.</li>
+            <li><strong>Profil D2 (125x26 mm):</strong> För större rör och rörbroar.</li>
+          </ul>
+        </div>
+        
+        <!-- BILDDELEN: Tar 100% på mobil (hamnar under), 50% på större skärmar -->
+        <div class="w-full md:w-1/2 flex justify-center opacity-90">
+          <svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-sm h-auto">
+            <title>Teknisk skiss av stålprofilens korrugering</title>
+            <desc>Diagram som visar hur korrugeringen ökar rörets styvhet genom att vecka stålet.</desc>
+            <line x1="0" y1="90" x2="400" y2="90" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4" />
+            <path d="M 20 90 Q 45 40 70 90 T 120 90 T 170 90 T 220 90 T 270 90 T 320 90 T 370 90" fill="none" stroke="#ca8a04" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            <line x1="95" y1="130" x2="195" y2="130" stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-200" stroke-width="2" />
+            <line x1="95" y1="125" x2="95" y2="135" stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-200" stroke-width="2" />
+            <line x1="195" y1="125" x2="195" y2="135" stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-200" stroke-width="2" />
+            <text x="145" y="150" font-family="sans-serif" font-size="12" fill="currentColor" class="text-DGreenC-800 dark:text-TanC-50" text-anchor="middle">Våglängd (ex. 125mm)</text>
+            <line x1="295" y1="65" x2="295" y2="115" stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-200" stroke-width="2" />
+            <line x1="290" y1="65" x2="300" y2="65" stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-200" stroke-width="2" />
+            <line x1="290" y1="115" x2="300" y2="115" stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-200" stroke-width="2" />
+            <text x="340" y="95" font-family="sans-serif" font-size="12" fill="currentColor" class="text-DGreenC-800 dark:text-TanC-50" text-anchor="middle">Våghöjd</text>
+          </svg>
+        </div>
 
-    <!-- Korrugering SVG (Den första versionen som var bra) -->
-    <div class="flex flex-col md:flex-row gap-8 items-center mb-10 pb-10 border-b border-DGreenC-300/30">
-      <div class="flex-1">
-        <h3 class="font-bold text-xl mb-3 text-YellowC-600 dark:text-YellowC-400">Varför korrugering?</h3>
-        <p class="mb-3 text-base">
-          Genom att "vecka" stålet ökar vi rörets styvhet radikalt (samma princip som wellpapp).
-          Detta gör att vi kan använda lättare stål men ändå klara tunga trafiklaster.
-        </p>
-        <ul class="list-disc ml-5 text-sm space-y-2">
-          <li><strong>Profil D1 (68x13 mm):</strong> För rör upp till ca 800mm.</li>
-          <li><strong>Profil D2 (125x26 mm):</strong> För större rör och rörbroar där maximal styrka krävs.</li>
-        </ul>
       </div>
 
-      <!-- ORIGINAL SVG (Den detaljerade) -->
-      <div
-        class="flex-1 w-full max-w-md bg-white dark:bg-DGreenC-900 p-4 rounded-xl border border-DGreenC-300 dark:border-DGreenC-600 shadow-inner">
-        <svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-          <!-- Background Grid -->
-          <line x1="0" y1="90" x2="400" y2="90" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4" />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Livslängd -->
+        <div class="bg-TanC-50 dark:bg-DGreenC-700 p-6 rounded shadow flex flex-col h-full">
+          <h3 class="font-subheading text-lg text-YellowC-600 dark:text-YellowC-400 mb-3 border-b border-DGreenC-200 pb-2">Korrosionsskydd</h3>
+          <ul class="font-body text-sm text-DGreenC-800 dark:text-TanC-50 space-y-3 mt-2 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-YellowC-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><strong>Z600 (Standard):</strong> Godkänt för normala miljöer med 40–50 års förväntad livslängd.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-YellowC-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><strong>Z1000 (Extra skydd):</strong> Högre zinkhalt för ca 50–70 års livslängd.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-YellowC-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span><strong>Trenchcoat™:</strong> Plastlaminat applicerat över stålet för >100 års beständighet.</span>
+            </li>
+          </ul>
+        </div>
 
-          <!-- The Wave -->
-          <path d="M 20 90 Q 45 40 70 90 T 120 90 T 170 90 T 220 90 T 270 90 T 320 90 T 370 90" fill="none"
-            stroke="#ca8a04" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
-
-          <!-- Dimensions: Våglängd -->
-          <line x1="95" y1="130" x2="195" y2="130" stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-200"
-            stroke-width="2" />
-          <line x1="95" y1="125" x2="95" y2="135" stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-200"
-            stroke-width="2" />
-          <line x1="195" y1="125" x2="195" y2="135" stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-200"
-            stroke-width="2" />
-          <text x="145" y="150" font-family="sans-serif" font-size="12" fill="currentColor"
-            class="text-DGreenC-800 dark:text-TanC-50" text-anchor="middle">Våglängd (ex. 125mm)</text>
-
-          <!-- Dimensions: Våghöjd -->
-          <line x1="295" y1="65" x2="295" y2="115" stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-200"
-            stroke-width="2" />
-          <line x1="290" y1="65" x2="300" y2="65" stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-200"
-            stroke-width="2" />
-          <line x1="290" y1="115" x2="300" y2="115" stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-200"
-            stroke-width="2" />
-          <text x="340" y="95" font-family="sans-serif" font-size="12" fill="currentColor"
-            class="text-DGreenC-800 dark:text-TanC-50" text-anchor="middle">Våghöjd</text>
-        </svg>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-      <!-- Stål & Material -->
-      <div>
-        <h3 class="font-bold text-xl mb-3 text-YellowC-600 dark:text-YellowC-400">Stål & Hållfasthet</h3>
-        <p class="mb-4 text-sm">
-          Våra rör tillverkas av varmförzinkat konstruktionsstål (DX51D eller S250GD). Kombinationen av stålets styrka
-          och
-          profilens form klarar enorma laster.
-        </p>
-      </div>
-
-      <!-- Korrosionsskydd -->
-      <div>
-        <h3 class="font-bold text-xl mb-3 text-YellowC-600 dark:text-YellowC-400">Livslängd</h3>
-        <ul class="space-y-2 text-sm">
-          <li><strong>Z600 (Standard):</strong> ca 40–50 års livslängd.</li>
-          <li><strong>Z1000 (Extra):</strong> ca 50–70 års livslängd.</li>
-          <li><strong>Trenchcoat™:</strong> Plastlaminat för >100 års livslängd.</li>
-        </ul>
-      </div>
-
-      <!-- Miljö -->
-      <div>
-        <h3 class="font-bold text-xl mb-3 text-YellowC-600 dark:text-YellowC-400">Miljö & Transport</h3>
-        <p class="mb-4 text-sm">
-          Ett stålrör väger endast ca 5% av ett betongrör. Det innebär:
-          <br>✅ Billigare frakt
-          <br>✅ Enklare lossning (ofta räcker grävmaskinen)
-          <br>✅ Upp till 77% lägre CO₂-utsläpp
-        </p>
+        <!-- Miljö / Hantering -->
+        <div class="bg-TanC-50 dark:bg-DGreenC-700 p-6 rounded shadow flex flex-col h-full">
+          <h3 class="font-subheading text-lg text-YellowC-600 dark:text-YellowC-400 mb-3 border-b border-DGreenC-200 pb-2">Logistik & Ekonomi</h3>
+          <p class="font-body text-sm text-DGreenC-800 dark:text-TanC-50 mb-3">
+            Stål väger endast ca 5% av vikten för motsvarande betongrör, vilket effektiviserar arbetet markant.
+          </p>
+          <ul class="font-body text-sm text-DGreenC-800 dark:text-TanC-50 space-y-3 flex-1">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-YellowC-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span>Kräver ej specialkranar. Grävmaskin räcker ofta vid lossning och förläggning.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-YellowC-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span>Upp till 77% lägre koldioxidavtryck genom minskade transporter.</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -555,95 +487,49 @@
       <div class="flex justify-center">
         <a rel="noopener noreferrer" href="#" class="flex justify-center space-x-3 items-center">
           <div class="flex items-center justify-center w-11 h-11">
-            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="-60 -60 120 120" width="40"
-              height="40" class="fill-DGreenC-800 dark:fill-TanC-50">
+            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="-60 -60 120 120" width="40" height="40" class="fill-DGreenC-800 dark:fill-TanC-50">
               <g stroke="currentColor" class="text-DGreenC-800 dark:text-TanC-50">
                 <circle r="58" fill="none" stroke-width="4" />
                 <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
-                <path fill="currentColor" stroke-width="6.1"
-                  d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447" />
+                <path fill="currentColor" stroke-width="6.1" d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447" />
               </g>
             </svg>
           </div>
-          <span class="self-center text-2xl font-heading uppercase text-DGreenC-800 dark:text-TanC-50">Vägtrummor
-          </span>
+          <span class="self-center text-2xl font-heading uppercase text-DGreenC-800 dark:text-TanC-50">Vägtrummor</span>
         </a>
       </div>
       <div class="lg:w-2/3 flex justify-center">
         <div class="grid grid-cols-2 text-sm gap-x-5 gap-y-8 sm:grid-cols-4 sm:gap-x-5">
           <div class="space-y-3">
-            <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide">
-              <strong>Produkter</strong>
-            </h3>
+            <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"><strong>Produkter</strong></h3>
             <ul class="space-y-1">
-              <li>
-                <a rel="noopener noreferrer " href="Plasticpipes.html"
-                  class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">Plasttrummor</a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="Steelpipes.html"
-                  class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">Ståltrummor</a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="Archculverts.html"
-                  class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">Valvbågar</a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="Geotextile.html"
-                  class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">Markduk</a>
-              </li>
+              <li><a href="Plasticpipes.html" class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition hover:scale-110">Plasttrummor</a></li>
+              <li><a href="Steelpipes.html" class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition hover:scale-110">Ståltrummor</a></li>
+              <li><a href="Archculverts.html" class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition hover:scale-110">Valvbågar</a></li>
+              <li><a href="Geotextile.html" class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition hover:scale-110">Markduk</a></li>
             </ul>
           </div>
           <div class="space-y-3">
-            <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide">
-              <strong>Address</strong>
-            </h3>
-            <ul
-              class="space-y-1inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">
-              <li>
-                <a href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö" target="_blank"
-                  rel="noopener noreferrer">By 120</a>
-              </li>
-              <li>
-                <a href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö" target="_blank"
-                  rel="noopener noreferrer">893 96 Sidensjö</a>
-              </li>
-            </ul>
-          </div>
-          <div class="space-y-3">
-            <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide">
-              <strong>Kontakt</strong>
-            </h3>
+            <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"><strong>Address</strong></h3>
             <ul class="space-y-1">
-              <li>
-                <a rel="noopener noreferrer" target="_blank"
-                  href="https://www.linkedin.com/in/hugo-kjellsson-2bb0011b6/"
-                  class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">Hugo
-                  Kjellsson</a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" target="_blank" href="tel:+46703909051"
-                  class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"><span>070</span>-<span>390</span>
-                  <span>90</span> <span>51</span></a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" target="_blank" href="mailto:hugo@kjellsson.nu"
-                  class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110">hugo@kjellsson.nu</a>
-              </li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö" target="_blank" rel="noopener noreferrer" class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition hover:scale-110">By 120</a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö" target="_blank" rel="noopener noreferrer" class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition hover:scale-110">893 96 Sidensjö</a></li>
             </ul>
           </div>
           <div class="space-y-3">
-            <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide">
-              <strong>Social media</strong>
-            </h3>
+            <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"><strong>Kontakt</strong></h3>
+            <ul class="space-y-1">
+              <li><a target="_blank" href="https://www.linkedin.com/in/hugo-kjellsson-2bb0011b6/" class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition hover:scale-110">Hugo Kjellsson</a></li>
+              <li><a target="_blank" href="tel:+46703909051" class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition hover:scale-110">070-390 90 51</a></li>
+              <li><a target="_blank" href="mailto:hugo@kjellsson.nu" class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition hover:scale-110">hugo@kjellsson.nu</a></li>
+            </ul>
+          </div>
+          <div class="space-y-3">
+            <h3 class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"><strong>Social media</strong></h3>
             <div class="flex justify-start space-x-3">
-              <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/profile.php?id=61564964080791"
-                title="Facebook"
-                class="flex items-center p-1 text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out transform hover:scale-115 ">
+              <a target="_blank" href="https://www.facebook.com/profile.php?id=61564964080791" title="Facebook" class="flex items-center p-1 text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition transform hover:scale-115">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current">
-                  <path
-                    d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z">
-                  </path>
+                  <path d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z"></path>
                 </svg>
               </a>
             </div>
