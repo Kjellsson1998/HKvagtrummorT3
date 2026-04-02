@@ -705,6 +705,12 @@
   .max-w-\[200px\] {
     max-width: 200px;
   }
+  .max-w-\[220px\] {
+    max-width: 220px;
+  }
+  .max-w-\[240px\] {
+    max-width: 240px;
+  }
   .max-w-full {
     max-width: 100%;
   }
@@ -832,6 +838,9 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
+  .gap-12 {
+    gap: calc(var(--spacing) * 12);
+  }
   .space-y-1 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
@@ -907,6 +916,9 @@
       margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
     }
+  }
+  .gap-y-3 {
+    row-gap: calc(var(--spacing) * 3);
   }
   .gap-y-8 {
     row-gap: calc(var(--spacing) * 8);
@@ -1178,6 +1190,9 @@
   }
   .fill-current {
     fill: currentColor;
+  }
+  .stroke-YellowC-600 {
+    stroke: var(--color-YellowC-600);
   }
   .object-contain {
     object-fit: contain;
@@ -1482,6 +1497,9 @@
   .lowercase {
     text-transform: lowercase;
   }
+  .normal-case {
+    text-transform: none;
+  }
   .uppercase {
     text-transform: uppercase;
   }
@@ -1507,6 +1525,9 @@
   }
   .opacity-0 {
     opacity: 0%;
+  }
+  .opacity-70 {
+    opacity: 70%;
   }
   .opacity-90 {
     opacity: 90%;
@@ -1902,9 +1923,19 @@
       right: calc(var(--spacing) * 2);
     }
   }
+  .sm\:ml-1 {
+    @media (width >= 40rem) {
+      margin-left: calc(var(--spacing) * 1);
+    }
+  }
   .sm\:block {
     @media (width >= 40rem) {
       display: block;
+    }
+  }
+  .sm\:hidden {
+    @media (width >= 40rem) {
+      display: none;
     }
   }
   .sm\:inline {
@@ -2032,6 +2063,12 @@
     @media (width >= 40rem) {
       font-size: var(--text-lg);
       line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+  }
+  .sm\:text-sm {
+    @media (width >= 40rem) {
+      font-size: var(--text-sm);
+      line-height: var(--tw-leading, var(--text-sm--line-height));
     }
   }
   .sm\:text-xl {
@@ -2571,6 +2608,16 @@
   .dark\:fill-TanC-50 {
     @media (prefers-color-scheme: dark) {
       fill: var(--color-TanC-50);
+    }
+  }
+  .dark\:fill-TanC-200 {
+    @media (prefers-color-scheme: dark) {
+      fill: var(--color-TanC-200);
+    }
+  }
+  .dark\:stroke-YellowC-400 {
+    @media (prefers-color-scheme: dark) {
+      stroke: var(--color-YellowC-400);
     }
   }
   .dark\:text-DGreenC-800 {
