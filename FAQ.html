@@ -78,13 +78,7 @@
         ad_storage: "denied",
       });
     </script>
-    <!-- Implement a cookie banner or another method to collect user consent. When a user grants consent (e.g., selects 'Accept' on your banner), update the consent settings using the command below. -->
-    <script>
-      window.uetq = window.uetq || [];
-      window.uetq.push("consent", "update", {
-        ad_storage: "granted",
-      });
-    </script>
+    <!-- TODO: Koppla consent "update" till en cookie-banner. Kör inte "granted" utan användarens samtycke. -->
     <!-- End Bing UET Tag -->
 
     <meta charset="UTF-8" />
@@ -106,6 +100,20 @@
     <link rel="apple-touch-icon" href="Image/HK-logo_liten3.png" />
     <link rel="shortcut icon" href="Image/HK-logo_liten5.png" />
   </head>
+
+  <body
+    class="bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-800 dark:text-TanC-50 font-body"
+  >
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPS3ZLJW"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
   <nav
     id="header"
@@ -149,10 +157,11 @@
 
           <!-- Produkter Dropdown (Desktop) -->
           <li class="relative group">
-            <button
-              class="inline-flex items-center no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3"
+            <a
+              href="Products.html"
+              class="font-subheading inline-flex items-center no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3"
             >
-              <a href="Products.html" class="font-subheading">Produkter</a>
+              Produkter
               <svg
                 class="ml-1 w-4 h-4 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
@@ -167,7 +176,7 @@
                   d="M19.5 8.25l-7.5 7.5-7.5-7.5"
                 />
               </svg>
-            </button>
+            </a>
             <!-- Updated Product Links with English filenames -->
             <ul
               class="absolute hidden group-hover:block bg-YellowC-500 shadow-md rounded-md mt-0 pt-0 top-full left-0 w-48 text-left font-medium"
@@ -290,9 +299,9 @@
               />
               <label
                 for="mobile-produkt-toggle"
-                class="inline-flex items-center justify-center w-full hover:text-YellowC-100 transition duration-300 ease-in-out text-xl py-3 cursor-pointer"
+                class="font-subheading inline-flex items-center justify-center w-full hover:text-YellowC-100 transition duration-300 ease-in-out text-xl py-3 cursor-pointer"
               >
-                <a href="Products.html" class="font-subheading">Produkter</a>
+                Produkter
                 <svg
                   class="ml-1 w-4 h-4 fill-current"
                   xmlns="http://www.w3.org/2000/svg"
@@ -387,20 +396,6 @@
       </div>
     </div>
   </nav>
-
-  <body
-    class="bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-800 dark:text-TanC-50 font-body"
-  >
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-KPS3ZLJW"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <!-- ================== START FAQ SECTION ================== -->
     <section class="px-6 py-12">
@@ -3798,7 +3793,7 @@
         <div class="flex justify-center">
           <a
             rel="noopener noreferrer"
-            href="#"
+            href="index.html"
             class="flex justify-center space-x-3 items-center"
           >
             <div class="flex items-center justify-center w-11 h-11">
@@ -3847,7 +3842,7 @@
               <ul class="space-y-1">
                 <li>
                   <a
-                    rel="noopener noreferrer "
+                    rel="noopener noreferrer"
                     href="Plasticpipes.html"
                     class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
                     >Plasttrummor</a
@@ -3886,7 +3881,7 @@
                 <strong>Address</strong>
               </h3>
               <ul
-                class="space-y-1inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                class="space-y-1 transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
               >
                 <li>
                   <a
@@ -3973,7 +3968,7 @@
         </div>
       </div>
       <div class="py-4 text-sm text-center text-DGreenC-800 dark:text-TanC-50">
-        © 2025 HK Vägtrummor. All rights reserved.
+        © 2026 HK Vägtrummor. All rights reserved.
       </div>
     </footer>
   </body>
