@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dämningsberäkning – Valvbåge i befintligt brospann | HK Vägtrummor</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        paper:    '#eae1d7',
+        card:     '#faf5ee',
+        ink:      '#25231e',
+        inkmute:  '#595648',
+        line:     '#d3c7b5',
+        water:    '#355f79',
+        waterdeep:'#244052',
+        betong:   '#d8d2c4',
+        steel:    '#5d6770',
+        amber:    '#9e7a10',
+        crit:     '#a41e1e',
+        ok:       '#4e572d',
+        yellow:   '#ebbd33',
+        yellowdk: '#d1a215'
+      },
+      fontFamily: {
+        disp: ['Montserrat', 'sans-serif'],
+        body: ['Inter', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  :root { --line:#d3c7b5; }
+  body{
+    background-color:#eae1d7;
+    background-image:
+      linear-gradient(rgba(118,100,70,.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(118,100,70,.055) 1px, transparent 1px);
+    background-size: 24px 24px;
+    font-variant-numeric: tabular-nums;
+  }
+  .rule-double{ border-top:1px solid #25231e; box-shadow:0 3px 0 -2px #25231e; }
+  .lbl{ font-family:'Inter',sans-serif; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
+  input[type=range]{ -webkit-appearance:none; appearance:none; height:4px; border-radius:2px;
+    background:linear-gradient(90deg,#355f79 var(--fill,50%), #d3c7b5 var(--fill,50%)); outline:none; }
+  input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none; width:20px;height:20px;border-radius:50%;
+    background:#faf5ee; border:3px solid #355f79; cursor:pointer; box-shadow:0 1px 3px rgba(0,0,0,.25); }
+  input[type=range]::-moz-range-thumb{ width:14px;height:14px;border-radius:50%; background:#faf5ee;border:3px solid #355f79;cursor:pointer; }
+  input[type=number]{ background:#faf5ee; }
+  input[type=number]:focus{ outline:2px solid #355f7933; }
+  .seg label{ cursor:pointer; }
+  .seg input:checked + span{ background:#25231e; color:#faf5ee; }
+  details > summary{ cursor:pointer; list-style:none; }
+  details > summary::-webkit-details-marker{ display:none; }
+  details[open] .chev{ transform:rotate(90deg); }
+  @media print{
+    body{ background:#fff; }
+    .no-print{ display:none !important; }
+  }
+</style>
+</head>
+<body class="font-body text-ink">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+
+  <!-- ══════════ RITNINGSHUVUD ══════════ -->
+  <header class="mb-8">
+    <!-- Varumärkesrad -->
+    <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+      <div class="flex items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="-60 -60 120 120" width="40" height="40" class="fill-ink shrink-0" aria-hidden="true">
+          <g stroke="currentColor" class="text-ink">
+            <circle r="58" fill="none" stroke-width="4"/>
+            <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853"/>
+            <path fill="currentColor" stroke-width="6.1" d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447"/>
+          </g>
+        </svg>
+        <span class="font-disp uppercase text-xl tracking-wide text-ink leading-none">HK&nbsp;Vägtrummor</span>
+      </div>
+      <div class="text-right text-xs text-inkmute leading-5">
+        <p class="text-ink font-semibold">Hugo Kjellsson</p>
+        <p>
+          <a href="tel:+46703909051" class="hover:text-water">070-390&nbsp;90&nbsp;51</a>
+          · <a href="mailto:hugo@kjellsson.nu" class="hover:text-water">hugo@kjellsson.nu</a>
+        </p>
+      </div>
+    </div>
+    <div class="rule-double mb-5"></div>
+
+    <div class="flex flex-wrap items-end justify-between gap-4 pb-3">
+      <div>
+        <p class="lbl text-xs text-inkmute mb-1">Hydraulisk bedömning · Indikativ nivå</p>
+        <h1 class="font-disp font-700 font-bold text-4xl sm:text-5xl leading-none tracking-wide uppercase">Valvbåge i befintligt brospann</h1>
+        <p class="text-inkmute mt-2 max-w-2xl text-sm leading-relaxed">
+          Befintlig bro med betongvingar, innermått <b class="text-ink">5,50&nbsp;m</b>. En valvbåge ställs på nya
+          fundament innanför betongväggarna, vilket smalnar av vattenfåran. Verktyget visar hur mycket
+          vattennivån <b class="text-ink">uppströms</b> beräknas stiga vid olika fria spännvidder.
+        </p>
+      </div>
+      <div class="text-right text-xs text-inkmute leading-5">
+        <p class="lbl">Objekt</p>
+        <p class="text-ink font-semibold">Bro över vattendrag</p>
+        <p class="mt-1">Normalflöde ca 3,5 m³/s · Vattenkraftverk uppströms</p>
+      </div>
+    </div>
+    <div class="rule-double"></div>
+  </header>
+
+  <!-- ══════════ SAMMANFATTNING ══════════ -->
+  <div class="mb-8 bg-card border border-line px-5 py-4 shadow-sm">
+    <p class="lbl text-xs text-water mb-1">Slutsats med valda förutsättningar</p>
+    <p id="summary" class="text-lg leading-relaxed"></p>
+  </div>
+
+  <div class="grid lg:grid-cols-[330px_1fr] gap-8 items-start">
+
+    <!-- ══════════ INMATNING ══════════ -->
+    <aside class="bg-card border border-line shadow-sm lg:sticky lg:top-4">
+      <div class="px-5 py-3 border-b border-line bg-yellow text-ink">
+        <h2 class="lbl text-sm">Förutsättningar</h2>
+      </div>
+      <div class="px-5 py-5 space-y-6">
+
+        <!-- Spännvidd -->
+        <div>
+          <div class="flex justify-between items-baseline mb-1">
+            <label for="b2" class="lbl text-xs text-inkmute">Fri spännvidd i vattenvägen</label>
+            <span class="font-disp text-2xl font-semibold text-water"><span id="b2val"></span> m</span>
+          </div>
+          <input id="b2" type="range" min="2" max="5.5" step="0.05" value="4.5" class="w-full">
+          <div class="flex justify-between text-[11px] text-inkmute mt-1">
+            <span>2,0</span><span>idag: 5,5 m</span>
+          </div>
+        </div>
+
+        <!-- Flöde -->
+        <div>
+          <div class="flex justify-between items-baseline mb-1">
+            <label for="Q" class="lbl text-xs text-inkmute">Flöde Q</label>
+            <span class="font-disp text-2xl font-semibold"><span id="Qval"></span> m³/s</span>
+          </div>
+          <input id="Q" type="range" min="0.5" max="15" step="0.1" value="3.5" class="w-full">
+          <div class="flex justify-between text-[11px] text-inkmute mt-1">
+            <span>0,5</span><span>normalflöde 3,5</span><span>15</span>
+          </div>
+        </div>
+
+        <!-- Referensdjup -->
+        <div>
+          <p class="lbl text-xs text-inkmute mb-1.5">Kalibrering vid 3,5 m³/s</p>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center justify-between gap-2">
+              <label for="fri">Klackens ÖK → vattenytan</label>
+              <span><input id="fri" type="number" min="-0.5" max="2" step="0.05" value="0.15" class="w-20 border border-line px-2 py-1 text-right font-semibold"> m</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <label for="yref">Vattendjup, yta → bäckbotten</label>
+              <span><input id="yref" type="number" min="0.15" max="2" step="0.05" value="0.50" class="w-20 border border-line px-2 py-1 text-right font-semibold"> m</span>
+            </div>
+          </div>
+          <p class="text-[11px] text-inkmute mt-1.5 leading-snug">
+            Avståndet ned till ytan mäts enkelt mot betongklacken (foto: ca 0,15 m) och låser vattennivån
+            mot konstruktionen. Djupet styr hastigheterna och bör loddas på plats.
+            Bäckbotten hamnar <b id="bottdisp" class="text-ink"></b> under klackens ÖK.<br>
+            Vid annat flöde skalas djupet med Q<sup>0,6</sup> (Manning).
+            Beräknat djup vid valt flöde: <b id="y0disp" class="text-ink"></b>
+          </p>
+        </div>
+
+        <!-- Förlustantagande -->
+        <div>
+          <p class="lbl text-xs text-inkmute mb-1.5">Förlustantagande in-/utlopp</p>
+          <div class="seg grid grid-cols-3 text-center text-sm border border-line divide-x divide-line">
+            <label><input type="radio" name="preset" value="gyn" class="hidden"><span class="block py-2 transition-colors">Gynnsam</span></label>
+            <label><input type="radio" name="preset" value="norm" class="hidden" checked><span class="block py-2 transition-colors">Normal</span></label>
+            <label><input type="radio" name="preset" value="kons" class="hidden"><span class="block py-2 transition-colors">Försiktig</span></label>
+          </div>
+          <p id="presetinfo" class="text-[11px] text-inkmute mt-1.5 leading-snug"></p>
+        </div>
+
+        <!-- Avancerat -->
+        <details class="border-t border-line pt-3">
+          <summary class="lbl text-xs text-inkmute flex items-center gap-1">
+            <span class="chev inline-block transition-transform">▸</span> Avancerat
+          </summary>
+          <div class="mt-3 space-y-3 text-sm">
+            <div class="flex items-center justify-between gap-2">
+              <label for="b1">Befintlig fri bredd</label>
+              <span><input id="b1" type="number" min="3" max="8" step="0.1" value="5.5" class="w-20 border border-line px-2 py-1 text-right"> m</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <label for="rise">Valvets innerhöjd över fundament</label>
+              <span><input id="rise" type="number" min="0.8" max="2.8" step="0.05" value="1.80" class="w-20 border border-line px-2 py-1 text-right"> m</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <label for="fRel">Fundament ÖK rel. klackens ÖK</label>
+              <span><input id="fRel" type="number" min="-0.5" max="0.8" step="0.05" value="0.00" class="w-20 border border-line px-2 py-1 text-right"> m</span>
+            </div>
+            <p class="lbl text-[11px] text-inkmute pt-1">Friktion genom bågen (Manning)</p>
+            <div class="flex items-center justify-between gap-2">
+              <label for="Lb">Våt båglängd</label>
+              <span><input id="Lb" type="number" min="0" max="30" step="1" value="12" class="w-20 border border-line px-2 py-1 text-right"> m</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <label for="nBed">n bäckbotten</label>
+              <span><input id="nBed" type="number" min="0.02" max="0.06" step="0.002" value="0.030" class="w-20 border border-line px-2 py-1 text-right"></span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <label for="nConc">n betongytor</label>
+              <span><input id="nConc" type="number" min="0.01" max="0.03" step="0.001" value="0.014" class="w-20 border border-line px-2 py-1 text-right"></span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <label for="nPlate">n korrugerad plåt</label>
+              <span><input id="nPlate" type="number" min="0.02" max="0.045" step="0.001" value="0.033" class="w-20 border border-line px-2 py-1 text-right"></span>
+            </div>
+            <p class="text-[11px] text-inkmute leading-snug">
+              Friktionen stegas genom bågen med sammansatt råhet (botten/betong/plåt) och räknas netto mot
+              dagens naturliga gradient på samma sträcka. Sätt båglängden till 0 för att stänga av.
+              Innerhöjd och fundamentnivå påverkar i övrigt endast ritning, kurvatur- och överfyllnadskontroll.
+            </p>
+          </div>
+        </details>
+      </div>
+    </aside>
+
+    <!-- ══════════ RESULTAT ══════════ -->
+    <main class="space-y-8 min-w-0">
+
+      <!-- Nyckeltal -->
+      <section class="grid sm:grid-cols-4 gap-px bg-line border border-line shadow-sm">
+        <div class="bg-card px-4 py-4 sm:col-span-1">
+          <p class="lbl text-[11px] text-inkmute">Nivåhöjning uppströms</p>
+          <p class="font-disp font-bold text-5xl text-water leading-none mt-1"><span id="dh"></span><span class="text-2xl align-baseline"> cm</span></p>
+          <p class="text-[11px] text-inkmute mt-1">spann: <span id="dhrange"></span></p>
+        </div>
+        <div class="bg-card px-4 py-4">
+          <p class="lbl text-[11px] text-inkmute">Vattendjup uppströms</p>
+          <p class="font-disp font-semibold text-3xl mt-1"><span id="y1"></span> m</p>
+          <p class="text-[11px] text-inkmute mt-1">idag <span id="y0b"></span> m · yta <span id="relok" class="text-ink font-semibold"></span> rel. klack-ÖK</p>
+        </div>
+        <div class="bg-card px-4 py-4">
+          <p class="lbl text-[11px] text-inkmute">Hastighet i valvet</p>
+          <p class="font-disp font-semibold text-3xl mt-1"><span id="V2"></span> m/s</p>
+          <p class="text-[11px] text-inkmute mt-1">idag <span id="V3"></span> m/s · Fr <span id="Fr"></span></p>
+        </div>
+        <div class="bg-card px-4 py-4">
+          <p class="lbl text-[11px] text-inkmute">Strömningstillstånd</p>
+          <p id="status" class="font-disp font-semibold text-2xl mt-1 leading-tight"></p>
+          <p class="text-[11px] text-inkmute mt-1">fyllnadsgrad i valvet <span id="fyllgrad" class="text-ink font-semibold"></span></p>
+        </div>
+      </section>
+
+      <div id="warnings" class="space-y-2"></div>
+
+      <!-- Tvärsektion -->
+      <section class="bg-card border border-line shadow-sm">
+        <div class="px-5 py-3 border-b border-line flex items-baseline justify-between">
+          <h2 class="lbl text-sm">Tvärsektion – Valvbåge på nya fundament</h2>
+          <span class="text-[11px] text-inkmute">Skalenlig · nivåer avser uppströms bron</span>
+        </div>
+        <div class="p-3 sm:p-5 overflow-x-auto">
+          <div id="section" class="min-w-[640px]"></div>
+        </div>
+      </section>
+
+      <!-- Kurva -->
+      <section class="bg-card border border-line shadow-sm">
+        <div class="px-5 py-3 border-b border-line flex items-baseline justify-between">
+          <h2 class="lbl text-sm">Dämning som funktion av spännvidd</h2>
+          <span class="text-[11px] text-inkmute">vid valt flöde <span id="Qcurve"></span> m³/s</span>
+        </div>
+        <div class="p-3 sm:p-5 overflow-x-auto">
+          <div id="curve" class="min-w-[640px]"></div>
+        </div>
+        <div class="px-5 pb-5 overflow-x-auto">
+          <table class="w-full text-sm border border-line">
+            <thead>
+              <tr class="bg-yellow text-ink lbl text-[11px]">
+                <th class="px-3 py-2 text-left font-medium">Fri spännvidd</th>
+                <th class="px-3 py-2 text-right font-medium">Gynnsam</th>
+                <th class="px-3 py-2 text-right font-medium">Normal</th>
+                <th class="px-3 py-2 text-right font-medium">Försiktig</th>
+              </tr>
+            </thead>
+            <tbody id="tbody" class="divide-y divide-line"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Kraftverk -->
+      <section class="bg-card border border-line shadow-sm">
+        <div class="px-5 py-3 border-b border-line">
+          <h2 class="lbl text-sm">Konsekvens för kraftverket uppströms</h2>
+        </div>
+        <div class="px-5 py-5 grid md:grid-cols-[1fr_auto] gap-6 items-start">
+          <div>
+            <p class="text-sm leading-relaxed text-inkmute">
+              Om kraftverkets utloppsnivå ligger i samma vattenspegel som dämningen vid bron motsvarar
+              nivåhöjningen en förlorad fallhöjd på <b class="text-ink"><span id="dhm"></span> m</b>.
+              Det är ett <em>övre</em> värde – ligger kraftverket en bit uppströms avtar dämningen längs sträckan.
+              Effektförlust beräknas som P&nbsp;=&nbsp;ρ·g·Q·Δh·η.
+            </p>
+            <div class="grid grid-cols-3 gap-px bg-line border border-line mt-4 text-center">
+              <div class="bg-paper px-3 py-3">
+                <p class="lbl text-[11px] text-inkmute">Effektförlust</p>
+                <p class="font-disp font-semibold text-2xl mt-0.5"><span id="pkw"></span> kW</p>
+              </div>
+              <div class="bg-paper px-3 py-3">
+                <p class="lbl text-[11px] text-inkmute">Energi per år</p>
+                <p class="font-disp font-semibold text-2xl mt-0.5"><span id="mwh"></span> MWh</p>
+              </div>
+              <div class="bg-paper px-3 py-3">
+                <p class="lbl text-[11px] text-inkmute">Värde per år</p>
+                <p class="font-disp font-semibold text-2xl mt-0.5"><span id="sek"></span> kr</p>
+              </div>
+            </div>
+          </div>
+          <div class="text-sm space-y-2 md:w-56">
+            <div class="flex items-center justify-between gap-2">
+              <label for="eta">Verkningsgrad η</label>
+              <input id="eta" type="number" min="0.5" max="0.95" step="0.01" value="0.85" class="w-20 border border-line px-2 py-1 text-right">
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <label for="pris">Elvärde, kr/kWh</label>
+              <input id="pris" type="number" min="0" max="5" step="0.05" value="0.50" class="w-20 border border-line px-2 py-1 text-right">
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <label for="drift">Drifttid, % av året</label>
+              <input id="drift" type="number" min="0" max="100" step="5" value="100" class="w-20 border border-line px-2 py-1 text-right">
+            </div>
+            <p class="text-[11px] text-inkmute leading-snug">Energin räknas på valt flöde Q under angiven drifttid.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Metod -->
+      <section class="bg-card border border-line shadow-sm">
+        <div class="px-5 py-3 border-b border-line">
+          <h2 class="lbl text-sm">Metod, antaganden och begränsningar</h2>
+        </div>
+        <div class="px-5 py-5 text-sm leading-relaxed text-inkmute space-y-3 max-w-3xl">
+          <p>
+            Beräkningen bygger på energiekvationen (Bernoulli) för stationär strömning i öppen kanal mellan tre
+            sektioner: uppströms (full bredd), genom valvbågen (avsmalnad bredd) och nedströms (full bredd).
+            Nedströms vattennivå antas opåverkad av åtgärden. Kontraktions- och expansionsförluster ansätts som
+            C&nbsp;·&nbsp;Δ(v²/2g) enligt vald förlustnivå – Gynnsam C<sub>c</sub>/C<sub>e</sub>&nbsp;=&nbsp;0,1/0,3
+            (mjuka övergångar, vingmurar), Normal 0,3/0,5, Försiktig 0,5/1,0 (skarpa kanter, ingen återvinning).
+            Om avsmalningen blir så kraftig att flödet inte kan passera subkritiskt går strömningen kritisk i
+            valvet och bågen blir bestämmande sektion – nivån uppströms stiger då tills energin räcker.
+          </p>
+          <p>
+            Vattenvägen approximeras som rektangulär med konstant bredd lika med fri spännvidd mellan de nya
+            fundamenten; valvets inåtlutande sidor vid högre vattenstånd ger i verkligheten något större dämning
+            vid högflöden. Friktionen genom bågen ingår: vattenprofilen stegas med Manning över angiven våt
+            båglängd med sammansatt råhet (naturbotten, betongytor, korrugerad plåt över springlinjen) och
+            räknas netto mot dagens naturliga gradient på samma sträcka. Fundamentens detaljutformning och
+            sned anströmning är försummade. Kapaciteten är inte dimensionerande: vid 75&nbsp;% fyllnadsgrad
+            sväljer bågen i storleksordningen tio gånger normalflödet (jfr HK&nbsp;Vägtrummors
+            kapacitetsformel) – det är dämningen som är frågan. Kalibreringen vid 3,5&nbsp;m³/s görs med två mått: avståndet
+            från betongklackens överkant ned till vattenytan (ca&nbsp;0,15&nbsp;m enligt foto), som låser
+            vattennivån mot konstruktionen, och vattendjupet från ytan ned till bäckbotten
+            (ca&nbsp;0,5&nbsp;m enligt skiss), som styr hastigheter och dämning. Tillsammans ger de
+            bäckbottens nivå under klacken. Båda måtten bör verifieras på plats vid känt flöde.
+          </p>
+          <p class="text-ink border-l-2 border-amber pl-3">
+            Resultaten är indikativa och avsedda som diskussions- och beslutsunderlag på budgetnivå. För
+            genomförande krävs hydraulisk modellering med dimensionerande flöden från SMHI samt anmälan/tillstånd
+            för vattenverksamhet (11&nbsp;kap. miljöbalken); detta är normalt beställarens
+            ansvar. Påverkan på kraftverket bör stämmas av med dess ägare innan utförande.
+          </p>
+        </div>
+      </section>
+
+      <!-- Titelblock -->
+      <footer class="border border-ink bg-card shadow-sm">
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-line text-[11px]">
+          <div class="px-4 py-3"><p class="lbl text-inkmute">Objekt</p><p class="font-semibold text-ink text-xs mt-0.5">Befintlig bro · innermått 5,50 m</p></div>
+          <div class="px-4 py-3"><p class="lbl text-inkmute">Underlag</p><p class="font-semibold text-ink text-xs mt-0.5">Platsskiss + foto, normalflöde 3,5 m³/s</p></div>
+          <div class="px-4 py-3"><p class="lbl text-inkmute">Metod</p><p class="font-semibold text-ink text-xs mt-0.5">Energiekvation, öppen kanal</p></div>
+          <div class="px-4 py-3"><p class="lbl text-inkmute">Status</p><p class="font-semibold text-ink text-xs mt-0.5">Indikativ – ej bygghandling · <span id="datum"></span></p></div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+</div>
+
+<script>
+"use strict";
+const g = 9.81;
+const QREF = 3.5;            // referensflöde för dagens djup
+const PRESETS = {
+  gyn:  { Cc:0.1, Ce:0.3, namn:'Gynnsam',   info:'Cc 0,1 / Ce 0,3 – avfasade kanter, vingmurar, god återvinning.' },
+  norm: { Cc:0.3, Ce:0.5, namn:'Normal',    info:'Cc 0,3 / Ce 0,5 – typisk brokontraktion utan särskild inloppsutformning.' },
+  kons: { Cc:0.5, Ce:1.0, namn:'Försiktig', info:'Cc 0,5 / Ce 1,0 – skarpa kanter, ingen energiåtervinning i utloppet.' }
+};
+
+/* ── Hydraulik ───────────────────────────────────────────── */
+// Lös y + c·q²/(2g·y²) = E på subkritisk gren (y ≥ ylow). null = stryper.
+function solveDepth(q, c, E, ylow){
+  const f = y => y + c*q*q/(2*g*y*y);
+  if (f(ylow) > E + 1e-12) return null;
+  let lo = ylow, hi = Math.max(E, ylow) + 1;
+  for (let i=0;i<90;i++){ const m=(lo+hi)/2; (f(m)<E ? lo=m : hi=m); }
+  return (lo+hi)/2;
+}
+// Sammansatt Manning-n (Horton/Einstein): naturbotten + betongsidor + ev. plåt över springlinjen
+function nComp(b, y, springZ, nBed, nConc, nPlate){
+  const Pb=b, Pc=2*Math.min(y,springZ), Pp=2*Math.max(0,y-springZ);
+  return Math.pow((Pb*Math.pow(nBed,1.5)+Pc*Math.pow(nConc,1.5)+Pp*Math.pow(nPlate,1.5))/(Pb+Pc+Pp), 2/3);
+}
+function fricSlope(Q,b,y,n){ const A=b*y, R=A/(b+2*y), V=Q/A; return Math.pow(n*V/Math.pow(R,2/3),2); }
+
+function hydraulik(Q, b1, b2, y0, Cc, Ce, fr){
+  fr = fr || { L:0 };
+  const nBed=fr.nBed??0.030, nConc=fr.nConc??0.014, nPlate=fr.nPlate??0.033,
+        L=fr.L??0, springZ=fr.springZ??1e9;
+  const V3 = Q/(b1*y0), h3 = V3*V3/(2*g);
+  // Dagens gradient: normalflöde i befintlig sektion (naturbotten + betongväggar)
+  const S0 = fricSlope(Q, b1, y0, nComp(b1, y0, 1e9, nBed, nConc, nPlate));
+  const q2 = Q/b2, yc2 = Math.cbrt(q2*q2/g);
+  const cE = 1 - Math.min(Ce,1);
+  let y2 = solveDepth(q2, cE, y0 + cE*h3, yc2), choked=false;
+  if (y2 === null){ choked = true; y2 = yc2; }
+  // Friktion genom bågen: profilen stegas uppströms, netto mot dagens gradient på samma sträcka
+  let yIn = y2, E = y2 + Math.pow(q2/y2,2)/(2*g), fric = 0;
+  if (L > 0 && !choked){
+    const N = 12, dx = L/N;
+    for (let i=0;i<N;i++){
+      const nB = nComp(b2, yIn, springZ, nBed, nConc, nPlate);
+      const dE = (fricSlope(Q, b2, yIn, nB) - S0) * dx;
+      E += dE; fric += dE;
+      const yn = solveDepth(q2, 1, E, yc2);
+      if (yn === null){ choked = true; yIn = yc2; E = 1.5*yc2; break; }
+      yIn = yn;
+    }
+  }
+  const V2 = q2/yIn, E2 = E;
+  const q1 = Q/b1, yc1 = Math.cbrt(q1*q1/g);
+  let y1 = Math.max(y0, yIn);
+  for (let i=0;i<60;i++){
+    const V1 = Q/(b1*y1);
+    const E1 = E2 + Cc*Math.max(0, V2*V2 - V1*V1)/(2*g);
+    const yn = solveDepth(q1, 1, E1, yc1);
+    if (yn === null){ y1 = yc1; break; }
+    if (Math.abs(yn - y1) < 1e-8){ y1 = yn; break; }
+    y1 = yn;
+  }
+  const V1 = Q/(b1*y1);
+  return { y1, y2: yIn, yExit: y2, V1, V2, V3, Fr: V2/Math.sqrt(g*yIn), choked, fric,
+           dh: Math.max(0, y1 - y0) };
+}
+
+/* ── Formattering ────────────────────────────────────────── */
+const fmt = (x,d=2) => x.toLocaleString('sv-SE',{minimumFractionDigits:d, maximumFractionDigits:d});
+const $ = id => document.getElementById(id);
+
+function inputs(){
+  const Q   = parseFloat($('Q').value);
+  const b2  = parseFloat($('b2').value);
+  const b1  = Math.max(parseFloat($('b1').value)||5.5, b2);
+  const yref= parseFloat($('yref').value)||0.5;
+  const y0  = yref * Math.pow(Q/QREF, 0.6);
+  const key = document.querySelector('input[name=preset]:checked').value;
+  const fri  = Number.isFinite(parseFloat($('fri').value)) ? parseFloat($('fri').value) : 0.15;
+  const fRel = parseFloat($('fRel').value)||0;
+  const num = (id, def) => Number.isFinite(parseFloat($(id).value)) ? parseFloat($(id).value) : def;
+  const fr = { nBed: num('nBed',0.030), nConc: num('nConc',0.014), nPlate: num('nPlate',0.033),
+               L: Math.max(0, num('Lb',12)), springZ: Math.max(0.05, fri + yref + fRel) };
+  return { Q, b1, b2, y0, yref, key, p: PRESETS[key],
+           fri, fRel, fr,
+           rise: parseFloat($('rise').value)||1.8,
+           eta:  parseFloat($('eta').value)||0.85,
+           pris: parseFloat($('pris').value)||0.5,
+           drift:(parseFloat($('drift').value)||100)/100 };
+}
+
+/* ── SVG-hjälp ───────────────────────────────────────────── */
+const esc = s => s; // statiska strängar, inga användardata in i SVG
+
+/* ── Tvärsektion ─────────────────────────────────────────── */
+function drawSection(st, r){
+  const S = 96;                       // px per meter
+  const WALL = 0.45, SHELF = 0.40, plate = 0.07;
+  const yk = st.fri + st.yref;                   // klackens ÖK över bäckbotten (fribord + djup vid 3,5 m³/s)
+  const Hcrest = yk + 3.01;                      // väggkrön: klack-ÖK + 3,01 m
+  const springZ = Math.max(0.05, yk + st.fRel);  // fundamentets ÖK / valvets springlinje
+  const rise = Math.min(st.rise, Hcrest - springZ - 0.15);
+  const W = st.b1, b2 = st.b2;
+  const ML = 1.05, MR = 1.05, MT = 0.75, MB = 0.75; // marginaler i meter
+  const sceneW = ML + WALL + W + WALL + MR;
+  const sceneH = MT + Hcrest + 0.55 + MB;
+  const X = m => (ML + m) * S;                       // m från vänster väggs yttersida
+  const Y = m => (MT + Hcrest - m) * S;              // m över bäckbotten (uppåt +)
+  const x0 = X(WALL), x1 = X(WALL + W);              // innerkanter
+  const wf = (W - b2)/2;                             // fundamentbredd per sida
+  const hk = Math.min(SHELF, yk);                    // synlig klackhöjd över botten
+  const cx = (x0+x1)/2, rxIn = b2/2*S, ryIn = rise*S, rxUt = rxIn + plate*S, ryUt = ryIn + plate*S;
+  const ySpr = Y(springZ);
+  const archTop = springZ + rise + plate;
+  const overfyll = Hcrest - archTop;
+  const yNiva = Math.min(r.y1, springZ + rise*0.985);
+
+  let s = `<svg viewBox="0 0 ${sceneW*S} ${sceneH*S}" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+  <defs>
+    <pattern id="betong" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#dad7cd"/><path d="M0 5h10" stroke="#c6c2b4" stroke-width="1"/>
+    </pattern>
+    <pattern id="nybetong" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#cfccc0"/><circle cx="2" cy="2" r="0.9" fill="#b4b1a3"/><circle cx="6" cy="6" r="0.9" fill="#b4b1a3"/>
+    </pattern>
+    <pattern id="fyll" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#eee9dc"/>
+      <path d="M2 4l2-2 2 2zM8 10l2-2 2 2" stroke="#cdc7b4" stroke-width="1" fill="none"/>
+    </pattern>
+    <pattern id="mark" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#e7e2d4"/><path d="M-3 12L12 -3M0 15L15 0" stroke="#cfc9b8" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="vatten" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#86b0ca" stop-opacity=".55"/><stop offset="1" stop-color="#355f79" stop-opacity=".75"/>
+    </linearGradient>
+    <clipPath id="kanal">
+      <path d="M ${cx-rxIn} ${Y(0)} L ${cx-rxIn} ${ySpr} A ${rxIn} ${ryIn} 0 0 1 ${cx+rxIn} ${ySpr} L ${cx+rxIn} ${Y(0)} Z"/>
+    </clipPath>
+    <marker id="pil" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+      <path d="M0 0L7 3.5L0 7Z" fill="#355f79"/>
+    </marker>
+    <marker id="pilink" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+      <path d="M0 0L7 3.5L0 7Z" fill="#595648"/>
+    </marker>
+  </defs>`;
+
+  // Mark utanför vingarna + under bäckbotten
+  s += `<path d="M ${X(-ML)} ${Y(Hcrest)} H ${X(0)} V ${Y(-0.55)} H ${X(-ML)} Z" fill="url(#mark)"/>`;
+  s += `<path d="M ${X(WALL*2+W)} ${Y(Hcrest)} H ${X(WALL*2+W+MR)} V ${Y(-0.55)} H ${X(WALL*2+W)} Z" fill="url(#mark)"/>`;
+  s += `<rect x="${X(0)}" y="${Y(0)}" width="${(W+2*WALL)*S}" height="${0.55*S}" fill="url(#mark)"/>`;
+
+  // Fyllning ovan fundamentnivå, mellan väggarna
+  s += `<rect x="${x0}" y="${Y(Hcrest)}" width="${W*S}" height="${(Hcrest-springZ)*S}" fill="url(#fyll)"/>`;
+
+  // Befintliga vingmurar + klackar (klack-ÖK = nollreferens för platsmått)
+  for (const [xa, shx] of [[X(0), x0],[X(WALL+W), x1-SHELF*S]]){
+    s += `<rect x="${xa}" y="${Y(Hcrest)}" width="${WALL*S}" height="${(Hcrest+0.5)*S}" fill="url(#betong)" stroke="#9a968a" stroke-width="1"/>`;
+    if (hk > 0.02)
+      s += `<rect x="${shx}" y="${Y(yk)}" width="${SHELF*S}" height="${hk*S}" fill="url(#betong)" stroke="#9a968a" stroke-width="1"/>`;
+  }
+
+  // Nya fundament (gjuts från botten upp till springlinjen)
+  if (wf > 0.04){
+    for (const xa of [x0, x1 - wf*S]){
+      s += `<rect x="${xa}" y="${Y(springZ)}" width="${wf*S}" height="${(springZ+0.35)*S}" fill="url(#nybetong)" stroke="#8d897c" stroke-width="1.2"/>`;
+    }
+  }
+
+  // Valvets inneröppning (luft)
+  s += `<path d="M ${cx-rxIn} ${Y(0)} L ${cx-rxIn} ${ySpr} A ${rxIn} ${ryIn} 0 0 1 ${cx+rxIn} ${ySpr} L ${cx+rxIn} ${Y(0)} Z" fill="#faf5ee"/>`;
+
+  // Vatten: ny nivå (fylld) + dagens nivå (streckad)
+  s += `<g clip-path="url(#kanal)">
+    <rect x="${cx-rxIn}" y="${Y(yNiva)}" width="${2*rxIn}" height="${yNiva*S}" fill="url(#vatten)"/>
+    <line x1="${cx-rxIn}" y1="${Y(r.y1)}" x2="${cx+rxIn}" y2="${Y(r.y1)}" stroke="#244052" stroke-width="2"/>
+    <line x1="${cx-rxIn}" y1="${Y(st.y0)}" x2="${cx+rxIn}" y2="${Y(st.y0)}" stroke="#244052" stroke-width="1.6" stroke-dasharray="6 4"/>
+  </g>`;
+
+  // Valvplåt
+  s += `<path d="M ${cx-rxUt} ${ySpr} A ${rxUt} ${ryUt} 0 0 1 ${cx+rxUt} ${ySpr} L ${cx+rxIn} ${ySpr} A ${rxIn} ${ryIn} 0 0 0 ${cx-rxIn} ${ySpr} Z"
+        fill="#5d6770" stroke="#3f474e" stroke-width="1.2"/>`;
+
+  // Vägbana
+  s += `<rect x="${X(-ML)}" y="${Y(Hcrest)-0.10*S}" width="${sceneW*S}" height="${0.10*S}" fill="#4a4a46"/>
+        <line x1="${X(-ML)}" y1="${Y(Hcrest)-0.10*S}" x2="${X(WALL*2+W+MR)}" y2="${Y(Hcrest)-0.10*S}" stroke="#25231e" stroke-width="1.5"/>`;
+
+  // ── Måttsättning ──
+  const dim = (xa,xb,y,txt,up=true) => `
+    <g stroke="#595648" stroke-width="1">
+      <line x1="${xa}" y1="${y}" x2="${xb}" y2="${y}" marker-start="url(#pilink)" marker-end="url(#pilink)"/>
+      <line x1="${xa}" y1="${y-5}" x2="${xa}" y2="${y+5}"/><line x1="${xb}" y1="${y-5}" x2="${xb}" y2="${y+5}"/>
+    </g>
+    <text x="${(xa+xb)/2}" y="${y + (up?-7:15)}" text-anchor="middle" font-size="13" fill="#25231e" font-weight="600">${txt}</text>`;
+
+  s += dim(x0, x1, Y(Hcrest)-0.42*S, `Innermått 5,50 m`);
+  if (wf > 0.04) s += dim(cx-rxIn, cx+rxIn, Y(0)+0.34*S, `Fri spännvidd ${fmt(b2,2)} m`, false);
+
+  // Höjdmåttskedja på höger sida: botten → klack-ÖK → väggkrön
+  const hx = X(WALL*2+W) + 0.45*S;
+  const vdim = (za,zb,txt) => `
+    <g stroke="#595648" stroke-width="1">
+      <line x1="${hx}" y1="${Y(za)}" x2="${hx}" y2="${Y(zb)}" marker-start="url(#pilink)" marker-end="url(#pilink)"/>
+    </g>
+    <text x="${hx+8}" y="${(Y(za)+Y(zb))/2}" font-size="13" fill="#25231e" font-weight="600" transform="rotate(90 ${hx+8} ${(Y(za)+Y(zb))/2})" text-anchor="middle">${txt}</text>`;
+  s += `<g stroke="#595648" stroke-width="1" stroke-dasharray="3 3">
+      <line x1="${hx-5}" y1="${Y(0)}" x2="${X(WALL*2+W)+4}" y2="${Y(0)}"/>
+      <line x1="${hx-5}" y1="${Y(yk)}" x2="${x1-SHELF*S}" y2="${Y(yk)}"/>
+      <line x1="${hx-5}" y1="${Y(Hcrest)}" x2="${X(WALL*2+W)+4}" y2="${Y(Hcrest)}"/>
+    </g>`;
+  s += vdim(0, yk, `${fmt(yk,2)} m`);
+  s += vdim(yk, Hcrest, `3,01 m`);
+  s += `<text x="${hx-9}" y="${Y(yk)-5}" font-size="10.5" fill="#595648" text-anchor="end">klackens ÖK</text>
+        <text x="${hx-9}" y="${Y(0)+13}" font-size="10.5" fill="#595648" text-anchor="end">bäckbotten</text>`;
+
+  // Överfyllnad
+  if (wf > 0.04 && overfyll > 0.02){
+    const ox = cx;
+    s += `<g stroke="#9e7a10" stroke-width="1.2">
+        <line x1="${ox}" y1="${Y(archTop)}" x2="${ox}" y2="${Y(Hcrest)}" marker-start="url(#pilink)" marker-end="url(#pilink)"/>
+      </g>
+      <text x="${ox+8}" y="${(Y(archTop)+Y(Hcrest))/2+4}" font-size="12" fill="#9e7a10" font-weight="600">överfyllnad ${fmt(overfyll,2)} m</text>`;
+  }
+
+  // Nivåetiketter med hänvisningar åt vänster
+  const lx = X(-ML)+6;
+  s += `<g font-size="12.5" font-weight="600">
+    <line x1="${cx-rxIn}" y1="${Y(r.y1)}" x2="${lx+118}" y2="${Y(r.y1)}" stroke="#244052" stroke-width="1" stroke-dasharray="2 3"/>
+    <text x="${lx}" y="${Y(r.y1)-5}" fill="#244052">Ny nivå ${fmt(r.y1,2)} m</text>
+    <line x1="${cx-rxIn}" y1="${Y(st.y0)}" x2="${lx+118}" y2="${Y(st.y0)}" stroke="#595648" stroke-width="1" stroke-dasharray="2 3"/>
+    <text x="${lx}" y="${Y(st.y0)+15}" fill="#595648">Nivå idag ${fmt(st.y0,2)} m</text>
+  </g>`;
+  // Δh-klammer till höger om vänstra nivålinjerna
+  const bx = lx+126;
+  s += `<g stroke="#355f79" stroke-width="1.4">
+      <line x1="${bx}" y1="${Y(r.y1)}" x2="${bx}" y2="${Y(st.y0)}"/>
+      <line x1="${bx-4}" y1="${Y(r.y1)}" x2="${bx+4}" y2="${Y(r.y1)}"/>
+      <line x1="${bx-4}" y1="${Y(st.y0)}" x2="${bx+4}" y2="${Y(st.y0)}"/>
+    </g>
+    <text x="${bx+8}" y="${(Y(r.y1)+Y(st.y0))/2+4}" font-size="13" font-weight="700" fill="#355f79">Δh ${fmt(r.dh*100,1)} cm</text>`;
+
+  // Etiketter konstruktion
+  if (wf > 0.04){
+    s += `<text x="${x0 + wf*S/2}" y="${Y(-0.32)}" font-size="11.5" fill="#595648" text-anchor="middle">Nytt fundament</text>`;
+  }
+  s += `<text x="${cx}" y="${ySpr - ryUt - 8}" font-size="11.5" fill="#3f474e" text-anchor="middle">Valvbåge</text>
+  <text x="${X(WALL/2)}" y="${Y(Hcrest/2)}" font-size="11.5" fill="#7a766a" text-anchor="middle" transform="rotate(-90 ${X(WALL/2)} ${Y(Hcrest/2)})">Bef. betongvinge</text>
+  <text x="${X(-ML)+4}" y="${Y(Hcrest)-0.16*S}" font-size="11.5" fill="#4a4a46">Vägbana 6 m</text>`;
+
+  s += `</svg>`;
+  $('section').innerHTML = s;
+}
+
+/* ── Kurva Δh(b2) ────────────────────────────────────────── */
+function drawCurve(st, rNow){
+  const W=760, H=330, ml=58, mr=20, mt=18, mb=44;
+  const iw=W-ml-mr, ih=H-mt-mb;
+  const bMin=2.0, bMax=st.b1;
+  const N=90, xs=[], serier={gyn:[],norm:[],kons:[]};
+  for(let i=0;i<=N;i++){
+    const b=bMin+(bMax-bMin)*i/N; xs.push(b);
+    for(const k of ['gyn','norm','kons']){
+      const p=PRESETS[k];
+      serier[k].push(hydraulik(st.Q, st.b1, b, st.y0, p.Cc, p.Ce, st.fr).dh*100);
+    }
+  }
+  let dmax=Math.max(...serier.kons, rNow.dh*100, 10);
+  dmax=Math.ceil(dmax/10)*10;
+  const X=b=>ml+iw*(b-bMin)/(bMax-bMin);
+  const Y=d=>mt+ih*(1-Math.min(d,dmax)/dmax);
+  const path=a=>a.map((d,i)=>`${i?'L':'M'}${X(xs[i]).toFixed(1)} ${Y(d).toFixed(1)}`).join('');
+
+  let s=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif" font-size="12">`;
+  // grid
+  const stepY = dmax<=30?5:10;
+  for(let d=0; d<=dmax; d+=stepY){
+    s+=`<line x1="${ml}" y1="${Y(d)}" x2="${W-mr}" y2="${Y(d)}" stroke="${d===0?'#9a968a':'#e4e0d4'}" stroke-width="1"/>
+        <text x="${ml-8}" y="${Y(d)+4}" text-anchor="end" fill="#595648">${d}</text>`;
+  }
+  for(let b=2; b<=bMax+0.001; b+=0.5){
+    s+=`<line x1="${X(b)}" y1="${mt}" x2="${X(b)}" y2="${H-mb}" stroke="#efece2" stroke-width="1"/>
+        <text x="${X(b)}" y="${H-mb+18}" text-anchor="middle" fill="#595648">${fmt(b,1)}</text>`;
+  }
+  // referenslinjer
+  s+=`<line x1="${X(4.7)}" y1="${mt}" x2="${X(4.7)}" y2="${H-mb}" stroke="#9e7a10" stroke-width="1" stroke-dasharray="4 4"/>
+      <text x="${X(4.7)+4}" y="${mt+12}" fill="#9e7a10" font-size="11">mellan bef. klackar 4,7 m</text>`;
+  // band gynnsam–försiktig
+  s+=`<path d="${path(serier.kons)} ${serier.gyn.slice().reverse().map((d,i)=>`L${X(xs[N-i]).toFixed(1)} ${Y(d).toFixed(1)}`).join('')} Z" fill="#355f79" opacity="0.12"/>`;
+  s+=`<path d="${path(serier.gyn)}"  fill="none" stroke="#86b0ca" stroke-width="1.4"/>`;
+  s+=`<path d="${path(serier.kons)}" fill="none" stroke="#86b0ca" stroke-width="1.4"/>`;
+  // vald förlustnivå
+  s+=`<path d="${path(serier[st.key])}" fill="none" stroke="#355f79" stroke-width="2.6"/>`;
+  // markör
+  s+=`<line x1="${X(st.b2)}" y1="${Y(rNow.dh*100)}" x2="${X(st.b2)}" y2="${H-mb}" stroke="#25231e" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle cx="${X(st.b2)}" cy="${Y(rNow.dh*100)}" r="6" fill="#faf5ee" stroke="#355f79" stroke-width="3"/>
+      <text x="${X(st.b2)+10}" y="${Y(rNow.dh*100)-10}" fill="#355f79" font-weight="700">${fmt(rNow.dh*100,1)} cm vid ${fmt(st.b2,2)} m</text>`;
+  // axlar
+  s+=`<text x="${ml-40}" y="${mt+ih/2}" transform="rotate(-90 ${ml-40} ${mt+ih/2})" text-anchor="middle" fill="#25231e" font-weight="600">Nivåhöjning uppströms (cm)</text>
+      <text x="${ml+iw/2}" y="${H-8}" text-anchor="middle" fill="#25231e" font-weight="600">Fri spännvidd (m)</text>
+      <text x="${W-mr}" y="${mt+12}" text-anchor="end" fill="#86b0ca" font-size="11">band: gynnsam–försiktig</text>`;
+  s+=`</svg>`;
+  $('curve').innerHTML=s;
+
+  // tabell
+  let rows='';
+  for(const b of [3.0,3.5,4.0,4.5,4.7,5.0]){
+    if (b>st.b1-0.01) continue;
+    const cells=['gyn','norm','kons'].map(k=>{
+      const p=PRESETS[k], r=hydraulik(st.Q, st.b1, b, st.y0, p.Cc, p.Ce, st.fr);
+      return `<td class="px-3 py-1.5 text-right ${k===st.key?'font-bold text-water':''}">${fmt(r.dh*100,1)} cm${r.choked?' *':''}</td>`;
+    }).join('');
+    const aktiv = Math.abs(b-st.b2)<0.026 ? 'bg-water/5' : '';
+    rows+=`<tr class="${aktiv}"><td class="px-3 py-1.5 font-semibold">${fmt(b,1)} m${b===4.7?' <span class="text-inkmute font-normal">(bef. klackar)</span>':''}</td>${cells}</tr>`;
+  }
+  rows+=`<tr><td colspan="4" class="px-3 py-1.5 text-[11px] text-inkmute">* kritisk strömning – valvet stryper flödet, värdet är en undre gräns.</td></tr>`;
+  $('tbody').innerHTML=rows;
+}
+
+/* ── Render ──────────────────────────────────────────────── */
+function render(){
+  const st = inputs();
+  $('b2val').textContent = fmt(st.b2,2);
+  $('Qval').textContent  = fmt(st.Q,1);
+  $('Qcurve').textContent= fmt(st.Q,1);
+  $('y0disp').textContent= fmt(st.y0,2)+' m';
+  $('presetinfo').textContent = st.p.info;
+  const slider=$('b2'); slider.style.setProperty('--fill', ((st.b2-2)/(5.5-2)*100)+'%');
+  const qs=$('Q'); qs.style.setProperty('--fill', ((st.Q-0.5)/(15-0.5)*100)+'%');
+
+  const r  = hydraulik(st.Q, st.b1, st.b2, st.y0, st.p.Cc, st.p.Ce, st.fr);
+  const rg = hydraulik(st.Q, st.b1, st.b2, st.y0, PRESETS.gyn.Cc,  PRESETS.gyn.Ce, st.fr);
+  const rk = hydraulik(st.Q, st.b1, st.b2, st.y0, PRESETS.kons.Cc, PRESETS.kons.Ce, st.fr);
+
+  $('dh').textContent = fmt(r.dh*100,1);
+  $('dhrange').textContent = `${fmt(rg.dh*100,1)}–${fmt(rk.dh*100,1)} cm`;
+  $('y1').textContent = fmt(r.y1,2);
+  $('y0b').textContent = fmt(st.y0,2);
+  const rel = r.y1 - (st.fri + st.yref);
+  $('relok').textContent = (rel >= 0 ? '+' : '\u2212') + fmt(Math.abs(rel),2) + ' m';
+  $('bottdisp').textContent = fmt(st.fri + st.yref,2) + ' m';
+  $('V2').textContent = fmt(r.V2,2);
+  $('V3').textContent = fmt(r.V3,2);
+  $('Fr').textContent = fmt(r.Fr,2);
+
+  const stEl=$('status');
+  if (r.choked){ stEl.textContent='Kritisk – stryper'; stEl.className='font-disp font-semibold text-2xl mt-1 leading-tight text-crit'; }
+  else if (r.Fr>0.85){ stEl.textContent='Nära kritisk'; stEl.className='font-disp font-semibold text-2xl mt-1 leading-tight text-amber'; }
+  else { stEl.textContent='Lugn (subkritisk)'; stEl.className='font-disp font-semibold text-2xl mt-1 leading-tight text-ok'; }
+
+  $('summary').innerHTML =
+    `Med en fri spännvidd på <b>${fmt(st.b2,2)} m</b> (idag ${fmt(st.b1,2)} m) beräknas vattennivån uppströms stiga med
+     <b class="text-water">ca ${fmt(r.dh*100,1)} cm</b> <span class="text-inkmute">(${fmt(rg.dh*100,1)}–${fmt(rk.dh*100,1)} cm beroende på in-/utloppsutformning)</span>
+     vid flödet ${fmt(st.Q,1)} m³/s. Hastigheten i valvet blir ${fmt(r.V2,2)} m/s.`;
+
+  // Varningar
+  const warn=[];
+  if (r.choked) warn.push(['crit','Spännvidden är så liten att strömningen blir kritisk i valvet (Fr = 1). Bågen blir bestämmande sektion, nedströms uppstår stråkande vatten med vattensprång, och dämningen ovan är att betrakta som en undre gräns. Undvik denna dimension.']);
+  else if (r.Fr>0.85) warn.push(['amber','Froudetalet i valvet överstiger 0,85 – strömningen är nära kritisk. Små förändringar i flöde eller råhet ger stora nivåvariationer; välj gärna större spännvidd eller verifiera med högflödesberäkning.']);
+  const yk = st.fri + st.yref;
+  const springZ = st.fr.springZ;
+  const rise = Math.min(st.rise, yk + 3.01 - springZ - 0.15);
+  const Hinner = springZ + rise;
+  $('fyllgrad').textContent = fmt(r.y2/Hinner*100,0) + ' %';
+  if (r.y2 > Math.min(0.75*Hinner, Hinner-0.25)) warn.push(['amber',`Fyllnadsgraden i valvet är ${fmt(r.y2/Hinner*100,0)} % – över riktvärdet 75 % (minst 0,25 m luftspalt) enligt kapacitetspraxis för valvbågar. Välj större spännvidd eller högre båge för detta flöde.`]);
+  if (r.y1 > springZ + 0.3*rise) warn.push(['amber',`Vattenytan går upp i valvets sidokurvatur (mer än 30 % av innerhöjden ${fmt(rise,2)} m över fundamentets ÖK). Den rektangulära approximationen underskattar då dämningen – kontrollera mot leverantörens tvärsektion.`]);
+  const overfyll = (yk + 3.01) - (springZ + rise + 0.07);
+  if (overfyll < 0.6) warn.push(['amber',`Överfyllnaden blir endast ${fmt(Math.max(overfyll,0),2)} m mellan valvhjässa och vägbana. Räkna med minst 1,0 m överfyllnad – stäm av minsta täckning för vald båge.`]);
+  $('warnings').innerHTML = warn.map(([typ,txt])=>`
+    <div class="border-l-4 ${typ==='crit'?'border-crit bg-crit/5':'border-amber bg-amber/5'} px-4 py-3 text-sm leading-relaxed">
+      <span class="lbl text-[11px] ${typ==='crit'?'text-crit':'text-amber'} mr-2">${typ==='crit'?'Varning':'Observera'}</span>${txt}
+    </div>`).join('');
+
+  // Kraftverk
+  const P = 1000*g*st.Q*r.dh*st.eta;            // W
+  const E = P*8760*st.drift/1000;               // kWh/år
+  $('dhm').textContent = fmt(r.dh,2);
+  $('pkw').textContent = fmt(P/1000,1);
+  $('mwh').textContent = fmt(E/1000,1);
+  $('sek').textContent = Math.round(E*st.pris).toLocaleString('sv-SE');
+
+  drawSection(st, r);
+  drawCurve(st, r);
+}
+
+document.querySelectorAll('input').forEach(el=>el.addEventListener('input', render));
+$('datum').textContent = new Date().toLocaleDateString('sv-SE');
+render();
+</script>
+</body>
+</html>

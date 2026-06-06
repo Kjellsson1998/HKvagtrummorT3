@@ -85,12 +85,53 @@
     <!-- *** UPPDATERA BESKRIVNINGEN HÄR *** -->
     <meta
       name="description"
-      content="Fördjupad information om rekommenderat fyllnadsdjup för vägtrummor, samspelet mellan rör och mark, samt teoretiska beräkningar med Modifierade Iowa-formeln."
+      content="Hur djupt ska en vägtrumma grävas ner för att hålla? Guide om rekommenderat fyllnadsdjup och 60 cm överfyllnad, samspelet rör/mark och beräkning med Modifierade Iowa-formeln."
     />
     <link href="src/output.css" rel="stylesheet" />
     <link
       rel="canonical"
       href="https://www.hkvagtrummor.se/Fyllnadsdjup.html"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Fyllnadsdjup för vägtrummor – hur djupt behöver trumman grävas ner?"
+    />
+    <meta
+      property="og:description"
+      content="Fördjupad guide om rekommenderat fyllnadsdjup för vägtrummor: samspelet mellan rör och mark samt teoretiska beräkningar med Modifierade Iowa-formeln."
+    />
+    <meta
+      property="og:url"
+      content="https://www.hkvagtrummor.se/Fyllnadsdjup.html"
+    />
+    <meta property="og:site_name" content="HK Vägtrummor" />
+    <meta
+      property="og:image"
+      content="https://www.hkvagtrummor.se/Image/Banner_trummlager_optimized_.webp"
+    />
+    <meta property="og:locale" content="sv_SE" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://www.hkvagtrummor.se/Fyllnadsdjup.html"
+    />
+    <meta
+      name="twitter:title"
+      content="Fyllnadsdjup för vägtrummor – hur djupt behöver trumman grävas ner?"
+    />
+    <meta
+      name="twitter:description"
+      content="Fördjupad guide om rekommenderat fyllnadsdjup för vägtrummor: samspelet mellan rör och mark samt teoretiska beräkningar med Modifierade Iowa-formeln."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.hkvagtrummor.se/Image/Banner_trummlager_optimized_.webp"
     />
 
     <!-- Favicon länkar - Kopierat från about.html -->
@@ -105,7 +146,32 @@
     <!-- *** UPPDATERA TITELN HÄR *** -->
     <title>Fördjupning: Fyllnadsdjup för Vägtrummor - HK Vägtrummor</title>
 
-    <!-- Eventuellt Schema.org JSON-LD för denna sida (TechArticle eller liknande) kan läggas till här -->
+    <!-- Schema.org JSON-LD: TechArticle -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Hur djupt bör vägtrumman grävas ner för att hålla?",
+        "description": "Fördjupad guide om rekommenderat fyllnadsdjup (överfyllnad) för vägtrummor: samspelet mellan flexibla rör och omgivande mark, samt teoretiska beräkningar med Modifierade Iowa-formeln för SN8-rör.",
+        "inLanguage": "sv",
+        "author": {
+          "@type": "Person",
+          "name": "Hugo Kjellsson"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "HK Vägtrummor",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.hkvagtrummor.se/Image/logo.webp"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://www.hkvagtrummor.se/Fyllnadsdjup.html"
+        }
+      }
+    </script>
   </head>
 
   <body
@@ -122,9 +188,12 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <a href="#fyllnadsdjup-info" class="skip-link">Hoppa till innehåll</a>
+
   <!-- Se till att aktiv länk (underline klass) eventuellt flyttas från "Om HK" till "Vanliga Frågor" om denna sida hör dit -->
   <nav
     id="header"
+    aria-label="Huvudmeny"
     class="font-subheading w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2"
   >
     <div class="w-full flex items-center justify-between px-6 py-2 relative">
@@ -136,6 +205,8 @@
           viewBox="-60 -60 120 120"
           width="40"
           height="40"
+          aria-hidden="true"
+          focusable="false"
         >
           <g stroke="currentColor">
             <circle r="58" fill="none" stroke-width="4" />
@@ -177,6 +248,8 @@
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
+                aria-hidden="true"
+                focusable="false"
               >
                 <path
                   stroke-linecap="round"
@@ -267,11 +340,13 @@
       <!-- Mobile Hamburger -->
       <div class="md:hidden">
         <input type="checkbox" id="menu-toggle" class="hidden peer" />
-        <label for="menu-toggle" aria-label="Open menu" class="cursor-pointer">
+        <label for="menu-toggle" aria-label="Öppna meny" class="cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-8 h-8 transition-transform duration-200 ease-in-out transform hover:scale-125 hover:fill-YellowC-100"
             viewBox="0 0 48 48"
+            aria-hidden="true"
+            focusable="false"
           >
             <g data-name="Layer 2">
               <path fill="none" d="M0 0h48v48H0z" data-name="invisible box" />
@@ -405,7 +480,7 @@
     </div>
   </nav>
 
-    <section id="fyllnadsdjup-info" class="px-6 py-12">
+    <main id="fyllnadsdjup-info" class="px-6 py-12">
       <!-- Title Section -->
       <div class="text-center">
         <h1
@@ -433,7 +508,8 @@
             <strong class="font-semibold text-YellowC-600 dark:text-YellowC-400"
               >60 cm överfyllnad</strong
             >
-            (från trummans högsta punkt till vägbanan), som till exempel
+            (från trummans hjässa, dess högsta punkt, till vägbanan), som till
+            exempel
             <a
               href="https://www.skogskunskap.se/vagar-i-skogen/drift-och-underhall/upprustning-och-ombyggnad/byta-trummor/#:~:text=Normalt%20rekommenderas%20minst%2060%20cm%20%C3%B6verfyllnad.%20En%20sedimenteringsgrop,Trumman%20b%C3%B6r%20ha%20ett%20fall%20p%C3%A5%201%E2%80%934%20cm/m."
               class="font-body font-medium text-YellowC-600 hover:text-YellowC-500 dark:text-YellowC-500 dark:hover:text-YellowC-400 hover:underline"
@@ -456,11 +532,14 @@
             primära syfte är att sprida ut koncentrerade laster (från t.ex.
             fordonshjul) och att skapa förutsättningar för jorden att hjälpa
             till att bära lasten. Målet är att trummans deformation (nedböjning)
-            inte ska överstiga ca
+            hålls låg — som ett medvetet konservativt designmål brukar ca
             <strong class="font-semibold text-YellowC-600 dark:text-YellowC-400"
               >5-6%</strong
             >
-            av dess diameter.
+            av diametern användas. Detta är en serviceability-gräns (form, flöde,
+            fogtäthet), inte en brottgräns: erkända standarder tillåter ofta upp
+            till 7,5 % för självfallsrör i plast, medan verkligt strukturellt
+            brott (revers krökning) inträffar först vid ca 15–30 %.
           </p>
         </div>
 
@@ -507,13 +586,20 @@
             <svg
               viewBox="65 15 179 200"
               xmlns="http://www.w3.org/2000/svg"
-              class="inline-block max-w-full h-70"
+              class="inline-block w-full max-w-xs sm:max-w-sm h-auto"
+              role="img"
+              aria-labelledby="lastspridningskon-svg-title"
               style="
                 stroke-linecap: round;
                 stroke-linejoin: round;
                 fill-rule: evenodd;
               "
             >
+              <title id="lastspridningskon-svg-title">
+                Skiss av en lastspridningskon med toppvinkeln θ ovanför ett rör
+                med ytterdiameter Dₒ och minsta fyllnadshöjd h över rörets
+                hjässa.
+              </title>
               <style>
                 .main-geo {
                   stroke: currentColor;
@@ -658,24 +744,24 @@
           <p class="font-body text-DGreenC-800 dark:text-TanC-50 mt-4">
             Detta resonemang leder fram till en enkel geometrisk formel för att
             uppskatta den minsta fyllnadshöjden över trumman för att få lasten
-            att spridas jämt över trumman:
+            att spridas jämnt över trumman:
           </p>
           <!-- Formel Block -->
           <section
             aria-labelledby="minsta-fyllnadshojd-formula-heading"
             class="bg-TanC-200 dark:bg-DGreenC-700 border border-YellowC-500 dark:border-YellowC-400 p-6 rounded-lg my-6 shadow-md overflow-x-auto"
           >
-            <h4
+            <h3
               id="minsta-fyllnadshojd-formula-heading"
               class="font-subheading text-center text-lg mb-4 text-DGreenC-800 dark:text-TanC-50"
             >
               Formel för Minsta Fyllnadshöjd
-            </h4>
+            </h3>
             <div
               class="text-DGreenC-800 dark:text-TanC-50 text-center text-xl font-mono"
             >
               \[ h_{\text{min}} = \frac{D_{\text{o}}}{2
-              \tan(\frac{\theta_{\text{kon}}}{2})} - \frac{D_{\text{o}}}{2} \]
+              \tan(\frac{\theta_{\text{kon}}}{2})} \]
             </div>
             <div
               class="mt-6 text-sm text-DGreenC-700 dark:text-TanC-300 font-body"
@@ -725,7 +811,7 @@
             <strong class="font-semibold">OBS!</strong> Det är mitt sätt att se
             på överfyllnad på mindre trummor upp till 400 mm i diameter.
             Observera att dessa beräkningar inte ger några garantier eller
-            officiella rekommendationer utan mer som en bodepraktika!
+            officiella rekommendationer utan ska ses mer som en tumregel!
           </div>
 
           <h3
@@ -761,7 +847,7 @@
           </ul>
           <p class="font-body text-DGreenC-800 dark:text-TanC-50 mt-4">
             För att dina exempelvärden ska stämma ungefär, behöver
-            \(\theta_{\text{kon}}\) vara i intervallet ca 35° till 55°. <br />
+            \(\theta_{\text{kon}}\) vara i intervallet ca 35° till 53°. <br />
             Det är viktigt att förstå dessa uppskattningar korrekt, och om det
             finns tillräckligt med material bör man alltid sträva efter att ha
             <strong class="font-semibold text-YellowC-600 dark:text-YellowC-400"
@@ -783,12 +869,16 @@
             class="font-body leading-relaxed text-DGreenC-700 dark:text-TanC-300 mb-6"
           >
             För en teknisk analys av nedböjning hos flexibla rör är den
-            Modifierade Iowa-formeln en metod. Metoden
+            Modifierade Iowa-formeln en etablerad och ofta använd metod. Den
             syftar till att kvantifiera den förväntade vertikala nedböjningen,
             uttryckt som en procentandel av rörets diameter (\(\Delta y /
-            D_o\)), och verifiera att denna understiger specificerade tillåtna
-            gränsvärden (vanligen 5-6% för de flesta applikationer för att
-            säkerställa långsiktig funktion).
+            D_o\)), och verifiera att denna understiger tillåtna gränsvärden. Som
+            konservativt designmål används ofta 5-6%; för självfallsrör i plast
+            accepterar standarder vanligen upp till 7,5 % (ASTM D3034, AWWA M55),
+            och Svenskt Vatten P91 tillåter i fältkontroll upp till 6 % för PVC
+            och 7 % för PE/PP. Eftersom verkligt strukturellt brott sker först
+            vid ca 15–30 % innebär 5-6% en säkerhetsfaktor på storleksordningen
+            4–6.
           </p>
 
           <h3
@@ -820,8 +910,21 @@
               class="text-DGreenC-800 dark:text-TanC-50 text-center text-xl font-mono"
             >
               \[ \frac{\Delta y}{D_o} (\%) = \frac{D_L \cdot K \cdot (W_E +
-              W_L)}{P_S + 0.061 \cdot E'} \times 100 \]
+              W_L)}{D_o \cdot (P_S + 0.061 \cdot E')} \times 100 \]
             </div>
+            <p
+              class="mt-4 text-xs italic text-DGreenC-600 dark:text-TanC-400 font-body"
+            >
+              Faktorn \(D_o\) i nämnaren omvandlar linjelasterna (\(W_E, W_L\) i
+              N/m) till en dimensionslös relativ nedböjning. Ekvivalent kan man
+              uttrycka lasterna som tryck (N/m²) och utelämna \(D_o\), vilket ger
+              den klassiska AWWA M45-formen \(\frac{\Delta y}{D_o} = \frac{D_L
+              \cdot K \cdot q}{0{,}149 \cdot P_S + 0.061 \cdot E'}\), där \(q\)
+              är det vertikala trycket vid rörets nivå. Koefficienten 0,149 och
+              den exakta definitionen av rörstyvheten \(P_S\) (ASTM D2412)
+              respektive ringstyvheten SN (EN ISO 9969) skiljer sig, men för
+              flexibla rör domineras nämnaren ändå av jordens sidostöd \(E'\).
+            </p>
 
             <div
               class="mt-6 text-sm text-DGreenC-700 dark:text-TanC-300 font-body"
@@ -1021,7 +1124,7 @@
                       \(g\): Tyngdacceleration (\(\approx 9.82 \, m/s^2\))
                     </li>
                     <li>
-                      \(h\): Överfyllnadsdjup från markyta till rörets hjässa
+                      \(h\): Överfyllnadshöjd från rörets hjässa till markytan
                       (m)
                     </li>
                     <li>\(D_o\): Rörets ytterdiameter (m)</li>
@@ -1145,26 +1248,31 @@
                 >
                   <tr>
                     <th
+                      scope="col"
                       class="px-3 py-3 font-subheading text-left align-middle"
                     >
                       Installationskvalitet & Kringfyllnad
                     </th>
                     <th
+                      scope="col"
                       class="px-3 py-3 font-subheading text-center align-middle"
                     >
                       Packningsgrad<br />(% Standard Proctor)
                     </th>
                     <th
+                      scope="col"
                       class="px-3 py-3 font-subheading text-center align-middle"
                     >
                       Typisk Densitet<br />(kg/m³)
                     </th>
                     <th
+                      scope="col"
                       class="px-3 py-3 font-subheading text-left align-middle"
                     >
                       Typisk Jordtyp / Material (ASTM-klass)
                     </th>
                     <th
+                      scope="col"
                       class="px-3 py-3 font-subheading text-center align-middle"
                     >
                       Typiskt \(E'\) Intervall<br />(MPa = 10⁶ N/m²)
@@ -1176,44 +1284,53 @@
                 >
                   <!-- Utmärkt -->
                   <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
-                    <td class="px-3 py-4 align-top">
+                    <th
+                      scope="row"
+                      class="px-3 py-4 align-top text-left font-normal"
+                    >
                       <strong>Utmärkt:</strong> Välgraderat krossmaterial (t.ex.
                       bergkross 0-32 mm). Packat i tunna lager (≤15 cm) vid
                       optimal fuktkvot. Mycket god kontroll.
-                    </td>
-                    <td class="px-3 py-4 text-center align-top">>95-100%</td>
+                    </th>
+                    <td class="px-3 py-4 text-center align-top">&gt;95-100 %</td>
                     <td class="px-3 py-4 text-center align-top">~2200-2400</td>
                     <td class="px-3 py-4 align-top">
                       Krossad sten, välgraderat grus (GW, GP)
                     </td>
                     <td class="px-3 py-4 text-center align-top font-semibold">
-                      20 - 30+ MPa
+                      Grus ~20–28 MPa,<br />krossad sten upp till ~42 MPa
                     </td>
                   </tr>
                   <!-- Bra -->
                   <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
-                    <td class="px-3 py-4 align-top">
+                    <th
+                      scope="row"
+                      class="px-3 py-4 align-top text-left font-normal"
+                    >
                       <strong>Bra:</strong> Sand/grus-material (t.ex.
                       rörgravsgrus 0-18 mm). Packat i lager (≤30 cm) vid nära
                       optimal fuktkvot. God kontroll.
-                    </td>
+                    </th>
                     <td class="px-3 py-4 text-center align-top">90-95%</td>
                     <td class="px-3 py-4 text-center align-top">~1900-2200</td>
                     <td class="px-3 py-4 align-top">
                       Sandigt grus, grusig sand (SW, SP, GP)
                     </td>
                     <td class="px-3 py-4 text-center align-top font-semibold">
-                      10 - 20 MPa
+                      ca 7–15 MPa
                     </td>
                   </tr>
                   <!-- Medelgod -->
                   <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
-                    <td class="px-3 py-4 align-top">
+                    <th
+                      scope="row"
+                      class="px-3 py-4 align-top text-left font-normal"
+                    >
                       <strong>Medelgod/Tillräcklig:</strong> Sand/grus eller
                       vissa kohesionsjordar packade kontrollerat vid optimal
                       fuktkvot. Packning kritisk och måste noggrant
                       kontrolleras.
-                    </td>
+                    </th>
                     <td class="px-3 py-4 text-center align-top">85-90%</td>
                     <td class="px-3 py-4 text-center align-top">~1700-2000</td>
                     <td class="px-3 py-4 align-top">
@@ -1225,20 +1342,23 @@
                   </tr>
                   <!-- Dålig -->
                   <tr class="hover:bg-TanC-100 dark:hover:bg-DGreenC-600">
-                    <td class="px-3 py-4 align-top">
+                    <th
+                      scope="row"
+                      class="px-3 py-4 align-top text-left font-normal"
+                    >
                       <strong>Dålig/Otillräcklig:</strong> Dåligt packad jord,
                       löst tippat material, kohesionsjord med ogynnsam
                       vattenhalt, organiskt material eller stora stenar nära
                       röret.
-                    </td>
-                    <td class="px-3 py-4 text-center align-top">&lt 85%</td>
+                    </th>
+                    <td class="px-3 py-4 text-center align-top">&lt; 85 %</td>
                     <td class="px-3 py-4 text-center align-top">~1500-1800</td>
                     <td class="px-3 py-4 align-top">
                       Lös sand/grus, silt (ML), lera (CL/CH), organisk jord (OH,
                       OL)
                     </td>
                     <td class="px-3 py-4 text-center align-top font-semibold">
-                      &lt 3 MPa
+                      &lt; 3 MPa
                     </td>
                   </tr>
                 </tbody>
@@ -1247,15 +1367,400 @@
             <div
               class="p-4 text-sm italic text-DGreenC-600 dark:text-TanC-300 bg-TanC-50 dark:bg-DGreenC-700 font-body"
             >
-              Observera: Värdena ovan är typiska och baserade på ASTM D2321 och
-              etablerad praxis. Faktiska värden kan variera beroende på projekt-
-              och platsförhållanden. Geoteknisk undersökning och fältprovning
-              rekommenderas för att fastställa projektspecifika E'-värden.
-              Parametern \(E'\) är avgörande för rörinstallationens stabilitet
-              och långsiktiga prestanda.
+              Observera: E′-värdena ovan baseras på Amster K. Howards tabell
+              ”Modulus of Soil Reaction (E′) Values for Buried Flexible Pipe”
+              (U.S. Bureau of Reclamation, 1977, reviderad 2006), som ligger
+              till grund för AWWA M45 och kopplas till jordklassificeringen i
+              ASTM D2321 / D2487 (USCS). Motsvarande europeisk dimensionering
+              enligt ATV-DVWK-A 127 / EN 1295 ger jämförbara värden per
+              jordgrupp och packningsgrad. Howards klassiska tabell har ett
+              schablonmaximum kring 20,7 MPa (3000 psi) för välpackat grus;
+              högre värden (upp till ca 42 MPa) gäller välpackad, helt krossad
+              sten eller stora täckdjup. Densitetskolumnen anger typiska
+              torrdensiteter – de auktoritativa tabellerna utgår från
+              packningsgrad (% Standard Proctor), inte absolut densitet. Faktiska
+              värden varierar med projekt- och platsförhållanden; geoteknisk
+              undersökning och fältprovning rekommenderas för projektspecifika
+              E′-värden, som är avgörande för rörinstallationens stabilitet och
+              långsiktiga prestanda.
             </div>
           </section>
           <!-- Slut E Prime Tabell -->
+
+          <!-- Interaktiv kalkylator -->
+          <section
+            aria-labelledby="calc-heading"
+            class="bg-TanC-200 dark:bg-DGreenC-700 border border-YellowC-500 dark:border-YellowC-400 p-6 rounded-lg my-6 shadow-md"
+          >
+            <h3
+              id="calc-heading"
+              class="font-subheading text-center text-lg mb-2 text-DGreenC-800 dark:text-TanC-50"
+            >
+              Interaktiv nedböjningskalkylator
+            </h3>
+            <p
+              class="text-sm text-center italic text-DGreenC-600 dark:text-TanC-300 mb-6 font-body"
+            >
+              Dra i reglagen för att se hur parametrarna påverkar den beräknade
+              nedböjningen \(\Delta y / D_o\) enligt den (förenklade) Modifierade
+              Iowa-formeln.
+            </p>
+
+            <noscript>
+              <p
+                class="text-sm text-RedC-500 dark:text-RedC-400 text-center mb-4 font-body"
+              >
+                Kalkylatorn kräver JavaScript. Aktivera JavaScript i webbläsaren
+                för att räkna interaktivt.
+              </p>
+            </noscript>
+
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 gap-6 font-body text-sm text-DGreenC-800 dark:text-TanC-50"
+            >
+              <!-- Diameter -->
+              <label class="block">
+                <span class="flex items-center justify-between mb-1">
+                  <span>Rörets ytterdiameter D&#8338;</span>
+                  <span
+                    id="calc-d-val"
+                    class="font-mono font-semibold text-YellowC-700 dark:text-YellowC-400"
+                    >400 mm</span
+                  >
+                </span>
+                <input
+                  id="calc-d"
+                  class="calc-range"
+                  type="range"
+                  min="100"
+                  max="1200"
+                  step="10"
+                  value="400"
+                  aria-label="Rörets ytterdiameter i millimeter"
+                />
+              </label>
+
+              <!-- Överfyllnadshöjd -->
+              <label class="block">
+                <span class="flex items-center justify-between mb-1">
+                  <span>Överfyllnadshöjd h</span>
+                  <span
+                    id="calc-h-val"
+                    class="font-mono font-semibold text-YellowC-700 dark:text-YellowC-400"
+                    >0,60 m</span
+                  >
+                </span>
+                <input
+                  id="calc-h"
+                  class="calc-range"
+                  type="range"
+                  min="0.2"
+                  max="2"
+                  step="0.05"
+                  value="0.6"
+                  aria-label="Överfyllnadshöjd i meter"
+                />
+              </label>
+
+              <!-- Axellast -->
+              <label class="block">
+                <span class="flex items-center justify-between mb-1">
+                  <span>Axellast</span>
+                  <span
+                    id="calc-axle-val"
+                    class="font-mono font-semibold text-YellowC-700 dark:text-YellowC-400"
+                    >12 ton</span
+                  >
+                </span>
+                <input
+                  id="calc-axle"
+                  class="calc-range"
+                  type="range"
+                  min="2"
+                  max="16"
+                  step="0.5"
+                  value="12"
+                  aria-label="Axellast i ton"
+                />
+              </label>
+
+              <!-- E' packning -->
+              <label class="block">
+                <span class="flex items-center justify-between mb-1">
+                  <span>Jordens sidostöd E&#8242; (packning)</span>
+                  <span
+                    id="calc-eprime-val"
+                    class="font-mono font-semibold text-YellowC-700 dark:text-YellowC-400"
+                    >10 MPa</span
+                  >
+                </span>
+                <input
+                  id="calc-eprime"
+                  class="calc-range"
+                  type="range"
+                  min="1"
+                  max="30"
+                  step="0.5"
+                  value="10"
+                  aria-label="Jordens reaktionsmodul E-prime i MPa"
+                />
+                <span
+                  id="calc-eprime-band"
+                  class="block text-xs italic text-DGreenC-600 dark:text-TanC-400 mt-1"
+                  >Bra packning</span
+                >
+              </label>
+
+              <!-- SN-klass -->
+              <label class="block">
+                <span class="block mb-1">Rörets ringstyvhet (SN-klass)</span>
+                <select
+                  id="calc-sn"
+                  class="w-full px-3 py-2 rounded-md border border-YellowC-500 dark:border-YellowC-400 bg-TanC-50 dark:bg-DGreenC-500 text-DGreenC-800 dark:text-TanC-50"
+                >
+                  <option value="2000">SN2</option>
+                  <option value="4000">SN4</option>
+                  <option value="8000" selected>SN8</option>
+                  <option value="16000">SN16</option>
+                </select>
+              </label>
+
+              <!-- Långtidsfaktor D_L -->
+              <label class="block">
+                <span class="flex items-center justify-between mb-1">
+                  <span>Långtidsfaktor D<sub>L</sub></span>
+                  <span
+                    id="calc-dl-val"
+                    class="font-mono font-semibold text-YellowC-700 dark:text-YellowC-400"
+                    >1,50</span
+                  >
+                </span>
+                <input
+                  id="calc-dl"
+                  class="calc-range"
+                  type="range"
+                  min="1"
+                  max="1.5"
+                  step="0.05"
+                  value="1.5"
+                  aria-label="Långtidsfaktor D_L"
+                />
+              </label>
+            </div>
+
+            <p
+              class="text-xs italic text-DGreenC-600 dark:text-TanC-400 mt-4 font-body"
+            >
+              Fasta antaganden: lastkoefficient C<sub>d</sub> = 1,0
+              (prismalast), bäddningsfaktor K = 0,1, dynamisk faktor
+              I<sub>f</sub> = 1,5,
+              jorddensitet ρ = 1900 kg/m³, g = 9,82 m/s². Trafiklasten beräknas
+              som punktlast (Boussinesq) rakt under ett hjul. Diametern påverkar
+              främst den absoluta nedböjningen (mm) – den relativa (%) är i denna
+              förenklade modell i stort sett oberoende av diametern.
+            </p>
+
+            <!-- Resultat -->
+            <div
+              class="mt-6 p-4 rounded-md bg-TanC-50 dark:bg-DGreenC-500 border border-YellowC-500 dark:border-YellowC-400"
+            >
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <span
+                    class="block text-xs font-subheading text-DGreenC-600 dark:text-TanC-300"
+                    >Relativ nedböjning Δy/D&#8338;</span
+                  >
+                  <span
+                    id="calc-out-pct"
+                    class="text-3xl font-mono font-bold tabular-nums"
+                    style="color: #4e572d"
+                    >3,1 %</span
+                  >
+                </div>
+                <div>
+                  <span
+                    class="block text-xs font-subheading text-DGreenC-600 dark:text-TanC-300"
+                    >Absolut nedböjning Δy</span
+                  >
+                  <span
+                    id="calc-out-dy"
+                    class="text-2xl font-mono font-semibold tabular-nums text-DGreenC-800 dark:text-TanC-50"
+                    >≈ 12,5 mm</span
+                  >
+                </div>
+              </div>
+              <p
+                id="calc-status"
+                class="mt-3 text-sm font-semibold font-body"
+                style="color: #4e572d"
+              >
+                ✓ Inom 5 % – god marginal till gränsvärdet
+              </p>
+              <p
+                class="mt-2 text-xs text-DGreenC-600 dark:text-TanC-300 font-body"
+              >
+                Riktvärde: konservativt designmål ca 5–6 %. Standarder för
+                självfallsrör i plast tillåter ofta upp till 7,5 %; verkligt
+                brott sker först vid betydligt högre nedböjning (~15–30 %).
+              </p>
+            </div>
+
+            <div
+              class="mt-4 p-4 rounded-md border border-YellowC-600 dark:border-YellowC-400 bg-TanC-50 dark:bg-DGreenC-700 text-sm text-DGreenC-800 dark:text-TanC-50 font-body"
+            >
+              <strong class="font-semibold">Ansvarsfriskrivning:</strong>
+              Kalkylatorn och beräkningarna på denna sida är förenklade,
+              teoretiska uppskattningar avsedda för allmän förståelse och
+              utbildning. De är <strong class="font-semibold">inte</strong> en
+              dimensionering, projektering eller garanti, och tar inte hänsyn
+              till de specifika förhållandena på din plats (jordart, packning,
+              grundvatten, laster m.m.). Resultaten får inte läggas till grund
+              för installation. För verkliga projekt gäller tillverkarens
+              anvisningar och relevanta standarder (t.ex. AMA Anläggning, EN
+              1295, AWWA M45), och vid minsta tvekan ska sakkunnig konsulteras.
+              HK Vägtrummor ansvarar inte för beslut som fattas utifrån dessa
+              beräkningar.
+            </div>
+          </section>
+          <!-- Slut Interaktiv kalkylator -->
+
+          <script>
+            (function () {
+              "use strict";
+              function ready(fn) {
+                if (document.readyState === "loading") {
+                  document.addEventListener("DOMContentLoaded", fn);
+                } else {
+                  fn();
+                }
+              }
+              ready(function () {
+                try {
+                  var ids = [
+                    "calc-d",
+                    "calc-h",
+                    "calc-axle",
+                    "calc-eprime",
+                    "calc-sn",
+                    "calc-dl",
+                  ];
+                  // Avbryt tyst om kalkylatorns markup saknas
+                  var hasAll = ids.every(function (id) {
+                    return document.getElementById(id);
+                  });
+                  if (!hasAll) return;
+
+                  var RHO = 1900, // kg/m³
+                    G = 9.82, // m/s²
+                    CD = 1.0, // lastkoefficient (prismalast)
+                    K = 0.1, // bäddningsfaktor
+                    IF = 1.5; // dynamisk faktor
+
+                  function getNum(id, fallback, min, max) {
+                    var el = document.getElementById(id);
+                    if (!el) return fallback;
+                    var v = parseFloat(String(el.value).replace(",", "."));
+                    if (!isFinite(v)) v = fallback;
+                    if (typeof min === "number" && v < min) v = min;
+                    if (typeof max === "number" && v > max) v = max;
+                    return v;
+                  }
+                  function fmt(n, dec) {
+                    if (!isFinite(n)) return "–";
+                    return n.toFixed(dec).replace(".", ",");
+                  }
+                  function intStr(n) {
+                    // visa heltal utan ",0"
+                    return fmt(n, 1).replace(/,0$/, "");
+                  }
+                  function setText(id, txt) {
+                    var el = document.getElementById(id);
+                    if (el) el.textContent = txt;
+                  }
+                  function band(e) {
+                    if (e < 3) return "Dålig/otillräcklig packning";
+                    if (e < 10) return "Medelgod packning";
+                    if (e < 20) return "Bra packning";
+                    return "Utmärkt packning";
+                  }
+
+                  function render() {
+                    try {
+                      var Dmm = getNum("calc-d", 400, 100, 1200);
+                      var h = getNum("calc-h", 0.6, 0.2, 2);
+                      if (h < 0.05) h = 0.05; // skydd mot division med noll
+                      var axle = getNum("calc-axle", 12, 2, 16);
+                      var EpMPa = getNum("calc-eprime", 10, 1, 30);
+                      var PS = getNum("calc-sn", 8000, 1000, 32000);
+                      var DL = getNum("calc-dl", 1.5, 1, 1.5);
+
+                      var Dmeter = Dmm / 1000;
+                      var Ep = EpMPa * 1e6; // Pa
+                      var Pwheel = (axle * 1000 * G) / 2; // N
+                      var qE = CD * RHO * G * h; // Pa (jordtryck)
+                      var sigmaZ = (3 * Pwheel) / (2 * Math.PI * h * h); // Pa
+                      var qL = IF * sigmaZ; // Pa (trafiktryck)
+                      var q = qE + qL;
+                      var denom = PS + 0.061 * Ep;
+                      var ratio = denom > 0 ? (DL * K * q) / denom : NaN;
+                      var pct = ratio * 100;
+                      var dymm = ratio * Dmm;
+
+                      // Live-etiketter
+                      setText("calc-d-val", Math.round(Dmm) + " mm");
+                      setText("calc-h-val", fmt(h, 2) + " m");
+                      setText("calc-axle-val", intStr(axle) + " ton");
+                      setText("calc-eprime-val", intStr(EpMPa) + " MPa");
+                      setText("calc-eprime-band", band(EpMPa));
+                      setText("calc-dl-val", fmt(DL, 2));
+
+                      // Resultat
+                      setText("calc-out-pct", fmt(pct, 1) + " %");
+                      setText("calc-out-dy", "≈ " + fmt(dymm, 1) + " mm");
+
+                      var pctEl = document.getElementById("calc-out-pct");
+                      var statusEl = document.getElementById("calc-status");
+                      var color, msg;
+                      if (!isFinite(pct)) {
+                        color = "#cf2626";
+                        msg = "Ogiltiga indata.";
+                      } else if (pct < 5) {
+                        color = "#4e572d";
+                        msg = "✓ Inom 5 % – god marginal till gränsvärdet";
+                      } else if (pct <= 6) {
+                        color = "#9e7a10";
+                        msg = "⚠ 5–6 % – på gränsen, kräver kontroll";
+                      } else {
+                        color = "#cf2626";
+                        msg =
+                          "⚠ Över 6 % – över det konservativa designmålet. Standarder för självfallsrör tillåter ofta upp till 7,5 %; kontrollera kringfyllning (E′), djup och rörstyvhet, och följ tillverkarens anvisningar.";
+                      }
+                      if (pctEl) pctEl.style.color = color;
+                      if (statusEl) {
+                        statusEl.style.color = color;
+                        statusEl.textContent = msg;
+                      }
+                    } catch (err) {
+                      // Fail-safe: visa streck, krascha aldrig sidan
+                      setText("calc-out-pct", "–");
+                      setText("calc-out-dy", "–");
+                    }
+                  }
+
+                  ids.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el) {
+                      el.addEventListener("input", render);
+                      el.addEventListener("change", render);
+                    }
+                  });
+                  render();
+                } catch (err) {
+                  /* Fail-safe: panelen behåller sina förifyllda standardvärden */
+                }
+              });
+            })();
+          </script>
 
           <!-- Nyckelkomponenter och Slutsatser -->
           <section aria-labelledby="key-conclusions-heading" class="font-body">
@@ -1308,9 +1813,10 @@
               <li>
                 <strong>Designmål:</strong> Det slutgiltiga målet är att
                 säkerställa att den beräknade maximala nedböjningen (\(\Delta y
-                / D_o\)) understiger det tillåtna gränsvärdet (ofta 5-6%) med en
-                betryggande marginal för att garantera rörets funktion och
-                strukturella integritet under hela dess livslängd.
+                / D_o\)) understiger det tillåtna gränsvärdet med en betryggande
+                marginal. Som konservativt designmål används ofta 5-6%, medan
+                standarder för självfallsrör i plast vanligen tillåter upp till
+                7,5 %; verkligt brott sker först vid ca 15–30 %.
               </li>
             </ul>
             <p class="leading-relaxed mt-4 text-DGreenC-700 dark:text-TanC-300">
@@ -1507,7 +2013,7 @@
         </div>
       </div>
       <!-- End Content Sections Div -->
-    </section>
+    </main>
 
     <footer
       class="px-4 divide-y border-t bg-TanC-200 dark:bg-DGreenC-500 border-DGreenC-800 dark:border-TanC-50"
@@ -1529,6 +2035,8 @@
                 width="40"
                 height="40"
                 class="fill-DGreenC-800 dark:fill-TanC-50"
+                aria-hidden="true"
+                focusable="false"
               >
                 <g
                   stroke="currentColor"
@@ -1675,12 +2183,15 @@
                   target="_blank"
                   href="https://www.facebook.com/profile.php?id=61564964080791"
                   title="Facebook"
+                  aria-label="HK Vägtrummor på Facebook"
                   class="flex items-center p-1 text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out transform hover:scale-115"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 32 32"
                     class="w-5 h-5 fill-current"
+                    aria-hidden="true"
+                    focusable="false"
                   >
                     <path
                       d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z"

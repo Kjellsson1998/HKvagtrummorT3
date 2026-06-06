@@ -1447,7 +1447,7 @@
 
               <hr class="my-0 border-YellowC-500 dark:border-YellowC-500" />
 
-              <details class="group">
+              <details class="group" id="overdjup">
                 <summary
                   class="flex items-center justify-between w-full py-3 font-medium text-left cursor-pointer focus:outline-none list-none"
                 >
@@ -3971,5 +3971,23 @@
         © 2026 HK Vägtrummor. All rights reserved.
       </div>
     </footer>
+
+    <!-- Öppna en FAQ-fråga automatiskt om den länkas direkt (t.ex. FAQ.html#overdjup) -->
+    <script>
+      (function () {
+        function openFromHash() {
+          try {
+            if (!location.hash) return;
+            var el = document.querySelector(location.hash);
+            if (el && el.tagName === "DETAILS") {
+              el.open = true;
+              el.scrollIntoView({ block: "start" });
+            }
+          } catch (e) {}
+        }
+        window.addEventListener("DOMContentLoaded", openFromHash);
+        window.addEventListener("hashchange", openFromHash);
+      })();
+    </script>
   </body>
 </html>
