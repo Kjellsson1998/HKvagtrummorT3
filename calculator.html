@@ -743,14 +743,18 @@ function warnHtml(p,c,kind){
 let kind="pipe", timer=null;
 const $=id=>document.getElementById(id);
 
+// pilsteg per fält: metermått hoppar 10 cm, mindre detaljmått 5 cm,
+// lutningar 0,1 och vinkeln hela grader
+const STEPS={brook_slp:"0.0001",theta:"1",S:"0.1",Se:"0.1",guard:"0.05",Hf:"0.05",Bf:"0.05",tf:"0.05",bk:"0.05"};
 function fieldHtml(f,labelOverride){
   const [k,label,unit,def,choices]=f, lbl=labelOverride||label;
+  const u=`<span class="inline-block w-4 shrink-0 text-xs text-inkmute">${unit||""}</span>`;
   if(choices){
     const opts=choices.map(o=>`<option value="${o[0]}"${o[0]===def?" selected":""}>${o[1]}</option>`).join("");
-    return `<label class="flex justify-between items-center gap-2 text-sm py-1">${lbl}<select id="${k}" class="w-[150px] border border-line px-2 py-1">${opts}</select></label>`;
+    return `<label class="flex justify-between items-center gap-2 text-sm py-1"><span>${lbl}</span><span class="flex items-center gap-1.5 whitespace-nowrap"><select id="${k}" class="w-[132px] border border-line px-2 py-1">${opts}</select>${u}</span></label>`;
   }
-  const step=k==="brook_slp"?"0.0001":k==="theta"?"1":"0.01";
-  return `<label class="flex justify-between items-center gap-2 text-sm py-1">${lbl}${unit?` <span class="text-inkmute text-xs">[${unit}]</span>`:""}<input id="${k}" type="number" step="${step}" value="${def}" class="w-[92px] border border-line px-2 py-1 text-right font-semibold"></label>`;
+  const step=STEPS[k]||"0.1";
+  return `<label class="flex justify-between items-center gap-2 text-sm py-1"><span>${lbl}</span><span class="flex items-center gap-1.5 whitespace-nowrap"><input id="${k}" type="number" step="${step}" value="${def}" class="w-[92px] border border-line px-2 py-1 text-right font-semibold">${u}</span></label>`;
 }
 // Fundamentfältens etiketter beror på grundläggningstyp: betongsulor har
 // sula + liv, plåtfötter står på basplåt mot en packad krossbädd (tf utgår).
