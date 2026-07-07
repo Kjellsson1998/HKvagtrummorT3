@@ -187,7 +187,8 @@ const MODELS={
       ["B",  "Vägkropp (bredd)", "m", 4.20, null, "basic"],
       ["Fh", "Överfyllnad",      "m", 0.65, null, "basic"],
       ...ADV],
-    compute:p=>computeCore(p, p.D, 0)
+    // trumman sätts ÖD under bäckbotten: hjässa över botten = D − ÖD, anfang = −ÖD
+    compute:p=>{const od=overdjup(p.D); const c=computeCore(p, p.D-od, -od); c.od=od; return c;}
   },
   pipe:{
     title:"Pipebåge", sub:"pressad trumma (rörbåge) – sluten profil",
@@ -197,7 +198,7 @@ const MODELS={
       ["B",  "Vägkropp (bredd)", "m", 4.20, null, "basic"],
       ["Fh", "Överfyllnad",      "m", 0.65, null, "basic"],
       ...ADV],
-    compute:p=>computeCore(p, p.H, 0)
+    compute:p=>{const od=overdjup(p.D); const c=computeCore(p, p.H-od, -od); c.od=od; return c;}
   },
   valv:{
     title:"Valvbåge", sub:"öppen båge på klackar (bultad över 3,6 m spännvidd)",
@@ -213,7 +214,7 @@ const MODELS={
       ["tf", "Sultjocklek",            "m", 0.25, null, "fundament"],
       ["bk", "Livbredd (klack)",       "m", 0.30, null, "fundament"],
       ...ADV],
-    compute:p=>computeCore(p, p.Hk+p.H, p.Hk)
+    compute:p=>{const c=computeCore(p, p.Hk+p.H, p.Hk); c.od=0; return c;}
   }
 };
 
@@ -245,6 +246,21 @@ function computeCore(p, Htot, hk){
 }
 
 function valvTyp(D){ return D<=3.6 ? "valvbåge" : "bultad valvbåge"; }
+
+// Överdjup: trumman sätts ÖD under bäckbotten så naturligt bottenmaterial
+// återetableras i trumman. Tabell [Di mm, ÖD mm]; linjär interpolation,
+// klampad i ändarna. Gäller rund trumma och pipebåge (valvbågen står på klackar).
+const OD_TAB=[[200,50],[300,50],[400,90],[500,100],[600,120],[1000,180],[1400,240],[1600,270],[2000,330]];
+function overdjup(Dm){
+  const di=Dm*1000, t=OD_TAB;
+  if(di<=t[0][0]) return t[0][1]/1000;
+  if(di>=t[t.length-1][0]) return t[t.length-1][1]/1000;
+  for(let i=0;i<t.length-1;i++){
+    const [d0,o0]=t[i],[d1,o1]=t[i+1];
+    if(di<=d1) return (o0+(o1-o0)*(di-d0)/(d1-d0))/1000;
+  }
+  return t[t.length-1][1]/1000;
+}
 // grundläggningens höjd: betongsulan måste rymmas i fundamentet (Hf ≥ tf),
 // krossbädden behöver bara vara större än noll
 function hfOf(p){ return Math.max(p.Hf, p.klacktyp==="betong" ? p.tf+0.02 : 0.05); }
@@ -252,8 +268,8 @@ function hfOf(p){ return Math.max(p.Hf, p.klacktyp==="betong" ? p.tf+0.02 : 0.05
 // ===================== SVG-HJÄLPARE =====================
 // view: passa in modellrektangeln (x0..x1, y0..y1) i pixelrutan med
 // bibehållna proportioner (y uppåt i modellen, nedåt i SVG).
-function view(x0,x1,y0,y1, px,py,pw,ph){
-  const s=Math.min(pw/(x1-x0), ph/(y1-y0));
+function view(x0,x1,y0,y1, px,py,pw,ph, forceS){
+  const s=forceS || Math.min(pw/(x1-x0), ph/(y1-y0));
   const cx=(x0+x1)/2, cy=(y0+y1)/2, pcx=px+pw/2, pcy=py+ph/2;
   return { s,
     X:x=>pcx+(x-cx)*s,
@@ -325,10 +341,19 @@ function vdim(o,v,y0,y1,x,label,opt={}){
   o.push(`<text x="${(Xp+off).toFixed(1)}" y="${Ym.toFixed(1)}" font-size="${fs}" text-anchor="middle" fill="${DARK}" transform="rotate(-90 ${(Xp+off).toFixed(1)} ${Ym.toFixed(1)})" stroke="#fff" stroke-width="3.5" style="paint-order:stroke" stroke-linejoin="round">${label}</text>`);
 }
 
-function scalebar(o,v,x,y,len=2){
-  ln(o,v,x,y,x+len,y,{stroke:DARK,sw:1.6,cap:"butt"});
-  for(const xx of [x,x+len]) ln(o,v,xx,y-0.09,xx,y+0.09,{stroke:DARK,sw:1});
-  txt(o,v,x+len/2,y-0.18,len+" m",{fs:FS.note,va:"top"});
+// kartskala i botten av ritningen: växlande fyllda/vita segment med etiketter.
+// Längden väljs så stapeln blir minst ~110 px och slutar på ett jämnt tal.
+function mapScalebar(o,x,y,s){
+  const T=[1,2,5,10,20,50].find(t=>t*s>=110)||50;
+  const n=(T===5||T===10||T===50)?5:4, seg=T/n*s;
+  o.push(`<text x="${x}" y="${y+6}" font-size="9.5" fill="${NOTE}">skala</text>`);
+  const bx=x+36;
+  for(let i=0;i<n;i++)
+    o.push(`<rect x="${(bx+i*seg).toFixed(1)}" y="${y}" width="${seg.toFixed(1)}" height="6" fill="${i%2?"#fff":DARK}" stroke="${DARK}" stroke-width="0.8"/>`);
+  const lab=(t,px)=>o.push(`<text x="${px.toFixed(1)}" y="${y+17}" font-size="9" text-anchor="middle" fill="${DARK}">${t}</text>`);
+  lab("0",bx);
+  if(n===4) lab(String(T/2).replace(".",","),bx+2*seg);
+  lab(T+" m",bx+n*seg);
 }
 
 // sluten catmull-rom-spline (för pipebågens päronform)
@@ -358,6 +383,15 @@ function carFront(o,v,cx,cy,s=1){
   poly(o,v,[[cx-0.28*s,cy+0.33*s],[cx-0.18*s,cy+0.56*s],[cx+0.18*s,cy+0.56*s],[cx+0.28*s,cy+0.33*s]],{fill:GLASS});
   E(cx-0.46*s,cy+0.16*s,0.05,0.04,ACCENT); E(cx+0.46*s,cy+0.16*s,0.05,0.04,ACCENT);
 }
+function carSide(o,v,cx,cy,s=1){
+  // bil i sidoprofil som kör längs vägen (cy = vägbanans nivå)
+  poly(o,v,[[cx-1.05*s,cy+0.30*s],[cx-1.10*s,cy+0.56*s],[cx-0.70*s,cy+0.72*s],[cx-0.40*s,cy+1.02*s],
+            [cx+0.46*s,cy+1.02*s],[cx+0.80*s,cy+0.70*s],[cx+1.12*s,cy+0.60*s],[cx+1.15*s,cy+0.38*s],
+            [cx+1.02*s,cy+0.30*s]],{fill:BODY,stroke:DARK,sw:0.6});
+  poly(o,v,[[cx-0.34*s,cy+0.72*s],[cx-0.28*s,cy+0.95*s],[cx+0.36*s,cy+0.95*s],[cx+0.62*s,cy+0.72*s]],{fill:GLASS});
+  for(const wx of [cx-0.62*s,cx+0.62*s])
+    o.push(`<circle cx="${v.X(wx).toFixed(1)}" cy="${v.Y(cy+0.30*s).toFixed(1)}" r="${(0.30*s*v.s).toFixed(1)}" fill="${TIRE}"/>`);
+}
 function carTop(o,v,cx,cy,s=1){
   // ritas pekande uppåt och roteras 90° medurs -> kör åt höger längs vägen
   const px=v.X(cx).toFixed(1), py=v.Y(cy).toFixed(1);
@@ -370,13 +404,14 @@ function carTop(o,v,cx,cy,s=1){
 }
 
 // ===================== VYER =====================
-function drawSidovy(o,defs,p,c,kind,box){
+function drawSidovy(o,defs,p,c,kind,box,sForce){
   const {B,Fh,S,Se,Xv}=p;
   const {Htot,emb_h,perp_b,perp_t,drive_w,slope_a,skew_a,skew_y0,hk}=c;
   const pb=perp_b/2, pt=perp_t/2;
   const Hf=kind==="valv"?hfOf(p):0;
   const fy0=kind==="valv"?hk-Hf:0;
-  const v=view(-pb-2.8,pb+2.8, Math.min(-1.7,fy0-1.0), emb_h+1.75, box.x,box.y+26,box.w,box.h-30);
+  // y-spannet täcker även tunnelvyns behov – vyerna delar vertikal skala
+  const v=view(-pb-2.8,pb+2.8, Math.min(-1.7,fy0-1.15), emb_h+1.75, box.x,box.y+26,box.w,box.h-30, sForce);
 
   // vägbank + trummans längsgående envelopp (rak läpp Xv över anfanget, sedan snedskuren)
   poly(o,v,[[-pb,0],[-B/2,emb_h],[B/2,emb_h],[pb,0]],{fill:TAN});
@@ -397,15 +432,40 @@ function drawSidovy(o,defs,p,c,kind,box){
     poly(o,v,[[-pb,fy0],[pb,fy0],[pb,hk],[-pb,hk]],{fill:kc,stroke:ke,sw:kw});
     poly(o,v,[[-pb,fy0],[pb,fy0],[pb,hk],[-pb,hk]],{fill:`url(#${kh})`});
     ln(o,v,-pb,0,pb,0,{stroke:WEDGE,sw:0.9});   // vattennivå / bäckbotten
-    const flabel_y = fy0<-0.05 ? fy0/2 : (fy0+hk)/2;
-    txt(o,v,0,flabel_y,ktyp==="betong"?"fundament":"packad krossbädd",{fs:FS.note,italic:true,va:"mid",halo:true});
-    txt(o,v,pb-0.18,hk+0.05,"anfang",{fs:FS.note,italic:true,color:NOTE,anchor:"end"});
   }else{
-    const wlev=Math.min(0.62,0.45*Htot);
+    // överdjupet (hk = −ÖD .. 0) fylls med naturligt bottenmaterial; vattnet
+    // står lågt ovanför bäckbotten
+    if(hk<-0.01){
+      poly(o,v,[[-pb,hk],[pb,hk],[pb,0],[-pb,0]],{fill:KROSS,clip:"cpEnvS"});
+      poly(o,v,[[-pb,hk],[pb,hk],[pb,0],[-pb,0]],{fill:"url(#hK)",clip:"cpEnvS"});
+    }
+    const wlev=Math.min(0.3,0.2*Htot);
     poly(o,v,[[-pb,0],[pb,0],[pb,wlev],[-pb,wlev]],{fill:WATER,clip:"cpEnvS"});
     ln(o,v,-pb,wlev,pb,wlev,{stroke:WEDGE,sw:0.8,clip:"cpEnvS"});
   }
+  // Trummans mynningskanter i vägriktningen: den bortre väggens ändkant ligger
+  // D·cos θ innanför den närmare vid läppen, men eftersom trumman är rund möts
+  // de två snedskärningslinjerna i hjässan. Höger sida tittar man IN i trumman
+  // – där är kanten synlig och ritas heldragen; vänster sida döljs av trumman
+  // och streckas.
+  const dxh=p.D*Math.abs(Math.cos(p.theta*Math.PI/180));
+  if(dxh>0.04){
+    for(const sx of [1,-1]){
+      const prof=[[sx*(pb-dxh),hk]];
+      if(hk<skew_y0 && skew_y0<Htot) prof.push([sx*(pb-dxh),skew_y0]);
+      prof.push([sx*pt,Htot]);
+      const st={stroke:DARK,sw:0.9,clip:"cpEnvS"};
+      if(sx===-1) st.dash="5 4";
+      pline(o,v,prof,st);
+    }
+  }
   poly(o,v,cv,{fill:"none",stroke:DARK,sw:1.4});
+  if(kind==="valv"){
+    // etiketterna ritas efter de streckade kanterna så texten hamnar överst
+    const flabel_y = fy0<-0.05 ? fy0/2 : (fy0+hk)/2;
+    txt(o,v,0,flabel_y,p.klacktyp==="betong"?"fundament":"packad krossbädd",{fs:FS.note,italic:true,va:"mid",halo:true});
+    txt(o,v,pb-0.18,hk+0.05,"anfang",{fs:FS.note,italic:true,color:NOTE,anchor:"end",halo:true});
+  }
 
   // väg, slänter, räcken, bil
   poly(o,v,[[-B/2,emb_h],[B/2,emb_h],[B/2,emb_h+0.10],[-B/2,emb_h+0.10]],{fill:DARK});
@@ -418,54 +478,78 @@ function drawSidovy(o,defs,p,c,kind,box){
   carFront(o,v,0,emb_h+0.10);
   for(const sx of [-1,1])
     o.push(`<circle cx="${v.X(sx*pb).toFixed(1)}" cy="${v.Y(0).toFixed(1)}" r="2.6" fill="${DARK}"/>`);
-  txt(o,v,-pb,fy0-0.12,"släntfot",{fs:FS.note,va:"top"});
-  txt(o,v, pb,fy0-0.12,"släntfot",{fs:FS.note,va:"top"});
+  const flab=Math.min(fy0,hk)-0.12;
+  txt(o,v,-pb,flab,"släntfot",{fs:FS.note,va:"top",halo:true});
+  txt(o,v, pb,flab,"släntfot",{fs:FS.note,va:"top",halo:true});
   txt(o,v,-(pb+B/2)/2-0.1,emb_h/2+0.15,"slänt 1:"+fmt(S,1),{fs:FS.note,italic:true,rot:slope_a,halo:true});
   txt(o,v,(pt+pb)/2,(Htot+skew_y0)/2+0.18,"snedskärning 1:"+fmt(Se,1),{fs:FS.note,italic:true,rot:-skew_a,halo:true});
 
-  // mått
+  // mått (trummans längder anges i längdprofil/topvy – här bara väg och höjder)
   hdim(o,v,-B/2,B/2,emb_h+1.35,"Vägkropp B = "+fmt(B)+" m",{ext:emb_h+0.10});
   hdim(o,v,-drive_w/2,drive_w/2,emb_h+0.80,"Körbar bredd = "+fmt(drive_w)+" m");
-  hdim(o,v,-pt,pt,Htot-0.42,"vinkelrät topplängd = "+fmt(perp_t)+" m",{fs:FS.note});
-  hdim(o,v,-pb,pb,fy0-0.60,"vinkelrät bottenlängd = "+fmt(perp_b)+" m",{ext:fy0});
-  const hl = kind==="rund" ? "Ø = "+fmt(Htot)+" m" : kind==="pipe" ? "H = "+fmt(Htot)+" m" : "Hk+H = "+fmt(Htot)+" m";
-  vdim(o,v,0,Htot,pb+0.80,hl,{ext:pb});
+  // höjdmåttet avser trumman själv (från anfang/invert), för valv från vattenytan
+  const hl = kind==="rund" ? "Ø = "+fmt(p.D)+" m" : kind==="pipe" ? "H = "+fmt(p.H)+" m" : "Hk+H = "+fmt(Htot)+" m";
+  vdim(o,v,kind==="valv"?0:hk,Htot,pb+0.80,hl,{ext:pb});
   vdim(o,v,Htot,emb_h,pb+1.45,"Fh = "+fmt(Fh)+" m",{ext:pb+0.80});
-  vdim(o,v,hk,skew_y0,pb+0.32,"Xv = "+fmt(Xv)+" m",{fs:FS.note});
-  scalebar(o,v,-pb,emb_h+0.45,2);
+  vdim(o,v,hk,Math.min(skew_y0,Htot),pb+0.32,"Xv = "+fmt(Xv)+" m",{fs:FS.note});
   o.push(`<text x="${box.x+box.w/2}" y="${box.y+12}" font-size="${FS.title}" font-weight="700" text-anchor="middle" fill="${DARK}">SIDOVY</text>`);
+  return v;   // tunnelvyn delar skala och vertikal mappning med sidovyn
 }
 
-function drawTunnel(o,defs,p,c,kind,box){
+// väg i sidoprofil tvärs över banken: vägbana, räcke (stolpar + regel på samma
+// höjd som sidovyns räcke, +0,40 m) och bil i samma skala som sidovyns
+function roadTunnel(o,v,RW,emb_h,carX){
+  poly(o,v,[[-RW,emb_h],[RW,emb_h],[RW,emb_h+0.10],[-RW,emb_h+0.10]],{fill:DARK});
+  for(let x=-RW+0.6;x<=RW-0.3;x+=2)
+    ln(o,v,x,emb_h+0.10,x,emb_h+0.40,{stroke:DARK,sw:1});
+  ln(o,v,-RW+0.15,emb_h+0.40,RW-0.15,emb_h+0.40,{stroke:DARK,sw:1.5,cap:"butt"});
+  carSide(o,v,carX,emb_h+0.10,1.0);
+  txt(o,v,RW-0.25,emb_h+0.55,"väg med räcke tvärs över",{fs:FS.note,italic:true,color:NOTE,anchor:"end"});
+}
+
+// delad vy: samma skala och vertikala mappning som sidovyn, x centrerad i egen ruta
+function shareView(halfW,vs,box){
+  if(halfW*vs.s > box.w/2-6) return null;   // får inte plats i delad skala
+  return { s:vs.s, X:x=>box.x+box.w/2+x*vs.s, Y:vs.Y };
+}
+
+function drawTunnel(o,defs,p,c,kind,box,vs){
   const Fh=p.Fh, {emb_h,Htot,hk}=c, D=p.D, bw=p.brook_w, Xv=p.Xv;
 
   if(kind!=="valv"){
-    const H=kind==="rund"?D:p.H;
-    const v=view(-D/2-2.8,D/2+2.8, -1.7, emb_h+1.75, box.x,box.y+26,box.w,box.h-30);
+    const H=kind==="rund"?D:p.H, od=c.od||0;
+    const v=(vs&&shareView(D/2+2.8,vs,box)) ||
+            view(-D/2-2.8,D/2+2.8, -1.7, emb_h+1.75, box.x,box.y+26,box.w,box.h-30);
+    // trumman satt med överdjup: invert på −ÖD, hjässa på H−ÖD över bäckbotten
     if(kind==="rund"){
-      const r=(D/2*v.s).toFixed(1), ccx=v.X(0).toFixed(1), ccy=v.Y(D/2).toFixed(1);
+      const r=(D/2*v.s).toFixed(1), ccx=v.X(0).toFixed(1), ccy=v.Y(D/2-od).toFixed(1);
       defs.push(`<clipPath id="cpT"><circle cx="${ccx}" cy="${ccy}" r="${r}"/></clipPath>`);
       o.push(`<circle cx="${ccx}" cy="${ccy}" r="${r}" fill="#fff"/>`);
       var strokeShape=()=>o.push(`<circle cx="${ccx}" cy="${ccy}" r="${r}" fill="none" stroke="${DARK}" stroke-width="1.4"/>`);
     }else{
-      const pear=catmull(NORM.map(q=>[q[0]*D/2,q[1]*H]));
+      const pear=catmull(NORM.map(q=>[q[0]*D/2,q[1]*H-od]));
       defs.push(`<clipPath id="cpT"><polygon points="${PTS(v,pear)}"/></clipPath>`);
       poly(o,v,pear,{fill:"#fff"});
       var strokeShape=()=>poly(o,v,pear,{fill:"none",stroke:DARK,sw:1.4});
     }
-    const wlev=Math.min(0.6,0.45*H);
+    if(od>0.01){   // överdjupet fylls med naturligt bottenmaterial
+      poly(o,v,[[-D/2,-od],[D/2,-od],[D/2,0],[-D/2,0]],{fill:KROSS,clip:"cpT"});
+      poly(o,v,[[-D/2,-od],[D/2,-od],[D/2,0],[-D/2,0]],{fill:"url(#hK)",clip:"cpT"});
+    }
+    const wlev=Math.min(0.3,0.2*Htot);
     poly(o,v,[[-D/2,0],[D/2,0],[D/2,wlev],[-D/2,wlev]],{fill:WATER,clip:"cpT"});
     ln(o,v,-D*0.46,wlev,D*0.46,wlev,{stroke:WEDGE,sw:0.7,clip:"cpT"});
-    txt(o,v,0,wlev/2,"vatten",{fs:FS.note,color:WEDGE,va:"mid"});
+    txt(o,v,0,wlev+0.07,"vatten",{fs:FS.note,color:WEDGE});
     strokeShape();
-    o.push(`<line x1="${v.X(-D/2-0.6).toFixed(1)}" y1="${v.Y(emb_h).toFixed(1)}" x2="${v.X(D/2+0.6).toFixed(1)}" y2="${v.Y(emb_h).toFixed(1)}" stroke="${TANEDGE}" stroke-width="0.8" stroke-dasharray="5 4" marker-start="url(#arwT)" marker-end="url(#arwT)"/>`);
-    txt(o,v,0,emb_h+0.12,"väg tvärs över",{fs:FS.note,italic:true,color:TANEDGE});
+    roadTunnel(o,v,(box.w/2-10)/v.s,emb_h,-(D/2+1.4));
     const dl = kind==="rund" ? "Ø D = "+fmt(D)+" m" : "H = "+fmt(H)+" m";
-    vdim(o,v,0,H,D/2+0.80,dl,{ext:0});
-    vdim(o,v,H,emb_h,D/2+1.45,"Fh = "+fmt(Fh)+" m",{ext:D/2+0.80});
-    vdim(o,v,0,Math.min(Xv,H),D/2+0.32,"Xv = "+fmt(Xv)+" m",{fs:FS.note});
-    hdim(o,v,-bw/2,bw/2,-0.7,"bäckbredd "+fmt(bw)+" m",{ext:0.18});
+    vdim(o,v,-od,H-od,D/2+0.80,dl,{ext:0});
+    vdim(o,v,H-od,emb_h,D/2+1.45,"Fh = "+fmt(Fh)+" m",{ext:D/2+0.80});
+    vdim(o,v,-od,Math.min(Xv,H)-od,D/2+0.32,"Xv = "+fmt(Xv)+" m",{fs:FS.note});
+    if(od>0.01) vdim(o,v,-od,0,-(D/2+0.35),"ÖD = "+fmt(od)+" m",{side:"left",fs:FS.note});
+    hdim(o,v,-bw/2,bw/2,-0.85,"bäckbredd "+fmt(bw)+" m",{ext:0.18});
     o.push(`<text x="${box.x+box.w/2}" y="${box.y+12}" font-size="${FS.title}" font-weight="700" text-anchor="middle" fill="${DARK}">TUNNELVY (genom trumman)</text>`);
+    o.push(`<text x="${box.x+box.w/2}" y="${box.y+24}" font-size="${FS.note}" font-style="italic" text-anchor="middle" fill="${NOTE}">trumman sätts med överdjup ÖD under bäckbotten</text>`);
     return;
   }
 
@@ -474,7 +558,8 @@ function drawTunnel(o,defs,p,c,kind,box){
   const bk=p.bk, Bf=p.Bf, tf=p.tf, Hf=hfOf(p);
   const half=D/2, crown=Hk+H, yb=Hk-Hf, ys=yb+tf, fw=Math.max(Bf,bk);
   const xmax=half+fw/2+1.7;
-  const v=view(-xmax-0.7,xmax+0.7, Math.min(-1.7,yb-1.1), emb_h+1.75, box.x,box.y+26,box.w,box.h-30);
+  const v=(vs&&shareView(xmax+0.7,vs,box)) ||
+          view(-xmax-0.7,xmax+0.7, Math.min(-1.7,yb-1.1), emb_h+1.75, box.x,box.y+26,box.w,box.h-30);
   const arch=[...Array(81)].map((_,i)=>{const t=Math.PI*i/80;return [half*Math.cos(t),Hk+H*Math.sin(t)];});
   poly(o,v,arch,{fill:"#fff"});                                  // bågens inre
   poly(o,v,[[-half,0],[half,0],[half,Hk],[-half,Hk]],{fill:"#fff"});  // kanalen ovan vatten
@@ -501,8 +586,7 @@ function drawTunnel(o,defs,p,c,kind,box){
   const flbl=ktyp==="betong"?"betongfundament (sula + liv)":"plåtfötter (basplåt) på packad krossbädd";
   txt(o,v,0,yb-0.16,flbl,{fs:FS.note,italic:true,color:NOTE,va:"top",halo:true});
   pline(o,v,arch,{stroke:DARK,sw:1.8});                           // valvplåten
-  o.push(`<line x1="${v.X(-xmax+0.2).toFixed(1)}" y1="${v.Y(emb_h).toFixed(1)}" x2="${v.X(xmax-0.2).toFixed(1)}" y2="${v.Y(emb_h).toFixed(1)}" stroke="${TANEDGE}" stroke-width="0.8" stroke-dasharray="5 4" marker-start="url(#arwT)" marker-end="url(#arwT)"/>`);
-  txt(o,v,0,emb_h+0.12,"väg tvärs över",{fs:FS.note,italic:true,color:TANEDGE});
+  roadTunnel(o,v,(box.w/2-10)/v.s,emb_h,-(half+0.9));
   hdim(o,v,-half,half,yb-0.95,"spännvidd D = "+fmt(D)+" m",{ext:yb});
   const bwLbl = bw<=D ? "bäckbredd "+fmt(bw)+" m" : "kanal "+fmt(ww)+" m (bäck "+fmt(bw)+" m &gt; D)";
   hdim(o,v,-ww/2,ww/2,0.34,bwLbl,{fs:FS.note});
@@ -516,13 +600,13 @@ function drawTunnel(o,defs,p,c,kind,box){
   o.push(`<text x="${box.x+box.w/2}" y="${box.y+24}" font-size="${FS.note}" font-style="italic" text-anchor="middle" fill="${NOTE}">${subNote}</text>`);
 }
 
-function drawLangd(o,defs,p,c,kind,box){
+function drawLangd(o,defs,p,c,kind,box,sForce){
   const Fh=p.Fh, Xv=p.Xv, theta=p.theta;
   const {Htot,L,Lt,fall,perp_b,perp_t,hk}=c;
   const top=fall+Htot+Fh;
   const Hf=kind==="valv"?hfOf(p):0;
   const fmin=hk-Hf;
-  const v=view(-1.9,L+2.7, Math.min(-2.0,fmin-0.9), top+0.95, box.x,box.y+26,box.w,box.h-30);
+  const v=view(-1.9,L+2.7, Math.min(-2.0,fmin-0.9), top+0.95, box.x,box.y+26,box.w,box.h-30, sForce);
   const cy=x=>fall+Htot-fall*x/L;      // krönets höjd (lutar med fallet)
   const inv=x=>fall*(1-x/L);           // bäckbotten/invert
   const anf=x=>inv(x)+hk;              // anfang (bågens nedersta kant)
@@ -539,24 +623,35 @@ function drawLangd(o,defs,p,c,kind,box){
     poly(o,v,fund,{fill:`url(#${kh})`});
   }
 
-  const body=[[0,anf(0)],[0,anf(0)+Xv],[br,cy(br)],[L-br,cy(L-br)],[L,anf(L)+Xv],[L,anf(L)]];
+  const lip=Math.min(Xv,Htot-hk);   // läppen kan aldrig vara högre än trumman
+  const body=[[0,anf(0)],[0,anf(0)+lip],[br,cy(br)],[L-br,cy(L-br)],[L,anf(L)+lip],[L,anf(L)]];
   poly(o,v,body,{fill:"#fff",stroke:DARK,sw:1.4});
   defs.push(`<clipPath id="cpBody"><polygon points="${PTS(v,body)}"/></clipPath>`);
 
   if(kind==="valv"){
     ln(o,v,0,inv(0),L,inv(L),{stroke:WEDGE,sw:0.9});   // bäckbotten längs inverten
-    txt(o,v,L*0.25,anf(L*0.25)+0.06,"anfang (klack "+fmt(hk)+" m över botten)",{fs:FS.note,italic:true,color:NOTE,halo:true});
+    txt(o,v,L*0.60,anf(L*0.60)+0.06,"anfang (klack "+fmt(hk)+" m över botten)",{fs:FS.note,italic:true,color:NOTE,halo:true});
   }else{
-    poly(o,v,[[0,fall],[L,0],[L,0.45],[0,fall+0.45]],{fill:WATER,clip:"cpBody"});
-    ln(o,v,0,fall+0.45,L,0.45,{stroke:WEDGE,sw:0.7,clip:"cpBody"});
+    // överdjupet (invert −ÖD .. bäckbotten) fylls med bottenmaterial; grunt vatten ovanpå
+    if(hk<-0.01){
+      const sed=[[0,anf(0)],[L,anf(L)],[L,inv(L)],[0,inv(0)]];
+      poly(o,v,sed,{fill:KROSS,clip:"cpBody"});
+      poly(o,v,sed,{fill:"url(#hK)",clip:"cpBody"});
+    }
+    const wlev=Math.min(0.3,0.2*Htot);
+    poly(o,v,[[0,inv(0)],[L,inv(L)],[L,inv(L)+wlev],[0,inv(0)+wlev]],{fill:WATER,clip:"cpBody"});
+    ln(o,v,0,inv(0)+wlev,L,inv(L)+wlev,{stroke:WEDGE,sw:0.7,clip:"cpBody"});
   }
 
   ln(o,v,x0,cy(x0)+Fh,x1,cy(x1)+Fh,{stroke:DARK,sw:2.2,cap:"butt"});
   txt(o,v,(x0+x1)/2,cy((x0+x1)/2)+Fh+0.14,"väg (täckning "+fmt(Fh)+" m)",{fs:FS.note,italic:true});
-  const bang=Math.atan2(cy(br)-(anf(0)+Xv),br)*180/Math.PI;
-  txt(o,v,br*0.5,(anf(0)+Xv+cy(br))/2+0.16,"snedskärning",{fs:FS.note,italic:true,rot:bang,halo:true});
-  o.push(`<line x1="${v.X(L*0.4).toFixed(1)}" y1="${v.Y(anf(L*0.4)+0.28).toFixed(1)}" x2="${v.X(L*0.6).toFixed(1)}" y2="${v.Y(anf(L*0.6)+0.28).toFixed(1)}" stroke="${WEDGE}" stroke-width="1.4" marker-end="url(#arwW)"/>`);
-  txt(o,v,L*0.5,anf(L*0.5)+0.44,"flöde",{fs:FS.note,italic:true,color:WEDGE});
+  const bang=br>1e-9?Math.atan2(cy(br)-(anf(0)+lip),br)*180/Math.PI:90;
+  if(br>1e-9) txt(o,v,br*0.5,(anf(0)+lip+cy(br))/2+0.16,"snedskärning",{fs:FS.note,italic:true,rot:bang,halo:true});
+  // flödespilen ligger ovanför vattnet/anfanget, i vänstra delen så den inte
+  // krockar med Lt′-måttet som ligger mitt i vyn
+  const yfl=x=>Math.max(anf(x),inv(x))+0.26;
+  o.push(`<line x1="${v.X(L*0.16).toFixed(1)}" y1="${v.Y(yfl(L*0.16)).toFixed(1)}" x2="${v.X(L*0.36).toFixed(1)}" y2="${v.Y(yfl(L*0.36)).toFixed(1)}" stroke="${WEDGE}" stroke-width="1.4" marker-end="url(#arwW)"/>`);
+  txt(o,v,L*0.26,yfl(L*0.26)+0.16,"flöde",{fs:FS.note,italic:true,color:WEDGE,halo:true});
   txt(o,v,-0.12,fall+Htot*0.5,"uppströms",{fs:FS.note,anchor:"end",va:"mid"});
   txt(o,v,L+0.18,cy(L)+0.24,"nedströms",{fs:FS.note,anchor:"start"});
 
@@ -572,29 +667,31 @@ function drawLangd(o,defs,p,c,kind,box){
   }
   const Ymid=(Y0+Yf)/2;
   o.push(`<text x="${(Xf+11).toFixed(1)}" y="${(Ymid-2).toFixed(1)}" font-size="${FS.note}" fill="${DARK}">totalt fall</text>`);
-  o.push(`<text x="${(Xf+11).toFixed(1)}" y="${(Ymid+10).toFixed(1)}" font-size="${FS.note}" fill="${DARK}">på L = ${fmt(fall)} m</text>`);
+  o.push(`<text x="${(Xf+11).toFixed(1)}" y="${(Ymid+10).toFixed(1)}" font-size="${FS.note}" fill="${DARK}">${fmt(fall)} m</text>`);
 
-  hdim(o,v,br,L-br,cy(L/2)-0.42,"topplängd i plan Lt = "+fmt(Lt)+" m",{fs:FS.note});
-  hdim(o,v,0,L,-0.62,"bottenlängd i plan L = "+fmt(L)+" m",{ext:0});
-  txt(o,v,L/2,-1.12,"bäckbotten lutar "+fmt(p.brook_slp*100,2)+" %   –   verklig trumlängd L′ = "+fmt(c.L_slope)+" m (längs fall)",{fs:FS.note,italic:true});
-  txt(o,v,L/2,-1.60,"L = vinkelrät "+fmt(perp_b)+" m ÷ sin "+fmt(theta,0)+"°   ·   Lt = vinkelrät "+fmt(perp_t)+" m ÷ sin "+fmt(theta,0)+"°",{fs:FS.note,italic:true,color:NOTE});
-  scalebar(o,v,L-2,top+0.30,2);
+  // kundmått: trummans verkliga längder (mätta längs fallet)
+  hdim(o,v,br,L-br,cy(L/2)-0.42,"topplängd Lt′ = "+fmt(c.Lt_slope)+" m",{fs:FS.note});
+  hdim(o,v,0,L,-0.62,"trumlängd L′ = "+fmt(c.L_slope)+" m",{ext:0});
+  txt(o,v,L/2,-1.12,"bäckbotten lutar "+fmt(p.brook_slp*100,2)+" %   –   längderna mäts längs trumman (i fallets riktning)",{fs:FS.note,italic:true});
   o.push(`<text x="${box.x+box.w/2}" y="${box.y+12}" font-size="${FS.title}" font-weight="700" text-anchor="middle" fill="${DARK}">LÄNGDPROFIL (flödesriktning)</text>`);
 }
 
 function drawTopvy(o,defs,p,c,kind,box){
   const D=p.D, B=p.B, S=p.S, th=p.theta;
-  const {L,Lt,perp_b,Htot,skew_run}=c;
+  const {L,Lt,perp_b,perp_t,Htot,skew_run}=c;
   const rad=th*Math.PI/180, a=[Math.cos(rad),Math.sin(rad)], pp=[-a[1],a[0]];
   const lc=(s1,k1,s2,k2)=>[s1*k1[0]+s2*k2[0], s1*k1[1]+s2*k2[1]];
   const xr=Math.max(L*0.55,6.5);
-  // utstick förbi släntfoten = S·Htot − skew_run (klampat till 0)
+  // Bottenläppen slutar vid släntfoten (kärnan: L mäts släntfot–släntfot),
+  // så mynningen ritas vid ±L/2. Det som sticker ut UR SLÄNTYTAN högre upp
+  // är i stället daglinjen, som dras in proj = S·Htot − skew_run i banken.
   const proj=Math.max(S*Htot-skew_run,0);
-  const m=Math.max(L/2, perp_b/2+proj+0.3)+1.6;
+  const ptb=perp_b/2, depth=(L-Lt)/2;
+  const m=Math.max(L/2, ptb+(D/2+0.9)*Math.abs(Math.cos(rad)))+1.6;
   const v=view(-xr-0.4,xr+0.4,-m,m, box.x,box.y+38,box.w,box.h-42);
   const sinr=Math.sin(rad);
   const proj_ax=sinr>1e-6?proj/sinr:0;
-  const wall=L/2+proj_ax, cut=L/2, depth=(L-Lt)/2, ptb=perp_b/2;
+  const wall=L/2, cut=Math.max(L/2-proj_ax, depth);
   const PH=[...Array(61)].map((_,i)=>-Math.PI/2+Math.PI*i/60);
   const daylight=sgn=>PH.map(t=>lc(sgn*cut-sgn*depth*Math.cos(t),a,(D/2)*Math.sin(t),pp));
 
@@ -634,7 +731,7 @@ function drawTopvy(o,defs,p,c,kind,box){
   culv({stroke:DARK,sw:0.9,dash:"6 4",clip:"cpBur"});     // begravt under banken
   for(const sgn of [1,-1]) pline(o,v,daylight(sgn),{stroke:TANEDGE,sw:1.3});  // slänt-daglinje
 
-  txt(o,v,-xr+0.15,ptb-0.08,"släntfot",{fs:FS.note,color:NOTE,anchor:"start",va:"top"});
+  txt(o,v,-xr+0.15,ptb-0.08,"släntfot",{fs:FS.note,color:NOTE,anchor:"start",va:"top",halo:true});
   o.push(`<line x1="${v.X(-xr+0.95).toFixed(1)}" y1="${v.Y(B/2+0.30).toFixed(1)}" x2="${v.X(-xr+0.95).toFixed(1)}" y2="${v.Y(ptb-0.30).toFixed(1)}" stroke="${NOTE}" stroke-width="0.9" marker-end="url(#arwN)"/>`);
   txt(o,v,-xr+0.55,(B/2+ptb)/2,"slänt 1:"+fmt(S,1),{fs:FS.note,color:NOTE,italic:true,rot:90,va:"mid"});
   carTop(o,v,-xr+1.4,0);
@@ -647,19 +744,24 @@ function drawTopvy(o,defs,p,c,kind,box){
     const lp=lc(fx*len,a,1,[off[0]+fpp*pp[0],off[1]+fpp*pp[1]]);
     txt(o,v,lp[0],lp[1],label,{fs:FS.note,rot:th-90,halo:true,va:"mid"});
   };
-  dimAx(L, o1, 0.30, 0.35, "L = "+fmt(L)+" m");
-  dimAx(Lt,o2,-0.30,-0.35, "Lt = "+fmt(Lt)+" m");
+  dimAx(L, o1, 0.30, 0.35, "trumlängd L′ = "+fmt(c.L_slope)+" m");
+  dimAx(Lt,o2,-0.30,-0.35, "topplängd Lt′ = "+fmt(c.Lt_slope)+" m");
+  // vinkelräta projektioner (tvärs vägen) – visas bara här, där de inte kan
+  // förväxlas med trummans verkliga längd
+  vdim(o,v,-ptb,ptb,xr-0.45,"vinkelrät bottenlängd = "+fmt(perp_b)+" m",{fs:FS.note});
+  vdim(o,v,-perp_t/2,perp_t/2,xr-1.45,"vinkelrät topplängd = "+fmt(perp_t)+" m",{side:"left",fs:FS.note});
   const r=1.7;
   o.push(`<path d="M ${v.X(r).toFixed(1)} ${v.Y(0).toFixed(1)} A ${(r*v.s).toFixed(1)} ${(r*v.s).toFixed(1)} 0 0 0 ${v.X(r*Math.cos(rad)).toFixed(1)} ${v.Y(r*Math.sin(rad)).toFixed(1)}" fill="none" stroke="${DARK}" stroke-width="0.8"/>`);
   txt(o,v,2.15*Math.cos(rad/2),2.15*Math.sin(rad/2),"θ = "+fmt(th,0)+"°",{fs:FS.dim,halo:true,va:"mid"});
 
-  o.push(`<text x="${box.x+box.w/2}" y="${box.y+12}" font-size="${FS.title}" font-weight="700" text-anchor="middle" fill="${DARK}">TOPVY</text>`);
+  o.push(`<text x="${box.x+box.w/2}" y="${box.y+12}" font-size="${FS.title}" font-weight="700" text-anchor="middle" fill="${DARK}">TOPPVY</text>`);
   o.push(`<text x="${box.x+box.w/2}" y="${box.y+25}" font-size="${FS.note}" font-style="italic" text-anchor="middle" fill="${NOTE}">streckat = under banken · heldraget = mynning sticker ut ur slänten</text>`);
+  o.push(`<text x="${box.x+box.w-4}" y="${box.y+box.h+8}" font-size="8.5" font-style="italic" text-anchor="end" fill="#999">toppvyn i förminskad skala – gå efter måttsiffrorna</text>`);
 }
 
 // ===================== HELA RITNINGEN =====================
 function buildSvg(p,c,kind){
-  const W=1320, Hpx=930;
+  const W=1320, Hpx=944;
   const o=[], defs=[];
   // pilspetsar (fyllda) för måttlinjer + tunna varianter
   defs.push(`<marker id="arw" viewBox="0 0 10 10" refX="9.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="${DARK}"/></marker>`);
@@ -675,11 +777,21 @@ function buildSvg(p,c,kind){
               : "Konstruktionsritning – "+valvTyp(p.D)+" (på klackar)";
   o.push(`<text x="${W/2}" y="30" font-size="${FS.sup}" font-weight="700" text-anchor="middle" fill="${DARK}">${title}</text>`);
 
-  drawSidovy(o,defs,p,c,kind,{x:10, y:58, w:790, h:410});
-  drawTunnel(o,defs,p,c,kind,{x:810,y:58, w:500, h:410});
-  drawLangd (o,defs,p,c,kind,{x:10, y:492,w:790, h:410});
+  // Gemensam skala för sidovy, tunnelvy och längdprofil (minsta som ryms i
+  // respektive ruta) så att kartskalan i botten gäller alla tre. Toppvyn
+  // behåller egen skala – den ska rymma hela planen i en halv ruta.
+  const Hfv=kind==="valv"?hfOf(p):0, fy0=kind==="valv"?c.hk-Hfv:0;
+  const xrS=c.perp_b+5.6,           yrS=(c.emb_h+1.75)-Math.min(-1.7,fy0-1.15);
+  const topL=c.fall+c.Htot+p.Fh;
+  const xrL=c.L+4.6,                yrL=(topL+0.95)-Math.min(-2.0,(c.hk-Hfv)-0.9);
+  const sGlob=Math.min(790/xrS, 380/yrS, 790/xrL, 380/yrL);
+
+  const vSide=drawSidovy(o,defs,p,c,kind,{x:10, y:58, w:790, h:410},sGlob);
+  drawTunnel(o,defs,p,c,kind,{x:810,y:58, w:500, h:410},vSide);
+  drawLangd (o,defs,p,c,kind,{x:10, y:492,w:790, h:410},sGlob);
   drawTopvy (o,defs,p,c,kind,{x:810,y:492,w:500, h:410});
 
+  mapScalebar(o,20,Hpx-30,sGlob);
   o.push(`<text x="${W-12}" y="${Hpx-10}" font-size="9" text-anchor="end" fill="#999">hkvagtrummor.se · trumkalkylator</text>`);
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${Hpx}" font-family="Inter,Arial,sans-serif"><defs>${defs.join("")}</defs><rect width="${W}" height="${Hpx}" fill="#fff"/>${o.join("")}</svg>`;
 }
@@ -698,14 +810,14 @@ function calcRows(p,c,kind){
     embF="B + 2·S·(Fh+Hk+H)"; embS=`${f(p.B)} + 2·${f(p.S)}·(${f(p.Fh)}+${f(p.Hk)}+${f(p.H)})`;
     skF="Se·(Htot−Hk−Xv)"; skS=`${f(p.Se)}·(${f(c.Htot)}−${f(p.Hk)}−${f(p.Xv)})`;
     topF="bottenlängd − 2·Se·(Htot−Hk−Xv)";
-  }else if(kind==="rund"){
-    embF="B + 2·S·(Fh+D)"; embS=`${f(p.B)} + 2·${f(p.S)}·(${f(p.Fh)}+${f(p.D)})`;
-    skF="Se·(D−Xv)"; skS=`${f(p.Se)}·(${f(c.Htot)}−${f(p.Xv)})`;
-    topF="bottenlängd − 2·Se·(D−Xv)";
   }else{
-    embF="B + 2·S·(Fh+H)"; embS=`${f(p.B)} + 2·${f(p.S)}·(${f(p.Fh)}+${f(p.H)})`;
-    skF="Se·(H−Xv)"; skS=`${f(p.Se)}·(${f(c.Htot)}−${f(p.Xv)})`;
-    topF="bottenlängd − 2·Se·(H−Xv)";
+    const hsym=kind==="rund"?"D":"H";
+    rows.push(["Överdjup ÖD (enligt tabell)","tabell(Di)",`Di = ${f(p.D*1000,0)} mm`,c.od,"m"]);
+    rows.push(["Hjässa över bäckbotten Htot",`${hsym} − ÖD`,
+               `${f(kind==="rund"?p.D:p.H)} − ${f(c.od)}`,c.Htot,"m"]);
+    embF="B + 2·S·(Fh+Htot)"; embS=`${f(p.B)} + 2·${f(p.S)}·(${f(p.Fh)}+${f(c.Htot)})`;
+    skF=`Se·(${hsym}−Xv)`; skS=`${f(p.Se)}·(${f(kind==="rund"?p.D:p.H)}−${f(p.Xv)})`;
+    topF=`bottenlängd − 2·Se·(${hsym}−Xv)`;
   }
   rows.push(
     ["Vinkelrät bottenlängd",embF,embS,c.perp_b,"m"],
@@ -730,13 +842,22 @@ function calcHtml(p,c,kind){
 function cardsHtml(c,kind){
   const items=[["Verklig bottenlängd L′",fmt(c.L_slope)+" m"],["Verklig topplängd Lt′",fmt(c.Lt_slope)+" m"]];
   if(kind==="valv") items.push(["Hjässa över vatten",fmt(c.Htot)+" m"]);
-  items.push(["Körbar bredd",fmt(c.drive_w)+" m"],["Totalt fall på L",fmt(c.fall)+" m"]);
+  else items.push(["Överdjup ÖD",fmt(c.od)+" m"]);
+  items.push(["Körbar bredd",fmt(c.drive_w)+" m"],["Totalt fall längs trumman",fmt(c.fall)+" m"]);
   return items.map(([n,v])=>`<div class="bg-card border border-line px-4 py-2 text-center shadow-sm"><b class="font-disp text-lg block">${v}</b><span class="text-[11px] text-inkmute">${n}</span></div>`).join("");
 }
 function warnHtml(p,c,kind){
   if(!c.top_degen) return "";
-  const cond=kind==="valv"?"Hk+Xv &gt; Htot":"Xv &gt; "+(kind==="rund"?"D":"H");
-  return `<p class="mb-4 px-4 py-2 bg-card border border-red-800 text-red-800 text-sm">⚠ Snedskärningen är geometriskt omöjlig för dessa indata (${cond} eller för stor Se): toppen har skurits förbi noll. Topplängden klampas till 0 – kontrollera Xv och Se.</p>`;
+  // två olika degenererade fall som kräver olika förklaring:
+  // 1) läppen Xv når över hjässan -> ingen snedskärning alls (rak ände)
+  // 2) för stor Se -> toppen skärs förbi noll och klampas
+  const wrap=t=>`<p class="mb-4 px-4 py-2 bg-card border border-red-800 text-red-800 text-sm">⚠ ${t}</p>`;
+  if(c.Htot-c.skew_y0 < -1e-9){
+    const hsym=kind==="rund"?"diametern D":kind==="pipe"?"höjden H":"hjässhöjden Hk+H";
+    const xsym=kind==="valv"?"Hk+Xv":"Xv";
+    return wrap(`${xsym} är större än ${hsym}: den raka läppen når över trummans hjässa, så ingen snedskärning kan göras. Trumman ritas med rak ände (topplängd = bottenlängd) – kontrollera Xv.`);
+  }
+  return wrap("Snedskärningen är för stor för dessa indata (för stor Se): toppen har skurits förbi noll och topplängden klampas till 0 – kontrollera Xv och Se.");
 }
 
 // ===================== UI =====================
@@ -765,11 +886,12 @@ const FUND_LBL={
 function section(title,inner){
   return `<div class="border-t border-line mt-3 pt-1"><p class="lbl text-xs text-inkmute py-1.5">${title}</p>${inner}</div>`;
 }
+let fieldCache={};   // bevarar även värden i fält som tillfälligt är dolda (t.ex. tf i kross-läge)
 function renderFields(preserve){
   const ps=MODELS[kind].params;
-  const old={};
-  if(preserve) for(const f of ps){ const el=$(f[0]); if(el) old[f[0]]=el.value; }
-  const ktyp = old.klacktyp==="kross" ? "kross" : "betong";
+  if(preserve){ for(const f of ps){ const el=$(f[0]); if(el) fieldCache[f[0]]=el.value; } }
+  else fieldCache={};
+  const ktyp = fieldCache.klacktyp==="kross" ? "kross" : "betong";
   const grp=g=>ps.filter(f=>f[5]===g);
   let h=grp("basic").map(f=>fieldHtml(f)).join("");
   const fund=grp("fundament").filter(f=>f[4] || FUND_LBL[ktyp][f[0]]);
@@ -777,7 +899,7 @@ function renderFields(preserve){
   const adv=grp("avancerat");
   if(adv.length) h+=section("Avancerat", adv.map(f=>fieldHtml(f)).join(""));
   $("fields").innerHTML=h;
-  if(preserve) for(const k in old){ const el=$(k); if(el) el.value=old[k]; }
+  for(const k in fieldCache){ const el=$(k); if(el) el.value=fieldCache[k]; }
   for(const f of ps){
     const el=$(f[0]); if(!el) continue;
     el.addEventListener("input",deb); el.addEventListener("change",deb);
@@ -790,7 +912,10 @@ function readParams(){
   const p={};
   for(const f of MODELS[kind].params){
     const [k,,,def,choices]=f, el=$(k);
-    if(!el){ p[k]=def; continue; }          // fält dolt för vald grundläggning
+    if(!el){                                 // fält dolt för vald grundläggning
+      const cached=parseFloat(String(fieldCache[k]??"").replace(",","."));
+      p[k]=Number.isFinite(cached)?cached:def; continue;
+    }
     if(choices){ p[k]=el.value; continue; }
     const val=parseFloat(String(el.value).replace(",","."));
     p[k]=Number.isFinite(val)?val:def;
