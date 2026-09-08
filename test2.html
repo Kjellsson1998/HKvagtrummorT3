@@ -610,16 +610,82 @@
 
     <!-- TABELL: RUNDA RÖR -->
     <section id="runda" class="px-5 max-w-5xl mx-auto mb-16 scroll-mt-24">
-      <h2
-        class="font-heading uppercase text-2xl text-DGreenC-800 dark:text-TanC-50 mb-2"
+      <div
+        class="flex flex-col sm:flex-row gap-6 items-center sm:items-start mb-6"
       >
-        Runda Rör
-      </h2>
-      <p class="font-body text-base text-DGreenC-700 dark:text-TanC-200 mb-6">
-        Runda rör i diameter 300–3600 mm. Mindre rör har den finare
-        korrugeringen (68×13&nbsp;mm); från Ø1000 är den kraftigare
-        (125×26&nbsp;mm) standard. Måtten nedan är innerdiameter.
-      </p>
+        <div class="flex-1">
+          <h2
+            class="font-heading uppercase text-2xl text-DGreenC-800 dark:text-TanC-50 mb-2"
+          >
+            Runda Rör
+          </h2>
+          <p class="font-body text-base text-DGreenC-700 dark:text-TanC-200">
+            Runda rör i diameter 300–3600 mm. Mindre rör har den finare
+            korrugeringen (68×13&nbsp;mm); från Ø1000 är den kraftigare
+            (125×26&nbsp;mm) standard. Måtten nedan är innerdiameter.
+          </p>
+        </div>
+
+        <!-- Måttskiss -->
+        <div
+          class="w-full max-w-[200px] flex-shrink-0 mx-auto md:mx-0 opacity-90 pt-1"
+        >
+          <svg
+            viewBox="0 0 240 170"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full h-auto"
+          >
+            <title>Måttskiss Runt Rör</title>
+            <circle
+              cx="100"
+              cy="70"
+              r="62"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="4"
+              class="text-YellowC-600 dark:text-YellowC-400"
+            />
+            <line
+              x1="38"
+              y1="145"
+              x2="162"
+              y2="145"
+              stroke="currentColor"
+              stroke-width="2"
+              class="text-DGreenC-800 dark:text-TanC-200"
+            />
+            <line
+              x1="38"
+              y1="140"
+              x2="38"
+              y2="150"
+              stroke="currentColor"
+              stroke-width="2"
+              class="text-DGreenC-800 dark:text-TanC-200"
+            />
+            <line
+              x1="162"
+              y1="140"
+              x2="162"
+              y2="150"
+              stroke="currentColor"
+              stroke-width="2"
+              class="text-DGreenC-800 dark:text-TanC-200"
+            />
+            <text
+              x="100"
+              y="162"
+              font-family="sans-serif"
+              font-size="12"
+              fill="currentColor"
+              class="text-DGreenC-800 dark:text-TanC-50 font-bold"
+              text-anchor="middle"
+            >
+              Innerdiameter Ø
+            </text>
+          </svg>
+        </div>
+      </div>
 
       <!-- Standard vs. skräddarsytt -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
@@ -660,81 +726,133 @@
       </div>
 
       <div
-        class="rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md overflow-hidden"
+        class="rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md overflow-x-auto"
       >
           <table
             class="w-full border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body"
           >
             <thead class="bg-YellowC-500 text-DGreenC-800">
               <tr>
-                <th class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
-                  Ø<span class="block font-body font-normal text-xs opacity-70">mm</span>
+                <th rowspan="2" class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
+                  Ø<span class="block font-body font-normal normal-case text-xs opacity-70">mm</span>
                 </th>
-                <th class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
-                  Area<span class="block font-body font-normal text-xs opacity-70">m²</span>
+                <th colspan="2" class="bg-YellowC-500 px-2 pt-3 sm:px-4 font-subheading align-bottom text-left">
+                  Area
                 </th>
-                <th class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
-                  Korr.<span class="block font-body font-normal text-xs opacity-70">mm</span>
+                <th rowspan="2" class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
+                  Korr.<span class="block font-body font-normal normal-case text-xs opacity-70">mm</span>
                 </th>
-                <th class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
-                  Gods<span class="block font-body font-normal text-xs opacity-70">mm</span>
+                <th rowspan="2" class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
+                  Gods<span class="block font-body font-normal normal-case text-xs opacity-70">mm</span>
                 </th>
-                <th class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
-                  ~Vikt<span class="block font-body font-normal text-xs opacity-70">kg/m</span>
+                <th rowspan="2" class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
+                  ~Vikt<span class="block font-body font-normal normal-case text-xs opacity-70">kg/m</span>
+                </th>
+              </tr>
+              <tr>
+                <th class="bg-YellowC-500 px-2 pb-3 sm:px-4 border-b-2 border-YellowC-600 font-body font-normal normal-case text-xs opacity-70 align-top text-left">
+                  m²
+                </th>
+                <th class="bg-YellowC-500 px-2 pb-3 sm:px-4 border-b-2 border-YellowC-600 font-body font-normal normal-case text-xs opacity-70 align-top text-left">
+                  m²*
                 </th>
               </tr>
             </thead>
             <tbody class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500">
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">300 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">0,07</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></td><td class="px-2 py-2 sm:px-4"><span class="font-semibold">~12</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">400 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">0,13</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></td><td class="px-2 py-2 sm:px-4"><span class="font-semibold">~16</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">500 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">0,20</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,0</span></td><td class="px-2 py-2 sm:px-4"><span class="block font-semibold">~20</span><span class="block">~27</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">600 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">0,28</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,0</span></td><td class="px-2 py-2 sm:px-4"><span class="block font-semibold">~24</span><span class="block">~32</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">700</td><td class="px-2 py-2 sm:px-4">0,38</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,0</span></td><td class="px-2 py-2 sm:px-4"><span class="block font-semibold">~28</span><span class="block">~37</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">800 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">0,50</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,0</span></td><td class="px-2 py-2 sm:px-4"><span class="block font-semibold">~32</span><span class="block">~43</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">900</td><td class="px-2 py-2 sm:px-4">0,64</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,0</span></td><td class="px-2 py-2 sm:px-4"><span class="block font-semibold">~36</span><span class="block">~48</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">1000 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">0,79</td><td class="px-2 py-2 sm:px-4"><span class="block">68×13</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">125×26<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">1,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">2,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~45</span><span class="block font-semibold">~60</span><span class="block">~75</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">1100</td><td class="px-2 py-2 sm:px-4">0,95</td><td class="px-2 py-2 sm:px-4"><span class="block">68×13</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">125×26<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">1,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">2,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~50</span><span class="block font-semibold">~66</span><span class="block">~83</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">1200 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">1,13</td><td class="px-2 py-2 sm:px-4"><span class="block">68×13</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">125×26<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">1,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">2,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~54</span><span class="block font-semibold">~72</span><span class="block">~90</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">1300</td><td class="px-2 py-2 sm:px-4">1,33</td><td class="px-2 py-2 sm:px-4"><span class="block">68×13</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">125×26<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">1,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">2,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,5</span><span class="block">3,0</span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~59</span><span class="block font-semibold">~78</span><span class="block">~98</span><span class="block">~117</span><span class="block">~137</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">1400 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">1,54</td><td class="px-2 py-2 sm:px-4"><span class="block">68×13</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">125×26<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">1,5</span><span class="block">2,0</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">2,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,0</span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~63</span><span class="block">~84</span><span class="block font-semibold">~105</span><span class="block">~126</span><span class="block">~147</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">1500</td><td class="px-2 py-2 sm:px-4">1,77</td><td class="px-2 py-2 sm:px-4"><span class="block">68×13</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">125×26<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">1,5</span><span class="block">2,0</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">2,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,0</span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~68</span><span class="block">~90</span><span class="block font-semibold">~113</span><span class="block">~135</span><span class="block">~158</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">1600 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">2,01</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,0</span><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">~96</span><span class="block">~120</span><span class="block font-semibold">~144</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">1700</td><td class="px-2 py-2 sm:px-4">2,27</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,0</span><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">~102</span><span class="block">~128</span><span class="block font-semibold">~153</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">1800 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">2,54</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,0</span><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~108</span><span class="block">~135</span><span class="block font-semibold">~162</span><span class="block">~189</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">1900</td><td class="px-2 py-2 sm:px-4">2,84</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,0</span><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~114</span><span class="block">~143</span><span class="block font-semibold">~171</span><span class="block">~200</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">2000 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">3,14</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,0</span><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~120</span><span class="block">~150</span><span class="block font-semibold">~180</span><span class="block">~210</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">2100</td><td class="px-2 py-2 sm:px-4">3,46</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~158</span><span class="block font-semibold">~189</span><span class="block">~221</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">2200 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">3,80</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~165</span><span class="block font-semibold">~198</span><span class="block">~231</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">2300</td><td class="px-2 py-2 sm:px-4">4,15</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~173</span><span class="block font-semibold">~207</span><span class="block">~242</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">2400 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">4,52</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~180</span><span class="block font-semibold">~216</span><span class="block">~252</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">2500</td><td class="px-2 py-2 sm:px-4">4,91</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~188</span><span class="block font-semibold">~225</span><span class="block">~263</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">2600 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">5,31</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~195</span><span class="block font-semibold">~234</span><span class="block">~273</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">2700</td><td class="px-2 py-2 sm:px-4">5,73</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~203</span><span class="block font-semibold">~243</span><span class="block">~284</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">2800 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">6,16</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~210</span><span class="block font-semibold">~252</span><span class="block">~295</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">2900</td><td class="px-2 py-2 sm:px-4">6,61</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~218</span><span class="block font-semibold">~261</span><span class="block">~305</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">3000 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">7,07</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~225</span><span class="block font-semibold">~270</span><span class="block">~316</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">3100</td><td class="px-2 py-2 sm:px-4">7,55</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~233</span><span class="block font-semibold">~279</span><span class="block">~326</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">3200 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">8,04</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~240</span><span class="block font-semibold">~288</span><span class="block">~337</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">3300</td><td class="px-2 py-2 sm:px-4">8,55</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~248</span><span class="block font-semibold">~297</span><span class="block">~347</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">3400 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">9,08</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~255</span><span class="block font-semibold">~306</span><span class="block">~358</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">3500</td><td class="px-2 py-2 sm:px-4">9,62</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~263</span><span class="block font-semibold">~315</span><span class="block">~368</span></td></tr>
-              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">3600 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">10,18</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~270</span><span class="block font-semibold">~324</span><span class="block">~379</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">300 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">0,07</td><td class="px-2 py-2 sm:px-4">0,05</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></td><td class="px-2 py-2 sm:px-4"><span class="font-semibold">~12</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">400 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">0,13</td><td class="px-2 py-2 sm:px-4">0,08</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></td><td class="px-2 py-2 sm:px-4"><span class="font-semibold">~16</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">500 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">0,20</td><td class="px-2 py-2 sm:px-4">0,13</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,0</span></td><td class="px-2 py-2 sm:px-4"><span class="block font-semibold">~20</span><span class="block">~27</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">600 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">0,28</td><td class="px-2 py-2 sm:px-4">0,19</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,0</span></td><td class="px-2 py-2 sm:px-4"><span class="block font-semibold">~24</span><span class="block">~32</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">700</td><td class="px-2 py-2 sm:px-4">0,38</td><td class="px-2 py-2 sm:px-4">0,26</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,0</span></td><td class="px-2 py-2 sm:px-4"><span class="block font-semibold">~28</span><span class="block">~37</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">800 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">0,50</td><td class="px-2 py-2 sm:px-4">0,34</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,0</span></td><td class="px-2 py-2 sm:px-4"><span class="block font-semibold">~32</span><span class="block">~43</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">900</td><td class="px-2 py-2 sm:px-4">0,64</td><td class="px-2 py-2 sm:px-4">0,43</td><td class="px-2 py-2 sm:px-4">68×13</td><td class="px-2 py-2 sm:px-4"><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">1,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,0</span></td><td class="px-2 py-2 sm:px-4"><span class="block font-semibold">~36</span><span class="block">~48</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">1000 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">0,79</td><td class="px-2 py-2 sm:px-4">0,54</td><td class="px-2 py-2 sm:px-4"><span class="block">68×13</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">125×26<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">1,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">2,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~45</span><span class="block font-semibold">~60</span><span class="block">~75</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">1100</td><td class="px-2 py-2 sm:px-4">0,95</td><td class="px-2 py-2 sm:px-4">0,65</td><td class="px-2 py-2 sm:px-4"><span class="block">68×13</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">125×26<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">1,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">2,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~50</span><span class="block font-semibold">~66</span><span class="block">~83</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">1200 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">1,13</td><td class="px-2 py-2 sm:px-4">0,78</td><td class="px-2 py-2 sm:px-4"><span class="block">68×13</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">125×26<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">1,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">2,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~54</span><span class="block font-semibold">~72</span><span class="block">~90</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">1300</td><td class="px-2 py-2 sm:px-4">1,33</td><td class="px-2 py-2 sm:px-4">0,91</td><td class="px-2 py-2 sm:px-4"><span class="block">68×13</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">125×26<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">1,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">2,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">2,5</span><span class="block">3,0<sup aria-hidden="true" class="text-DGreenC-500 dark:text-TanC-300">†</sup><span class="sr-only"> (endast 68×13)</span></span><span class="block">3,5<sup aria-hidden="true" class="text-DGreenC-500 dark:text-TanC-300">†</sup><span class="sr-only"> (endast 68×13)</span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">~59</span><span class="block font-semibold">~78</span><span class="block">~98</span><span class="block">~117</span><span class="block">~137</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">1400 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">1,54</td><td class="px-2 py-2 sm:px-4">1,06</td><td class="px-2 py-2 sm:px-4"><span class="block">68×13</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">125×26<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">1,5</span><span class="block">2,0</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">2,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,0<sup aria-hidden="true" class="text-DGreenC-500 dark:text-TanC-300">†</sup><span class="sr-only"> (endast 68×13)</span></span><span class="block">3,5<sup aria-hidden="true" class="text-DGreenC-500 dark:text-TanC-300">†</sup><span class="sr-only"> (endast 68×13)</span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">~63</span><span class="block">~84</span><span class="block font-semibold">~105</span><span class="block">~126</span><span class="block">~147</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">1500</td><td class="px-2 py-2 sm:px-4">1,77</td><td class="px-2 py-2 sm:px-4">1,22</td><td class="px-2 py-2 sm:px-4"><span class="block">68×13</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">125×26<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">1,5</span><span class="block">2,0</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">2,5<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,0</span><span class="block">3,5<sup aria-hidden="true" class="text-DGreenC-500 dark:text-TanC-300">†</sup><span class="sr-only"> (endast 68×13)</span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">~68</span><span class="block">~90</span><span class="block font-semibold">~113</span><span class="block">~135</span><span class="block">~158</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">1600 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">2,01</td><td class="px-2 py-2 sm:px-4">1,39</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,0</span><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">~96</span><span class="block">~120</span><span class="block font-semibold">~144</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">1700</td><td class="px-2 py-2 sm:px-4">2,27</td><td class="px-2 py-2 sm:px-4">1,58</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,0</span><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span></td><td class="px-2 py-2 sm:px-4"><span class="block">~102</span><span class="block">~128</span><span class="block font-semibold">~153</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">1800 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">2,54</td><td class="px-2 py-2 sm:px-4">1,77</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,0</span><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~108</span><span class="block">~135</span><span class="block font-semibold">~162</span><span class="block">~189</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">1900</td><td class="px-2 py-2 sm:px-4">2,84</td><td class="px-2 py-2 sm:px-4">1,97</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,0</span><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~114</span><span class="block">~143</span><span class="block font-semibold">~171</span><span class="block">~200</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">2000 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">3,14</td><td class="px-2 py-2 sm:px-4">2,19</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,0</span><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~120</span><span class="block">~150</span><span class="block font-semibold">~180</span><span class="block">~210</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">2100</td><td class="px-2 py-2 sm:px-4">3,46</td><td class="px-2 py-2 sm:px-4">2,41</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~158</span><span class="block font-semibold">~189</span><span class="block">~221</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">2200 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">3,80</td><td class="px-2 py-2 sm:px-4">2,65</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~165</span><span class="block font-semibold">~198</span><span class="block">~231</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">2300</td><td class="px-2 py-2 sm:px-4">4,15</td><td class="px-2 py-2 sm:px-4">2,90</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~173</span><span class="block font-semibold">~207</span><span class="block">~242</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">2400 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">4,52</td><td class="px-2 py-2 sm:px-4">3,16</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~180</span><span class="block font-semibold">~216</span><span class="block">~252</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">2500</td><td class="px-2 py-2 sm:px-4">4,91</td><td class="px-2 py-2 sm:px-4">3,43</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~188</span><span class="block font-semibold">~225</span><span class="block">~263</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">2600 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">5,31</td><td class="px-2 py-2 sm:px-4">3,72</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~195</span><span class="block font-semibold">~234</span><span class="block">~273</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">2700</td><td class="px-2 py-2 sm:px-4">5,73</td><td class="px-2 py-2 sm:px-4">4,01</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~203</span><span class="block font-semibold">~243</span><span class="block">~284</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">2800 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">6,16</td><td class="px-2 py-2 sm:px-4">4,31</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~210</span><span class="block font-semibold">~252</span><span class="block">~295</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">2900</td><td class="px-2 py-2 sm:px-4">6,61</td><td class="px-2 py-2 sm:px-4">4,63</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~218</span><span class="block font-semibold">~261</span><span class="block">~305</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">3000 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">7,07</td><td class="px-2 py-2 sm:px-4">4,96</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~225</span><span class="block font-semibold">~270</span><span class="block">~316</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">3100</td><td class="px-2 py-2 sm:px-4">7,55</td><td class="px-2 py-2 sm:px-4">5,29</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~233</span><span class="block font-semibold">~279</span><span class="block">~326</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">3200 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">8,04</td><td class="px-2 py-2 sm:px-4">5,64</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~240</span><span class="block font-semibold">~288</span><span class="block">~337</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">3300</td><td class="px-2 py-2 sm:px-4">8,55</td><td class="px-2 py-2 sm:px-4">6,00</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~248</span><span class="block font-semibold">~297</span><span class="block">~347</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">3400 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">9,08</td><td class="px-2 py-2 sm:px-4">6,38</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~255</span><span class="block font-semibold">~306</span><span class="block">~358</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold">3500</td><td class="px-2 py-2 sm:px-4">9,62</td><td class="px-2 py-2 sm:px-4">6,76</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~263</span><span class="block font-semibold">~315</span><span class="block">~368</span></td></tr>
+              <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top"><td class="px-2 py-2 sm:px-4 font-bold whitespace-nowrap">3600 <span class="text-YellowC-600 dark:text-YellowC-400" aria-hidden="true">●</span><span class="sr-only"> (vanlig standarddimension)</span></td><td class="px-2 py-2 sm:px-4">10,18</td><td class="px-2 py-2 sm:px-4">7,15</td><td class="px-2 py-2 sm:px-4">125×26</td><td class="px-2 py-2 sm:px-4"><span class="block">2,5</span><span class="block"><span class="inline-block rounded bg-YellowC-500 px-1 -mx-1 font-semibold text-DGreenC-800">3,0<span class="sr-only"> (vanligast)</span></span></span><span class="block">3,5</span></td><td class="px-2 py-2 sm:px-4"><span class="block">~270</span><span class="block font-semibold">~324</span><span class="block">~379</span></td></tr>
             </tbody>
           </table>
       </div>
-      <p class="text-xs text-DGreenC-600 dark:text-TanC-300 mt-2">
-        <span class="text-YellowC-600 dark:text-YellowC-400">●</span> = vanlig
-        standarddimension – mellanliggande mått tillverkas på beställning.
-        <span
-          class="inline-block rounded bg-YellowC-500 px-1 font-semibold text-DGreenC-800"
-          >Gulmarkerad</span
-        >
-        godstjocklek och korrugering är de vanligaste för dimensionen; alla
-        tjocklekar går att beställa. För Ø600–900 föreskriver AMA Anläggning
-        2,0&nbsp;mm – i praktiken är 1,5&nbsp;mm ändå det vanligaste valet. <strong>Area</strong> =
-        genomströmningsarea (innerarea). <strong>~Vikt</strong> = beräknad
-        ungefärlig vikt per meter.
-      </p>
+      <dl class="text-xs text-DGreenC-600 dark:text-TanC-300 mt-3 space-y-1">
+        <div class="flex gap-2">
+          <dt class="w-20 flex-shrink-0 font-semibold">
+            <span class="text-YellowC-600 dark:text-YellowC-400">●</span>
+          </dt>
+          <dd>
+            Vanlig standarddimension – mellanliggande mått tillverkas på
+            beställning.
+          </dd>
+        </div>
+        <div class="flex gap-2">
+          <dt class="w-20 flex-shrink-0">
+            <span
+              class="inline-block rounded bg-YellowC-500 px-1 font-semibold text-DGreenC-800"
+              >Gulmarkerad</span
+            >
+          </dt>
+          <dd>
+            Vanligaste godstjocklek och korrugering för dimensionen – alla
+            tjocklekar går att beställa.
+          </dd>
+        </div>
+        <div class="flex gap-2">
+          <dt class="w-20 flex-shrink-0 font-semibold">m²</dt>
+          <dd>Invändig tvärsnittsarea.</dd>
+        </div>
+        <div class="flex gap-2">
+          <dt class="w-20 flex-shrink-0 font-semibold">m²*</dt>
+          <dd>
+            Effektiv flödesarea: trumman lagd med
+            <a
+              href="FAQ.html#overdjup"
+              class="underline text-YellowC-600 dark:text-YellowC-400"
+              >rekommenderat överdjup enligt Trafikverket</a
+            >
+            och vattnet fyller som mest 75&nbsp;% av trummans höjd.
+          </dd>
+        </div>
+        <div class="flex gap-2">
+          <dt class="w-20 flex-shrink-0 font-semibold">~Vikt</dt>
+          <dd>Beräknad ungefärlig vikt per meter.</dd>
+        </div>
+        <div class="flex gap-2">
+          <dt class="w-20 flex-shrink-0 font-semibold">†</dt>
+          <dd>
+            Godstjocklek som för dimensionen endast tillverkas i den mindre
+            korrugeringen (68×13&nbsp;mm).
+          </dd>
+        </div>
+        <div class="flex gap-2">
+          <dt class="w-20 flex-shrink-0 font-semibold">Ø600–900</dt>
+          <dd>
+            AMA Anläggning föreskriver 2,0&nbsp;mm godstjocklek – i praktiken
+            är 1,5&nbsp;mm ändå det vanligaste valet.
+          </dd>
+        </div>
+      </dl>
 
       <!-- Överdjup-notis -->
       <div
@@ -845,6 +963,14 @@
             vattenföring även vid låga nivåer och håller nere risken för erosion.
             Storlekarna anges som spännvidd × höjd (innermått).
           </p>
+          <p
+            class="font-body text-sm text-DGreenC-700 dark:text-TanC-200 mt-3"
+          >
+            Enligt Trafikverkets definition räknas en konstruktion med
+            teoretisk spännvidd på 2,0&nbsp;m eller mer som bro, inte trumma.
+            Det gäller rörbroar från HCPA-13 och runda rör från Ø2000, och kan
+            påverka kraven på projektering och besiktning.
+          </p>
         </div>
 
         <!-- Måttskiss -->
@@ -858,7 +984,7 @@
           >
             <title>Måttskiss Pressad Trumma</title>
             <path
-              d="M 40 120 L 160 120 Q 190 120 190 90 Q 190 20 100 20 Q 10 20 10 90 Q 10 120 40 120 Z"
+              d="M 100 120 C 150 120 190 106 190 82 C 190 39 132 20 100 20 C 68 20 10 39 10 82 C 10 106 50 120 100 120 Z"
               fill="none"
               stroke="currentColor"
               stroke-width="4"
@@ -947,7 +1073,7 @@
       </div>
 
       <div
-        class="rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md overflow-hidden"
+        class="rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md overflow-x-auto"
       >
           <table
             class="w-full border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body"
@@ -955,19 +1081,19 @@
             <thead class="bg-YellowC-500 text-DGreenC-800">
               <tr>
                 <th class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
-                  Storlek<span class="block font-body font-normal text-xs opacity-70">B×H · m</span>
+                  Storlek<span class="block font-body font-normal normal-case text-xs opacity-70">B×H · m</span>
                 </th>
                 <th class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
-                  Area<span class="block font-body font-normal text-xs opacity-70">m²</span>
+                  Area<span class="block font-body font-normal normal-case text-xs opacity-70">m²</span>
                 </th>
                 <th class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
-                  Korr.<span class="block font-body font-normal text-xs opacity-70">mm</span>
+                  Korr.<span class="block font-body font-normal normal-case text-xs opacity-70">mm</span>
                 </th>
                 <th class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
-                  Gods<span class="block font-body font-normal text-xs opacity-70">mm</span>
+                  Gods<span class="block font-body font-normal normal-case text-xs opacity-70">mm</span>
                 </th>
                 <th class="bg-YellowC-500 px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom text-left">
-                  ~Vikt<span class="block font-body font-normal text-xs opacity-70">kg/m</span>
+                  ~Vikt<span class="block font-body font-normal normal-case text-xs opacity-70">kg/m</span>
                 </th>
               </tr>
             </thead>
@@ -1025,18 +1151,280 @@
             </tbody>
           </table>
       </div>
-      <p class="text-xs text-DGreenC-600 dark:text-TanC-300 mt-2">
-        <span
-          class="inline-block rounded bg-YellowC-500 px-1 font-semibold text-DGreenC-800"
-          >Gulmarkerad</span
+      <dl class="text-xs text-DGreenC-600 dark:text-TanC-300 mt-3 space-y-1">
+        <div class="flex gap-2">
+          <dt class="w-20 flex-shrink-0">
+            <span
+              class="inline-block rounded bg-YellowC-500 px-1 font-semibold text-DGreenC-800"
+              >Gulmarkerad</span
+            >
+          </dt>
+          <dd>
+            Vanligaste godstjockleken för profilen – andra tjocklekar går att
+            beställa.
+          </dd>
+        </div>
+        <div class="flex gap-2">
+          <dt class="w-20 flex-shrink-0 font-semibold">Area</dt>
+          <dd>Invändig tvärsnittsarea.</dd>
+        </div>
+        <div class="flex gap-2">
+          <dt class="w-20 flex-shrink-0 font-semibold">~Vikt</dt>
+          <dd>Ungefärlig vikt per meter.</dd>
+        </div>
+        <div class="flex gap-2">
+          <dt class="w-20 flex-shrink-0 font-semibold">Typkod</dt>
+          <dd>Ange gärna typkoden (t.ex. HCPA-21) vid förfrågan.</dd>
+        </div>
+        <div class="flex gap-2">
+          <dt class="w-20 flex-shrink-0 font-semibold">Specialmått</dt>
+          <dd>
+            Mellanliggande mått och större specialprofiler kan ofta tas fram –
+            hör av dig så löser vi det.
+          </dd>
+        </div>
+      </dl>
+
+      <!-- Jämförelse: runt rör vs pressad trumma -->
+      <div
+        class="mt-6 bg-TanC-100 dark:bg-DGreenC-700 border border-YellowC-500 rounded-lg p-4 text-DGreenC-800 dark:text-TanC-50"
+      >
+        <svg
+          viewBox="0 0 780 480"
+          xmlns="http://www.w3.org/2000/svg"
+          class="block w-full h-auto mx-auto"
+          style="max-width: 640px"
+          role="img"
+          aria-label="Jämförelse av flödesarea vid samma vattendjup: runt rör Ø1,20 m mot pressad trumma HCPA 1,80 gånger 1,20 m"
         >
-        godstjocklek är den vanligaste för profilen – andra tjocklekar går att
-        beställa. <strong>Area</strong> =
-        genomströmningsarea. <strong>~Vikt</strong> = ungefärlig vikt per meter.
-        Ange gärna typkoden (t.ex. HCPA-21)
-        vid förfrågan. Mellanliggande mått och större specialprofiler kan ofta
-        tas fram – hör av dig så löser vi det.
-      </p>
+          <title>Flödesarea: runt rör mot pressad trumma</title>
+          <defs>
+            <marker
+              id="cmp-arrow"
+              style="overflow: visible"
+              refX="0"
+              refY="0"
+              orient="auto-start-reverse"
+              markerWidth="1"
+              markerHeight="1"
+              viewBox="0 0 1 1"
+              preserveAspectRatio="xMidYMid"
+            >
+              <path
+                transform="scale(0.7)"
+                d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+                style="fill: context-stroke; fill-rule: evenodd; stroke: none"
+              />
+            </marker>
+            <pattern
+              id="cmp-hatch"
+              width="9"
+              height="18"
+              patternUnits="userSpaceOnUse"
+              patternTransform="rotate(45)"
+            >
+              <line
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="18"
+                style="stroke: var(--color-BrownC-400)"
+                stroke-width="2"
+              />
+            </pattern>
+          </defs>
+
+          <!-- Mark / vägbana -->
+          <rect x="60" y="30" width="660" height="18" fill="url(#cmp-hatch)" />
+          <path
+            d="M 60 48 H 720"
+            style="stroke: var(--color-BrownC-400)"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            fill="none"
+          />
+
+          <!-- Vattennivåer (streckade) -->
+          <g
+            stroke="currentColor"
+            stroke-width="1.3"
+            stroke-dasharray="8 6"
+            opacity="0.85"
+          >
+            <path d="M 130 238 H 712" fill="none" />
+            <path d="M 97 268 H 712" fill="none" />
+            <path d="M 64 298 H 712" fill="none" />
+          </g>
+          <!-- Bottenlinjens förlängning åt vänster -->
+          <path
+            d="M 60 330 H 168"
+            stroke="currentColor"
+            stroke-width="1"
+            opacity="0.7"
+            fill="none"
+          />
+
+          <!-- Profiler -->
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="4.5"
+            stroke-linejoin="round"
+            class="text-YellowC-600 dark:text-YellowC-400"
+          >
+            <circle cx="260" cy="240" r="90" />
+            <path
+              d="M 570 330 C 645 330 705 305 705 262 C 705 185 618 150 570 150 C 522 150 435 185 435 262 C 435 305 495 330 570 330 Z"
+            />
+          </g>
+
+          <!-- Namn och diameter -->
+          <text
+            x="260"
+            y="200"
+            font-family="sans-serif"
+            font-size="17"
+            font-weight="bold"
+            fill="currentColor"
+            text-anchor="middle"
+          >
+            Runt rör
+          </text>
+          <text
+            x="570"
+            y="200"
+            font-family="sans-serif"
+            font-size="17"
+            font-weight="bold"
+            fill="currentColor"
+            text-anchor="middle"
+          >
+            HCPA
+          </text>
+          <path
+            d="M 349 152 L 329 172"
+            stroke="currentColor"
+            stroke-width="1.2"
+            fill="none"
+            marker-end="url(#cmp-arrow)"
+          />
+          <text
+            x="354"
+            y="150"
+            font-family="sans-serif"
+            font-size="15"
+            font-weight="bold"
+            fill="currentColor"
+          >
+            Ø 1,20
+          </text>
+
+          <!-- Vattendjup (vänster) -->
+          <g stroke="currentColor" stroke-width="1.3" fill="none">
+            <path
+              d="M 70 323 V 305"
+              marker-start="url(#cmp-arrow)"
+              marker-end="url(#cmp-arrow)"
+            />
+            <path
+              d="M 103 323 V 275"
+              marker-start="url(#cmp-arrow)"
+              marker-end="url(#cmp-arrow)"
+            />
+            <path
+              d="M 136 323 V 245"
+              marker-start="url(#cmp-arrow)"
+              marker-end="url(#cmp-arrow)"
+            />
+          </g>
+          <g
+            font-family="sans-serif"
+            font-size="13"
+            fill="currentColor"
+            text-anchor="middle"
+          >
+            <text x="70" y="291">0,21</text>
+            <text x="103" y="261">0,41</text>
+            <text x="136" y="231">0,61</text>
+          </g>
+
+          <!-- Höjd och täckning (höger) -->
+          <path
+            d="M 585 150 H 728 M 710 330 H 728"
+            stroke="currentColor"
+            stroke-width="1"
+            opacity="0.7"
+            fill="none"
+          />
+          <g stroke="currentColor" stroke-width="1.3" fill="none">
+            <path
+              d="M 722 55 V 143"
+              marker-start="url(#cmp-arrow)"
+              marker-end="url(#cmp-arrow)"
+            />
+            <path
+              d="M 722 157 V 323"
+              marker-start="url(#cmp-arrow)"
+              marker-end="url(#cmp-arrow)"
+            />
+          </g>
+          <g font-family="sans-serif" font-size="13" fill="currentColor">
+            <text transform="rotate(-90 740 99)" x="740" y="99" text-anchor="middle">H</text>
+            <text transform="rotate(-90 740 240)" x="740" y="240" text-anchor="middle">1,20</text>
+          </g>
+
+          <!-- Spännvidd (under HCPA) -->
+          <path
+            d="M 435 336 V 372 M 705 336 V 372"
+            stroke="currentColor"
+            stroke-width="1"
+            opacity="0.7"
+            fill="none"
+          />
+          <path
+            d="M 442 365 H 698"
+            stroke="currentColor"
+            stroke-width="1.3"
+            fill="none"
+            marker-start="url(#cmp-arrow)"
+            marker-end="url(#cmp-arrow)"
+          />
+          <text
+            x="486"
+            y="357"
+            font-family="sans-serif"
+            font-size="13"
+            fill="currentColor"
+            text-anchor="middle"
+          >
+            1,80
+          </text>
+
+          <!-- Pilar till vattennivåerna -->
+          <g stroke="currentColor" stroke-width="1.2" fill="none">
+            <path d="M 290 393 V 245" marker-end="url(#cmp-arrow)" />
+            <path d="M 260 423 V 275" marker-end="url(#cmp-arrow)" />
+            <path d="M 230 453 V 305" marker-end="url(#cmp-arrow)" />
+            <path d="M 590 393 V 245" marker-end="url(#cmp-arrow)" />
+            <path d="M 560 423 V 275" marker-end="url(#cmp-arrow)" />
+            <path d="M 530 453 V 305" marker-end="url(#cmp-arrow)" />
+          </g>
+          <g font-family="sans-serif" font-size="15" fill="currentColor">
+            <text x="296" y="405">A = 0,59 m²</text>
+            <text x="266" y="435">A = 0,33 m²</text>
+            <text x="236" y="465">A = 0,12 m²</text>
+            <text x="596" y="405">A = 0,95 m²</text>
+            <text x="566" y="435">A = 0,60 m²</text>
+            <text x="536" y="465">A = 0,25 m²</text>
+          </g>
+        </svg>
+        <p class="font-body text-sm mt-3">
+          <strong>Samma bygghöjd – mer vatten:</strong> vid samma vattendjup
+          ger den pressade profilen (HCPA, 1,80&nbsp;×&nbsp;1,20&nbsp;m)
+          ungefär dubbelt så stor flödesarea som ett runt rör med samma höjd
+          (Ø&nbsp;1,20&nbsp;m) – störst är skillnaden vid låga vattennivåer.
+        </p>
+      </div>
     </section>
 
     <!-- TEKNISK DATA -->
@@ -1199,67 +1587,84 @@
           </div>
         </div>
 
-        <!-- Korrosionsskydd & livslängd (tabell) -->
+        <!-- Korrosionsskydd, livslängd & nötning (tabell) -->
         <h3
           class="font-subheading text-xl text-YellowC-600 dark:text-YellowC-400 mb-3"
         >
-          Korrosionsskydd & förväntad livslängd
+          Korrosionsskydd, livslängd & nötning
         </h3>
-        <p class="font-body text-base text-DGreenC-800 dark:text-TanC-50 mb-4">
-          Stålet levereras med färdigt korrosionsskydd. Vilket som behövs beror
-          på mark och vatten där trumman ska ligga.
-        </p>
         <div
-          class="rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md overflow-hidden mb-4"
+          class="rounded-lg border-2 border-YellowC-600 dark:border-YellowC-400 shadow-md overflow-x-auto mb-3"
         >
           <table
             class="w-full border-collapse bg-TanC-50 dark:bg-DGreenC-700 text-left text-sm text-DGreenC-800 dark:text-TanC-50 font-body"
           >
             <thead class="bg-YellowC-500 text-DGreenC-800">
               <tr>
-                <th class="px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading">
-                  Korrosionsskydd
+                <th class="px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom">
+                  Skydd
                 </th>
-                <th class="px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading">
-                  Normal miljö
+                <th class="px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom">
+                  Normal miljö<span class="block font-body font-normal text-xs opacity-70">livslängd</span>
                 </th>
-                <th class="px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading">
-                  Aggressiv miljö
+                <th class="px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom">
+                  Aggressiv miljö<span class="block font-body font-normal text-xs opacity-70">livslängd</span>
+                </th>
+                <th class="px-2 py-3 sm:px-4 border-b-2 border-YellowC-600 font-subheading align-bottom">
+                  Nötning<span class="block font-body font-normal text-xs opacity-70">sand &amp; grus i vattnet</span>
                 </th>
               </tr>
             </thead>
             <tbody class="divide-y divide-DGreenC-300 dark:divide-DGreenC-500">
               <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
                 <td class="px-2 py-2 sm:px-4">
-                  <span class="font-medium">Varmförzinkat 42&nbsp;µm</span>
-                  <span class="block text-DGreenC-500 dark:text-TanC-300">(600 g/m², standard)</span>
+                  <span class="block font-medium">Förzinkad</span>
+                  <span class="block text-xs text-DGreenC-500 dark:text-TanC-300">zink 42&nbsp;µm · standard</span>
                 </td>
                 <td class="px-2 py-2 sm:px-4">minst 40 år</td>
                 <td class="px-2 py-2 sm:px-4">Rekommenderas ej</td>
+                <td class="px-2 py-2 sm:px-4">
+                  Låg
+                  <span class="block text-xs text-DGreenC-500 dark:text-TanC-300">≤ 1,5 m/s</span>
+                </td>
               </tr>
               <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
                 <td class="px-2 py-2 sm:px-4">
-                  <span class="font-medium">Varmförzinkat 70&nbsp;µm</span>
-                  <span class="block text-DGreenC-500 dark:text-TanC-300">(1000 g/m², extra)</span>
+                  <span class="block font-medium">Extra förzinkad</span>
+                  <span class="block text-xs text-DGreenC-500 dark:text-TanC-300">zink 70&nbsp;µm</span>
                 </td>
                 <td class="px-2 py-2 sm:px-4">50–70 år</td>
                 <td class="px-2 py-2 sm:px-4">20–50 år</td>
+                <td class="px-2 py-2 sm:px-4">
+                  Låg
+                  <span class="block text-xs text-DGreenC-500 dark:text-TanC-300">≤ 1,5 m/s</span>
+                </td>
               </tr>
               <tr class="hover:bg-TanC-200 dark:hover:bg-DGreenC-600 align-top">
                 <td class="px-2 py-2 sm:px-4">
-                  <span class="font-medium">Zink + Trenchcoat</span>
-                  <span class="block text-DGreenC-500 dark:text-TanC-300">(polymer/plastlaminat, 300 µm)</span>
+                  <span class="block font-medium">Plastbelagd</span>
+                  <span class="block text-xs text-DGreenC-500 dark:text-TanC-300">zink 42&nbsp;µm + polymerfilm 300&nbsp;µm</span>
                 </td>
                 <td class="px-2 py-2 sm:px-4">över 100 år</td>
                 <td class="px-2 py-2 sm:px-4">80–100 år</td>
+                <td class="px-2 py-2 sm:px-4">
+                  Medel–hög
+                  <span class="block text-xs text-DGreenC-500 dark:text-TanC-300">≤ 3,5 m/s sand &amp; grus, &gt; 3,5 m/s finsand</span>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
         <p class="text-xs text-DGreenC-600 dark:text-TanC-300">
-          Normal miljö avser bl.a. pH 6,5–8,0 och vattenhastighet ≤ 1,5 m/s. Vid
-          surare/saltare vatten, högre flöden eller mycket nötande material
-          väljs ett kraftigare skydd.
+          Skyddet är färdigt från fabrik – valet styrs av mark, vatten och
+          nötning. Zinkskiktet anges per sida; i förfrågningsunderlag skrivs
+          det ofta som total zinkmängd på båda sidor: 42&nbsp;µm motsvarar
+          600&nbsp;g/m² (Z600) och 70&nbsp;µm motsvarar 1000&nbsp;g/m²
+          (Z1000). Normal miljö: pH 6,5–8,0 och vattenhastighet ≤ 1,5 m/s;
+          surare eller saltare vatten kräver kraftigare skydd. Zink klarar
+          bara låg nötning, polymerfilm även medel–hög. Klassning enligt
+          tillverkarens datablad – osäker på förhållandena? Hör av dig så tar
+          vi fram rätt skydd.
         </p>
       </div>
     </section>
