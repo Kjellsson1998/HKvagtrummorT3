@@ -177,3 +177,20 @@ summary:focus-visible,
 }
 
 
+
+/* Ståltrummor: rader med storlekar utanför standardsortimentet (randade) */
+.rad-ej-standard {
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-BrownC-400) 22%, transparent) 0 6px,
+    transparent 6px 14px
+  );
+}
+.rad-ej-standard > td:first-child {
+  box-shadow: inset 4px 0 0 var(--color-BrownC-500);
+}
+@media (prefers-color-scheme: dark) {
+  .rad-ej-standard > td:first-child {
+    box-shadow: inset 4px 0 0 var(--color-BrownC-300);
+  }
+}

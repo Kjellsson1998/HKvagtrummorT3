@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <link rel="canonical" href="https://www.hkvagtrummor.se/calculatorC.html" />
+
+    <!-- Google tag (gtag.js) — Ads + Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16731409488"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-16731409488");
+      gtag("config", "G-C6MPRK3ZTL");
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KPS3ZLJW");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Bing UET Tag -->
+    <script>
+      (function (w, d, t, r, u) {
+        var f, n, i;
+        (w[u] = w[u] || []),
+          (f = function () {
+            var o = { ti: "97209737", enableAutoSpaTracking: true };
+            (o.q = w[u]), (w[u] = new UET(o)), w[u].push("pageLoad");
+          }),
+          (n = d.createElement(t)),
+          (n.src = r),
+          (n.async = 1),
+          (n.onload = n.onreadystatechange =
+            function () {
+              var s = this.readyState;
+              (s && s !== "loaded" && s !== "complete") ||
+                (f(), (n.onload = n.onreadystatechange = null));
+            }),
+          (i = d.getElementsByTagName(t)[0]),
+          i.parentNode.insertBefore(n, i);
+      })(window, document, "script", "//bat.bing.com/bat.js", "uetq");
+    </script>
+    <!-- You can set default Consent Mode right after the UET tag -->
+    <script>
+      window.uetq = window.uetq || [];
+      window.uetq.push("consent", "default", {
+        ad_storage: "denied",
+      });
+    </script>
+    <!-- TODO: Koppla consent "update" till en cookie-banner. Kör inte "granted" utan användarens samtycke. -->
+    <!-- End Bing UET Tag -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trumkalkylator – hur lång vägtrumma behöver du? | HK Vägtrummor</title>
+    <meta
+      name="description"
+      content="Begär offert på vägtrumma: välj rund trumma, pipebåge eller valvbåge, ange vägens bredd och höjd – se direkt ungefär hur lång trumman blir och skicka en tydlig förfrågan till HK Vägtrummor."
+    />
+    <link href="src/output.css" rel="stylesheet" />
+    <link rel="icon" href="Image/HK logo Master Version.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="Image/HK-logo_liten3.png" />
+    <link rel="shortcut icon" href="Image/HK-logo_liten5.png" />
+
+    <style>
+      /* ===== Trumkalkylator för kunder (tk-) – sajtens färger, egna klasser ===== */
+      @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+      .tk {
+        --ink: #25231e; --mute: #595648; --card: #faf5ee; --soft: #f1e9de; --line: #d3c7b5;
+        --accent: #ebbd33; --accent-d: #d1a215; --link: #355f79;
+        --ok: #2f5f27; --okbg: #e6efd9; --warn: #6e4b06; --warnbg: #fbf0cf; --bad: #a41e1e; --badbg: #fbe9e9;
+        color: var(--ink); max-width: 1180px; margin: 0 auto; padding: 28px 16px 56px;
+      }
+      @media (prefers-color-scheme: dark) {
+        .tk {
+          --ink: #efe8e0; --mute: #d6cdc0; --card: #36342b; --soft: #474439; --line: #7f7a67;
+          --link: #a3c3d7; --ok: #c6e3b0; --okbg: #2f3a24; --warn: #f3d886; --warnbg: #4a3f1d; --bad: #f4b4b4; --badbg: #4b2323;
+        }
+      }
+      .tk *, .tk *::before, .tk *::after { box-sizing: border-box; }
+      .tk p { margin: 0; }
+      .tk-kicker { font-weight: 600; font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: #8a6a0e; }
+      @media (prefers-color-scheme: dark) { .tk-kicker { color: var(--accent); } }
+      .tk h1 { font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .02em;
+               font-size: clamp(28px, 6vw, 46px); line-height: 1.05; margin: 6px 0 0; }
+      .tk-lead { max-width: 44rem; color: var(--mute); font-size: 16.5px; margin-top: 12px !important; }
+
+      /* ---- appen: reglage + levande bild ---- */
+      .tk-app { margin-top: 24px; display: flex; flex-direction: column; gap: 16px; }
+      .tk-side { display: contents; }
+      .tk-live { order: 0; position: sticky; top: 0; z-index: 5; background: var(--card); border: 1px solid var(--line);
+                 border-radius: 14px; padding: 8px; box-shadow: 0 8px 20px rgba(37,35,30,.12); }
+      .tk-controls { order: 1; }
+      .tk-next { order: 2; }
+      @media (min-width: 900px) {
+        .tk-app { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.15fr); gap: 28px; align-items: start; }
+        .tk-controls { order: 0; }
+        .tk-side { order: 1; display: block; position: sticky; top: 16px; }
+        .tk-live { position: static; box-shadow: none; padding: 10px; }
+        .tk-next { margin-top: 14px; }
+      }
+      .tk-figure { background: #fbf8f3; border-radius: 10px; overflow: hidden; }
+      .tk-figure svg { display: block; width: 100%; height: auto; max-height: 30vh; }
+      @media (min-width: 900px) { .tk-figure svg { max-height: none; } }
+      .tk-answer { display: flex; align-items: flex-end; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; padding: 8px 6px 2px; }
+      .tk-answer-lbl { font-size: 13px; color: var(--mute); }
+      .tk-answer-num { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(28px, 7vw, 44px); line-height: 1.05; }
+      .tk-answer-sub { font-size: 14px; color: var(--mute); text-align: right; }
+      .tk-answer-num.tk-nofit { color: var(--bad); font-size: clamp(22px, 5vw, 30px); }
+
+      .tk-step { border: 1px solid var(--line); background: var(--card); border-radius: 14px; padding: 16px 16px 18px; margin: 0 0 14px; min-width: 0; }
+      .tk-step legend { float: left; width: 100%; padding: 0; margin: 0 0 12px; font-family: 'Montserrat', sans-serif; font-weight: 700;
+                        font-size: 17px; display: flex; align-items: center; gap: 10px; }
+      .tk-num { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--accent);
+                color: #25231e; font-size: 14px; flex: none; }
+      .tk-types { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; clear: both; }
+      .tk-type { position: relative; }
+      .tk-type input { position: absolute; opacity: 0; pointer-events: none; }
+      .tk-type label { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; height: 100%;
+                       padding: 12px 6px 10px; border: 2px solid var(--line); border-radius: 12px; cursor: pointer; background: var(--soft); }
+      .tk-type label:hover { border-color: var(--accent-d); }
+      .tk-type input:checked + label { border-color: var(--accent-d); background: var(--card); box-shadow: 0 0 0 3px rgba(235,189,51,.35); }
+      .tk-type input:focus-visible + label { outline: 2px solid var(--link); outline-offset: 2px; }
+      .tk-type svg { width: 60px; height: 44px; color: var(--ink); }
+      .tk-type b { font-size: 15px; line-height: 1.2; }
+      .tk-type small { font-size: 12px; color: var(--mute); line-height: 1.3; }
+      @media (max-width: 420px) { .tk-type small { display: none; } }
+
+      .tk-field { clear: both; }
+      .tk-field + .tk-field { margin-top: 20px; }
+      .tk-field-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+      .tk-field label { font-weight: 600; font-size: 15px; }
+      .tk-field output { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 17px; white-space: nowrap; }
+      .tk-range { width: 100%; margin: 8px 0 0; accent-color: var(--accent-d); height: 30px; cursor: pointer; }
+      .tk-scale { display: flex; justify-content: space-between; font-size: 12px; color: var(--mute); }
+      .tk-hint { font-size: 13px; color: var(--mute); margin-top: 6px !important; }
+      .tk a { color: var(--link); }
+      .tk-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+      .tk-chip { font: inherit; font-size: 13.5px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line);
+                 background: var(--soft); color: var(--ink); cursor: pointer; }
+      .tk-chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #25231e; font-weight: 600; }
+
+      .tk-next { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+      .tk-facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+      .tk-facts li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; line-height: 1.45; padding: 9px 12px;
+                     border-radius: 10px; background: var(--soft); }
+      .tk-facts li.ok { background: var(--okbg); color: var(--ok); }
+      .tk-facts li.warn { background: var(--warnbg); color: var(--warn); }
+      .tk-facts li.bad { background: var(--badbg); color: var(--bad); }
+      .tk-ico { flex: none; width: 18px; text-align: center; font-weight: 700; }
+      .tk-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+      .tk-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: inherit; font-weight: 600; font-size: 16px;
+                padding: 12px 18px; border-radius: 10px; text-decoration: none !important; cursor: pointer; border: 2px solid transparent; text-align: center; }
+      .tk-btn-primary { background: var(--accent); color: #25231e !important; flex: 1 1 230px; }
+      .tk-btn-primary:hover { background: var(--accent-d); }
+      .tk-btn-ghost { border-color: var(--ink); color: var(--ink) !important; background: transparent; flex: 1 1 170px; }
+      .tk-btn-ghost:hover { background: var(--soft); }
+
+      /* ---- steg 4: förfrågan ---- */
+      .tk-section { margin-top: 18px; }
+      .tk-section h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(20px, 3.4vw, 26px); line-height: 1.15; margin: 0;
+                       display: flex; align-items: center; gap: 10px; }
+      .tk-offer { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 18px; scroll-margin-top: 16px; }
+      @media (min-width: 900px) { .tk-offer { padding: 30px 32px; } }
+      .tk-offer-grid { display: grid; gap: 22px; margin-top: 16px; }
+      @media (min-width: 900px) { .tk-offer-grid { grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); } }
+      .tk-summary { background: var(--soft); border-radius: 12px; padding: 14px 16px; align-self: start; }
+      .tk-summary h3 { margin: 0 0 8px; font-size: 15px; font-weight: 700; }
+      .tk-summary dl { display: grid; grid-template-columns: max-content minmax(0,1fr); gap: 5px 14px; margin: 0; font-size: 14.5px; }
+      .tk-summary dt { color: var(--mute); }
+      .tk-summary dd { margin: 0; font-weight: 600; }
+      .tk-form { display: grid; gap: 12px; }
+      .tk-row { display: grid; gap: 12px; }
+      @media (min-width: 560px) { .tk-row { grid-template-columns: 1fr 1fr; } }
+      .tk-form label { display: grid; gap: 4px; font-size: 14px; font-weight: 600; }
+      .tk-form input, .tk-form textarea { font: inherit; font-weight: 400; font-size: 16px; padding: 10px 12px; border: 1px solid var(--line);
+                                          border-radius: 10px; background: #fffdf9; color: #25231e; width: 100%; }
+      .tk-form textarea { min-height: 88px; resize: vertical; }
+      .tk-form input:focus-visible, .tk-form textarea:focus-visible { outline: 2px solid var(--link); outline-offset: 1px; }
+      .tk-err { color: var(--bad); font-size: 13.5px; }
+      .tk-sent { background: var(--okbg); color: var(--ok); border-radius: 12px; padding: 14px 16px; display: grid; gap: 10px; }
+      .tk-sent textarea { font: inherit; font-size: 13px; width: 100%; min-height: 120px; border-radius: 8px; border: 1px solid var(--line); padding: 8px; background: #fffdf9; color: #25231e; }
+      .tk-small { font-size: 14px; color: var(--mute); }
+      .tk-disclaimer { font-size: 13px; color: var(--mute); margin-top: 28px !important; max-width: 52rem; }
+    </style>
+  </head>
+
+  <body class="bg-TanC-50 text-DGreenC-800 dark:bg-DGreenC-500 dark:text-TanC-50 font-body leading-relaxed">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPS3ZLJW"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <nav
+    id="header"
+    class="font-subheading w-full z-30 top-0 py-1 bg-YellowC-500 shadow-lg border-YellowC-900 mt-2"
+  >
+    <div class="w-full flex items-center justify-between px-6 py-2 relative">
+      <!-- Logo -->
+      <div class="flex-1 md:flex-none text-YellowC-600">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xml:space="preserve"
+          viewBox="-60 -60 120 120"
+          width="40"
+          height="40"
+        >
+          <g stroke="currentColor">
+            <circle r="58" fill="none" stroke-width="4" />
+            <path fill="none" stroke-width="6.1" d="M-36.508-44.93v89.853" />
+            <path
+              fill="currentColor"
+              stroke-width="6.1"
+              d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447"
+            />
+          </g>
+        </svg>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div
+        class="hidden md:flex items-center justify-end text-base text-YellowC-900"
+      >
+        <ul class="flex items-center space-x-4">
+          <li>
+            <!-- Link to index.html -->
+            <a
+              href="index.html"
+              class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3"
+              >Hem</a
+            >
+          </li>
+
+          <!-- Produkter Dropdown (Desktop) -->
+          <li class="relative group">
+            <a
+              href="Products.html"
+              class="inline-flex items-center no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3 font-subheading"
+            >
+              Produkter
+              <svg
+                class="ml-1 w-4 h-4 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </a>
+            <!-- Updated Product Links with English filenames -->
+            <ul
+              class="absolute hidden group-hover:block bg-YellowC-500 shadow-md rounded-md mt-0 pt-0 top-full left-0 w-48 text-left font-medium"
+            >
+              <li>
+                <a
+                  href="Plasticpipes.html"
+                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                  >Plasttrummor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Archculverts.html"
+                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                  >Valvbågar</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Steelpipes.html"
+                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                  >Ståltrummor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Stormwater.html"
+                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                  >Dagvatten</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Geotextile.html"
+                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                  >Markduk</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Gabions.html"
+                  class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                  >Gabioner</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- New Menu Items with English filenames -->
+          <li>
+            <!-- Link to Guestbook.html -->
+            <a
+              href="GuestBook.html"
+              class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3"
+              >Gästbok</a
+            >
+          </li>
+          <li>
+            <!-- Link to faq.html -->
+            <a
+              href="FAQ.html"
+              class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3"
+              >Vanliga Frågor</a
+            >
+          </li>
+          <!-- End New Menu Items -->
+
+          <li>
+            <!-- Link to about.html -->
+            <a
+              href="about.html"
+              class="inline-block no-underline hover:text-YellowC-100 transition duration-300 ease-in-out text-lg py-2 px-3"
+              >Om HK</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <div class="md:hidden">
+        <input type="checkbox" id="menu-toggle" class="hidden peer" />
+        <label for="menu-toggle" aria-label="Open menu" class="cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 transition-transform duration-200 ease-in-out transform hover:scale-125 hover:fill-YellowC-100"
+            viewBox="0 0 48 48"
+          >
+            <g data-name="Layer 2">
+              <path fill="none" d="M0 0h48v48H0z" data-name="invisible box" />
+              <g data-name="icons Q2">
+                <path
+                  d="M42 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 24a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2ZM42 36a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2 2 2 0 0 1 2-2h32a2 2 0 0 1 2 2Z"
+                />
+              </g>
+            </g>
+          </svg>
+        </label>
+
+        <!-- Mobile Menu -->
+        <div
+          class="hidden peer-checked:flex flex-col text-base text-YellowC-900 absolute top-full left-0 w-full bg-YellowC-500 shadow-md rounded-b-lg"
+        >
+          <ul class="text-center">
+            <li>
+              <!-- Link to index.html -->
+              <a
+                href="index.html"
+                class="block hover:text-YellowC-100 transition duration-300 ease-in-out text-xl py-3"
+                >Hem</a
+              >
+            </li>
+
+            <!-- Mobile Produkter Dropdown -->
+            <li class="block">
+              <input
+                type="checkbox"
+                id="mobile-produkt-toggle"
+                class="peer hidden"
+              />
+              <label
+                for="mobile-produkt-toggle"
+                class="inline-flex items-center justify-center w-full hover:text-YellowC-100 transition duration-300 ease-in-out text-xl py-3 cursor-pointer font-subheading"
+              >
+                Produkter
+                <svg
+                  class="ml-1 w-4 h-4 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </label>
+              <!-- Updated Product Links with English filenames -->
+              <ul class="hidden peer-checked:block bg-YellowC-500 font-medium">
+                <li>
+                  <a
+                    href="Plasticpipes.html"
+                    class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                    >Plasttrummor</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Archculverts.html"
+                    class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                    >Valvbågar</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Steelpipes.html"
+                    class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                    >Ståltrummor</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Stormwater.html"
+                    class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                    >Dagvatten</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Geotextile.html"
+                    class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                    >Markduk</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="Gabions.html"
+                    class="block px-4 py-2 hover:bg-YellowC-600 hover:text-white"
+                    >Gabioner</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- New Menu Items with English filenames -->
+            <li>
+              <!-- Link to GuestBook.html -->
+              <a
+                href="GuestBook.html"
+                class="block hover:text-YellowC-100 transition duration-300 ease-in-out text-xl py-3"
+                >Gästbok</a
+              >
+            </li>
+            <li>
+              <!-- Link to faq.html -->
+              <a
+                href="FAQ.html"
+                class="block hover:text-YellowC-100 transition duration-300 ease-in-out text-xl py-3"
+                >Vanliga Frågor</a
+              >
+            </li>
+            <!-- End New Menu Items -->
+
+            <li>
+              <!-- Link to about.html -->
+              <a
+                href="about.html"
+                class="block hover:text-YellowC-100 transition duration-300 ease-in-out text-xl py-3"
+                >Om HK</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <main class="tk">
+      <section aria-labelledby="tkTitle">
+        <p class="tk-kicker">Trumkalkylator</p>
+        <h1 id="tkTitle">Begär offert på vägtrumma</h1>
+        <p class="tk-lead">
+          Välj trumtyp, storlek och väg – du ser direkt ungefär hur lång trumman blir.
+          Skicka sedan förfrågan, så återkommer vi med pris.
+        </p>
+      </section>
+
+      <section class="tk-app" aria-label="Kalkylator">
+        <div class="tk-controls">
+          <fieldset class="tk-step">
+            <legend><span class="tk-num">1</span> Välj trumtyp</legend>
+            <div class="tk-types">
+              <div class="tk-type">
+                <input type="radio" name="tkKind" id="tkKindRund" value="rund" checked />
+                <label for="tkKindRund">
+                  <svg viewBox="0 0 60 44" aria-hidden="true">
+                    <circle cx="30" cy="22" r="18" fill="#e6eaee" />
+                    <path d="M15 32 A18 18 0 0 0 45 32 Z" fill="#9cc7e4" />
+                    <circle cx="30" cy="22" r="18" fill="none" stroke="currentColor" stroke-width="2.5" />
+                  </svg>
+                  <b>Rund trumma</b><small>Vanligast i bäckar och diken</small>
+                </label>
+              </div>
+              <div class="tk-type">
+                <input type="radio" name="tkKind" id="tkKindPipe" value="pipe" />
+                <label for="tkKindPipe">
+                  <svg viewBox="0 0 60 44" aria-hidden="true">
+                    <path d="M30 8 C43 8 51 18 51 27 C51 33 43 36 30 36 C17 36 9 33 9 27 C9 18 17 8 30 8 Z" fill="#e6eaee" />
+                    <path d="M11.5 31 C14 35 22 36 30 36 C38 36 46 35 48.5 31 Z" fill="#9cc7e4" />
+                    <path d="M30 8 C43 8 51 18 51 27 C51 33 43 36 30 36 C17 36 9 33 9 27 C9 18 17 8 30 8 Z" fill="none" stroke="currentColor" stroke-width="2.5" />
+                  </svg>
+                  <b>Pipebåge</b><small>Lägre – passar när vägen ligger lågt</small>
+                </label>
+              </div>
+              <div class="tk-type">
+                <input type="radio" name="tkKind" id="tkKindValv" value="valv" />
+                <label for="tkKindValv">
+                  <svg viewBox="0 0 60 44" aria-hidden="true">
+                    <path d="M12 34 A18 20 0 0 1 48 34 Z" fill="#e6eaee" />
+                    <rect x="15" y="34" width="30" height="4" fill="#9cc7e4" />
+                    <path d="M12 34 A18 20 0 0 1 48 34" fill="none" stroke="currentColor" stroke-width="2.5" />
+                    <rect x="8" y="34" width="8" height="5" fill="#c9c4b9" stroke="currentColor" stroke-width="1.2" />
+                    <rect x="44" y="34" width="8" height="5" fill="#c9c4b9" stroke="currentColor" stroke-width="1.2" />
+                  </svg>
+                  <b>Valvbåge</b><small>Bäckens naturliga botten blir kvar</small>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="tk-step">
+            <legend><span class="tk-num">2</span> Storlek på trumman</legend>
+            <div class="tk-field">
+              <div class="tk-field-head"><label for="tkSize" id="tkSizeLbl">Diameter</label><output id="tkSizeOut" for="tkSize"></output></div>
+              <input class="tk-range" type="range" id="tkSize" min="0" max="11" step="1" value="4" />
+              <div class="tk-scale"><span id="tkSizeMin"></span><span id="tkSizeMax"></span></div>
+              <p class="tk-hint">Storleken styrs av hur mycket vatten bäcken för. Osäker? Skriv det i <a href="#offert">förfrågan</a>, så hjälper vi dig.</p>
+            </div>
+          </fieldset>
+
+          <fieldset class="tk-step">
+            <legend><span class="tk-num">3</span> Vägen</legend>
+            <div class="tk-field">
+              <div class="tk-field-head"><label for="tkB">Vägens bredd</label><output id="tkBOut" for="tkB"></output></div>
+              <input class="tk-range" type="range" id="tkB" min="3" max="12" step="0.5" value="5" />
+              <div class="tk-chips" role="group" aria-label="Vanliga vägbredder">
+                <button type="button" class="tk-chip" data-b="4">Infart ≈ 4 m</button>
+                <button type="button" class="tk-chip" data-b="5">Skogsbilväg ≈ 5 m</button>
+                <button type="button" class="tk-chip" data-b="7">Större väg ≈ 7 m</button>
+              </div>
+            </div>
+            <div class="tk-field">
+              <div class="tk-field-head"><label for="tkBank">Vägens höjd över bäckbotten</label><output id="tkBankOut" for="tkBank"></output></div>
+              <input class="tk-range" type="range" id="tkBank" min="0.6" max="6" step="0.1" value="1.5" />
+              <p class="tk-hint" id="tkBankHint"></p>
+            </div>
+            <div class="tk-field">
+              <div class="tk-field-head"><label for="tkTheta">Korsar vägen bäcken rakt?</label><output id="tkThetaOut" for="tkTheta"></output></div>
+              <input class="tk-range" type="range" id="tkTheta" min="45" max="90" step="5" value="90" />
+              <div class="tk-scale"><span>Mycket snett</span><span>Rakt</span></div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="tk-side">
+          <div class="tk-live" aria-live="polite">
+            <div class="tk-figure" id="tkFig" role="img" aria-label="Skiss av trumman under vägen"></div>
+            <div class="tk-answer">
+              <div><p class="tk-answer-lbl" id="tkLenLbl">Din trumma blir ungefär</p><p class="tk-answer-num" id="tkLen">–</p></div>
+              <p class="tk-answer-sub" id="tkSub"></p>
+            </div>
+          </div>
+          <div class="tk-next">
+            <ul class="tk-facts" id="tkFacts"></ul>
+            <div class="tk-cta">
+              <a class="tk-btn tk-btn-primary" href="#offert">Skicka förfrågan</a>
+              <a class="tk-btn tk-btn-ghost" href="tel:+46703909051">Ring 070-390 90 51</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tk-section tk-offer" id="offert" aria-labelledby="tkOfferTitle">
+        <h2 id="tkOfferTitle"><span class="tk-num">4</span> Skicka förfrågan</h2>
+        <p class="tk-small" style="margin-top:8px">Dina val följer med automatiskt. Fyll i hur vi når dig, så återkommer vi med pris.</p>
+        <div class="tk-offer-grid">
+          <div class="tk-summary">
+            <h3>Det här skickas med</h3>
+            <dl id="tkSummary"></dl>
+          </div>
+          <div>
+            <form class="tk-form" id="tkForm" novalidate>
+              <div class="tk-row">
+                <label>Namn <input name="namn" id="tkName" autocomplete="name" required /></label>
+                <label>Telefon <input name="telefon" type="tel" autocomplete="tel" inputmode="tel" /></label>
+              </div>
+              <div class="tk-row">
+                <label>E-post <input name="epost" type="email" autocomplete="email" /></label>
+                <label>Plats (ort eller väg) <input name="plats" autocomplete="address-level2" /></label>
+              </div>
+              <label>Meddelande (frivilligt)
+                <textarea name="meddelande" placeholder="T.ex. hur mycket vatten bäcken för, när du behöver trumman, om du vill hämta eller få den levererad …"></textarea>
+              </label>
+              <p class="tk-err" id="tkFormErr" hidden></p>
+              <button type="submit" class="tk-btn tk-btn-primary">Skicka förfrågan</button>
+              <p class="tk-small">Ditt e-postprogram öppnas med förfrågan färdigskriven – du skickar själv.</p>
+            </form>
+            <div class="tk-sent" id="tkSent" hidden>
+              <p><b>Tack!</b> Ditt e-postprogram ska nu ha öppnats med förfrågan ifylld – tryck på skicka där.</p>
+              <p>Öppnades inget? Kopiera texten nedan och mejla den till <a href="mailto:hugo@kjellsson.nu">hugo@kjellsson.nu</a>, eller ring <a href="tel:+46703909051">070-390 90 51</a>.</p>
+              <textarea id="tkSentText" readonly aria-label="Förfrågan att kopiera"></textarea>
+            </div>
+          </div>
+        </div>
+        <p class="tk-small" style="margin-top:18px">Hellre prata direkt? Ring Hugo på <a href="tel:+46703909051">070-390 90 51</a> eller mejla <a href="mailto:hugo@kjellsson.nu">hugo@kjellsson.nu</a>.</p>
+      </section>
+
+      <p class="tk-disclaimer">
+        Längden är ungefärlig och gäller en vanlig vägbank (slänter 1:1,5) och en bäck med normal lutning.
+        Vill du läsa mer om hur mycket jord som behövs över trumman, se <a href="Fyllnadsdjup.html">Fyllnadsdjup</a>.
+      </p>
+    </main>
+
+    <footer
+      class="px-4 divide-y border-t bg-TanC-200 dark:bg-DGreenC-500 border-DGreenC-800 dark:border-TanC-50"
+    >
+      <div
+        class="font-body container flex flex-col justify-center items-center py-10 mx-auto space-y-8"
+      >
+        <div class="flex justify-center">
+          <a
+            rel="noopener noreferrer"
+            href="index.html"
+            class="flex justify-center space-x-3 items-center"
+          >
+            <div class="flex items-center justify-center w-11 h-11">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                viewBox="-60 -60 120 120"
+                width="40"
+                height="40"
+                class="fill-DGreenC-800 dark:fill-TanC-50"
+              >
+                <g
+                  stroke="currentColor"
+                  class="text-DGreenC-800 dark:text-TanC-50"
+                >
+                  <circle r="58" fill="none" stroke-width="4" />
+                  <path
+                    fill="none"
+                    stroke-width="6.1"
+                    d="M-36.508-44.93v89.853"
+                  />
+                  <path
+                    fill="currentColor"
+                    stroke-width="6.1"
+                    d="M0 57.872V-56.832M42.405-40.71 2.354 2.147M3.307-.938l40.175 38.86M-1.955 0h-32.447"
+                  />
+                </g>
+              </svg>
+            </div>
+            <span
+              class="self-center text-2xl font-heading uppercase text-DGreenC-800 dark:text-TanC-50"
+              >Vägtrummor
+            </span>
+          </a>
+        </div>
+        <div class="lg:w-2/3 flex justify-center">
+          <div
+            class="grid grid-cols-2 text-sm gap-x-5 gap-y-8 sm:grid-cols-4 sm:gap-x-5"
+          >
+            <div class="space-y-3">
+              <h3
+                class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"
+              >
+                <strong>Produkter</strong>
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    href="Plasticpipes.html"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >Plasttrummor</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    href="Steelpipes.html"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >Ståltrummor</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    href="Archculverts.html"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >Valvbågar</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    href="Geotextile.html"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >Markduk</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3
+                class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"
+              >
+                <strong>Address</strong>
+              </h3>
+              <ul
+                class="space-y-1"
+              >
+                <li>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >By 120</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=by+120+893+96+Sidensjö"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >893 96 Sidensjö</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3
+                class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"
+              >
+                <strong>Kontakt</strong>
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://www.linkedin.com/in/hugo-kjellsson-2bb0011b6/"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >Hugo Kjellsson</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="tel:+46703909051"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >070-390 90 51</a
+                  >
+                </li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="mailto:hugo@kjellsson.nu"
+                    class="inline-block transform text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out hover:scale-110 dark:hover:scale-110"
+                    >hugo@kjellsson.nu</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3
+                class="font-subheading text-YellowC-600 dark:text-YellowC-400 tracking-wide"
+              >
+                <strong>Social media</strong>
+              </h3>
+              <div class="flex justify-start space-x-3">
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="https://www.facebook.com/profile.php?id=61564964080791"
+                  title="Facebook"
+                  class="flex items-center p-1 text-DGreenC-800 hover:text-YellowC-600 dark:text-TanC-50 dark:hover:text-YellowC-400 transition duration-200 ease-in-out transform hover:scale-115"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 32 32"
+                    class="w-5 h-5 fill-current"
+                  >
+                    <path
+                      d="M32 16c0-8.839-7.167-16-16-16-8.839 0-16 7.161-16 16 0 7.984 5.849 14.604 13.5 15.803v-11.177h-4.063v-4.625h4.063v-3.527c0-4.009 2.385-6.223 6.041-6.223 1.751 0 3.584 0.312 3.584 0.312v3.937h-2.021c-1.984 0-2.604 1.235-2.604 2.5v3h4.437l-0.713 4.625h-3.724v11.177c7.645-1.199 13.5-7.819 13.5-15.803z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-4 text-sm text-center text-DGreenC-800 dark:text-TanC-50">
+        © 2026 HK Vägtrummor. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+(function () {
+  "use strict";
+  /* ============================================================
+     TRUMKALKYLATOR FÖR KUNDER (calculatorC.html)
+     Ett enkelt verktyg för att skicka en tydlig offertförfrågan.
+     Samma beräkningsmodell som proffsverktyget calculator.html:
+     horisontell väg, Fh vid vägmitt, bäcken lutar och ändarna kapas
+     vinkelrätt. Detaljerna (slänter, snedskärning, bäckens lutning …)
+     ligger här som fasta standardvärden.
+     ============================================================ */
+  const HID = { S: 1.5, Se: 1.5, Xv: 0.5, brook: 0.02, Hk: 0.3, Hf: 0.6, cover: 0.7, minCover: 0.6 };
+
+  // Överdjup enligt tabell [Di mm, ÖD mm], avrundat till hel mm (som i proffsverktyget)
+  const OD_TAB = [[200,50],[300,50],[400,90],[500,100],[600,120],[1000,180],[1400,240],[1600,270],[2000,330]];
+  function overdjup(Dm) {
+    const di = Dm * 1000, t = OD_TAB;
+    let mm = t[t.length - 1][1];
+    if (di <= t[0][0]) mm = t[0][1];
+    else for (let i = 0; i < t.length - 1; i++) {
+      const [d0, o0] = t[i], [d1, o1] = t[i + 1];
+      if (di <= d1) { mm = o0 + (o1 - o0) * (di - d0) / (d1 - d0); break; }
+    }
+    return Math.round(mm) / 1000;
+  }
+
+  // x = läge längs trumman i plan (0 = vägmitt), botten z = −i·x, vägytan på bankhöjden
+  function core(D, B, bank, theta, Htot, hk) {
+    const th = theta * Math.PI / 180, sin = Math.sin(th), cot = Math.abs(Math.cos(th)) / sin;
+    const bs = HID.brook, Sp = HID.S / sin, Bp = B / sin, half = (B / 2 + HID.S * bank) / sin, k = bs * Sp;
+    const u_up = half / (1 + k), u_dn = half / (1 - k), ext = D / 2 * cot;
+    const x0 = -(u_up + ext), x1 = u_dn + ext, L = x1 - x0;
+    const skew = HID.Se * Math.max(Htot - (hk + HID.Xv), 0) / sin;
+    const Lt = Math.max(L - 2 * skew, 0), f = Math.sqrt(1 + bs * bs);
+    return { bs, Bp, u_up, u_dn, x0, x1, L, Lt, Ls: L * f, R: bank, Htot, hk, lip: Math.min(HID.Xv, Htot - hk) };
+  }
+
+  const fmt = (x, n) => Number(x).toFixed(n).replace(".", ",");
+  const f1 = x => fmt(x, 1);
+  const r1 = x => x.toFixed(1);
+  const steps = (a, b, d) => { const r = []; for (let x = a; x <= b + 1e-9; x += d) r.push(+x.toFixed(2)); return r; };
+
+  // Trumtyper. Pipebågens höjd ≈ 0,675 × bredd, valvbågens = halva bredden.
+  const KINDS = {
+    rund: { name: "Rund trumma", sizeLbl: "Diameter", sizes: [0.4, 0.5, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.5, 3], def: 1,
+            dims: D => ({ D, H: D }), txt: d => "Ø " + f1(d.D) + " m" },
+    pipe: { name: "Pipebåge", sizeLbl: "Bredd × höjd", sizes: steps(1, 4, 0.2), def: 2,
+            dims: D => ({ D, H: +(0.675 * D).toFixed(2) }), txt: d => f1(d.D) + " × " + f1(d.H) + " m" },
+    valv: { name: "Valvbåge", sizeLbl: "Bredd × höjd", sizes: [...steps(1, 3.6, 0.2), 4, 4.5, 5, 6, 7, 8], def: 2.4,
+            dims: D => ({ D, H: +(D / 2).toFixed(2) }), txt: d => f1(d.D) + " × " + f1(d.H) + " m" }
+  };
+
+  function heights(kind, D) {
+    const d = KINDS[kind].dims(D);
+    if (kind === "valv") return { d, od: 0, hk: HID.Hk, Htot: HID.Hk + d.H };
+    const od = overdjup(d.D);
+    return { d, od, hk: -od, Htot: (kind === "rund" ? d.D : d.H) - od };
+  }
+  // höjd över bäckbotten som ger ~0,7 m jord över trumman (förslag)
+  const suggestBank = (kind, D, cover) => Math.ceil((heights(kind, D).Htot + cover) * 10 - 1e-9) / 10;
+
+  function compute(s) {
+    const h = heights(s.kind, s.D);
+    const c = core(h.d.D, s.B, s.bank, s.theta, h.Htot, h.hk);
+    c.d = h.d; c.od = h.od; c.Fh = s.bank - h.Htot;
+    c.len = Math.ceil(c.Ls * 2 - 1e-9) / 2;          // uppåt till närmaste halvmeter
+    return c;
+  }
+
+  // ===================== SKISS =====================
+  const COL = { soil: "#d9cbb0", water: "#a9cfe9", waterLine: "#4f86b3", bank: "#e8dcc4", grass: "#8da35a",
+                road: "#2e3236", pipe: "#3a3f44", conc: "#c9c4b9", body: "#33373c", glass: "#bcd0e4",
+                lamp: "#ebbd33", ink: "#25231e", bad: "#b3261e", bg: "#fbf8f3" };
+  const NORM = [[0,0],[0.576,0.0218],[0.879,0.109],[1.0,0.255],[0.955,0.418],[0.818,0.6],
+    [0.576,0.782],[0.303,0.927],[0,1.0],[-0.303,0.927],[-0.576,0.782],[-0.818,0.6],
+    [-0.955,0.418],[-1.0,0.255],[-0.879,0.109],[-0.576,0.0218]];
+  function catmull(pts, n) {
+    const P = pts.length, out = [];
+    for (let i = 0; i < P; i++) {
+      const p0 = pts[(i - 1 + P) % P], p1 = pts[i], p2 = pts[(i + 1) % P], p3 = pts[(i + 2) % P];
+      for (let j = 0; j < n; j++) {
+        const t = j / n, t2 = t * t, t3 = t2 * t;
+        out.push([0, 1].map(a => 0.5 * (2 * p1[a] + (-p0[a] + p2[a]) * t + (2 * p0[a] - 5 * p1[a] + 4 * p2[a] - p3[a]) * t2 + (-p0[a] + 3 * p1[a] - 3 * p2[a] + p3[a]) * t3)));
+      }
+    }
+    return out;
+  }
+
+  function drawSvg(c, kind) {
+    const W = 560, H = 230, padB = 34, padT = 8;
+    const z = x => -c.bs * x, an = x => z(x) + c.hk, cr = x => z(x) + c.Htot, R = c.R;
+    const Hf = kind === "valv" ? HID.Hf : 0;
+    const mL = 0.10 * c.L + 0.8, xa = c.x0 - mL, xb = c.x1 + mL;
+    const ylow = Math.min(an(c.x1) - Hf, z(xb)) - 0.15;
+    const yhi = Math.max(R + 0.85, cr(0) + 0.3);
+    const s = Math.min(W / (xb - xa), (H - padB - padT) / (yhi - ylow));
+    const ox = (W - (xb - xa) * s) / 2;
+    const X = x => ox + (x - xa) * s, Y = y => H - padB - (y - ylow) * s;
+    const P = pts => pts.map(q => r1(X(q[0])) + "," + r1(Y(q[1]))).join(" ");
+    const xL = xa - ox / s, xR = xb + ox / s, yS = ylow - 1 / s;   // bildens kanter i meter
+    const fits = c.Fh > 0;
+    const o = [];
+    o.push(`<defs><pattern id="tkCorr" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#e6eaee"/><rect width="2" height="6" fill="#c5ccd3"/></pattern>` +
+      `<marker id="tkArw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L10,5 L0,9 z" fill="${COL.ink}"/></marker>` +
+      `<marker id="tkArwB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,1 L10,5 L0,9 z" fill="${COL.waterLine}"/></marker></defs>`);
+    o.push(`<rect width="${W}" height="${H}" fill="${COL.bg}"/>`);
+    // mark under bäckbotten och vatten i bäcken
+    o.push(`<polygon points="${P([[xL, z(xL)], [xR, z(xR)], [xR, yS], [xL, yS]])}" fill="${COL.soil}"/>`);
+    const wl = Math.max(0.12, 3 / s);
+    o.push(`<polygon points="${P([[xL, z(xL)], [xR, z(xR)], [xR, z(xR) + wl], [xL, z(xL) + wl]])}" fill="${COL.water}"/>`);
+    o.push(`<polyline points="${P([[xL, z(xL) + wl], [xR, z(xR) + wl]])}" fill="none" stroke="${COL.waterLine}" stroke-width="1"/>`);
+    // vägbanken med gräsklädda slänter
+    const tu = [-c.u_up, z(-c.u_up)], td = [c.u_dn, z(c.u_dn)], el = [-c.Bp / 2, R], er = [c.Bp / 2, R];
+    o.push(`<polygon points="${P([tu, el, er, td])}" fill="${COL.bank}"/>`);
+    o.push(`<polyline points="${P([tu, el])}" fill="none" stroke="${COL.grass}" stroke-width="3" stroke-linecap="round"/>`);
+    o.push(`<polyline points="${P([er, td])}" fill="none" stroke="${COL.grass}" stroke-width="3" stroke-linecap="round"/>`);
+    // valvbågen står på fundament
+    const x0 = c.x0, x1 = c.x1;
+    if (kind === "valv")
+      o.push(`<polygon points="${P([[x0, an(x0) - Hf], [x1, an(x1) - Hf], [x1, an(x1)], [x0, an(x0)]])}" fill="${COL.conc}" stroke="${COL.pipe}" stroke-width="0.8"/>`);
+    // trumman, sedd från sidan, med snedskurna ändar
+    const br = (c.L - c.Lt) / 2, lip = c.lip;
+    const body = [[x0, an(x0)], [x0, an(x0) + lip], [x0 + br, cr(x0 + br)], [x1 - br, cr(x1 - br)], [x1, an(x1) + lip], [x1, an(x1)]];
+    o.push(`<polygon points="${P(body)}" fill="url(#tkCorr)" stroke="${fits ? COL.pipe : COL.bad}" stroke-width="${fits ? 1.6 : 2.6}" stroke-linejoin="round"/>`);
+    // vägen med räcken och en bil
+    o.push(`<polygon points="${P([el, er, [er[0], R + 0.12], [el[0], R + 0.12]])}" fill="${COL.road}"/>`);
+    const dw = Math.max(c.Bp / 2 - 0.25, 0.3);
+    for (const sx of [-1, 1]) {
+      o.push(`<line x1="${r1(X(sx * dw))}" y1="${r1(Y(R + 0.12))}" x2="${r1(X(sx * dw))}" y2="${r1(Y(R + 0.62))}" stroke="${COL.ink}" stroke-width="1.4"/>`);
+      o.push(`<line x1="${r1(X(sx * dw - 0.18))}" y1="${r1(Y(R + 0.42))}" x2="${r1(X(sx * dw + 0.18))}" y2="${r1(Y(R + 0.42))}" stroke="${COL.ink}" stroke-width="2.2"/>`);
+    }
+    car(o, X, Y, s, 0, R + 0.12);
+    // bäckens flöde
+    if (x0 - xL > 1.4) {
+      const fa = xL + 0.35, fb = Math.min(x0 - 0.35, xL + 1.8), lift = wl + Math.max(0.18, 6 / s);
+      o.push(`<line x1="${r1(X(fa))}" y1="${r1(Y(z(fa) + lift))}" x2="${r1(X(fb))}" y2="${r1(Y(z(fb) + lift))}" stroke="${COL.waterLine}" stroke-width="1.6" marker-end="url(#tkArwB)"/>`);
+    }
+    // ungefärlig längd
+    const yd = H - padB + 10, lowEnd = x => Y(an(x) - Hf) + 3;
+    for (const x of [x0, x1])
+      o.push(`<line x1="${r1(X(x))}" y1="${r1(lowEnd(x))}" x2="${r1(X(x))}" y2="${yd + 5}" stroke="${COL.ink}" stroke-width="0.8" stroke-dasharray="3 3" opacity=".55"/>`);
+    o.push(`<line x1="${r1(X(x0))}" y1="${yd}" x2="${r1(X(x1))}" y2="${yd}" stroke="${COL.ink}" stroke-width="1.2" marker-start="url(#tkArw)" marker-end="url(#tkArw)"/>`);
+    o.push(`<text x="${r1((X(x0) + X(x1)) / 2)}" y="${H - 5}" text-anchor="middle" font-family="Montserrat,Inter,Arial,sans-serif" font-weight="700" font-size="16" fill="${fits ? COL.ink : COL.bad}" stroke="${COL.bg}" stroke-width="5" paint-order="stroke">${fits ? "ca " + f1(c.len) + " m" : "trumman får inte plats"}</text>`);
+    inset(o, kind, c.d);
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" font-family="Inter,Arial,sans-serif">${o.join("")}</svg>`;
+  }
+
+  function car(o, X, Y, s, cx, cy) {
+    const pt = arr => arr.map(q => r1(X(q[0])) + "," + r1(Y(q[1]))).join(" ");
+    const E = (x, y, rx, ry, f) => o.push(`<ellipse cx="${r1(X(x))}" cy="${r1(Y(y))}" rx="${r1(rx * s)}" ry="${r1(ry * s)}" fill="${f}"/>`);
+    E(cx - 0.42, cy + 0.02, 0.15, 0.10, "#15171a"); E(cx + 0.42, cy + 0.02, 0.15, 0.10, "#15171a");
+    o.push(`<rect x="${r1(X(cx - 0.6))}" y="${r1(Y(cy + 0.29))}" width="${r1(1.2 * s)}" height="${r1(0.24 * s)}" rx="${r1(0.08 * s)}" fill="${COL.body}"/>`);
+    o.push(`<polygon points="${pt([[cx - 0.4, cy + 0.29], [cx - 0.26, cy + 0.6], [cx + 0.26, cy + 0.6], [cx + 0.4, cy + 0.29]])}" fill="${COL.body}"/>`);
+    o.push(`<polygon points="${pt([[cx - 0.28, cy + 0.33], [cx - 0.18, cy + 0.56], [cx + 0.18, cy + 0.56], [cx + 0.28, cy + 0.33]])}" fill="${COL.glass}"/>`);
+    E(cx - 0.46, cy + 0.16, 0.05, 0.04, COL.lamp); E(cx + 0.46, cy + 0.16, 0.05, 0.04, COL.lamp);
+  }
+
+  // liten genomskärning av trumman uppe till vänster
+  function inset(o, kind, d) {
+    const bx = 8, by = 8, bw = 96, bh = 72, cx = bx + bw / 2, base = by + 50;
+    const foot = kind === "valv" ? 0.22 : 0;
+    const k = Math.min(64 / d.D, 36 / (d.H + foot));
+    o.push(`<rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="8" fill="#fff" fill-opacity=".92" stroke="#d3c7b5"/>`);
+    let shape;
+    if (kind === "rund") {
+      const r = d.D / 2 * k;
+      shape = `<circle cx="${r1(cx)}" cy="${r1(base - r)}" r="${r1(r)}"/>`;
+    } else if (kind === "pipe") {
+      const pts = catmull(NORM, 10).map(q => r1(cx + q[0] * d.D / 2 * k) + "," + r1(base - q[1] * d.H * k)).join(" ");
+      shape = `<polygon points="${pts}"/>`;
+    } else {
+      const top = base - foot * k, pts = [];
+      for (let i = 0; i <= 40; i++) { const t = Math.PI * i / 40; pts.push(r1(cx + d.D / 2 * k * Math.cos(t)) + "," + r1(top - d.H * k * Math.sin(t))); }
+      shape = `<polygon points="${pts.join(" ")}"/>`;
+      const fw = Math.max(6, 0.12 * d.D * k);
+      for (const sx of [-1, 1])
+        o.push(`<rect x="${r1(cx + sx * d.D / 2 * k - fw / 2)}" y="${r1(top)}" width="${r1(fw)}" height="${r1(foot * k)}" fill="${COL.conc}" stroke="${COL.pipe}" stroke-width="0.8"/>`);
+    }
+    o.push(`<clipPath id="tkIn">${shape}</clipPath>`);
+    o.push(shape.replace("/>", ` fill="#e6eaee"/>`));
+    if (kind === "valv")       // vattnet rinner mellan fundamenten
+      o.push(`<rect x="${r1(cx - d.D / 2 * k + 4)}" y="${base - 3}" width="${r1(d.D * k - 8)}" height="3" fill="${COL.water}"/>`);
+    else {
+      const waterTop = base - Math.max(0.2 * d.H * k, 3);
+      o.push(`<rect x="${bx}" y="${r1(waterTop)}" width="${bw}" height="${r1(base - waterTop + 1)}" fill="${COL.water}" clip-path="url(#tkIn)"/>`);
+    }
+    o.push(shape.replace("/>", ` fill="none" stroke="${COL.pipe}" stroke-width="2"/>`));
+    o.push(`<text x="${r1(cx)}" y="${by + bh - 7}" text-anchor="middle" font-size="12.5" font-weight="600" fill="${COL.ink}">${KINDS[kind].txt(d)}</text>`);
+  }
+
+  // ===================== UI =====================
+  const $ = id => document.getElementById(id);
+  const st = { kind: "rund", D: KINDS.rund.def, B: 5, bank: 0, theta: 90, bankTouched: false };
+  st.bank = suggestBank(st.kind, st.D, HID.cover);
+
+  function facts(c) {
+    const F = [], fh = c.Fh, tipPipe = st.kind === "rund" ? " – eller prova en pipebåge, den är lägre" : "";
+    if (fh <= 0) F.push(["bad", "✕", `Trumman är högre än vägen. Välj en mindre storlek eller höj vägen${tipPipe}.`]);
+    else if (fh < 0.3) F.push(["bad", "!", `Bara ca ${fmt(fh, 2)} m jord över trumman – för lite för trafik. Välj mindre storlek eller höj vägen${tipPipe}.`]);
+    else if (fh < HID.minCover) F.push(["warn", "!", `Ca ${fmt(fh, 2)} m jord över trumman. Vi rekommenderar minst 0,6 m – skriv gärna i förfrågan, så hjälper vi dig.`]);
+    else F.push(["ok", "✓", `Bra jordtäckning: ca ${fmt(fh, 2)} m över trumman.`]);
+    if (st.theta < 89.5 && fh > 0) {
+      const extra = c.Ls - compute(Object.assign({}, st, { theta: 90 })).Ls;
+      F.push(["", "↗", `Vägen korsar snett – trumman blir ca ${f1(Math.max(extra, 0))} m längre än om bäcken korsade rakt.`]);
+    }
+    if (st.kind === "valv" && c.d.D > 3.6) F.push(["", "ⓘ", "Över 3,6 m bredd byggs valvbågen av bultade plåtar på plats."]);
+    return F;
+  }
+  const thetaTxt = t => t + "° · " + (t >= 90 ? "rakt" : t >= 75 ? "lite snett" : t >= 60 ? "snett" : "mycket snett");
+
+  function summaryRows(c) {
+    const K = KINDS[st.kind];
+    return [["Trumtyp", K.name], ["Storlek", K.txt(c.d)], ["Vägens bredd", f1(st.B) + " m"],
+            ["Höjd över bäckbotten", f1(st.bank) + " m"], ["Vinkel väg/bäck", thetaTxt(st.theta)],
+            ["Ungefärlig längd", c.Fh > 0 ? "ca " + f1(c.len) + " m" : "får inte plats med valda mått"]];
+  }
+
+  let raf = 0;
+  const schedule = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; render(); }); };
+  function render() {
+    const K = KINDS[st.kind], c = compute(st), fits = c.Fh > 0;
+    const idx = K.sizes.indexOf(st.D);
+    const size = $("tkSize");
+    size.max = String(K.sizes.length - 1);
+    size.value = String(idx);
+    size.setAttribute("aria-valuetext", K.txt(c.d));
+    $("tkSizeLbl").textContent = K.sizeLbl;
+    $("tkSizeOut").textContent = K.txt(c.d);
+    $("tkSizeMin").textContent = K.txt(K.dims(K.sizes[0]));
+    $("tkSizeMax").textContent = K.txt(K.dims(K.sizes[K.sizes.length - 1]));
+    $("tkB").value = String(st.B);
+    $("tkBOut").textContent = f1(st.B) + " m";
+    document.querySelectorAll(".tk-chip").forEach(b => b.setAttribute("aria-pressed", String(Math.abs(+b.dataset.b - st.B) < 0.01)));
+    $("tkBank").value = String(st.bank);
+    $("tkBankOut").textContent = f1(st.bank) + " m";
+    const need = suggestBank(st.kind, st.D, HID.minCover);
+    $("tkBankHint").textContent = st.bankTouched
+      ? `Mät från bäckens botten upp till vägytan. Den här storleken behöver minst ca ${f1(need)} m.`
+      : "Förslag utifrån storleken – mät gärna från bäckens botten upp till vägytan och ändra.";
+    $("tkTheta").value = String(st.theta);
+    $("tkThetaOut").textContent = thetaTxt(st.theta);
+    $("tkTheta").setAttribute("aria-valuetext", thetaTxt(st.theta));
+
+    $("tkFig").innerHTML = drawSvg(c, st.kind);
+    $("tkLenLbl").textContent = fits ? "Din trumma blir ungefär" : "Ändra storlek eller vägens höjd";
+    $("tkLen").textContent = fits ? "ca " + f1(c.len) + " m" : "Får inte plats";
+    $("tkLen").classList.toggle("tk-nofit", !fits);
+    $("tkSub").textContent = K.name + " " + K.txt(c.d);
+    $("tkFacts").innerHTML = facts(c).map(([cls, ico, t]) => `<li class="${cls}"><span class="tk-ico" aria-hidden="true">${ico}</span><span>${t}</span></li>`).join("");
+    $("tkSummary").innerHTML = summaryRows(c).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
+  }
+
+  // ---- reglage ----
+  // Byte av trumtyp: standardstorleken, men har kunden angett vägens höjd väljs
+  // den största storlek upp till standard som får minst 0,6 m jord över sig.
+  function sizeFor(kind) {
+    const K = KINDS[kind];
+    if (!st.bankTouched) return K.def;
+    const ok = K.sizes.filter(D => D <= K.def && st.bank - heights(kind, D).Htot >= HID.minCover);
+    return ok.length ? ok[ok.length - 1] : K.sizes[0];
+  }
+  document.querySelectorAll('input[name="tkKind"]').forEach(r => r.addEventListener("change", () => {
+    st.kind = r.value;
+    st.D = sizeFor(st.kind);
+    if (!st.bankTouched) st.bank = suggestBank(st.kind, st.D, HID.cover);
+    schedule();
+  }));
+  $("tkSize").addEventListener("input", e => {
+    st.D = KINDS[st.kind].sizes[+e.target.value];
+    if (!st.bankTouched) st.bank = suggestBank(st.kind, st.D, HID.cover);
+    schedule();
+  });
+  $("tkB").addEventListener("input", e => { st.B = +e.target.value; schedule(); });
+  document.querySelectorAll(".tk-chip").forEach(b => b.addEventListener("click", () => { st.B = +b.dataset.b; schedule(); }));
+  $("tkBank").addEventListener("input", e => { st.bank = +e.target.value; st.bankTouched = true; schedule(); });
+  $("tkTheta").addEventListener("input", e => { st.theta = +e.target.value; schedule(); });
+
+  // ---- offertförfrågan: färdigskrivet mejl till Hugo ----
+  const track = (ev, p) => { try { if (typeof window.gtag === "function") window.gtag("event", ev, p || {}); } catch (e) {} };
+  $("tkForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const fd = new FormData(e.target), v = k => String(fd.get(k) || "").trim();
+    const err = $("tkFormErr");
+    if (!v("namn") || (!v("telefon") && !v("epost"))) {
+      err.textContent = "Fyll i ditt namn och telefon eller e-post, så vi kan nå dig.";
+      err.hidden = false;
+      (!v("namn") ? $("tkName") : e.target.elements.telefon).focus();
+      return;
+    }
+    err.hidden = true;
+    const c = compute(st), K = KINDS[st.kind];
+    const subject = `Offertförfrågan: ${K.name} ${K.txt(c.d)}` + (c.Fh > 0 ? `, ca ${f1(c.len)} m` : "");
+    const lines = ["Hej Hugo!", "", "Jag vill ha en offert på en vägtrumma enligt nedan.", "",
+      ...summaryRows(c).map(([k, val]) => `${k}: ${val}`), "",
+      `Namn: ${v("namn")}`, `Telefon: ${v("telefon") || "–"}`, `E-post: ${v("epost") || "–"}`, `Plats: ${v("plats") || "–"}`];
+    if (v("meddelande")) lines.push("", "Meddelande:", v("meddelande"));
+    lines.push("", "(Skickat från trumkalkylatorn på hkvagtrummor.se)");
+    const body = lines.join("\r\n");
+    track("generate_lead", { method: "trumkalkylator", trumtyp: st.kind });
+    $("tkSentText").value = `Till: hugo@kjellsson.nu\r\nÄmne: ${subject}\r\n\r\n${body}`;
+    $("tkSent").hidden = false;
+    window.location.href = "mailto:hugo@kjellsson.nu?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  });
+  document.querySelectorAll('.tk a[href^="tel:"]').forEach(a => a.addEventListener("click", () => track("click_to_call", { location: "trumkalkylator" })));
+
+  render();
+})();
+
+    </script>
+  </body>
+</html>
